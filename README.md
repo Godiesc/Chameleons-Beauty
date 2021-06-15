@@ -14,10 +14,10 @@ Additionally You should install the themes from firefox add-ons web page: https:
 
 Steps to apply this theme: Copy the Chrome folder and the user.js file into your Firefox profile directory and restart the browser. To find out your profile directory go to about:support or about:profiles.
 
+Additionally You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
+
 # -> Example of about:support
 ![about-support](https://user-images.githubusercontent.com/22057609/120349392-b372f980-c2c3-11eb-904d-b088168fd849.png)
-
-Additionally You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
 
 # -> Adapted to "Beautiful" Themes
 
