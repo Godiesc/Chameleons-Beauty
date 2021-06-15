@@ -142,17 +142,3 @@ button.primary { color: #cacaca !important;}
 display: inline-block !important; height: 82px !important; margin-inline-start: 16px !important; width: 134px !important;}
 .ds-outer-wrapper-breakpoint-override main {min-width: 366px !important;}
 }
-
-@-moz-document url(https://www.facebook.com/watch) , url(https://www.facebook.com/watch/), url(https://www.facebook.com/groups/feed/)
-,url(https://www.facebook.com/groups/feed/),  url(https://www.facebook.com/), url(https://www.facebook.com){
-  .ecyo15nh {width: 1108px !important;}
-  .o36gj0jk {width:221px !important;}
-  .o36gj0jk {width:221px !important;}
-  .f9o22wc5 {margin-left: 0px !important;}
-  .grtyclo8 {max-width: 754px !important;}
-  .rirtxc74 {max-width: 250px !important;}
-  .fjf4s8hc {padding-left: 0px !important; margin-left: -16px !important;}
-  .fer614ym {min-width: 225px !important;}
-  .fjf4s8hc {padding-left: 0px !important;}
-  .f7vcsfb0 {padding-right: 190px !important;}
-}
