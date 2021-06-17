@@ -125,7 +125,7 @@ border-radius: 9px !important; top: 8px; left: 9px !important;margin-right: 6px 
       fill-opacity: 0.6 !important;}
   /*muteado hover*/
     .tab-icon-overlay:not([pinned])[muted]:hover{ stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;
-      transition-duration: 100ms !important; transform: rotate(120deg) !important;list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;}
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;}
 
 /*----ícono "reproduciendo" hover----*/
 .tab-icon-overlay:not([pinned])[soundplaying]:hover, .tab-icon-overlay:not([pinned])[activemedia-blocked]:hover {stroke: transparent !important; 
@@ -136,13 +136,12 @@ border-radius: 9px !important; top: 8px; left: 9px !important;margin-right: 6px 
 .tab-icon-overlay:is([pinned][soundplaying]){ transform: rotate(0deg); animation: 3000ms infinite ease-in-out; animation-name: slide1;  stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
 
 /*ícono "reproduciendo" Pinned :hover*/
-.tab-icon-overlay:is([pinned]):hover{stroke:var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; transform: rotate(90deg) !important}
+.tab-icon-overlay:is([pinned]):hover{stroke:var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; }
 .tab-icon-overlay:is([pinned][muted]){list-style-image: url("images/audio-muted.svg") !important;}
-.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important; transform: rotate(120deg) !important;transition-duration: 150ms !important; fill-opacity: 1 !important;}
+.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important; fill-opacity: 1 !important;}
 .tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/audio-muted.svg") !important;
   stroke:var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; transition-duration: 150ms !important; 
   transform: rotate(90deg) !important; fill-opacity: 1 !important;}
-
 /*Regla para visualizar mejor el seleccionar varias pestañas*/
 .tabbrowser-tab[multiselected]:-moz-lwtheme{color: var(--lwt-tab-text) !important; --tab-line-color: transparent !important; }
 .tabbrowser-tab> .tab-stack > .tab-background:is([multiselected]) , .tabbrowser-tab> .tab-stack > .tab-content:is([multiselected]){background: #4d4dfe  !important; background-color: #4d4dfe  !important;}
