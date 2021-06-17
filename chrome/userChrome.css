@@ -203,5 +203,4 @@ menuseparator { border-top: 1px solid var(--panel-separator-color) !important; p
 #main-menubar > menu  {border-radius: 4px !important}
 
 /*Espacio izquierda de la primera pestaña*/
-.tabbrowser-tab:first-child { margin-left: 2px !important; }
-#tabs-newtab-button, #TabsToolbar #new-tab-button { padding-right: 4px !important;}
+.tabbrowser-tab:first-child:not([pinned]) { margin-left: 2px !important;}
