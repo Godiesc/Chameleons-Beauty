@@ -2,7 +2,7 @@
 
 ![splash2camaleon](https://user-images.githubusercontent.com/22057609/122129098-3aaf8980-cdfb-11eb-8c1c-b29d32225a90.jpg)
 
-Theme to "Beautiful" Themes Lovers. v89+ versions of the browser.
+Theme to "Beautiful" Themes Lovers. v89-90 versions of the browser.
 
 (ES) Reglas Css para vestir de Camaleon a Firefox
 
