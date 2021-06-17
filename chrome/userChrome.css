@@ -14,8 +14,8 @@
   --lwt-toolbar-field-border-color:color-mix(in srgb , var(--toolbar-bgcolor) 95%, var(--lwt-toolbar-field-color) ) !important;
   --button-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 70%, var(--arrowpanel-color)) !important;
   --button-primary-bgcolor: #0063b1 !important;
-  --button-primary-hover-bgcolor: color-mix(in srgb, black 10%, #0063b1);
-  --button-primary-active-bgcolor: color-mix(in srgb, black 50%, #0063b1);
+  --button-primary-hover-bgcolor: color-mix(in srgb, black 10%, #0063b1) !important;
+  --button-primary-active-bgcolor: color-mix(in srgb, black 50%, #0063b1) !important;
   --lwt-selected-tab-background-color:var(--toolbar-bgcolor) !important;  
 }
 
