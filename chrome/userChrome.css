@@ -142,6 +142,7 @@ border-radius: 9px !important; top: 8px; left: 9px !important;margin-right: 6px 
 .tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/audio-muted.svg") !important;
   stroke:var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; transition-duration: 150ms !important; 
   transform: rotate(90deg) !important; fill-opacity: 1 !important;}
+
 /*Regla para visualizar mejor el seleccionar varias pestañas*/
 .tabbrowser-tab[multiselected]:-moz-lwtheme{color: var(--lwt-tab-text) !important; --tab-line-color: transparent !important; }
 .tabbrowser-tab> .tab-stack > .tab-background:is([multiselected]) , .tabbrowser-tab> .tab-stack > .tab-content:is([multiselected]){background: #4d4dfe  !important; background-color: #4d4dfe  !important;}
