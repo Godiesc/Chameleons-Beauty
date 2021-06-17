@@ -82,8 +82,8 @@ body {
   -webkit-background-clip: text !important;  -webkit-text-fill-color: transparent !important; border: 1px solid #3a3a8b50 !important}
   
 /*Colores de la interfaz para Personalizar la NewTab*/
-.customize-menu {color: var(--newtab-background-primary-text-color) !important; background-color: color-mix( in srgb, var(--newtab-background-color) 95%, var(--newtab-background-primary-text-color) )!important;}
-.home-section .section .selector {background-color: color-mix( in srgb, var(--newtab-background-color) 95%, white ) !important; border: 1px solid color-mix( in srgb, var(--newtab-background-color) 65%, black ) !important;
+.customize-menu {color: var(--newtab-background-primary-text-color) !important; background-color: var(--newtab-background-color) !important;}
+.home-section .section .selector {background-color:var(--newtab-background-color) !important; border: 1px solid #7171af40 !important; !important;
     box-shadow: none !important;}
 .customize-menu.customize-animate-enter-done, .customize-menu.customize-animate-enter-active {
     box-shadow: 0px 0px 20px rgb(1 1 1 / 16%), 0px 0px 10px rgb(0 0 0 / 93%) !important;}
@@ -91,12 +91,12 @@ body {
 *{scrollbar-width: none !important }
  
 /*colores de los sitios anclados*/
-.outer-wrapper.newtab-experience .top-site-outer .tile:not(.active, :focus, :hover){ background-color: color-mix( in srgb, var(--newtab-background-color) 95%, var(--newtab-background-primary-text-color) )!important;
+.outer-wrapper.newtab-experience .top-site-outer .tile:not(.active, :focus, :hover){ background-color: var(--newtab-background-color) !important;
     box-shadow: 0px 0px 1px rgb(1 1 1 / 16%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
   
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
 .outer-wrapper.newtab-experience .top-site-outer:hover .tile{ box-shadow: 1px 1px 1px rgb(1 1 1 / 16%), 4px 4px 2px rgb(0 0 0 / 23%) !important;
-     background: var(--newtab-background-color) !important; border: 1px solid color-mix( in srgb, var(--newtab-background-primary-text-color) 15%, var(--newtab-background-color) ) !important;}
+     background: var(--newtab-background-color) !important; border: 1px solid #7171af40 !important;}
 
 /*Color al pasar por los items del menú de 3 puntos*/
 .context-menu > ul > li > a:is(:focus, :hover), .context-menu > ul > li > button:is(:focus, :hover) {
@@ -107,13 +107,13 @@ body {
     
 /*colores al pasar el mouse sobre los sitios anclados (fondo más grande)*/
 .outer-wrapper.newtab-experience:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
-  box-shadow: none !important; background-color: color-mix( in srgb, var(--newtab-background-color) 85%, var(--newtab-background-primary-text-color) )!important; }
+  box-shadow: none !important; background-color: var(--newtab-background-color) !important; }
 
 /*Color de label the sitio anclado :hover*/
 .outer-wrapper.newtab-experience .top-site-outer:is(.active, :focus, :hover)  .title{color: var(--newtab-background-primary-text-color) !important;}
   
 /*Color del fondo del menú de tres puntos*/
-.context-menu {background:  color-mix( in srgb, var(--newtab-background-color) 97%, white ) !important; color:var(--newtab-background-primary-text-color) !important; }
+.context-menu {background: var(--newtab-background-color) !important; color:var(--newtab-background-primary-text-color) !important; }
   
 /*Boton de 3 puntos*/
 .outer-wrapper.newtab-experience .top-site-outer .context-menu-button {fill: var(--newtab-background-primary-text-color)}
