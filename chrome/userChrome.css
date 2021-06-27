@@ -3,6 +3,7 @@
   --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text)) !important;
   --toolbarbutton-inner-padding: 5px !important;
   --proton-tab-block-margin: 3px 2px !important;
+  --tab-block-margin: 3px 2px !important;
   --tab-min-height:  32px !important;
   --tabs-shadow-size: 0px !important;
   --arrowpanel-menuitem-padding: 7px !important;
