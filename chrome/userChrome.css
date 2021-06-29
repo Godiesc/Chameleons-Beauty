@@ -27,7 +27,7 @@
 #tabbrowser-tabs {--tab-line-color: transparent !important}
 
 /*Centrar botón "open newtab"*/
-#TabsToolbar .toolbarbutton-1 {padding-top: 1px !important;}
+#TabsToolbar .toolbarbutton-1 {padding-top: 1px !important; padding-left: 1px !important;}
 
 /*"Menú con menos espacios"*/
 menupopup > menuitem, menupopup > menu{ padding-block: 0.3em !important;} 
