@@ -23,6 +23,8 @@ Additionally You should install the themes from firefox add-ons web page: https:
 
 You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
 
+The dark theme is: https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/
+
 ![Splash3CamaleonThemes3](https://user-images.githubusercontent.com/22057609/122129403-a85bb580-cdfb-11eb-8699-aaba1ff4d1e4.jpg)
 
 
