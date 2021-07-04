@@ -1,3 +1,5 @@
+/*copia este codigo y pégalo al final del archivo principal userChrome.css*/
+
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: 0 !important; }
 
 #TabsToolbar { margin-top: -1px !important; margin-bottom: 1px !important; margin-left: 35vw !important; }
