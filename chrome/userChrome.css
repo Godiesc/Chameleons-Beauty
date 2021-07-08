@@ -103,8 +103,6 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 .tab-throbber::before{ display: none !important; }
 .tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 18px !important; background-repeat: no-repeat !important;  background-position:  center !important;} 
 
- @keyframes slide1{ from { transform: rotate(0deg);}to {transform: rotate(720deg);}}
-
 .identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;}
 .identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1E934F !important;}
 .identity-color-orange {--identity-tab-color: #e67e22 !important; --identity-icon-color: #e67e22 !important;}
@@ -131,10 +129,10 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 /*------ícono  reproduciendose-------*/
 .tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {transition-duration: 200ms !important; opacity: 1 !important; border-radius: 9px !important; 
   top: 11px; left: 21px !important; color: var(--lwt-tab-text) !important; background-color: transparent !important; animation: 5000ms infinite linear; animation-name: slide1;} 
-.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important; animation: 5000ms infinite linear; animation-name: slide1;}
+.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;}
 
   /*Compartiendo microfono y cámara*/
-    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important; animation: 5000ms infinite linear; animation-name: slide1;} 
+    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important} 
 
 /*------muteado-------*/
 .tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) { list-style-image: url("images/audio-muted.svg") !important;
@@ -155,7 +153,7 @@ border-radius: 9px !important; top: 11px; left: 9px !important;margin-right: 6px
 /*-----------ícono "reproduciendo" Pinned-----------*/
 .tab-icon-overlay:is([pinned]){top: 9px !important; left: 9px !important;}
 .tab-icon-overlay:is([pinned][muted]){ list-style-image: url("images/audio-muted.svg") !important; fill-opacity: 0.4 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; animation: none !important}
-.tab-icon-overlay:is([pinned][soundplaying]){ animation: 3000ms infinite linear; animation-name: slide1;  stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
+.tab-icon-overlay:is([pinned][soundplaying]){stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
 
 /*ícono "reproduciendo" Pinned :hover*/
 .tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important; fill-opacity: 1 !important;}
