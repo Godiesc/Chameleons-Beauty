@@ -216,3 +216,41 @@ menuseparator { border-top: 1px solid var(--panel-separator-color) !important; p
 
 /*barra de menú*/
 #main-menubar > menu  {border-radius: 4px !important;}
+
+/*íconos en el menú de hamburguesa*/
+.subviewbutton:not(.subviewbutton-iconic, .subviewbutton-back, [checked="true"]) > .toolbarbutton-icon {
+  width: 16px; margin-inline-end: 8px !important;}
+.subviewbutton {-moz-context-properties: fill; fill: currentColor;}
+#appMenu-zoom-controls2 > .toolbarbutton-text {margin-inline-start: 24px !important;}
+#appMenu-new-tab-button2 {list-style-image: url("chrome://browser/skin/new-tab.svg");}
+#appMenu-new-window-button2, #appMenuRecentlyClosedWindows { list-style-image: url("chrome://browser/skin/window.svg");}
+#appMenu-new-private-window-button2 { list-style-image: url("chrome://browser/skin/privateBrowsing.svg");}
+#appMenu-bookmarks-button, #panelMenuBookmarkThisPage[starred], #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks {
+  list-style-image: url("chrome://browser/skin/bookmark.svg");}
+#appMenu-history-button, #appMenu-library-history-button, #sidebar-switcher-history { list-style-image: url("chrome://browser/skin/history.svg");}
+#appMenu-downloads-button, #appMenu-library-downloads-button { list-style-image: url("chrome://browser/skin/downloads/downloads.svg");}
+#appMenu-passwords-button { list-style-image: url("chrome://browser/skin/login.svg");}
+#appMenu-extensions-themes-button {list-style-image: url("chrome://mozapps/skin/extensions/extension.svg");}
+#appMenu-print-button2 {list-style-image: url("chrome://global/skin/icons/print.svg");}
+#appMenu-find-button2, #panelMenu_searchBookmarks {list-style-image: url("chrome://global/skin/icons/search-glass.svg");}
+#appMenu-settings-button { list-style-image: url("chrome://global/skin/icons/settings.svg");}
+#appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/help.svg");}
+#appMenu-quit-button2 { list-style-image: url("chrome://browser/skin/quit.svg");}
+#panelMenuBookmarkThisPage { list-style-image: url("chrome://browser/skin/bookmark-hollow.svg");}
+#panelMenu_viewBookmarksToolbar {list-style-image: url("chrome://browser/skin/bookmarks-toolbar.svg");}
+#appMenuRecentlyClosedTabs, #sidebar-switcher-tabs { list-style-image: url("chrome://browser/skin/tab.svg");}
+#appMenuRestoreSession { list-style-image: url("chrome://browser/skin/restore-session.svg");}
+#appMenuClearRecentHistory {list-style-image: url("chrome://browser/skin/forget.svg");}
+#appmenu-moreTools-button, #overflowMenu-customize-button { list-style-image: url("chrome://browser/skin/customize.svg");}
+[data-l10n-id="sidebar-menu-close"] { list-style-image: url("chrome://global/skin/icons/close.svg");}
+:root[fxastatus="signedin"] #fxa-menu-avatar { display: unset; -moz-box-ordinal-group: 2;}
+#fxa-manage-account-button vbox { margin-inline-start: 24px;}
+.syncNowBtn { visibility: visible !important; margin-inline-end: 8px;  -moz-box-ordinal-group: 0 !important;}
+#PanelUI-fxa-menu-connect-device-button, #PanelUI-fxa-menu-sendtab-button, #PanelUI-fxa-menu-account-signout-button, [oncommand="switchToTabHavingURI('about:performance', true)"] {
+  background-position: left 8px center; background-repeat: no-repeat; background-size: 16px;}
+#PanelUI-fxa-menu-connect-device-button { background-image: url("chrome://browser/skin/fxa/add-device.svg");}
+#PanelUI-fxa-menu-sendtab-button { background-image: url("chrome://browser/skin/send-to-device.svg");}
+#PanelUI-fxa-menu-account-signout-button { background-image: url("chrome://browser/skin/sign-out.svg");}
+[oncommand="switchToTabHavingURI('about:performance', true)"] { background-image: url("chrome://global/skin/icons/performance.svg");}
+#appMenu-fxa-label2::before { content: "";  display: block;  width: 16px;  height: 16px;  margin-inline-end: 8px;  border-radius: 50%;
+  background: var(--avatar-image-url) no-repeat center/16px;}
