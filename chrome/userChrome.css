@@ -108,7 +108,7 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 .identity-color-turquoise {--identity-tab-color: #03b48d !important; --identity-icon-color: #03b48d !important;}
 
 /*Label de medios "Reproduciendo" modifiado*/
-.tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important; margin-top:-1px !important; margin-bottom: 1px !important;
+.tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important; margin-top:-4px !important; margin-bottom: 2px !important;
  margin-left: 14px !important; font-weight: bold !important;}
 .tab-secondary-label:is([muted], [activemedia-blocked]) {display: none}
 
