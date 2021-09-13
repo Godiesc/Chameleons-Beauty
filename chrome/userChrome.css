@@ -67,7 +67,9 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
   background-color: var(--toolbarbutton-active-background) !important;}
 
 /*"ícono de marcadores y vista de lectura más pequeños"*/
-.urlbar-icon {padding: 3px !important;}
+.urlbar-page-action:not([disabled]):hover, #urlbar-go-button:focus, .search-go-button:focus {
+    background-color: var(--toolbarbutton-hover-background) !important;}
+.urlbar-icon {margin-left: 2px !important}
 
 /*"Urlbar y Search-bar más pequeñas"*/
 #urlbar{min-height: 24px !important; margin-block: 0px 0px !important; text-shadow: none !important;}
