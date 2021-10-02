@@ -1,4 +1,5 @@
 :root{
+  --toolbar-field-focus-border-color: transparent !important; 
   --lwt-accent-color: var(--toolbar-bgcolor) !important;
   --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text)) !important;
   --toolbarbutton-inner-padding: 5px !important;
