@@ -1,9 +1,8 @@
 :root{
-  --toolbar-field-focus-border-color: transparent !important; 
+  --toolbar-field-focus-border-color: transparent !important;  
   --lwt-accent-color: var(--toolbar-bgcolor) !important;
   --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text)) !important;
   --toolbarbutton-inner-padding: 5px !important;
-  --proton-tab-block-margin: 3px 2px !important;
   --tab-block-margin: 3px 2px !important;
   --tab-min-height:  32px !important;
   --tabs-shadow-size: 0px !important;
@@ -13,8 +12,8 @@
   --urlbar-icon-padding: 4px !important;
   --toolbarbutton-outer-padding: 3px !important;
   --urlbar-popup-url-color: #3399ff !important;
-  --lwt-toolbar-field-border-color:color-mix(in srgb , var(--toolbar-bgcolor) 95%, var(--lwt-toolbar-field-color) ) !important;
-  --button-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 70%, var(--arrowpanel-color)) !important;
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;
+  --button-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 95%, var(--arrowpanel-color)) !important;
   --button-primary-bgcolor: #0063b1 !important;
   --button-primary-hover-bgcolor: color-mix(in srgb, black 10%, #0063b1) !important;
   --button-primary-active-bgcolor: color-mix(in srgb, black 50%, #0063b1) !important;
@@ -88,7 +87,12 @@ tab:is([pinned])[selected] .tab-context-line {max-width: -moz-available !importa
   -moz-box-ordinal-group: 2 !important; opacity: 1 !important;  border-radius: 4px !important;}
 tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
-.tab-throbber-tabslist, .tab-throbber, .tab-icon-pending, .tab-sharing-icon-overlay, .tab-icon-image{border: 1px solid var(--identity-icon-color, #00000000) !important;
+.tab-throbber-tabslist:not([selected]), .tab-throbber:not([selected]), .tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]),
+.tab-icon-image:not([selected]){border-top: 1px solid var(--identity-icon-color, #00000000) !important;border-bottom: 1px solid var(--identity-icon-color, #00000000) !important;
+  border-left: 1px solid  #00000000 !important; border-right: 1px solid #00000000 !important;
+  border-radius: 4px !important; padding: 2px !important; width: 22px !important; height: 22px !important;}
+.tab-throbber-tabslist[selected], .tab-throbber[selected], .tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected]{
+  border: 1px solid var(--identity-icon-color, #00000000) !important;
   border-radius: 4px !important; padding: 2px !important; width: 22px !important; height: 22px !important;}
 .tab-throbber-tabslist, .tab-throbber, .tab-icon-pending, .tab-sharing-icon-overlay, 
   .tab-icon-image{ margin-right: 4px !important; margin-left: -4px !important}
@@ -126,11 +130,11 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
 /*------ícono  reproduciendose-------*/
 .tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {transition-duration: 200ms !important; opacity: 1 !important; border-radius: 9px !important; 
-  top: 11px; left: 21px !important; color: var(--lwt-tab-text) !important; background-color: transparent !important;} 
-.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;top: 11px !important;}
+  top: 11px; left: 21px !important; color: var(--lwt-tab-text) !important; background-color: transparent !important;transform: scale(0.9) !important; transition-duration: 100ms !important;} 
+.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;}
 
   /*Compartiendo microfono y cámara*/
-    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important; animation: 5000ms infinite linear; animation-name: slide1;} 
+    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
 
 /*------muteado-------*/
 .tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) { 
@@ -142,12 +146,12 @@ border-radius: 9px !important; top: 11px; left: 9px !important;margin-right: 6px
       fill-opacity: 0.4 !important;}
   /*muteado hover*/
     .tab-icon-overlay:not([pinned])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:hover:not([pinned]){ stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;
-    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; height: 13px !important; width: 13px !important;}
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; height: 13px !important; width: 13px !important;transform: scale(1.2) !important; transition-duration: 100ms !important;}
 
 /*----ícono "reproduciendo" hover----*/
 .tab-icon-overlay:not([pinned])[soundplaying]:hover, .tab-icon-overlay:not([pinned])[activemedia-blocked]:hover{ 
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; 
-  stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+  stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important; transform: scale(1.2) !important; transition-duration: 100ms !important;}
 
 /*-----------ícono "reproduciendo" Pinned-----------*/
 .tab-icon-overlay:is([pinned]){top: 11px !important; left: 9px !important; height: 13px !important; width: 13px !important;
@@ -188,7 +192,7 @@ tab:is([pinned]):not([selected="true"]) .tab-content {margin-top: 3px !important
 .tabbrowser-tab> .tab-stack {padding-right: 1px !important;}
 
 /*linea colorida urlbar focus*/
-#urlbar[focused=true]{background-image: linear-gradient(to bottom right, #fc272770 0%, #b02cfc70 25%, #33b3fd70 50%, #fec83770 75%, #fd189270 100%);
+#urlbar[focused=true]{background-image: linear-gradient(to bottom right, #fc272790 0%, #b02cfc90 25%, #33b3fd90 50%, #fec83790 75%, #fd189290 100%);
   border-radius: 5px !important;}
 #urlbar[focused=true] #urlbar-background{background-color: color-mix(in srgb, var(--lwt-accent-color) 93%, black )!important; border: transparent !important;
   margin-bottom: 1px !important; margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important;}
