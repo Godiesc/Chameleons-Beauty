@@ -157,6 +157,4 @@ display: inline-block !important; height: 82px !important; margin-inline-start: 
 }
 @-moz-document url('about:config'), regexp("^about:(neterror|certerror).*"){
 .button[autofocus], .button[type="submit"], .button[default], button.primary {
-    color: #cacaca !important;
-    }
-}
+    color: #cacaca !important; }}
