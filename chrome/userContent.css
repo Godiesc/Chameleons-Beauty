@@ -38,26 +38,26 @@ body {
     --newtab-textbox-background-color: color-mix( in srgb, var(--newtab-background-color) 87%, var(--newtab-wordmark-color) ) !important;  /*fondo de la barra de busqueda*/
 
     --newtab-background-color-secondary: color-mix( in srgb, var(--newtab-background-color) 90%,  var(--newtab-wordmark-color) )!important;  /*fondo de sitios fijados*/
-                                                                   /*contextual menu de tres puntos pinned*/
+    --newtab-contextmenu-background-color: red !important;                                                                /*contextual menu de tres puntos pinned*/
     
     --newtab-element-hover-color: var(--newtab-background-color-secondary) !important;                                    /*color de fondo al hacer clic al menú 3 puntos*/
-    --newtab-element-secondary-hover-color: linear-gradient(to right, #fa00ff70,#1293bd90) !important;                      /*color al pasar el mouse sobre los items del menú tres puntos*/
-    --newtab-element-secondary-active-color: #9a0fa4 !important;                                                          /*Color al hacer clic en el menú contextual de 3 puntos*/
+    --newtab-element-hover-color: linear-gradient(to right, #fa00ff70,#1293bd90) !important;                      /*color al pasar el mouse sobre los items del menú tres puntos*/
+    --newtab-element-active-color: #9a0fa4 !important;                                                          /*Color al hacer clic en el menú contextual de 3 puntos*/
     
-    --newtab-icon-primary-color:var(--newtab-background-primary-text-color) !important;                                           /*tres puntos hover*/ 
+    --newtab-icon-primary-color:var(--newtab-wordmark-color) !important;                                           /*tres puntos hover*/ 
     --newtab-border-color: color-mix( in srgb, var(--newtab-background-color) 87%, var(--newtab-wordmark-color)  ) !important;    /*Linea separadora de items de menú contextual*/
-                                                                              /*label principal al editar un sitio*/
+    --newtab-section-header-text-color:  var(--newtab-wordmark-color) !important;                                                                           /*label principal al editar un sitio*/
     
     
-    --newtab-card-background-color: color-mix( in srgb, var(--newtab-background-color) 97%,  var(--newtab-background-primary-text-color) )!important;  /*fondo de actividad reciente*/
-    --newtab-text-secondary-color: var(--newtab-background-primary-text-color) !important;                                     /*Label linea 1 de Actividad reciente*/
+    --newtab-card-background-color: color-mix( in srgb, var(--newtab-background-color) 97%,  var(--newtab-wordmark-color) )!important;  /*fondo de actividad reciente*/
+    --newtab-text-secondary-color: var(--newtab-wordmark-color) !important;                                     /*Label linea 1 de Actividad reciente*/
     --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                                       /*label linea 2 de actividad reciente*/
        
-    --newtab-modal-color:red !important;                                                                                       /*fondo Al editar un sitio*/
+    --newtab-modal-color: var(--newtab-overlay-color)!important;                                                                                       /*fondo Al editar un sitio*/
     --newtab-overlay-color: color-mix( in srgb, var(--newtab-background-color) 95%, transparent ) !important;                  /*fondo de editar, transparente*/
-                                                                                       /*contorno de txt al editar un sitio*/ 
+    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                                                   /*contorno de txt al editar un sitio*/ 
   
-    --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-background-primary-text-color), var(--newtab-background-color) )!important;  /*Linea separadora en "personalizar"*/
+    --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important;  /*Linea separadora en "personalizar"*/
     --newtab-button-primary-color: #1050ff !important;                  /*Color del botón "Guardar"*/
     --newtab-button-secondary-color: #f02020c0 !important;              /*color del botón "cancelar"*/
     --newtab-element-secondary-color: #4a4851 !important;              /*color radiobutton no activo*/
@@ -105,7 +105,7 @@ body {
 *{scrollbar-width: none !important }
  
 /*colores de los sitios anclados*/
-.outer-wrapper.newtab-experience .top-site-outer .tile:not(.active, :focus, :hover){ background-color: color-mix( in srgb, var(--newtab-background-color) 90%, var(--newtab-wordmark-color) )!important;
+.top-site-outer .tile:not(.active, :focus, :hover){ background-color: color-mix( in srgb, var(--newtab-background-color) 92%, var(--newtab-wordmark-color) )!important;
     box-shadow: 0px 0px 1px rgb(1 1 1 / 16%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
