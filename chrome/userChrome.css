@@ -271,11 +271,3 @@ menuseparator { border-top: 1px solid var(--panel-separator-color) !important; p
 [oncommand="switchToTabHavingURI('about:performance', true)"] { background-image: url("chrome://global/skin/icons/performance.svg");}
 #appMenu-fxa-label2::before { content: "";  display: block;  width: 16px;  height: 16px;  margin-inline-end: 8px;  border-radius: 50%;
   background: var(--avatar-image-url) no-repeat center/16px;}
-
-/*Color al pasar el puntero por los diferentes items de menús principales
-.protections-popup-category:hover, .protections-popup-footer-button:hover, #protections-popup-show-report-stack:hover > .protections-popup-footer-button,
- panelview .toolbarbutton-1:not([disabled], [open], :active):is(:hover), toolbarbutton.subviewbutton:not([disabled], [open], :active):is(:hover), 
-.navigable.subviewbutton:not([disabled], [open], :active):is(:hover), menu.subviewbutton:not([disabled], :active)[_moz-menuactive], 
- menuitem.subviewbutton:not([disabled], :active)[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open], :active):is(:hover),
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open], :active):is(:hover) {
- background-color:color-mix(in srgb, var(--toolbarbutton-hover-background)90%, var(--arrowpanel-color)) !important}*/
