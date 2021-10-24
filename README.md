@@ -2,6 +2,8 @@
 
 ![splash2camaleon](https://user-images.githubusercontent.com/22057609/122129098-3aaf8980-cdfb-11eb-8c1c-b29d32225a90.jpg)
 
+![chamaleonNightly](https://user-images.githubusercontent.com/22057609/138580949-25225afc-a0ae-43e6-805d-4623d5f6df30.png)
+
 Theme to "Beautiful" Themes Lovers. v89-90 versions of the browser.
 
 (ES) Reglas Css para vestir de Camaleon a Firefox
