@@ -41,8 +41,8 @@ body {
     --newtab-contextmenu-background-color: red !important;                                                                /*contextual menu de tres puntos pinned*/
     
     --newtab-element-hover-color: var(--newtab-background-color-secondary) !important;                                    /*color de fondo al hacer clic al menú 3 puntos*/
-    --newtab-element-hover-color: linear-gradient(to right, #fa00ff70,#1293bd90) !important;                      /*color al pasar el mouse sobre los items del menú tres puntos*/
-    --newtab-element-active-color: #9a0fa480 !important;                                                          /*Color al hacer clic en el menú contextual de 3 puntos*/
+    --newtab-element-hover-color: linear-gradient(to right, #cb2fe17a ,#1293bd90) !important;                      /*color al pasar el mouse sobre los items del menú tres puntos*/
+    --newtab-element-active-color: #cb2fe17a !important;                                                          /*Color al hacer clic en el menú contextual de 3 puntos*/
     
     --newtab-icon-primary-color:var(--newtab-wordmark-color) !important;                                           /*tres puntos hover*/ 
     --newtab-border-color: color-mix( in srgb, var(--newtab-background-color) 87%, var(--newtab-wordmark-color)  ) !important;    /*Linea separadora de items de menú contextual*/
