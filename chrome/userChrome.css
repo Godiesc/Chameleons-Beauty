@@ -224,7 +224,7 @@ menugroup > menuitem:last-child { padding-right: 4px !important;}
 menugroup > menuitem { border-radius: 4px !important; }
 menugroup > menuitem > hbox > image { border-radius: 4px !important;}
 menuseparator { border-top: 1px solid var(--panel-separator-color) !important; padding: 0 !important; margin-left: 4px !important; margin-right: 4px !important;}
-.menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color);
+.menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color) !important;
   border: 1px solid var(--arrowpanel-border-color) !important}
 
 /*favicon de pagina newtab*/
