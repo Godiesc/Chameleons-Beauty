@@ -42,7 +42,8 @@ body {
     
     --newtab-element-hover-color: var(--newtab-background-color-secondary) !important;                                    /*color de fondo al hacer clic al menú 3 puntos*/
     --newtab-element-hover-color: linear-gradient(to left,#1293bd90 5%, #cb2fe17a) !important;                      /*color al pasar el mouse sobre los items del menú tres puntos*/
-    --newtab-element-active-color: linear-gradient(to left,#1293bdb0 5%, #cb2fe19a) !important;                                                         /*Color al hacer clic en el menú contextual de 3 puntos*/
+    --newtab-element-secondary-hover-color: linear-gradient(to left,#1293bd90 5%, #cb2fe17a) !important; 
+    --newtab-element-secondary-active-color: linear-gradient(to left,#1293bdb0 5%, #cb2fe19a) !important;                                                         /*Color al hacer clic en el menú contextual de 3 puntos*/
     
     --newtab-icon-primary-color:var(--newtab-wordmark-color) !important;                                           /*tres puntos hover*/ 
     --newtab-border-color: color-mix( in srgb, var(--newtab-background-color) 87%, var(--newtab-wordmark-color)  ) !important;    /*Linea separadora de items de menú contextual*/
@@ -53,9 +54,9 @@ body {
     --newtab-text-secondary-color: var(--newtab-wordmark-color) !important;                                     /*Label linea 1 de Actividad reciente*/
     --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                                       /*label linea 2 de actividad reciente*/
        
-    --newtab-modal-color: var(--newtab-overlay-color)!important;                                                                                       /*fondo Al editar un sitio*/
-    --newtab-overlay-color: color-mix( in srgb, var(--newtab-background-color) 95%, transparent ) !important;                  /*fondo de editar, transparente*/
-    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                                                   /*contorno de txt al editar un sitio*/ 
+    --newtab-modal-color: var(--newtab-overlay-color)!important;                                                             /*fondo Al editar un sitio*/
+    --newtab-overlay-color: color-mix( in srgb, var(--newtab-background-color) 95%, transparent ) !important;                /*fondo de editar, transparente*/
+    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                         /*contorno de txt al editar un sitio*/ 
   
     --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important;  /*Linea separadora en "personalizar"*/
     --newtab-button-primary-color: #1050ff !important;                  /*Color del botón "Guardar"*/
@@ -63,10 +64,11 @@ body {
     --newtab-element-secondary-color: #4a4851 !important;              /*color radiobutton no activo*/
     --newtab-primary-element-text-color: #a6a1ca !important;           /*color radiobutton activo*/
     --newtab-primary-action-background: #394fcc !important;             /*color de fondo de radiobutton */
-    --newtab-border-primary-color: transparent !important;              /*borde del botón "Cancelar"*/
+    --newtab-element-border-primary-color: transparent !important;              /*borde del botón "Cancelar"*/
 }
  /*Color de fondo al editar un sitio anclado*/  
-.topsite-form{background: var(--newtab-background-color) !important}
+.topsite-form {background-color: var(--newtab-background-color) !important;}
+.modalOverlayOuter{background-color: color-mix(in srgb, var(--newtab-background-color) 50%, transparent)!important; backdrop-filter: blur(10px)}
     
 /*borde del menú de 3 puntos*/
 .context-menu {background: var(--newtab-background-color) !important;
@@ -153,6 +155,6 @@ display: inline-block !important; height: 82px !important; margin-inline-start: 
 .ds-outer-wrapper-breakpoint-override main {min-width: 366px !important;}
 .search-wrapper .logo-and-wordmark {margin-bottom: 0px !important;}
 }
-@-moz-document url('about:config'), regexp("^about:(neterror|certerror).*"){
+@-moz-document url('about:config'), regexp("^about:(neterror|certerror).*") {
 .button[autofocus], .button[type="submit"], .button[default], button.primary {
     color: #cacaca !important; }}
