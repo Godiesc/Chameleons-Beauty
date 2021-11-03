@@ -35,7 +35,7 @@
 #TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background {
  box-shadow: none !important;}
 #navigator-toolbox{--tabs-border-color: var(--gradient) !important}  
-#tabbrowser-tabs {--tab-line-color: transparent !important}
+#tabbrowser-tabs {--tab-line-color: (var(--gradient), transparent) !important}
 
 /*Centrar botón "open newtab"*/
 #TabsToolbar .toolbarbutton-1 {padding-top: 1px !important; padding-left: 3px !important;}
