@@ -94,8 +94,8 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 #urlbar[focused=true] #urlbar-background{background-color: var(--lwt-selected-tab-background-color)!important; border: transparent !important;box-shadow: none !important;
   margin-bottom: 1px !important; margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important; }
 
-#urlbar[open=true]{background-image: linear-gradient(to bottom right, #fd18f240 0%, #902cfc40 20%, #33b3fd40 50%, #00aaff40 85%, #fd18f240 100%);backdrop-filter:blur(14px)}
-#urlbar[open=true] #urlbar-background{background-color: color-mix(in srgb, var(--arrowpanel-background) 60%, transparent ) !important; margin-bottom: 1px !important;
+#urlbar[open=true]{background-image: linear-gradient(to bottom right, #fd18921c 0%, #b02cfc1c 25%, #33b3fd1c 50%, #00aaff1c 75%, #fd18921c 100%);backdrop-filter:blur(14px)}
+#urlbar[open=true] #urlbar-background{background-color: color-mix(in srgb, var(--arrowpanel-background) 70%, transparent ) !important; margin-bottom: 1px !important;
   margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important;animation-duration: 0ms !important; }
 
 /*rework en la Linea de Contenedores*/
