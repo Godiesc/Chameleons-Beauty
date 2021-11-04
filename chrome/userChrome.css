@@ -1,111 +1,106 @@
 :root{
-  --toolbar-field-focus-border-color: transparent !important;  
-  --lwt-accent-color-inactive: var(--toolbar-bgcolor) !important;
-  --lwt-accent-color: var(--toolbar-bgcolor) !important;
-  --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text)) !important;
-  --toolbarbutton-inner-padding: 5px !important;
-  --tab-block-margin: 3px 2px !important;
-  --tab-min-height:  32px !important;
-  --tabs-shadow-size: 0px !important;
-  --arrowpanel-menuitem-padding: 7px !important;
-  --panel-font-size: 1.1em !important;
-  --arrowpanel-padding: 0.8em !important;
-  --urlbar-icon-padding: 4px !important;
-  --toolbarbutton-outer-padding: 3px !important;
-  --urlbar-popup-url-color: #3399ff !important;
-  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;
-  --button-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 95%, var(--arrowpanel-color)) !important;
-  --button-primary-bgcolor: #0063b1 !important;
-  --button-primary-hover-bgcolor: color-mix(in srgb, black 10%, #0063b1) !important;
-  --button-primary-active-bgcolor: color-mix(in srgb, black 50%, #0063b1) !important;
-  --lwt-selected-tab-background-color: color-mix(in srgb, var(--arrowpanel-background) 97%, var(--lwt-tab-text)) !important; 
-  --toolbarbutton-hover-background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, var(--lwt-tab-text)) !important;                         /*"button_background_hover": "#26242e"*/
-  --toolbar-field-background-color: var(--toolbar-bgcolor) !important;
-  --toolbar-field-focus-background-color: var(--toolbar-bgcolor) !important;
+  --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
+  --lwt-accent-color-inactive: var(--toolbar-bgcolor) !important;                                                  /*FondoPestañasNoSeleccionadasVentanaInactiva*/
+  --lwt-accent-color: var(--toolbar-bgcolor) !important;                                                           /*FondoPestañasNoSeleccionadasVentanaActiva*/
+  --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text)) !important;              /*ColorLetrasPestañaNoSeleccionada*/
+  --toolbarbutton-inner-padding: 5px !important;                                                                   /*botonesIconosToolbarMásPequeños*/
+  --tab-block-margin: 3px 2px !important;                                                                          /*MargenTop-BottomPestañas*/
+  --tab-min-height:  32px !important;                                                                              /*TamañoPestañas*/
+  --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
+  --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
+  --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;         /*ColorBordeCuadroUrlbar*/  
+  --button-primary-bgcolor: #3033f1 !important;                                                                    /*ColorBotónGuardar*/
+  --button-primary-hover-bgcolor: #304af1 !important;                                                              /*ColorBotónGuardar:Hover*/
+  --button-primary-active-bgcolor: #0073b1 !important;                                                             /*ColorBotónGuardar:clic*/
+  --toolbarbutton-hover-background: var(--button-bgcolor) !important;                                              /*"button_background_hover": "#26242e"*/
+  --toolbar-field-background-color: var(--toolbar-bgcolor) !important;                                             /*ColorUrlbar*/
+  --toolbar-field-focus-background-color: var(--toolbar-bgcolor) !important;                                       /*ColorUrlbarOpen*/
+  --urlbar-popup-url-color: #3379ff !important;                                                                    /*colorUrlSugerenciasDeBusqueda*/
+  --lwt-popup-brighttext-url-color: #3379ff !important;                                                            /*"color de label: El sitio no funciona?"*/  
 
-  --panel-separator-zap-gradient: linear-gradient(to right, #c02c7aa0 15%, #902cfc90 50%, #3083ff90 100%) !important;
-  --gradient: linear-gradient(165deg, #c02c7a 0%, #b02cfc 8%, #3567fd 40%, #4093ff 60%,#3577fd 70%, #c02c7a 100%) !important;
+  --lwt-selected-tab-background-color: color-mix(in srgb, var(--arrowpanel-background) 97%, var(--lwt-tab-text)) !important;     /*ColorPestañaSeleccionada*/
+  --panel-separator-zap-gradient: linear-gradient(to right, #c02c7aa0 15%, #902cfc90 50%, #3083ff90 100%) !important;            /*GradienteMenúHamburguesa*/
+  --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;    /*GradientePestañaActiva*/
   
-  --button-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 90%, var(--lwt-tab-text)) !important;
-  --button-hover-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 83%,var(--lwt-tab-text)) !important;
-  --button-active-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 77%,var(--lwt-tab-text)) !important;
+  
+  --button-bgcolor: color-mix(in srgb, var(--lwt-tab-text) 10%, transparent) !important;                            /*ColorCombobox-yBotones(+-)*/
+  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text) 18%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
+  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text) 22%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/
 }
+/*RadiobuttonProtecciónAntirstreo*/
+.protections-popup-tp-switch[enabled]:hover { background-color: #4a4aff !important; border-color: transparent !important;}
+.protections-popup-tp-switch[enabled]{background-color: #3030ff !important; border-color: #454690 !important;}
 
-/*sombra de la pestaña activa eliminada y transparencia de la tabline y borde superior de la toolbar*/
-#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background {
- box-shadow: none !important;}
-#navigator-toolbox{--tabs-border-color: var(--gradient) !important}  
+/*sombra de la pestaña activa eliminada y borde superior de la toolbar y transparencia de la tabline*/
+#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > 
+.tab-stack > .tab-background { box-shadow: none !important;}
+#navigator-toolbox{--tabs-border-color: (var(--gradient), transparent) !important}  
 #tabbrowser-tabs {--tab-line-color: (var(--gradient), transparent) !important}
 
-/*Centrar botón "open newtab"*/
-#TabsToolbar .toolbarbutton-1 {padding-top: 1px !important; padding-left: 3px !important;}
-
-/*"Menú con menos espacios"*/
-menupopup > menuitem, menupopup > menu{ padding-block: 0.3em !important;} 
+/*Centrar botón "Open Newtab"*/
+#TabsToolbar .toolbarbutton-1 {padding-top: 1px !important}
 
 /*"Botón de cerrar pestaña"*/
-.tab-close-button{margin-inline-start: 0px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-5px !important}
-.tab-close-button[selected="true"]{margin-inline-start: 0px !important;width: 16x !important;height: 16px !important;padding: 3px !important; margin-inline-end:-5px !important;}
-.tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button{  border-radius: 10px !important}
-.tab-close-button:hover{background-color: var(--button-bgcolor)  !important}
+.tab-close-button{margin-inline-start: 0px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-5px !important;
+  border-radius: 10px !important}
+.tab-close-button:hover{background-color: color-mix(in srgb, var(--lwt-tab-text) 14%, transparent) !important;}
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:-moz-box !important}
 
 /*"Medidas menores para scroll de pestañas"*/
-#tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 2px }
-#scrollbutton-up, #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
-
-/*"Íconos de la urlbar más pequeños"*/
-.sharing-icon, #permissions-granted-icon, #blocked-permissions-container > .blocked-permission-icon {  height: 14px !important; width :14px !important;}
-#tracking-protection-icon{height: 14px !important; width :14px !important;padding: 0px !important; margin-left: 1px !important;}
-
-/*"Color verde de la descripción de web segura"*/
-#identity-icon {  width :14px !important;}
-description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, #identity-popup-securityView-body > button {
- color: #2cf62c !important;}
+#tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 0px }
+#scrollbutton-up, #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border, 0px) !important; }
 
 /*Páginas seguras de firefox"*/
 #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:not([open]),#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:not([open]){
-  background-color: #3e3bad !important;}
+  background-color: #3e3b8d !important; color: white !important; }
 #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open="true"],#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open="true"]{
-  background-color: #3e3bdc !important;}
+  background-color: #3e3bac !important;color: white !important;}
+#identity-popup-security-button { margin-bottom: 0px !important}
 
-/*fondo de íconos de la urlbar"*/
-:not(.urlbar-icon-wrapper) > .urlbar-icon:hover:not([open]), :not(.urlbar-icon-wrapper) > .urlbar-icon:hover:not([open]), .urlbar-icon-wrapper:hover:not([open]), 
- .urlbar-icon-wrapper:hover:not([open]) , .identity-box-button:hover:not([open="true"]), #tracking-protection-icon-container:hover:not([open="true"]) , 
- .identity-box-button:hover:not([open]){background-color: var(--toolbarbutton-hover-background) !important;}
+/*"Íconos de la urlbar más pequeños"*/
+#tracking-protection-icon, #identity-icon, .sharing-icon, #permissions-granted-icon, #blocked-permissions-container > .blocked-permission-icon 
+{height: 14px !important; width :14px !important;}
+#tracking-protection-icon{margin-left: 1px !important;}
+
+/*"Color verde de la descripción de web segura"*/
+description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, 
+  #identity-popup-securityView-body > button { color: #2cf62c !important}
+
+/*fondo:hover de íconos de la urlbar"*/
 :not(.urlbar-icon-wrapper) > .urlbar-icon[open="true"], :not(.urlbar-icon-wrapper) > .urlbar-icon[open="true"], .urlbar-icon-wrapper[open="true"], 
- .urlbar-icon-wrapper[open="true"],.identity-box-button[open="true"], #tracking-protection-icon-container[open="true"], .identity-box-button[open="true"]{
-  background-color: var(--toolbarbutton-active-background) !important;}
-
-/*"ícono de marcadores y vista de lectura más pequeños"*/
-.urlbar-page-action:not([disabled]):hover, #urlbar-go-button:focus, .search-go-button:focus {
-    background-color: var(--toolbarbutton-hover-background) !important;}
+  .urlbar-icon-wrapper[open="true"],.identity-box-button[open="true"], #tracking-protection-icon-container[open="true"], .identity-box-button[open="true"]
+.urlbar-page-action:not([disabled]):hover, #urlbar-go-button:hover, .search-go-button:hover 
+{ background-color: var(--toolbarbutton-active-background) !important;}
 .urlbar-icon {margin-left: 2px !important}
 
 /*"Urlbar y Search-bar más pequeñas"*/
-#urlbar{min-height: 26px !important; border-radius: 5px !important;}
 #urlbar-background{border-radius: 4px !important;}
+#urlbar{min-height: 26px !important; border-radius: 5px !important;}
 #searchbar {min-height: 26px !important;text-shadow: none !important; margin-block: 0px !important; padding: 0px !important;background: transparent !important}
 #searchbar .textbox-contextmenu{ margin-top: -1px !important; margin-bottom: -1px !important;}
 .toolbar-items{margin-bottom: -1px !important;}
+#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+    border-top: 1px solid #50505050 !important;
+}
 
 /*linea colorida urlbar focus*/
-#urlbar[focused=true]:not([open=true]){background-image: linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 50%, #00aaff50 75%, #fd189250 100%)}
-#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-selected-tab-background-color)!important; border: transparent !important;box-shadow: none !important;
-  margin-bottom: 1px !important; margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important; }
+#urlbar[open=true] #urlbar-background,#urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
 
-#urlbar[open=true]{background-image: linear-gradient(to bottom right, #bd189250 0%, #b02cfc50 10%, #33b3fd50 35%, #00aaff50 75%, #fd189250 100%);backdrop-filter:blur(10px)}
-#urlbar[open=true] #urlbar-background{background-color: color-mix(in srgb, var(--arrowpanel-background) 85%, transparent ) !important; margin-bottom: 1px !important;
-  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important;animation-duration: 0ms !important; }
+#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 50%, #00aaff50 75%, #fd189250 100%);}
+#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-selected-tab-background-color)!important; border: #00000000 !important;box-shadow: none !important;}
+#urlbar[open=true]{background-image: linear-gradient(to bottom right, #bd189230 0%, #b02cfc30 10%, #33b3fd30 35%, #00aaff30 75%, #fd189230 100%);backdrop-filter:blur(12px);}
+#urlbar[open=true] #urlbar-background{background-color: color-mix(in srgb, var(--lwt-selected-tab-background-color) 80%, transparent) !important; animation-duration: 0ms !important }
 
-/*rework en la Linea de Contenedores*/
-tab:not([pinned])[selected] .tab-context-line {max-width: -moz-available !important; height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
+/*rework en la Linea de Contenedores-BordeGeneral*/
+tab:not([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
   -moz-box-ordinal-group: 2 !important; opacity: 1 !important; border-radius: 5px !important;}
 tab:not([pinned]) .tab-context-line {opacity: 0 !important;}
-tab:is([pinned])[selected] .tab-context-line {max-width: -moz-available !important; height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
+tab:is([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
   -moz-box-ordinal-group: 2 !important; opacity: 1 !important;  border-radius: 5px !important;}
 tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
+/*rework en la Linea de Contenedores-BordeFavicon*/
 .tab-throbber-tabslist:not([selected]), .tab-throbber:not([selected]), .tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]),
 .tab-icon-image:not([selected]){border-top: 1px solid var(--identity-icon-color, #00000000) !important;border-bottom: 1px solid var(--identity-icon-color, #00000000) !important;
   border-left: 1px solid  #00000000 !important; border-right: 1px solid #00000000 !important;
@@ -114,13 +109,14 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
   border: 1px solid var(--identity-icon-color, #00000000) !important;
   border-radius: 4px !important; padding: 2px !important; width: 22px !important; height: 22px !important;}
 .tab-throbber-tabslist, .tab-throbber, .tab-icon-pending, .tab-sharing-icon-overlay, 
-  .tab-icon-image{ margin-right: 4px !important; margin-left: -4px !important}
+.tab-icon-image{ margin-right: 4px !important; margin-left: -4px !important}
 
 .tab-throbber-tabslist:is([pinned]):not([selected]), .tab-throbber:is([pinned]):not([selected]), .tab-icon-pending:is([pinned]):not([selected]), .tab-sharing-icon-overlay:is([pinned]):not([selected]), 
   .tab-icon-image:is([pinned]):not([selected]){ margin-right: -2px !important; margin-left: -2px !important}
 .tab-throbber-tabslist:is([pinned])[selected], .tab-throbber:is([pinned])[selected], .tab-icon-pending:is([pinned])[selected], .tab-sharing-icon-overlay:is([pinned])[selected], 
  .tab-icon-image:is([pinned])[selected]{margin-right: -2px !important; margin-left:-2px !important}
 
+/*Nuevo ícono de CargandoPágina*/
 .tab-throbber::before{ display: none !important; }
 .tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 18px !important; background-repeat: no-repeat !important;  background-position:  center !important; opacity: 1 !important;} 
 
@@ -133,83 +129,86 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 .identity-color-yellow {--identity-tab-color: #e6b803 !important; --identity-icon-color: #e6b803 !important;}
 .identity-color-turquoise {--identity-tab-color: #03b48d !important; --identity-icon-color: #03b48d !important;}
 
-/*Label de medios "Reproduciendo" modifiado*/
+/*Label de medios "Reproduciendo" modifiado - Animación*/
 @keyframes slide1{ from { transform: scale(1.0,1.0);}to {transform: scale(0.6,1.0);}}
-tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important;margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
-  font-weight: bold !important; background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
+tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
+  background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
   color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
-tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important;margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
-  font-weight: bold !important;
+tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
   color: transparent !important; border-radius:4px !important}
-.tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important; transition-duration: 0ms !important}
+.tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important}
 
 /*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
 .tab-icon-image:not([pinned]){ opacity: 1 !important;}
 .tab-icon-overlay{height: 13px !important; width: 14px !important; z-index: 1 ; padding: 0px !important}
 
-.tab-icon-overlay[activemedia-blocked] { stroke:color-mix(in srgb , #ff0000 90%, var(--lwt-tab-text)) !important; color:var(--lwt-acent-color) !important; 
-  padding: 0px !important;height: 13px !important; width: 14px !important;}
-.tab-icon-overlay:is([pinned][activemedia-blocked]):hover {list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; 
-  stroke:  var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; transition-duration: 150ms !important; opacity: 1 !important; fill-opacity: 1 !important}
+.tab-icon-overlay[activemedia-blocked] {stroke:  #d10000cc !important;fill: #ffffff !important;}
+.tab-icon-overlay:is([pinned][activemedia-blocked]){list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important}
 
 /*------ícono  reproduciendose-------*/
-.tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {border-radius: 10px !important;
-  top: 12px; left: 8px !important; color: var(--lwt-tab-text) !important; background-color: var(--lwt-selected-tab-background-color) !important; } 
-.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;}
+.tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {border-radius: 10px !important; top: 12px; left: 8px !important; 
+  color: var(--lwt-tab-text) !important; background-color: var(--lwt-selected-tab-background-color) !important; fill-opacity:1 !important} 
+/*.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;}------------eliminar*/
+
+tab:not([pinned],[selected]) .tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]){color:var(--lwt-tab-text) !important;
+  background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;}
 
   /*Compartiendo microfono y cámara*/
-    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
-/*------muteado-------*/
-.tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) { 
-border-radius: 10px !important; top: 12px; left: 8px !important;margin-right: 6px !important; animation: none !important; color:var(--lwt-tab-text) !important;
-  background-color: var(--button-bgcolor) !important; height: 13px !important; width: 14px !important;}
-  /*muteado seleccionado y no seleccionado*/
-     .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:not([selected="true"])[activemedia-blocked] ,
-     .tab-icon-overlay:is([selected="true"][muted]) , .tab-icon-overlay[activemedia-blocked][selected="true"] {
-      fill-opacity: 0.5 !important;}
-  /*muteado hover*/
-    .tab-icon-overlay:not([pinned])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:hover:not([pinned]){ stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;
-    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; height: 13px !important; width: 14px !important;}
+  .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
 
+/*------muteado-------*/
+.tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) {border-radius: 10px !important; top: 12px; left: 8px !important;
+  margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important;list-style-image: url("images/muted.svg") !important;}
+  /*muteado no seleccionado y seleccionado*/
+  .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:not([selected="true"])[activemedia-blocked]{
+     background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 0.8 !important;}
+  .tab-icon-overlay:is([selected="true"][muted]) , .tab-icon-overlay[activemedia-blocked][selected="true"] {
+      fill-opacity: 0.7 !important;color:var(--lwt-tab-text) !important;  background-color: var(--lwt-accent-color) !important;}
+  /*muteado hover*/
+    .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover, .tab-icon-overlay:not([pinned])[selected="true"][activemedia-blocked]:hover{
+    stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+    .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:not([pinned],[selected="true"]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
+       background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 1 !important;}
+      
 /*----ícono "reproduciendo" hover----*/
-.tab-icon-overlay:not([pinned])[soundplaying]:hover, .tab-icon-overlay:not([pinned])[activemedia-blocked]:hover{ 
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; 
-  stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover, .tab-icon-overlay:not([pinned])[activemedia-blocked]:hover{ 
+  list-style-image: url("images/muted.svg") !important;
+  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+
+tab:not([pinned],[selected]) .tab-icon-overlay:hover:is([sharing],[soundplaying]){color:var(--lwt-tab-text) !important;list-style-image: url("images/muted.svg") !important;
+  background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important; opacity: 1 !important;color:var(--lwt-tab-text) !important;}
 
 /*-----------ícono "reproduciendo" Pinned-----------*/
-.tab-icon-overlay:is([pinned]){top: 12px !important; left: 9px !important; height: 13px !important; width: 14px !important;
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; }
-.tab-icon-overlay:is([pinned][muted]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; fill-opacity: 0.8 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
+.tab-icon-overlay:is([pinned]){top: 12px !important; left: 9px !important; height: 13px !important; width: 14px !important;}
+.tab-icon-overlay:is([pinned][muted]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; fill-opacity: 1 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
 .tab-icon-overlay:is([pinned][soundplaying]){ stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
-
 /*ícono "reproduciendo" Pinned :hover*/
-.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; fill-opacity: 1 !important; stroke: var(--lwt-accent-color) !important}
-.tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important;
-  background: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+
+.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; fill-opacity: 1 !important;}
+.tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/muted.svg") !important; fill-opacity: 1 !important;}
 
 /*Regla para visualizar mejor el seleccionar varias pestañas*/
 .tabbrowser-tab[multiselected]:-moz-lwtheme{color: var(--lwt-tab-text) !important; --tab-line-color: transparent !important; }
-.tabbrowser-tab> .tab-stack > .tab-background:is([multiselected]) , .tabbrowser-tab> .tab-stack > .tab-content:is([multiselected]){background: #4d4dfe  !important;}
+.tabbrowser-tab[multiselected]> .tab-stack > .tab-background:is([multiselected]) , .tabbrowser-tab> .tab-stack > .tab-content:is([multiselected]){background: #4d4dfe  !important;}
 
 /*Vizualización correcta del porcentaje de zoom mostrado en la urlbar*/
-#urlbar-zoom-button {padding: 0px 2px !important; margin: 2px !important;}
+#urlbar-zoom-button {padding: 0px 4px !important; margin: 2px !important;}
 .tab-label{text-shadow: none !important}
 
 /*Linea gradiente en pestaña activa*/
 .tabbrowser-tab:not([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
   border-radius: 5px !important; height: 32px !important;  margin-left: -1px !important; margin-right: -1px !important; backdrop-filter: blur(50px)}
-.tabbrowser-tab:not([pinned])[selected="true"] .tab-content:not([multiselected]) {background-color: var(--lwt-selected-tab-background-color) !important; border-radius: 4px !important;
-  margin-top: 4px !important; height: 30px !important; transition-duration: 0ms !important; }
+.tabbrowser-tab:not([pinned],[multiselected])[selected="true"] .tab-content:not([multiselected]){background-color: var(--lwt-selected-tab-background-color) !important; 
+  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; transition-duration: 0ms !important; }
 
 .tabbrowser-tab:is([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
   border-radius: 5px !important; height: 32px !important; margin-left: -1px !important; margin-right: -1px !important; }
-.tabbrowser-tab:is([pinned])[selected="true"] .tab-content { background-color: var(--arrowpanel-background) !important;  border-radius: 4px !important;
-  margin-top: 4px !important; height: 30px !important;}
-
+.tabbrowser-tab:is([pinned])[selected="true"]:not([multiselected]) .tab-content { background-color: var(--arrowpanel-background) !important;  
+  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important;}
 
 /*Margenes y color de las pestañas no seleccionadas*/
 .tabbrowser-tab> .tab-stack > .tab-background:not([selected="true"]) {margin-left: -1px !important; margin-right: -1px !important;}
-.tabbrowser-tab:hover> .tab-stack > .tab-background:not([selected="true"], [multiselected]){background-color: color-mix(in srgb, var(--button-hover-bgcolor) 60%, transparent) !important;}
+.tabbrowser-tab:hover> .tab-stack > .tab-background:not([selected="true"], [multiselected]){background-color: var(--toolbarbutton-hover-background) !important;}
 
 .tabbrowser-tab .tab-stack{padding-left: 2px !important; margin-right: -1px !important;}
 
@@ -218,25 +217,34 @@ border-radius: 10px !important; top: 12px; left: 8px !important;margin-right: 6p
  margin-inline-start: 2px !important; }
 
 /*Menú contextual*/
-  /* Menu items border and padding */
-menupopup > menuitem, menupopup > menu { border-radius: 4px !important; margin-left: 4px !important; margin-right: 4px !important;  
+menupopup > menuitem, menupopup > menu{ padding-block: 0.3em !important;} 
+/* Menu items border and padding */
+menupopup > menuitem, menupopup > menu { border-radius: 4px !important; margin-left: 5px !important; margin-right: 5px !important;  
   padding-inline-start: 0.5em !important}
   /*borde izquierda y derecha del menú contextual*/
 menugroup > menuitem:first-child {padding-left: 4px !important;} 
 menugroup > menuitem:last-child { padding-right: 4px !important;}
-  /* context menu top buttons radius */
+/* context menu top buttons radius */
 menugroup > menuitem { border-radius: 4px !important; }
 menugroup > menuitem > hbox > image { border-radius: 4px !important;}
-menuseparator { border-top: 1px solid var(--panel-separator-color) !important; padding: 0 !important; margin-left: 4px !important; margin-right: 4px !important;}
-.menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color) !important;
-  border: 1px solid var(--arrowpanel-border-color) !important}
+menuseparator {padding: 0 !important; margin-left: 5px !important; margin-right: 5px !important;}
+
+  /*ColoresMenú*/
+  menupopup {
+   --panel-color: var(--arrowpanel-color) !important;                                                         /*ColorLetrasDelMenú*/
+   --panel-border-color: var(--panel-separator-color)!important;                                              /*bordeMenú*/
+   --panel-background: var(--arrowpanel-background) !important;                                               /*FondoMenú*/
+   --menuitem-hover-background-color: var(--toolbarbutton-hover-background) !important;                       /*ColorFondoAlPasarElMouseSobreItems*/
+   --menu-color:var(--arrowpanel-color) !important;                                                           /*ColorLetrasAlPasarElMouseSobreItems*/
+   --menu-disabled-color:color-mix(in srgb, var(--arrowpanel-background) 65%, var(--lwt-tab-text))!important; /*ColorIconoDehabilitado*/
+   --menu-border-color: var(--panel-separator-color) !important;                                              /*LineaSeparadoraItems*/}
 
 /*favicon de pagina newtab*/
 .tab-icon-stack .tab-icon-image[src="chrome://branding/content/icon32.png"]{ background:url("images/foxlogo.svg")!important;
   background-size: 16px !important; padding-left: 18px !important; background-position: center !important; background-repeat: no-repeat !important; }
 
 /*barra de menú*/
-#main-menubar > menu  {border-radius: 4px !important;}
+#main-menubar > menu  {border-radius: 4px !important}
 
 /*íconos en el menú de hamburguesa*/
 .subviewbutton:not(.subviewbutton-iconic, .subviewbutton-back, [checked="true"]) > .toolbarbutton-icon {
