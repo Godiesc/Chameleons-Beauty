@@ -139,7 +139,12 @@ tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinp
 .tab-icon-image:not([pinned]){ opacity: 1 !important;}
 .tab-icon-overlay{height: 13px !important; width: 14px !important; z-index: 1 ; padding: 0px !important}
 
-.tab-icon-overlay[activemedia-blocked] {stroke:  #d10000cc !important;fill: #ffffff !important;}
+.tab-icon-overlay[activemedia-blocked]:is([pinned]){left: 8px !important; opacity: 0.8 !important;}
+.tab-icon-overlay[activemedia-blocked]:is([pinned]):hover{left: 8px !important; background-color: transparent !important; opacity: 1 !important;}
+.tab-icon-overlay[activemedia-blocked] {stroke:  #d10000cc !important;fill: #ffffff !important;border-radius: 10px !important; top: 12px; left: 8px !important;
+  margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important; }
+.tab-icon-overlay[activemedia-blocked]:hover {stroke:  #d10000cc !important;fill: #ffffff !important;border-radius: 10px !important; top: 12px; left: 8px !important;
+  margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important; }
 .tab-icon-overlay:is([pinned][activemedia-blocked]){list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important}
 
 /*------ícono  reproduciendose-------*/
@@ -154,21 +159,21 @@ tab:not([pinned],[selected]) .tab-icon-overlay:is([sharing],[soundplaying]):not(
   .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
 
 /*------muteado-------*/
-.tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) {border-radius: 10px !important; top: 12px; left: 8px !important;
+.tab-icon-overlay[muted]:not([pinned])  {border-radius: 10px !important; top: 12px; left: 8px !important;
   margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important;list-style-image: url("images/muted.svg") !important;}
   /*muteado no seleccionado y seleccionado*/
-  .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:not([selected="true"])[activemedia-blocked]{
+  .tab-icon-overlay:not([selected="true"])[muted]{
      background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 0.8 !important;}
-  .tab-icon-overlay:is([selected="true"][muted]) , .tab-icon-overlay[activemedia-blocked][selected="true"] {
+  .tab-icon-overlay:is([selected="true"][muted]) {
       fill-opacity: 0.7 !important;color:var(--lwt-tab-text) !important;  background-color: var(--lwt-accent-color) !important;}
   /*muteado hover*/
-    .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover, .tab-icon-overlay:not([pinned])[selected="true"][activemedia-blocked]:hover{
+    .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover{
     stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;}
-    .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:not([pinned],[selected="true"]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
+    .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover { list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
        background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 1 !important;}
       
 /*----ícono "reproduciendo" hover----*/
-tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover, .tab-icon-overlay:not([pinned])[activemedia-blocked]:hover{ 
+tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover{ 
   list-style-image: url("images/muted.svg") !important;
   stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
 
@@ -179,8 +184,8 @@ tab:not([pinned],[selected]) .tab-icon-overlay:hover:is([sharing],[soundplaying]
 .tab-icon-overlay:is([pinned]){top: 12px !important; left: 9px !important; height: 13px !important; width: 14px !important;}
 .tab-icon-overlay:is([pinned][muted]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; fill-opacity: 1 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
 .tab-icon-overlay:is([pinned][soundplaying]){ stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
-/*ícono "reproduciendo" Pinned :hover*/
 
+/*ícono "reproduciendo" Pinned :hover*/
 .tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; fill-opacity: 1 !important;}
 .tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/muted.svg") !important; fill-opacity: 1 !important;}
 
