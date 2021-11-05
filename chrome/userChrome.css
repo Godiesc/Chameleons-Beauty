@@ -182,7 +182,7 @@ tab:not([pinned],[selected]) .tab-icon-overlay:hover:is([sharing],[soundplaying]
 
 /*-----------ícono "reproduciendo" Pinned-----------*/
 .tab-icon-overlay:is([pinned]){top: 12px !important; left: 9px !important; height: 13px !important; width: 14px !important;}
-.tab-icon-overlay:is([pinned][muted]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important; fill-opacity: 1 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
+.tab-icon-overlay:is([pinned][muted]){list-style-image: url("images/muted.svg") !important; fill-opacity: 1 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
 .tab-icon-overlay:is([pinned][soundplaying]){ stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
 
 /*ícono "reproduciendo" Pinned :hover*/
