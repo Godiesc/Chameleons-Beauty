@@ -118,7 +118,7 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
 /*Nuevo ícono de CargandoPágina*/
 .tab-throbber::before{ display: none !important; }
-.tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 18px !important; background-repeat: no-repeat !important;  background-position:  center !important; opacity: 1 !important;} 
+.tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 15px !important; background-repeat: no-repeat !important;  background-position:  center !important; opacity: 1 !important} 
 
 .identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;}
 .identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1E934F !important;}
@@ -166,7 +166,7 @@ tab:not([pinned],[selected]) .tab-icon-overlay:is([sharing],[soundplaying]):not(
       fill-opacity: 0.7 !important;color:var(--lwt-tab-text) !important;  background-color: var(--lwt-accent-color) !important;}
   /*muteado hover*/
     .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover, .tab-icon-overlay:not([pinned])[selected="true"][activemedia-blocked]:hover{
-    stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+    stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;}
     .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:not([pinned],[selected="true"]){ list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
        background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 1 !important;}
       
