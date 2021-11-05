@@ -118,7 +118,7 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
 /*Nuevo ícono de CargandoPágina*/
 .tab-throbber::before{ display: none !important; }
-.tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 15px !important; background-repeat: no-repeat !important;  background-position:  center !important; opacity: 1 !important} 
+.tab-throbber[busy]{ background-image: url("images/loading.svg") !important; background-size: 14px !important; background-repeat: no-repeat !important;  background-position:  center !important; opacity: 1 !important} 
 
 .identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;}
 .identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1E934F !important;}
