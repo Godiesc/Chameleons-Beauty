@@ -135,7 +135,7 @@ tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
   background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
   color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
-tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; 
+tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
   color: transparent !important; border-radius:4px !important}
 .tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important}
 
