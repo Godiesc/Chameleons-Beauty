@@ -14,7 +14,7 @@
                       
     --in-content-box-background-odd: #35355f !important;                /*color destinción entre filas de una tabla-atajos de busqueda*/
   
-    --in-content-primary-button-background: #1050ff !important;         /*color de la label colorida y de enlaces*/
+    --in-content-primary-button-background: #3070ff !important;         /*color de la label colorida y de enlaces*/
 
     --in-content-button-background-hover: #1050ff !important;           /*color de botones :hover*/
     --in-content-button-background-active: #1050ff !important;          /*color de botones al darle clic*/
@@ -35,7 +35,7 @@
 }
 @-moz-document url(chrome://browser/content/browser.xul), url(about:newtab), url(about:home) {  
 body {     
-    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color)90%, black ) !important;
+    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field)90%, black ) !important;
     --newtab-textbox-background-color: color-mix( in srgb, var(--newtab-background-color) 87%, var(--newtab-wordmark-color) ) !important;  /*fondo de la barra de busqueda*/
 
     --newtab-background-color-secondary: color-mix( in srgb, var(--newtab-background-color) 94%,  var(--newtab-wordmark-color) )!important;  /*fondo de sitios fijados*/
@@ -55,11 +55,12 @@ body {
     --newtab-text-secondary-color: var(--newtab-wordmark-color) !important;                                     /*Label secundaria*/
     --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                        /*label general*/
        
-    --newtab-modal-color: #00000000 !important;                                                             /*fondo Al editar un sitio*/
-    --newtab-overlay-color: transparent !important;                /*fondo de editar, transparente*/
-    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                         /*contorno de txt al editar un sitio*/ 
+
+    --newtab-overlay-color: #15151580 !important;                                                                 /*fondo de editar, transparente*/
+    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                              /*contorno de txt al editar un sitio*/ 
   
     --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important;  /*Linea separadora en "personalizar"*/
+    
     --newtab-button-secondary-color: #f02020c0 !important;             /*color del botón "cancelar"*/
     --newtab-element-secondary-color: #4a4851 !important;              /*color radiobutton no activo*/
     --newtab-primary-element-text-color: #a6a1ca !important;           /*color radiobutton activo*/
@@ -96,9 +97,8 @@ body {
   border: transparent !important;}
 .actions button:hover:not(.dismiss) {box-shadow: 0 0 0 5px #8380Ff !important;}
      
-/*Colores del botón "Personalizar"*/
+/*Colores del botón "Personalizar y cerrar"*/
 .personalize-button:hover {background-color: var(--newtab-background-color-secondary)!important;}
-    
 .close-button {background-color: var(--newtab-textbox-background-color) !important; color: #bfbfbf !important;box-shadow: none !important;border: 1px solid #6a6a6b3a !important;
     font-weight: bold !important;}
 .close-button:hover{
@@ -115,11 +115,11 @@ body {
 *{scrollbar-width: none !important }
  
 /*colores de los sitios anclados*/
-.top-site-outer .tile:not(.active, :focus, :hover){ background-color: var(--newtab-background-color-secondary)!important;
+.top-site-outer .tile:not(.active, :focus, :hover){ background-color: var( --newtab-background-color-secondary)!important;
     box-shadow: 0px 0px 1px rgb(1 1 1 / 36%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
-.top-site-outer:hover .tile{ box-shadow: none !important; background-color:color-mix(in srgb, var(--newtab-background-color) 65%, transparent )!important;
+.top-site-outer:hover .tile{ box-shadow: none !important; background-color: color-mix(in srgb, var(--newtab-background-color, Field) 65%, transparent )!important;
     border: 1px solid #00000050 !important}    
     
 /*colores al pasar el mouse sobre los sitios anclados (fondo más grande)*/
@@ -135,12 +135,15 @@ body {
 }
 
 /*Colores varios de la interfaz de complementos y configuración*/
-@-moz-document url-prefix(about:preferences), url-prefix(about:addons) {
-button {border-color: #7171af40 !important;} /*color de botones */
-button:hover {color: #bfbfbf !important;}
-#categories > .category[selected]:hover { color: #eaeaea !important;}
-#categories > .category[selected]  {color: #1090ff !important;}
-button.primary { color: #cacaca !important;}   
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons), url-prefix(about:support) {
+     button {background-color:color-mix(in srgb, var(--in-content-page-background)90%, white) !important; border-color: #7171af40 !important;} /*color de botones */
+button:hover {background-color: #3070ffbb !important; color: #dddddd !important;}
+#categories > .category{background-color: var(--in-content-page-background) !important;}
+#categories > .category:hover{background-color: #3090ffbb !important; color: White !important;}
+#categories > .category[selected]  {background-color: #3070ffbb !important; color: #fff!important;}
+#categories > .category[selected]:hover { background-color: #3090ffbb !important;  color: white !important;}
+button.primary {background-color: #2090ffbb !important;  color: #cacaca !important;}   
+button.primary:hover {background-color: #3070ffbb !important;  color: #cacaca !important;}  
 }
 
 @-moz-document url('about:home'), url('about:newtab'),url(about:privatebrowsing) {
