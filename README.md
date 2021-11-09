@@ -2,7 +2,9 @@
 
 ![chamaleonNightly](https://user-images.githubusercontent.com/22057609/138580949-25225afc-a0ae-43e6-805d-4623d5f6df30.png)
 
-![splash2camaleon](https://user-images.githubusercontent.com/22057609/122129098-3aaf8980-cdfb-11eb-8c1c-b29d32225a90.jpg)
+![Splash3](https://user-images.githubusercontent.com/22057609/140859196-0961f70f-0f3a-41ad-bd6e-5cf4d48dc250.png)
+
+![Splash4](https://user-images.githubusercontent.com/22057609/140859212-270becda-e606-42c4-9a3e-cbe08ce7fa21.png)
 
 Theme to "Beautiful" Themes Lovers. v89-90 versions of the browser.
 
@@ -32,4 +34,4 @@ The dark theme is: https://addons.mozilla.org/es/firefox/addon/beautiful-opera-g
 
 # -> Additional Characteristics
 
-![Splash4](https://user-images.githubusercontent.com/22057609/122129496-c88b7480-cdfb-11eb-8cfe-9c5e3344fcfb.jpg)
+![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/140859159-3de9c86a-6afe-42fc-a6cf-f5843702bba0.png)
