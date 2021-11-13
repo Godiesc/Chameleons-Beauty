@@ -2,6 +2,10 @@
 
 ![chamaleonNightly](https://user-images.githubusercontent.com/22057609/138580949-25225afc-a0ae-43e6-805d-4623d5f6df30.png)
 
+# -> Additional Characteristics
+
+![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/140859159-3de9c86a-6afe-42fc-a6cf-f5843702bba0.png)
+
 ![Splash3](https://user-images.githubusercontent.com/22057609/140859196-0961f70f-0f3a-41ad-bd6e-5cf4d48dc250.png)
 
 ![Splash4](https://user-images.githubusercontent.com/22057609/140859212-270becda-e606-42c4-9a3e-cbe08ce7fa21.png)
@@ -30,8 +34,3 @@ You should install the themes from firefox add-ons web page: https://addons.mozi
 The dark theme is: https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/
 
 ![Splash3CamaleonThemes3](https://user-images.githubusercontent.com/22057609/122129403-a85bb580-cdfb-11eb-8699-aaba1ff4d1e4.jpg)
-
-
-# -> Additional Characteristics
-
-![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/140859159-3de9c86a-6afe-42fc-a6cf-f5843702bba0.png)
