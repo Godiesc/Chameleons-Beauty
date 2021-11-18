@@ -65,9 +65,9 @@
 
 /*Páginas seguras de firefox"*/
 #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:not([open]),#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:not([open]){
-  background-color: #3e3b8d !important; color: white !important; }
+  background-color: #3070ffbb !important; color: white !important; }
 #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open="true"],#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open="true"]{
-  background-color: #3e3bac !important;color: white !important;}
+  background-color: #3090ffbb !important;color: white !important;}
 #identity-popup-security-button { margin-bottom: 0px !important}
 
 /*"Íconos de la urlbar más pequeños"*/
