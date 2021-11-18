@@ -88,7 +88,7 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 
 /*"Urlbar y Search-bar más pequeñas"*/
 #urlbar-background{border-radius: 4px !important;}
-#urlbar{min-height: 26px !important; border-radius: 5px !important;}
+#urlbar{min-height: 26px !important; border-radius: 4px !important;}
 #searchbar {min-height: 26px !important;text-shadow: none !important; margin-block: 0px !important; padding: 0px !important;background: transparent !important}
 #searchbar .textbox-contextmenu{ margin-top: -1px !important; margin-bottom: -1px !important;}
 .toolbar-items{margin-bottom: -1px !important}
@@ -96,39 +96,39 @@ toolbar {background-color: transparent !important;}
 
 /*linea colorida urlbar focus*/
 #urlbar[open=true] #urlbar-background,#urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
-#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 50%, #00aaff50 75%, #fd189250 100%);}
-#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(50%)}
-#urlbar[open=true]{background-image: linear-gradient(to bottom right, #bd189240 0%, #b02cfc40 10%, #33b3fd40 35%, #00aaff40 75%, #fd189230 100%); backdrop-filter: blur(10px) }
-#urlbar[open=true] #urlbar-background{background-color: color-mix(in srgb, var(--lwt-accent-color, #2b2a33cc) 96%, transparent) !important; animation-duration: 0ms !important; backdrop-filter: brightness(0%) }
+#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 25%, #33b3fd70 50%, #00aaff70 75%, #fd189270 100%);}
+#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%)}
+#urlbar[open=true]{background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 10%, #33b3fd60 35%, #00aaff60 75%, #fd189260 100%); backdrop-filter: blur(10px) }
+#urlbar[open=true] #urlbar-background{background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%) }
 
 /*color Rojo de boton "borrar marcador"*/
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color: #ff4d4dc1 !important; color: white !important;}
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover { background-color: #fb3d3ddb !important; color: white !important;}
 
-/*rework en la Linea de Contenedores-BordeGeneral*/
-tab:not([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
-  -moz-box-ordinal-group: 2 !important; opacity: 1 !important; border-radius: 5px !important;}
-tab:not([pinned]) .tab-context-line {opacity: 0 !important;}
-tab:is([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
-  -moz-box-ordinal-group: 2 !important; opacity: 1 !important;  border-radius: 5px !important;}
-tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
-
 /*Linea gradiente en pestaña activa*/
 .tabbrowser-tab:not([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
-  border-radius: 5px !important; height: 32px !important;  margin-left: -1px !important; margin-right: -1px !important}
+  border-radius: 4px !important; height: 32px !important;  margin-left: -1px !important; margin-right: -1px !important}
 .tabbrowser-tab:not([pinned],[multiselected])[selected="true"] .tab-content:not([multiselected]){background-color: var(--lwt-accent-color, var(--arrowpanel-background)) !important; 
-  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; transition-duration: 0ms !important; backdrop-filter: saturate(35%) brightness(15%) !important;}
+  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; transition-duration: 0ms !important; backdrop-filter: saturate(35%) brightness(10%) !important;}
 
 .tabbrowser-tab:is([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
-  border-radius: 5px !important; height: 32px !important; margin-left: -1px !important; margin-right: -1px !important; }
+  border-radius: 4px !important; height: 32px !important; margin-left: -1px !important; margin-right: -1px !important; }
 .tabbrowser-tab:is([pinned])[selected="true"]:not([multiselected]) .tab-content { background-color: var(--lwt-accent-color, var(--arrowpanel-background)) !important; 
-  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; backdrop-filter: saturate(35%) brightness(15%) !important;}
+  border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; backdrop-filter: saturate(35%) brightness(10%) !important;}
 
 /*Margenes y color de las pestañas no seleccionadas*/
 .tabbrowser-tab> .tab-stack > .tab-background:not([selected="true"]) {margin-left: -1px !important; margin-right: -1px !important;}
 .tabbrowser-tab:hover> .tab-stack > .tab-background:not([selected="true"], [multiselected]){background-color: var(--toolbarbutton-hover-background) !important;}
 
 .tabbrowser-tab .tab-stack{padding-left: 2px !important; margin-right: -1px !important;}
+
+/*rework en la Linea de Contenedores-BordeGeneral*/
+tab:not([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
+  -moz-box-ordinal-group: 2 !important; opacity: 1 !important; border-radius: 4px !important;}
+tab:not([pinned]) .tab-context-line {opacity: 0 !important;}
+tab:is([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
+  -moz-box-ordinal-group: 2 !important; opacity: 1 !important;  border-radius: 4px !important;}
+tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
 
 /*rework en la Linea de Contenedores-BordeFavicon*/
 .tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]),
