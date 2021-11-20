@@ -47,8 +47,7 @@
 .protections-popup-tp-switch[enabled]{background-color: #3030ff !important; border-color: #454690 !important;}
 
 /*sombra de la pestaña activa eliminada y borde superior de la toolbar y transparencia de la tabline*/
-#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > 
-.tab-stack > .tab-background { box-shadow: none !important;}
+.tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background { box-shadow: none !important;}
 .tab-label{text-shadow: none !important}
 #navigator-toolbox{--tabs-border-color: (var(--gradient), transparent) !important}  
 #tabbrowser-tabs {--tab-line-color: (var(--gradient), transparent) !important}
@@ -91,21 +90,22 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 .urlbar-page-action:not([disabled]):hover, #urlbar-go-button:hover, .search-go-button:hover 
 { background-color: var(--toolbarbutton-active-background) !important;}
 .urlbar-icon {margin-left: 2px !important}
+toolbar {background-color: #20202050 !important;}
 
 /*"Urlbar y Search-bar más pequeñas"*/
 #urlbar-background{border-radius: 4px !important;}
 #urlbar{min-height: 26px !important; border-radius: 4px !important;}
 #searchbar {min-height: 26px !important;text-shadow: none !important; margin-block: 0px !important; padding: 0px !important;background: transparent !important}
 #searchbar .textbox-contextmenu{ margin-top: -1px !important; margin-bottom: -1px !important;}
-.toolbar-items{margin-bottom: -1px !important}
-toolbar {background-color: transparent !important;}
+.toolbar-items{margin-bottom: -2px !important}
 
 /*linea colorida urlbar focus*/
-#urlbar[open=true] #urlbar-background,#urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
+#urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
 #urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 25%, #33b3fd70 50%, #00aaff70 75%, #fd189270 100%);}
 #urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%)}
-#urlbar[open=true]{background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 10%, #33b3fd60 35%, #00aaff60 75%, #fd189260 100%); backdrop-filter: blur(10px) }
+#urlbar[open=true]{margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 10%, #33b3fd60 35%, #00aaff60 75%, #fd189260 100%); backdrop-filter: blur(10px) }
 #urlbar[open=true] #urlbar-background{background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%) }
+#urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: -1px !important;}
 
 /*color Rojo de boton "borrar marcador"*/
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color: #ff4d4dc1 !important; color: white !important;}
@@ -173,7 +173,7 @@ tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {m
   background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
   color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
 tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
-  color: transparent !important; border-radius:4px !important}
+  color: transparent !important; border-radius: 2px !important}
 .tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important}
 
 /*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
