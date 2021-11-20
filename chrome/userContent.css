@@ -147,7 +147,7 @@ button:hover {background-color: #3070ffbb !important; color: var(--in-content-te
 #categories > .category[selected]:hover { background-color: #3090ffbb !important;  color: white !important;}
 button.primary {background-color: #2090ffbb !important;  color: var(--in-content-text-color) !important;}   
 button.primary:hover {background-color: #3070ffbb !important;  color: var(--in-content-text-color) !important;}
-th.column{color: black !important;}
+th.column{color: #eaeaea !important; background-color: #3050ffbb  !important;}
 panel-list {background:color-mix(in srgb, var(--in-content-page-background)90%, var(--in-content-text-color)) !important;}
 }
 
