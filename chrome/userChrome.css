@@ -90,14 +90,13 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 .urlbar-page-action:not([disabled]):hover, #urlbar-go-button:hover, .search-go-button:hover 
 { background-color: var(--toolbarbutton-active-background) !important;}
 .urlbar-icon {margin-left: 2px !important}
-toolbar {background-color: #20202050 !important;}
 
 /*"Urlbar y Search-bar más pequeñas"*/
 #urlbar-background{border-radius: 4px !important;}
 #urlbar{min-height: 26px !important; border-radius: 4px !important;}
 #searchbar {min-height: 26px !important;text-shadow: none !important; margin-block: 0px !important; padding: 0px !important;background: transparent !important}
 #searchbar .textbox-contextmenu{ margin-top: -1px !important; margin-bottom: -1px !important;}
-.toolbar-items{margin-bottom: -2px !important}
+.toolbar-items{margin-bottom: -1px !important}
 
 /*linea colorida urlbar focus*/
 #urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
