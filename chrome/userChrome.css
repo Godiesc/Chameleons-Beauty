@@ -1,4 +1,7 @@
 :root{
+  --lwt-frame: var(--toolbar-bgcolor, Field) !important;      
+  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important; 
+  
   --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
   --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /*FondoPestañasNoSeleccionadasVentanaInactiva*/
   --lwt-accent-color: var(--toolbar-bgcolor, Field) !important;                                                    /*FondoPestañasNoSeleccionadasVentanaActiva*/
@@ -49,6 +52,9 @@
 .tab-label{text-shadow: none !important}
 #navigator-toolbox{--tabs-border-color: (var(--gradient), transparent) !important}  
 #tabbrowser-tabs {--tab-line-color: (var(--gradient), transparent) !important}
+                  /**-----verion nighty-----Borrar luego lineas 53-54*/
+#navigator-toolbox{--lwt-tabs-border-color: (var(--gradient), transparent) !important}  
+#tabbrowser-tabs {--lwt-tab-line-color: (var(--gradient), transparent) !important}
 
 /*Centrar botón "Open Newtab"*/
 #TabsToolbar .toolbarbutton-1 {padding-top: 1px !important}
