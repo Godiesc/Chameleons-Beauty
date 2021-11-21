@@ -100,7 +100,7 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 
 /*linea colorida urlbar focus*/
 #urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
-#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 25%, #33b3fd70 50%, #00aaff70 75%, #fd189270 100%);}
+#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 50%, #00aaff50 75%, #fd189250 100%);}
 #urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%)}
 #urlbar[open=true]{margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 10%, #33b3fd60 35%, #00aaff60 75%, #fd189260 100%); backdrop-filter: blur(10px) }
 #urlbar[open=true] #urlbar-background{background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%) }
