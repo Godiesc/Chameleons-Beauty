@@ -122,8 +122,8 @@ body {
     box-shadow: 0px 0px 1px rgb(1 1 1 / 36%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
-.top-site-outer:hover .tile{ box-shadow: none !important; background-color: color-mix(in srgb, var(--newtab-background-color,Field) 60%, transparent )!important;
-    outline: 1px solid #00000070 !important}    
+.top-site-outer:hover .tile{ box-shadow:none !important; background-color: color-mix(in srgb, var(--newtab-background-color,Field) 75%, transparent )!important;
+    outline: 1px solid #00000050 !important; outline-offset: 1px !important;}    
     
 /*colores al pasar el mouse sobre los sitios anclados (fondo más grande)*/
 .top-site-outer:is(.active, :focus, :hover) {
