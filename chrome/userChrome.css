@@ -128,59 +128,48 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 .tabbrowser-tab .tab-stack{padding-left: 2px !important; margin-right: -1px !important;}
 
 /*rework en la Linea de Contenedores-BordeGeneral*/
-tab:not([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
-  -moz-box-ordinal-group: 2 !important; opacity: 1 !important; border-radius: 4px !important;}
-tab:not([pinned]) .tab-context-line {opacity: 0 !important;}
-tab:is([pinned])[selected] .tab-context-line { height: 32px !important; margin-left: 0px !important;  margin-right: 0px !important; margin-bottom: 0px !important;
-  -moz-box-ordinal-group: 2 !important; opacity: 1 !important;  border-radius: 4px !important;}
-tab:is([pinned]):not([selected]) .tab-context-line { opacity: 0 !important;}
+.tab-context-line {opacity: 0 !important;}
+tab[selected] .tab-context-line{height: 32px !important; margin: 0px !important; -moz-box-ordinal-group: 2 !important; opacity: 1 !important; border-radius: 4px !important;}
 
 /*rework en la Linea de Contenedores-BordeFavicon*/
-.tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]),
-.tab-icon-image:not([selected]){border-top: 1px solid var(--identity-icon-color, #00000000) !important;border-bottom: 1px solid var(--identity-icon-color, #00000000) !important;
-  border-left: 1px solid  #00000000 !important; border-right: 1px solid #00000000 !important;
-  border-radius: 4px !important; padding: 2px !important; width: 22px !important; height: 22px !important;}
+.tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]), .tab-throbber[busy]:not([pinned]), .tab-throbber:is([busy][pinned]),
+.tab-icon-image:not([selected]){box-shadow: 0 -1px 0 var(--identity-icon-color, #00000000) , 0 1px 0px var(--identity-icon-color, #00000000) !important;
+  border-radius: 3px !important; padding: 2px !important; width: 20px !important; height: 20px !important}
  .tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected]{
-  border: 1px solid var(--identity-icon-color, #00000000) !important;
-  border-radius: 4px !important; padding: 2px !important; width: 22px !important; height: 22px !important;}
- .tab-icon-pending, .tab-sharing-icon-overlay, 
-.tab-icon-image{ margin-right: 4px !important; margin-left: -4px !important}
-
-.tab-throbber-tabslist:is([pinned]):not([selected]), .tab-throbber:is([pinned]):not([selected]), .tab-icon-pending:is([pinned]):not([selected]), .tab-sharing-icon-overlay:is([pinned]):not([selected]), 
-  .tab-icon-image:is([pinned]):not([selected]),
-.tab-throbber-tabslist:is([pinned])[selected], .tab-throbber:is([pinned])[selected], .tab-icon-pending:is([pinned])[selected], .tab-sharing-icon-overlay:is([pinned])[selected], 
- .tab-icon-image:is([pinned])[selected]{margin-right: -4px !important;}
+  outline: 1px solid var(--identity-icon-color, #00000000) !important;
+  border-radius: 3px !important; padding: 2px !important; width: 20px !important; height: 20px !important;}
+.tab-icon-pending:not([pinned]), .tab-sharing-icon-overlay:not([pinned]), 
+.tab-icon-image:not([pinned]){ margin-right: 6px !important; margin-left: -3px !important}
+.tab-icon-pending[pinned], .tab-sharing-icon-overlay[pinned], 
+.tab-icon-image[pinned]{ margin-right: -3px !important; margin-left: -3px !important}
 
 /*Nuevo ícono de Cargando Página*/
-.tab-throbber[busy]:not([pinned]){ outline: 1px solid var(--identity-icon-color, #00000000);  outline-offset: 2px !important;  border-radius: 1px !important; padding: 0px !important;
-height: 16px !important;width: 16px !important; margin-right: 7px !important;margin-left: -1px !important;} 
-.tab-throbber:is([busy][pinned]){outline: 1px solid var(--identity-icon-color, #00000000);  outline-offset: 2px !important;  border-radius: 1px !important;
-height: 16px !important;width: 16px !important; margin-right: -1px !important;margin-left: -1px !important;}
+.tab-throbber[busy]:not([pinned]){border-radius: 0px !important; padding: 0px !important;
+height: 20px !important; width: 16px !important; margin-right: 7px !important; opacity: 1 !important;} 
+.tab-throbber:is([busy][pinned]){ border-radius: 0px !important; padding: 0px !important;
+height: 20px !important;width: 16px !important;  opacity: 1 !important;  margin-right: -1px !important; margin-left: -1px !important}
 
-.identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;}
-.identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1E934F !important;}
-.identity-color-orange {--identity-tab-color: #e67e22 !important; --identity-icon-color: #e67e22 !important;}
-.identity-color-red {--identity-tab-color: #ff392b !important; --identity-icon-color: #ff392b !important; }
-.identity-color-pink {--identity-tab-color: #ff33bb !important; --identity-icon-color: #ff33bb !important;}
-.identity-color-purple {--identity-tab-color: #813E9D !important; --identity-icon-color: #813E9D !important;}
-.identity-color-yellow {--identity-tab-color: #e6b803 !important; --identity-icon-color: #e6b803 !important;}
-.identity-color-turquoise {--identity-tab-color: #03b48d !important; --identity-icon-color: #03b48d !important;}
+.identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;} .identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1E934F !important;}
+.identity-color-orange {--identity-tab-color: #e67e22 !important; --identity-icon-color: #e67e22 !important;} .identity-color-red {--identity-tab-color: #ff392b !important; --identity-icon-color: #ff392b !important; }
+.identity-color-pink {--identity-tab-color: #ff33bb !important; --identity-icon-color: #ff33bb !important;} .identity-color-purple {--identity-tab-color: #813E9D !important; --identity-icon-color: #813E9D !important;}
+.identity-color-yellow {--identity-tab-color: #e6b803 !important; --identity-icon-color: #e6b803 !important;} .identity-color-turquoise {--identity-tab-color: #03b48d !important; --identity-icon-color: #03b48d !important;}
 
 /*Label de medios "Reproduciendo" modifiado - Animación*/
 @keyframes slide1{ from { transform: scale(1.0,1.0);}to {transform: scale(0.6,1.0);}}
-tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
+tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; margin-left: 0px !important;
   background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
   color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
-tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
+tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 0px !important; opacity: 1 !important; 
   color: transparent !important; border-radius: 2px !important}
 .tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important}
 
 /*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
-.tab-icon-image:not([pinned]){ opacity: 1 !important;}
-.tab-icon-overlay{height: 13px !important; width: 14px !important; z-index: 1 ; padding: 0px !important}
+.tab-icon-image:not([pinned]){opacity: 1 !important}
+.tab-icon-overlay[activemedia-blocked], .tab-icon-overlay, .tab-icon-overlay:is([pinned]){height: 13px !important; width: 14px !important; z-index: 1 ; padding: 0px !important;top: 12px !important; left: 8px !important; }
+tab[pinned]:not(:hover) .tab-icon-overlay:not([soundplaying]){opacity: 0 !important;}
 
-.tab-icon-overlay[activemedia-blocked]:is([pinned]){left: 8px !important; opacity: 0.8 !important;}
-.tab-icon-overlay[activemedia-blocked]:is([pinned]):hover{left: 8px !important; background-color: transparent !important; opacity: 1 !important;}
+.tab-icon-overlay[activemedia-blocked]:is([pinned]){opacity: 0.8 !important; margin-right: 0px !important;}
+.tab-icon-overlay[activemedia-blocked]:is([pinned]):hover{left: 8px !important; background-color: transparent !important; opacity: 1 !important; margin-right: 0px !important;}
 .tab-icon-overlay[activemedia-blocked] {stroke:  #d10000cc !important;fill: #ffffff !important;border-radius: 10px !important; top: 12px; left: 8px !important;
   margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important; }
 .tab-icon-overlay[activemedia-blocked]:hover {stroke:  #d10000cc !important;fill: #ffffff !important;border-radius: 10px !important; top: 12px; left: 8px !important;
@@ -188,7 +177,7 @@ tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinp
 .tab-icon-overlay:is([pinned][activemedia-blocked]){list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important}
 
 /*------ícono  reproduciendose-------*/
-.tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {border-radius: 10px !important; top: 12px; left: 8px !important; 
+.tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {border-radius: 10px !important;
   color: var(--lwt-tab-text) !important; background-color: var(--lwt-selected-tab-background-color) !important; fill-opacity:1 !important} 
 
 tab:not([pinned],[selected]) .tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]){color:var(--lwt-tab-text) !important;
@@ -197,36 +186,35 @@ tab:not([pinned],[selected]) .tab-icon-overlay:is([sharing],[soundplaying]):not(
   /*Compartiendo microfono y cámara*/
   .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
 
-/*------muteado-------*/
-.tab-icon-overlay[muted]:not([pinned])  {border-radius: 10px !important; top: 12px; left: 8px !important;
-  margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important;list-style-image: url("images/muted.svg") !important;}
-  /*muteado no seleccionado y seleccionado*/
-  .tab-icon-overlay:not([selected="true"])[muted]{
-     background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 0.8 !important;}
-  .tab-icon-overlay:is([selected="true"][muted]) {
-      fill-opacity: 0.7 !important;color:var(--lwt-tab-text) !important;  background-color: var(--lwt-accent-color) !important;}
-  /*muteado hover*/
-    .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover{
-    stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1  !important;list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;}
-    .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover { list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
-       background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;fill-opacity: 1 !important;}
-      
 /*----ícono "reproduciendo" hover----*/
-tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover{ 
+tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover, tab:is([pinned][selected]) .tab-icon-overlay:is([pinned][soundplaying]):hover{ 
   list-style-image: url("images/muted.svg") !important;
-  stroke: var(--lwt-selected-tab-background-color) !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;}
+  stroke: var(--lwt-selected-tab-background-color) !important; color: var(--lwt-tab-text) !important; background-color: var(--lwt-selected-tab-background-color) !important}
 
 tab:not([pinned],[selected]) .tab-icon-overlay:hover:is([sharing],[soundplaying]){color:var(--lwt-tab-text) !important;list-style-image: url("images/muted.svg") !important;
   background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important; opacity: 1 !important;color:var(--lwt-tab-text) !important;}
 
-/*-----------ícono "reproduciendo" Pinned-----------*/
-.tab-icon-overlay:is([pinned]){top: 12px !important; left: 8px !important; height: 13px !important; width: 14px !important;}
-.tab-icon-overlay:is([pinned][muted]){list-style-image: url("images/muted.svg") !important; fill-opacity: 1 !important;  stroke: var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important;}
-.tab-icon-overlay:is([pinned][soundplaying]){ stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important}
+/*------muteado-------*/
+.tab-icon-overlay[muted]:not([pinned])  {border-radius: 10px !important; top: 12px; left: 8px !important;
+ margin-right: 6px !important; animation: none !important;  height: 13px !important; width: 14px !important;list-style-image: url("images/muted.svg") !important;}
+  /*muteado no seleccionado y seleccionado*/
+   .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:is([pinned][muted]):not([selected="true"]),tab:is([pinned]):not([selected]):hover .tab-icon-overlay:is([pinned][soundplaying]):not([selected="true"]){
+      background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important; stroke: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;}
+   .tab-icon-overlay:is([selected="true"][muted]), .tab-icon-overlay:is([pinned][selected="true"][muted]), .tab-icon-overlay:is([pinned][selected="true"][soundplaying])  {
+      !important;color:var(--lwt-tab-text) !important;  background-color: var(--lwt-selected-tab-background-color) !important; stroke: var(--lwt-selected-tab-background-color) !important;}
+  /*muteado hover*/
+    .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover{
+        stroke: var(--lwt-selected-tab-background-color) !important; color: var(--lwt-tab-text) !important; list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;}
+    .tab-icon-overlay:not([pinned],[selected="true"])[muted]:hover { list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
+        background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;}  
 
-/*ícono "reproduciendo" Pinned :hover*/
-.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; fill-opacity: 1 !important;}
-.tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/muted.svg") !important; fill-opacity: 1 !important;}
+/*-----------ícono "reproduciendo" Pinned-----------*/
+.tab-icon-overlay:is([pinned][muted]){list-style-image: url("images/muted.svg") !important;}
+.tab-icon-overlay:is([pinned][soundplaying]){ stroke: var(--lwt-accent-color) !important; color:var(--lwt-tab-text) !important;  background-color: var(--lwt-accent-color) !important;}
+
+/*ícono "reproduciendo" y "muteado" Pinned :hover*/
+.tab-icon-overlay:is([pinned][muted]):hover{list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important;}
+.tab-icon-overlay:is([pinned][soundplaying]):hover{list-style-image: url("images/muted.svg") !important;}
 
 /*Regla para visualizar mejor el seleccionar varias pestañas*/
 .tabbrowser-tab[multiselected]:-moz-lwtheme{color: var(--lwt-tab-text) !important; --tab-line-color: transparent !important; }
@@ -242,16 +230,17 @@ tab:not([pinned],[selected]) .tab-icon-overlay:hover:is([sharing],[soundplaying]
 /*Menú contextual*/
 menupopup > menuitem, menupopup > menu{ padding-block: 0.3em !important;} 
 /* Menu items border and padding */
-menupopup > menuitem, menupopup > menu { border-radius: 4px !important; margin-left: 5px !important; margin-right: 5px !important;  
+menupopup > menuitem, menupopup > menu { border-radius: 4px !important; margin-left: 4px !important; margin-right: 4px !important;  
   padding-inline-start: 0.5em !important}
   /*borde izquierda y derecha del menú contextual*/
 menugroup > menuitem:first-child {padding-left: 4px !important;} 
 menugroup > menuitem:last-child { padding-right: 4px !important;}
-/* context menu top buttons radius */
+  /* context menu top buttons radius */
 menugroup > menuitem { border-radius: 4px !important; }
 menugroup > menuitem > hbox > image { border-radius: 4px !important;}
-menuseparator {padding: 0 !important; margin-left: 5px !important; margin-right: 5px !important;}
-panel, menupopup {--windows-panel-box-shadow: none !important;}
+menuseparator { border-top: 1px solid var(--panel-separator-color) !important; padding: 0 !important; margin-left: 4px !important; margin-right: 4px !important;}
+.menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color);
+  border: 1px solid var(--arrowpanel-border-color) !important}
 
  /*ColoresMenú*/
   menupopup {
