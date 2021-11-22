@@ -75,11 +75,11 @@ body {
     
  /*Color de fondo al editar un sitio anclado*/  
 .modal {background-color: var(--newtab-background-color) !important; border: 1px solid var(--newtab-textbox-background-color) !important;  border-radius: 9px !important;}
-.modalOverlayOuter{backdrop-filter: blur(20px) !important;}
+.modalOverlayOuter{background-color: #20202050 !important; backdrop-filter: blur(28px) !important;}
     
 /*fondo y borde del menú de 3 puntos, linea separadora*/
-.context-menu {background:  var(--newtab-background-color) !important; color: var(--newtab-wordmark-color) !important;
- box-shadow: 1px 2px 2px 0px rgb(1 1 1 / 16%), 4px 4px 8px rgb(1 0 0 / 23%) !important; border: 1px solid var(--newtab-border-color)}
+.context-menu {background-color: var(--newtab-background-color) !important; color: var(--newtab-wordmark-color) !important;
+ box-shadow: -1px -1px 0px var(--newtab-background-color), 1px 1px 0px var(--newtab-background-color) !important; border: 1px solid var(--newtab-border-color)}
 .context-menu .separator{margin-left: 5px !important; margin-right: 5px !important; width: -moz-available !important;}
     
 /*Color al pasar por los items del menú de 3 puntos*/
@@ -122,8 +122,8 @@ body {
     box-shadow: 0px 0px 1px rgb(1 1 1 / 36%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
-.top-site-outer:hover .tile{ box-shadow:none !important; background-color: color-mix(in srgb, var(--newtab-background-color,Field) 75%, transparent )!important;
-    outline: 1px solid #00000050 !important; outline-offset: 1px !important;}    
+.top-site-outer:hover .tile{ box-shadow:none !important; background-color: color-mix(in srgb, var(--newtab-background-color,Field) 65%, transparent )!important;
+   border: 1px solid #00000050 !important;}    
     
 /*colores al pasar el mouse sobre los sitios anclados (fondo más grande)*/
 .top-site-outer:is(.active, :focus, :hover) {
