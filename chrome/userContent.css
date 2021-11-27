@@ -102,11 +102,9 @@ body {
      
 /*Colores del botón "Personalizar y cerrar"*/
 .personalize-button:hover {background-color: var(--newtab-background-color-secondary)!important;}
-.close-button {background-color: var(--newtab-textbox-background-color) !important; color: var(--newtab-wordmark-color)  !important;box-shadow: none !important;border: 1px solid #6a6a6b3a !important;
-    font-weight: bold !important;}
-.close-button:hover{
-    font-weight: bold !important; color: var(--newtab-wordmark-color)  !important; background-color: color-mix( in srgb, var(--newtab-background-color) 80%, var(--newtab-wordmark-color) )!important; 
-    border: 1px solid #6a6a6b3a !important; box-shadow: 0px 0px 0px rgb(1 1 1 / 16%), 2px 2px 1px rgb(0 0 0 / 23%) !important;}
+.close-button {background-color: var(--newtab-textbox-background-color) !important; color: var(--newtab-wordmark-color)  !important;box-shadow: none !important;border: 1px solid #6a6a6b3a !important;}
+.close-button:hover{color: var(--newtab-wordmark-color)  !important; background-color: color-mix( in srgb, var(--newtab-background-color) 80%, var(--newtab-wordmark-color) )!important; 
+    border: 1px solid #6a6a6b3a !important; box-shadow: 2px 2px 2px #00000050 !important;}
   
 /*Colores de la sidebar para Personalizar la NewTab*/
 .customize-menu {color: var(--newtab-wordmark-color) !important; background-color: color-mix( in srgb, var(--newtab-background-color) 95%, var(--newtab-wordmark-color) ) !important;}
@@ -118,12 +116,12 @@ body {
 *{scrollbar-width: none !important }
  
 /*colores de los sitios anclados*/
-.top-site-outer .tile:not(.active, :focus, :hover){ background-color: var( --newtab-background-color-secondary)!important;
-    box-shadow: 0px 0px 1px rgb(1 1 1 / 36%), 0px 0px 2px rgb(0 0 0 / 23%) !important}  
+.top-site-outer .tile{ background-color: var( --newtab-background-color-secondary)!important;
+    box-shadow: 0px 0px 1px #00000050, 0px 0px 2px #00000050 !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
-.top-site-outer:hover .tile{ box-shadow:none !important; background-color: color-mix(in srgb, var(--newtab-background-color,Field) 65%, transparent )!important;
-   border: 1px solid #00000050 !important;}    
+.top-site-outer:is(.active, :focus, :hover) .tile{box-shadow: -1px 0 var(--newtab-background-color), 1px 0 var(--newtab-background-color), 0 -1px var(--newtab-background-color), 0 1px var(--newtab-background-color) !important;
+    background-color: color-mix(in srgb, var(--newtab-background-color,Field) 65%, transparent )!important;}
     
 /*colores al pasar el mouse sobre los sitios anclados (fondo más grande)*/
 .top-site-outer:is(.active, :focus, :hover) {
