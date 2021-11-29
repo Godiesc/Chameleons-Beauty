@@ -1,6 +1,6 @@
 # Chameleons-Beauty to Firefox CSS
 
-![ChameleonSplash](https://user-images.githubusercontent.com/22057609/143310384-6993b011-4123-4dca-b416-f260753205ac.png)
+![SplashChameleon](https://user-images.githubusercontent.com/22057609/143943154-5c9f4e95-5746-42a0-b804-afab606c7260.png)
 
 # -> Additional Characteristics
 
