@@ -101,7 +101,8 @@ body {
 .actions button:hover:not(.dismiss) {box-shadow: 0 0 0 5px #8380Ff !important;}
      
 /*Colores del botón "Personalizar y cerrar"*/
-.personalize-button:hover {background-color: var(--newtab-background-color-secondary)!important;}
+.personalize-button{color: color-mix( in srgb, var(--newtab-background-color) 60%, var(--newtab-wordmark-color) ) !important;}
+.personalize-button:hover {background-color: var(--newtab-background-color-secondary)!important; color:var(--newtab-wordmark-color)  !important;}
 .close-button {background-color: var(--newtab-textbox-background-color) !important; color: var(--newtab-wordmark-color)  !important;box-shadow: none !important;border: 1px solid #6a6a6b3a !important;}
 .close-button:hover{color: var(--newtab-wordmark-color)  !important; background-color: color-mix( in srgb, var(--newtab-background-color) 80%, var(--newtab-wordmark-color) )!important; 
     border: 1px solid #6a6a6b3a !important; box-shadow: 2px 2px 2px #00000050 !important;}
@@ -152,7 +153,7 @@ panel-list {background:color-mix(in srgb, var(--in-content-page-background)90%, 
 @-moz-document url('about:home'), url('about:newtab'),url(about:privatebrowsing) {
  /*Personalizacion de la página newtab  */
 .logo-and-wordmark .logo { background: url("images/foxlogo.svg") no-repeat !important; background-size: cover !important; display: inline-block !important;}
-.logo {height: 75px !important; width: 75px !important; }    
+.logo {height: 75px !important; width: 75px !important}    
 .wordmark { background: url("images/firefox-wordmark.svg") no-repeat center center !important; background-size: 134px !important;-moz-context-properties: fill !important;
  display: inline-block !important; height: 82px !important; margin-inline-start: 16px !important; width: 134px !important;}
 .ds-outer-wrapper-breakpoint-override main {min-width: 366px !important;}
