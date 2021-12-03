@@ -102,14 +102,14 @@ slot{border-radius: 8px !important;}
 /*linea colorida urlbar focus*/
 #urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
 #urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 45%, #00aaff50 60%, #fd189250 100%);}
-#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%); border-radius: 3px !important;}
+#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%);}
 #urlbar[open=true]{margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 25%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%); backdrop-filter: blur(10px);max-height: -moz-available !important; }
 #urlbar[open=true] #urlbar-background{background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%); max-height: -moz-available !important; }
-#urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: -1px !important;}
+#urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: 0px !important;}
 
 /*color Rojo de boton "borrar marcador"*/
-#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color: #ff4d4dc1 !important; color: white !important;}
-#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover { background-color: #fb3d3ddb !important; color: white !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color: #ff4d4d !important; color: white !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover { background-color: #fb3d3d !important; color: white !important;}
 
 /*Linea gradiente en pestaña activa*/
 .tabbrowser-tab:not([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
