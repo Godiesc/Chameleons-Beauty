@@ -24,10 +24,10 @@
   --lwt-toolbar-field-highlight: #3b439b !important;                                                               /*"toolbar_field_highlight": "#006f80"*/
   --lwt-toolbar-field-highlight-text: #eaeaea !important;                                                          /*"toolbar_field_highlight_text": "#eaeaea"*/
   --autocomplete-popup-highlight-background: #3e5bfdbb !important;                                                 /*"popup_highlight": "#006f80"*/
-  --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight": "#006f80"*/
+  --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight-letras": "#006f80"*/
   --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/
   
-  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ac0 15%, #902cfc90 50%, #3083ff90 100%) !important;            /*GradienteMenúHamburguesa*/
+  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff70 100%) !important;            /*GradienteMenúHamburguesa*/
   --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;    /*GradientePestañaActiva*/
   
   
@@ -35,6 +35,12 @@
   --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 18%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
   --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 22%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/
 }
+/*WindowsControls borde redondeado*/
+.titlebar-button:not(.titlebar-close):hover { background-color: var(--toolbarbutton-hover-background) !important;}
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close{border-radius: 6px !important; border: 3px solid #00000000 !important; margin-bottom: -1px !important}
+.titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover{border-radius: 6px !important; border: 3px solid var(--lwt-frame, var(--lwt-accent-color)) !important;}
+.titlebar-close:hover{border-radius: 6px 0px 6px 6px !important;}
+
 /*botones de la pagina de Personalizar Toolbar*/
 .customizationmode-button {background-color: color-mix(in srgb, var(--lwt-accent-color) 90%, var(--lwt-tab-text)) !important; border-color: #60606050 !important; color: var(--lwt-tab-text) !important;}
 .customizationmode-button:is(:active, :hover):not([disabled]), .customizationmode-button[open], .customizationmode-button[checked]{background-color: #2b7aff !important; border-color:#2b7aff !important;
