@@ -35,6 +35,10 @@
   --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 18%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
   --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 22%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/
 }
+/*WindowsControls borde redondeado*/
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close{margin-bottom: -1px !important; border-radius: 6px !important; border: 3px solid var(--lwt-frame) !important}
+.titlebar-close:hover{border-radius: 6px 0px 6px 6px !important; border: 3px solid var(--lwt-frame) !important; margin-bottom: -1px !important;}
+
 /*botones de la pagina de Personalizar Toolbar*/
 .customizationmode-button {background-color: color-mix(in srgb, var(--lwt-accent-color) 90%, var(--lwt-tab-text)) !important; border-color: #60606050 !important; color: var(--lwt-tab-text) !important;}
 .customizationmode-button:is(:active, :hover):not([disabled]), .customizationmode-button[open], .customizationmode-button[checked]{background-color: #2b7aff !important; border-color:#2b7aff !important;
@@ -91,20 +95,23 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 { background-color: var(--toolbarbutton-active-background) !important;}
 .urlbar-icon {margin-left: 2px !important}
 
-/*"Urlbar y Search-bar más pequeñas"*/
+/*"Urlbar más pequeñas"*/
 #urlbar{min-height: 26px !important; border-radius: 4px !important;max-height: 26px !important;}
-#searchbar {min-height: 26px !important; max-height: 26px !important;}
-#searchbar:focus-within{border-color: color-mix(in srgb, var(--toolbar-field-border-color) 65%, var(--lwt-text-color)) !important; 
-  box-shadow: none !important; box-shadow: none !important}
-slot{border-radius: 8px !important;}
 .toolbar-items{margin-bottom: -1px !important}
+
+/*Search-bar*/
+#searchbar {min-height: 26px !important; max-height: 26px !important;}
+#searchbar:focus-within{border-color: color-mix(in srgb, var(--toolbar-field-border-color) 65%, var(--lwt-text-color)) !important; box-shadow: none !important}
+#PopupSearchAutoComplete {--uc-slot-radius: 0 0 4px 4px; margin-top: -3px !important; border-radius: 0 0 4px 4px !important;
+ --arrowpanel-border-color: color-mix(in srgb, var(--toolbar-field-border-color) 65%, var(--lwt-text-color)) !important;}
+slot[part="content"]{border-radius: var(--uc-slot-radius,var(--panel-border-radius)) !important;}
 
 /*linea colorida urlbar focus*/
 #urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
-#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 25%, #33b3fd50 45%, #00aaff50 60%, #fd189250 100%);}
+#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 30%, #33b3fd50 45%, #00aaff50 60%, #fd189250 100%);}
 #urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%);}
-#urlbar[open=true]{margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 25%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%); backdrop-filter: blur(10px);max-height: -moz-available !important; }
-#urlbar[open=true] #urlbar-background{background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%); max-height: -moz-available !important; }
+#urlbar[open=true]{border-radius: 6px !important; margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%); backdrop-filter: blur(10px);max-height: -moz-available !important; }
+#urlbar[open=true] #urlbar-background{border-radius: 6px !important; background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%); max-height: -moz-available !important; }
 #urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: 0px !important;}
 
 /*color Rojo de boton "borrar marcador"*/
