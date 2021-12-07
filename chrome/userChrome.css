@@ -40,10 +40,10 @@
 .titlebar-button:not(.titlebar-close):hover { background-color: var(--toolbarbutton-hover-background) !important}
 .titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close{border-radius: 6px !important; border: 3px solid #00000000 !important; margin-bottom: -1px !important}
 .titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover{border-radius: 6px !important; border: 3px solid var(--lwt-frame, var(--lwt-accent-color)) !important;}
-.titlebar-close:hover{border-radius: 6px 0px 6px 6px !important;}
+.titlebar-close:hover{border-radius: 6px 0px 6px 0px !important;}
 
 /*botones de la pagina de Personalizar Toolbar*/
-.customizationmode-button {background-color: color-mix(in srgb, var(--lwt-accent-color) 90%, var(--lwt-tab-text)) !important; border-color: #60606050 !important; color: var(--lwt-tab-text) !important;}
+.customizationmode-button {background-color: color-mix(in srgb, var(--lwt-accent-color) 80%, var(--lwt-tab-text)) !important; border-color: #60606090 !important; color: var(--lwt-tab-text) !important;}
 .customizationmode-button:is(:active, :hover):not([disabled]), .customizationmode-button[open], .customizationmode-button[checked]{background-color: #2b7aff !important; border-color:#2b7aff !important;
   color:var(--lwt-tab-text) !important;}
 #customization-done-button {color: #fff !important; border-color: #0a84ff !important;background-color: #0a84ff !important;}
@@ -67,7 +67,7 @@
 
 /*"Botón de cerrar pestaña"*/
 .tab-close-button{margin-inline-start: 0px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-5px !important;
-  border-radius: 10px !important}
+  border-radius: 10px !important;}
 .tab-close-button:hover{background-color: color-mix(in srgb, var(--lwt-tab-text) 14%, transparent) !important;}
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:-moz-box !important}
 
@@ -85,7 +85,8 @@
 /*"Íconos de la urlbar más pequeños"*/
 #tracking-protection-icon, #identity-icon, .sharing-icon, #permissions-granted-icon, #blocked-permissions-container > .blocked-permission-icon 
 {height: 14px !important; width :14px !important;}
-#tracking-protection-icon{margin-left: 1px !important;}
+#tracking-protection-icon{margin-inline-start: 1px !important}
+#tracking-protection-icon-container{padding: 3px !important;}
 
 /*"Color verde de la descripción de web segura"*/
 description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, 
@@ -110,10 +111,10 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 slot[part="content"]{border-radius: var(--uc-slot-radius,var(--panel-border-radius)) !important;}
 
 /*linea colorida urlbar focus*/
-#urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important}
-#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 30%, #33b3fd50 45%, #00aaff50 60%, #fd189250 100%);}
-#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-accent-color, var(--lwt-selected-tab-background-color)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(0%);}
-#urlbar[open=true]{border-radius: 6px !important; margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%); backdrop-filter: blur(10px);max-height: -moz-available !important; }
+#urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background{margin-bottom: 1px !important;  margin-top: 1px !important; margin-left: 1px !important; margin-right: 1px !important;}
+#urlbar[focused=true]{background-image:linear-gradient(to bottom right, #fd189250 0%, #b02cfc50 30%, #33b3fd50 45%, #00aaff50 60%, #fd189250 100%);border-radius:}
+#urlbar[focused=true] #urlbar-background{background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important; border: #00000000 !important;box-shadow: none !important; backdrop-filter: saturate(35%) brightness(10%);}
+#urlbar[open=true]{border-radius: 6px !important; margin-top: 1px !important; background-image: linear-gradient(to bottom right, #fd189230 0%, #b02cfc30 30%, #33b3fd30 45%, #00aaff30 60%, #fd189230 100%); backdrop-filter: blur(20px);max-height: -moz-available !important; border-radius: 6px !important;}
 #urlbar[open=true] #urlbar-background{border-radius: 6px !important; background-color: var(--lwt-accent-color) !important; animation-duration: 0ms !important; backdrop-filter:saturate(100%) brightness(0%); max-height: -moz-available !important; }
 #urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: 0px !important;}
 
@@ -129,7 +130,7 @@ slot[part="content"]{border-radius: var(--uc-slot-radius,var(--panel-border-radi
 
 .tabbrowser-tab:is([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
   border-radius: 4px !important; height: 32px !important; margin-left: -1px !important; margin-right: -1px !important; }
-.tabbrowser-tab:is([pinned])[selected="true"]:not([multiselected]) .tab-content { background-color: var(--lwt-accent-color, var(--arrowpanel-background)) !important; 
+.tabbrowser-tab:is([pinned])[selected="true"]:not([multiselected]) .tab-content {background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important; 
   border-radius: 4px !important; margin-top: 4px !important; height: 30px !important; backdrop-filter: saturate(35%) brightness(10%) !important;}
 
 /*Margenes y color de las pestañas no seleccionadas*/
