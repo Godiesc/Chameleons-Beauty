@@ -1,4 +1,4 @@
-:root{ scrollbar-color: #38375580 #18173530 !important; }              /*Color de la barra de desplazamiento*/
+:root{ scrollbar-color:  #383755b0 #18173530 !important; }              /*Color de la barra de desplazamiento*/
 
 :host, :root {                                                          /*Colores varios de paginas de about:addons y about:settings*/
     --checkbox-unchecked-hover-bgcolor: #4050ee !important;             /*color de los checkbox hover*/
@@ -118,7 +118,7 @@ body {
  
 /*colores de los sitios anclados*/
 .top-site-outer .tile{ background-color: var( --newtab-background-color-secondary)!important;
-    box-shadow: 0px 0px 1px #00000050, 0px 0px 2px #00000050 !important}  
+    box-shadow: 0px 0px 1px #00000090 !important}  
     
 /*colores al pasar el mouse sobre los sitios anclados en :hover*/
 .top-site-outer:is(.active, :focus, :hover) .tile{box-shadow: -1px 0 var(--newtab-background-color), 1px 0 var(--newtab-background-color), 0 -1px var(--newtab-background-color), 0 1px var(--newtab-background-color) !important;
@@ -138,16 +138,16 @@ body {
 
 /*Colores varios de la interfaz de complementos y configuración*/
 @-moz-document url-prefix(about:preferences), url-prefix(about:addons), url-prefix(about:support) {
-button {background-color:color-mix(in srgb, var(--in-content-page-background)90%, var(--in-content-text-color)) !important; border-color: #50505050 !important;} /*color de botones */
-button:hover {background-color: #3070ffbb !important; color: var(--in-content-text-color) !important;}
+button {background-color:color-mix(in srgb, var(--in-content-page-background)86%, var(--in-content-text-color)) !important; border-color: #50505090 !important;} /*color de botones */
+button:hover {background-color: #3070ffbb !important; color: var(--in-content-text-color) !important; border-color: #3070ffbb !important;}
 #categories > .category{background-color: var(--in-content-page-background) !important;}
 #categories > .category:hover{background-color: #3090ffbb !important; color: White !important;}
 #categories > .category[selected]  {background-color: #3070ffbb !important; color: #fff!important;}
 #categories > .category[selected]:hover { background-color: #3090ffbb !important;  color: white !important;}
 button.primary {background-color: #2090ffbb !important;  color: var(--in-content-text-color) !important;}   
 button.primary:hover {background-color: #3070ffbb !important;  color: var(--in-content-text-color) !important;}
-th.column{color: #eaeaea !important; background-color: #2040df  !important;}
-panel-list {background:color-mix(in srgb, var(--in-content-page-background)90%, var(--in-content-text-color)) !important;}
+th.column{color: #eaeaea !important; background-color: #3040df  !important;}
+panel-list {background:color-mix(in srgb, var(--in-content-page-background)86%, var(--in-content-text-color)) !important;}
 }
 
 @-moz-document url('about:home'), url('about:newtab'),url(about:privatebrowsing) {
