@@ -250,7 +250,7 @@ menugroup > menuitem:last-child { padding-right: 4px !important;}
   /* context menu top buttons radius */
 menugroup > menuitem { border-radius: 4px !important; }
 menugroup > menuitem > hbox > image { border-radius: 4px !important;}
-menuseparator { border-top: 1px solid var(--panel-separator-color) !important; padding: 0 !important; margin-left: 4px !important; margin-right: 4px !important;}
+menuseparator { border-color: var(--panel-separator-color) !important; margin-left: 5px !important; margin-right: 5px !important;}
 .menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color);
   border: 1px solid var(--arrowpanel-border-color) !important; border-radius: 6px !important;}
 
