@@ -27,7 +27,7 @@
   --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight-letras": "#006f80"*/
   --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/
   
-  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff70 100%) !important;                       /*GradienteMenúHamburguesa*/
+  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff80 100%) !important;                       /*GradienteMenúHamburguesa*/
   --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   /*GradientePestañaActiva*/
   
   
@@ -268,16 +268,13 @@ menuseparator { border-color: var(--panel-separator-color) !important; margin-le
 .menupopup-arrowscrollbox {background: var(--arrowpanel-background) !important; background-color:var(--arrowpanel-background) !important; color: var(--arrowpanel-color);
   border: 1px solid var(--arrowpanel-border-color) !important; border-radius: 6px !important;}
 
- /*ColoresMenú*/
-  menupopup {
-   --panel-color: var(--arrowpanel-color, Field) !important;                                                         /*ColorLetrasDelMenú*/
-   --panel-border-color: var(--arrowpanel-border-color,Field)!important;                                            /*bordeMenú*/
-   --panel-background: var(--arrowpanel-background, Field) !important;                                               /*FondoMenú*/
-   --menuitem-hover-background-color: var(--toolbarbutton-hover-background, Field) !important;                       /*ColorFondoAlPasarElMouseSobreItems*/
-   --menu-color:var(--arrowpanel-color,Field) !important;                                                           /*ColorLetrasAlPasarElMouseSobreItems*/
-   --menu-disabled-color:color-mix(in srgb, var(--arrowpanel-background,Field) 65%, var(--lwt-tab-text,Field))!important; /*ColorIconoDehabilitado*/
-   --menu-border-color: var(--panel-separator-color,Field) !important;                                              /*LineaSeparadoraItems*/}
-
+/*Colores MenúContextual de ventanas: catálogo-marcadores-historial*/
+ menupopup {
+  --menu-disabled-color: var(--panel-disabled-color) !important;                                                      /*Color Letras Deshabilitadas*/
+  --menu-border-color: color-mix(in srgb, var(--panel-disabled-color) 25%, var(--lwt-tab-text)) !important;           /*Quita lineaSeparadora*/
+  --menuitem-hover-background-color: color-mix(in srgb, var(--panel-disabled-color) 45%, transparent) !important;     /*Color Hover Items*/
+  --menuitem-disabled-hover-background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 65%, var(--lwt-tab-text)) !important;  /*Quitar color en hover de items deshabilitados*/
+}
 /*favicon de pagina newtab*/
 .tab-icon-stack .tab-icon-image[src="chrome://branding/content/icon32.png"]{ background:url("images/foxlogo.svg")!important;
   background-size: 16px !important; padding-left: 18px !important; background-position: center !important; background-repeat: no-repeat !important; }
@@ -285,40 +282,81 @@ menuseparator { border-color: var(--panel-separator-color) !important; margin-le
 /*barra de menú*/
 #main-menubar > menu  {border-radius: 4px !important}
 
-/*íconos en el menú de hamburguesa*/
-.subviewbutton:not(.subviewbutton-iconic, .subviewbutton-back, [checked="true"]) > .toolbarbutton-icon {
-  width: 16px; margin-inline-end: 8px !important;}
-.subviewbutton {-moz-context-properties: fill; fill: currentColor;}
-#appMenu-zoom-controls2 > .toolbarbutton-text {margin-inline-start: 24px !important;}
-#appMenu-new-tab-button2 {list-style-image: url("chrome://browser/skin/new-tab.svg");}
-#appMenu-new-window-button2, #appMenuRecentlyClosedWindows { list-style-image: url("chrome://browser/skin/window.svg");}
-#appMenu-new-private-window-button2 { list-style-image: url("chrome://browser/skin/privateBrowsing.svg");}
-#appMenu-bookmarks-button, #panelMenuBookmarkThisPage[starred], #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks {
-  list-style-image: url("chrome://browser/skin/bookmark.svg");}
-#appMenu-history-button, #appMenu-library-history-button, #sidebar-switcher-history { list-style-image: url("chrome://browser/skin/history.svg");}
-#appMenu-downloads-button, #appMenu-library-downloads-button { list-style-image: url("chrome://browser/skin/downloads/downloads.svg");}
-#appMenu-passwords-button { list-style-image: url("chrome://browser/skin/login.svg");}
-#appMenu-extensions-themes-button {list-style-image: url("chrome://mozapps/skin/extensions/extension.svg");}
-#appMenu-print-button2 {list-style-image: url("chrome://global/skin/icons/print.svg");}
-#appMenu-find-button2, #panelMenu_searchBookmarks {list-style-image: url("chrome://global/skin/icons/search-glass.svg");}
-#appMenu-settings-button { list-style-image: url("chrome://global/skin/icons/settings.svg");}
-#appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/help.svg");}
-#appMenu-quit-button2 { list-style-image: url("chrome://browser/skin/quit.svg");}
-#panelMenuBookmarkThisPage { list-style-image: url("chrome://browser/skin/bookmark-hollow.svg");}
-#panelMenu_viewBookmarksToolbar {list-style-image: url("chrome://browser/skin/bookmarks-toolbar.svg");}
-#appMenuRecentlyClosedTabs, #sidebar-switcher-tabs { list-style-image: url("chrome://browser/skin/tab.svg");}
-#appMenuRestoreSession { list-style-image: url("chrome://browser/skin/restore-session.svg");}
-#appMenuClearRecentHistory {list-style-image: url("chrome://browser/skin/forget.svg");}
-#appmenu-moreTools-button, #overflowMenu-customize-button { list-style-image: url("chrome://browser/skin/customize.svg");}
-[data-l10n-id="sidebar-menu-close"] { list-style-image: url("chrome://global/skin/icons/close.svg");}
-:root[fxastatus="signedin"] #fxa-menu-avatar { display: unset; -moz-box-ordinal-group: 2;}
-#fxa-manage-account-button vbox { margin-inline-start: 24px;}
-.syncNowBtn { visibility: visible !important; margin-inline-end: 8px;  -moz-box-ordinal-group: 0 !important;}
+/*-----------------íconos en el menú de hamburguesa----------------------*/
+/*Posicion y margen de los íconos*/
 #PanelUI-fxa-menu-connect-device-button, #PanelUI-fxa-menu-sendtab-button, #PanelUI-fxa-menu-account-signout-button, [oncommand="switchToTabHavingURI('about:performance', true)"] {
   background-position: left 8px center; background-repeat: no-repeat; background-size: 16px;}
-#PanelUI-fxa-menu-connect-device-button { background-image: url("chrome://browser/skin/fxa/add-device.svg");}
-#PanelUI-fxa-menu-sendtab-button { background-image: url("chrome://browser/skin/send-to-device.svg");}
-#PanelUI-fxa-menu-account-signout-button { background-image: url("chrome://browser/skin/sign-out.svg");}
-[oncommand="switchToTabHavingURI('about:performance', true)"] { background-image: url("chrome://global/skin/icons/performance.svg");}
+.subviewbutton:not(.subviewbutton-iconic, .subviewbutton-back, [checked="true"]) > .toolbarbutton-icon {
+  width: 16px; margin-inline-end: 8px !important;}
+
+/*Color y margen de los íconos*/
+.subviewbutton {-moz-context-properties: fill; fill: currentColor;}
+#appMenu-zoom-controls2 > .toolbarbutton-text {margin-inline-start: 24px !important;}
+
+/*ícono account*/
 #appMenu-fxa-label2::before { content: "";  display: block;  width: 16px;  height: 16px;  margin-inline-end: 8px;  border-radius: 50%;
   background: var(--avatar-image-url) no-repeat center/16px;}
+#fxa-manage-account-button vbox:after { content: "";  display: block !important; width: 16px;  height: 16px;  border-radius: 0%; background-size: 16px 16px !important;
+  background: var(--avatar-image-url) no-repeat left; margin-inline-start: 0px; margin-left: -24px !important; margin-top: -28px !important}
+#fxa-manage-account-button vbox { margin-inline-start: 24px; padding-bottom: 12px !important;}
+:root[fxastatus="signedin"] #fxa-menu-avatar { display: unset; -moz-box-ordinal-group: 2;}
+
+/*Ícono Nueva Pestaña*/
+#appMenu-new-tab-button2 {list-style-image: url("chrome://browser/skin/new-tab.svg");}
+
+/*Ícono Nueva Ventana - PestañasCerradasRecientes*/
+#appMenuRecentlyClosedTabs, #sidebar-switcher-tabs { list-style-image: url("chrome://browser/skin/window.svg");}
+#appMenu-new-window-button2, #appMenuRecentlyClosedWindows { list-style-image: url("chrome://browser/skin/tab.svg");}
+
+/*Ícono Ventana Privada*/
+#appMenu-new-private-window-button2 { list-style-image: url("chrome://browser/skin/privateBrowsing.svg");}
+
+/*Ícono Marcadores*/
+#appMenu-bookmarks-button, #panelMenuBookmarkThisPage[starred], #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks {
+  list-style-image: url("chrome://browser/skin/bookmark.svg");}
+
+/*ícono Historial*/
+#appMenu-history-button, #appMenu-library-history-button, #sidebar-switcher-history { list-style-image: url("chrome://browser/skin/history.svg");}
+
+/*ícono decargas*/
+#appMenu-downloads-button, #appMenu-library-downloads-button { list-style-image: url("chrome://browser/skin/downloads/downloads.svg");}
+
+/*Ícono Contraeñas*/
+#appMenu-passwords-button { list-style-image: url("chrome://browser/skin/login.svg");}
+
+/*Ícono Complementos*/
+#appMenu-extensions-themes-button {list-style-image: url("chrome://mozapps/skin/extensions/extension.svg");}
+
+/*Ícono Imprimir*/
+#appMenu-print-button2 {list-style-image: url("chrome://global/skin/icons/print.svg");}
+
+/*Ícono Ajustes*/
+#appMenu-settings-button { list-style-image: url("chrome://global/skin/icons/settings.svg");}
+
+/*Ícono Ayuda*/
+#appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/help.svg");}
+
+/*Ícono salir*/
+#appMenu-quit-button2 { list-style-image: url("images/quit.png");}
+
+/*Íconos de marcadores*/
+#panelMenuBookmarkThisPage { list-style-image: url("chrome://browser/skin/bookmark-hollow.svg");}
+#appMenu-find-button2, #panelMenu_searchBookmarks {list-style-image: url("chrome://global/skin/icons/search-glass.svg");}
+#panelMenu_viewBookmarksToolbar {list-style-image: url("chrome://browser/skin/bookmarks-toolbar.svg");}
+
+/*Ícono Borrar Historial*/
+#appMenuClearRecentHistory {list-style-image: url("chrome://browser/skin/forget.svg");}
+
+/*ícono Personalizar BarraHerramientas*/
+#appmenu-moreTools-button, #overflowMenu-customize-button { list-style-image: url("chrome://browser/skin/customize.svg");}
+
+/*Ícono SincronizarAhora*/
+.syncNowBtn { visibility: visible !important; margin-inline-end: 8px;  -moz-box-ordinal-group: 0 !important;}
+
+/*Ícono ConectarOtroDispositivo*/
+#PanelUI-fxa-menu-connect-device-button { background-image: url("chrome://browser/skin/fxa/add-device.svg"); -moz-box-ordinal-group: 1 !important;
+  background-position: left 8px center; background-repeat: no-repeat; background-size: 16px}
+
+/*ícono en MásHerramientas*/
+#PanelUI-fxa-menu-account-signout-button { background-image: url("chrome://browser/skin/sign-out.svg");}
+[oncommand="switchToTabHavingURI('about:performance', true)"] { background-image: url("chrome://global/skin/icons/performance.svg");}
