@@ -14,7 +14,7 @@
   --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
   --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;         /*urlbarColor-ColorBordeCuadroUrlbar*/  
   --button-primary-bgcolor: #304af1 !important;                                                                    /*ColorBotónGuardar*/
-  --button-primary-hover-bgcolor: #3043b1 !important;                                                              /*ColorBotónGuardar:Hover*/
+  --button-primary-hover-bgcolor: #2c3da0 !important;                                                              /*ColorBotónGuardar:Hover*/
   --button-primary-active-bgcolor: #0073b1 !important;                                                             /*ColorBotónGuardar:clic*/
   --toolbarbutton-hover-background: var(--button-bgcolor) !important;                                              /*"button_background_hover": "#26242e"*/
   --toolbar-field-background-color: var(--toolbar-bgcolor) !important;                                             /*ColorUrlbar*/
@@ -27,13 +27,24 @@
   --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight-letras": "#006f80"*/
   --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/
   
-  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff70 100%) !important;            /*GradienteMenúHamburguesa*/
-  --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;    /*GradientePestañaActiva*/
+  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff70 100%) !important;                       /*GradienteMenúHamburguesa*/
+  --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   /*GradientePestañaActiva*/
   
   
   --button-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                            /*ColorCombobox-yBotones(+-)*/
   --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 18%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
   --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 22%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/
+  
+  --focus-outline-color: #2079ff !important;                                                                             /*Color borde en InputText Focus*/  
+  --input-border-color:color-mix(in srgb, var(--focus-outline-color) 45%, transparent) !important;                         /*Color borde en InputText*/
+
+  --checkbox-unchecked-hover-bgcolor: var(--button-primary-bgcolor) !important;                                            /*Colores checkbox —v*/
+  --checkbox-unchecked-active-bgcolor:var(--button-primary-bgcolor) !important;
+  --checkbox-checked-border-color: transparent !important;
+  --checkbox-checked-bgcolor: var(--button-primary-bgcolor) !important;
+  --checkbox-checked-color: var(--lwt-tab-text) !important;
+  --checkbox-checked-hover-bgcolor: #cc3535 !important;
+  --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;    
 }
 /*WindowsControls borde redondeado*/
 .titlebar-button:not(.titlebar-close){ padding-left: 10px !important; padding-right: 10px !important;}
@@ -119,8 +130,11 @@ slot[part="content"]{border-radius: var(--uc-slot-radius,var(--panel-border-radi
 #urlbar[breakout][breakout-extend] > #urlbar-input-container{margin-top: -1px !important; margin-bottom: 0px !important;}
 
 /*color Rojo de boton "borrar marcador"*/
-#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color: #ff4d4d !important; color: white !important;}
-#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover { background-color: #fb3d3d !important; color: white !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { background-color:var(--arrowpanel-background) !important; color: #f85149 !important; outline: 1px solid color-mix(in srgb, var(--arrowpanel-background) 80%, var(--lwt-tab-text, Field)) !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover { background-color: #da3633 !important; color: #f0f6fc !important; outline: 1px solid #f85149 !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton{outline: 1px solid color-mix(in srgb, var(--button-primary-bgcolor) 80% , transparent) !important;}
+
+#editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down {border-color: color-mix(in srgb, var(--arrowpanel-background) 80%, var(--lwt-tab-text, Field)) !important;}
 
 /*Linea gradiente en pestaña activa*/
 .tabbrowser-tab:not([pinned])[selected="true"] .tab-background {background-image: var(--gradient) !important;
@@ -168,10 +182,10 @@ height: 20px !important;width: 16px !important;  opacity: 1 !important;  margin-
 
 /*Label de medios "Reproduciendo" modifiado - Animación*/
 @keyframes slide1{ from { transform: scale(1.0,1.0);}to {transform: scale(0.6,1.0);}}
-tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; margin-left: 0px !important;
+tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:1px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
   background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
   color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
-tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:0px !important; margin-bottom: 0px !important; opacity: 1 !important; 
+tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {margin-top:1px !important; margin-bottom: 3px !important; opacity: 1 !important; 
   color: transparent !important; border-radius: 2px !important}
 .tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important}
 
