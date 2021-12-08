@@ -80,7 +80,7 @@ body {
     
  /*Color de fondo al "editar" un sitio anclado*/  
 .modal {background-color: var(--newtab-background-color) !important; border: 1px solid var(--newtab-textbox-background-color) !important;  border-radius: 9px !important;}
-.modalOverlayOuter{background-color: color-mix(in srgb, var(--newtab-background-color)85% , transparent) !important;/* backdrop-filter: blur(28px) !important;*/}
+.modalOverlayOuter{background-color: color-mix(in srgb, var(--newtab-background-color)85% , transparent) !important; backdrop-filter: blur(2px) !important;}
     
 /*fondo y borde del menú de 3 puntos, linea separadora*/
 .context-menu {background-color: var(--newtab-background-color) !important; color: var(--newtab-wordmark-color) !important;
