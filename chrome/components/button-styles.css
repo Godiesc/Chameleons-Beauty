@@ -1,0 +1,50 @@
+:root{  
+  --button-primary-bgcolor: #304af1 !important;                                                                    /*ColorBotónGuardar*/
+  --button-primary-color: #eaeaea !important;                                                                      /*ColorLetrasBotónGuardar*/
+  --button-primary-hover-bgcolor: #2c3da0 !important;                                                              /*ColorBotónGuardar:Hover*/
+  --button-primary-active-bgcolor: #0073b1 !important;                                                             /*ColorBotónGuardar:clic*/
+  
+  --focus-outline-color: var(--button-primary-bgcolor) !important;                                                 /*Color borde en InputText Focus*/  
+  --input-border-color: var(--focus-outline-color) !important;                                                     /*Color borde en InputText*/
+
+  --checkbox-unchecked-hover-bgcolor: var(--button-primary-bgcolor) !important;                                    /*Colores checkbox —v*/
+  --checkbox-unchecked-active-bgcolor:var(--button-primary-bgcolor) !important;
+  --checkbox-checked-border-color: transparent !important;
+  --checkbox-checked-bgcolor: var(--button-primary-bgcolor) !important;
+  --checkbox-checked-color: #eaeaea !important;
+  --checkbox-checked-hover-bgcolor: #cc3535 !important;
+  --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
+}
+/*RadiobuttonProtecciónAntirastreo*/
+.protections-popup-tp-switch[enabled]:hover {background-color: #3030ff !important; border-color: transparent !important; }
+.protections-popup-tp-switch[enabled]{background-color: #4a4aff !important; border-color: transparent !important;}
+
+/*color Rojo de boton "borrar marcador"*/
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { 
+  background-color: color-mix(in srgb, var(--arrowpanel-background) 88%, var(--lwt-tab-text, Field)) !important; color: #ff6159 !important; 
+  outline: 1px solid color-mix(in srgb, var(--arrowpanel-background) 82%, var(--lwt-tab-text, Field)) !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover{
+  background-color: #da3633 !important; color: #f0f6fc !important; outline: 0px !important;}
+
+/*color letras de boton "Guardar" marcador*/
+#editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton{
+  border: 1px solid var(--button-primary-bgcolor) !important;color: #eaeaea !important; margin: -1px !important; border-radius: 5px !important;}
+#editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton:hover{
+  border: 0px !important;color: #eaeaea !important; margin: 0px !important; border-radius: 5px !important;}
+
+/*Color borde menu desplegable*/
+#editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down{
+  border-color: color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; border-radius: 4px !important}
+
+#editBookmarkPanel .expander-up:hover, #editBookmarkPanel .expander-down:hover{
+  border-color: var(--button-primary-bgcolor) !important; background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important;}
+
+/*Flecha menú derecha*/
+menu:not(.subviewbutton) > .menu-right{ filter: invert(0)}
+
+/*Color del botón menú deplegable*/
+panel menulist,
+panel menulist:not([open]){ border: 1px solid color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; padding: 7px !important;}
+
+panel menulist:hover,
+panel menulist[open]{ background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important; border-color: transparent !important;}

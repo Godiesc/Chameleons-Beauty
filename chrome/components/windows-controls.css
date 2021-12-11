@@ -1,0 +1,6 @@
+/*WindowsControls borde redondeado*/
+.titlebar-button:not(.titlebar-close){ padding-left: 10px !important; padding-right: 10px !important;}
+.titlebar-button:not(.titlebar-close):hover { background-color: var(--toolbarbutton-hover-background) !important}
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close{border-radius: 6px !important; border: 3px solid #00000000 !important; margin-bottom: -1px !important}
+.titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover{border-radius: 6px !important; border: 3px solid var(--lwt-frame, var(--lwt-accent-color)) !important;}
+.titlebar-close:hover{border-radius: 6px 0px 6px 0px !important;}

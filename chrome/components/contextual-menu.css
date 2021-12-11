@@ -1,0 +1,56 @@
+/*Menú contextual*/
+menupopup > menuitem, menupopup > menu{ padding-block: 0.3em !important;} 
+/* Menu items border and padding */
+menupopup > menuitem, menupopup > menu { border-radius: 3px !important; margin-left: 4px !important; margin-right: 4px !important;  
+  padding-inline-start: 0.5em !important}
+  /*borde izquierda y derecha del menú contextual*/
+menugroup > menuitem:first-child {padding-left: 4px !important;} 
+menugroup > menuitem:last-child { padding-right: 4px !important;}
+  /* context menu top buttons radius */
+menugroup > menuitem { border-radius: 1px !important; }
+menugroup > menuitem > hbox > image { border-radius: 4px !important;}
+menuseparator { border-color: var(--panel-separator-color, #50505090) !important; margin-left: 5px !important; margin-right: 5px !important;}
+.menupopup-arrowscrollbox {background: var(--arrowpanel-background, #50505090) !important; background-color: var(--arrowpanel-background, #50505090) !important;
+  color: var(--arrowpanel-color, #50505090) !important;  border: 1px solid var(--arrowpanel-border-color, #50505090) !important; 
+  border-radius: 6px !important; --menuitem-hover-background-color: red !important;                       /*ColorFondoAlPasarElMouseSobreItems*/
+  --menuitem-hover-background-color: color-mix(in srgb, var(--button-bgcolor) 90%, var(--organizer-color, var(--arrowpanel-color))) !important;}
+
+/*ColoresMenú*/
+  .menupopup{
+   --panel-color: var(--arrowpanel-color, Field) !important;                                                         /*ColorLetrasDelMenú*/
+   --panel-border-color: var(--arrowpanel-border-color,Field)!important;                                            /*bordeMenú*/
+   --panel-background: var(--arrowpanel-background, Field) !important;                                               /*FondoMenú*/
+   --menuitem-hover-background-color: red !important;                       /*ColorFondoAlPasarElMouseSobreItems*/
+   --menu-color: var(--arrowpanel-color, Field) !important;                                                           /*ColorLetrasAlPasarElMouseSobreItems*/
+   --menu-border-color: var(--panel-separator-color,Field) !important;                                              /*LineaSeparadoraItems*/}
+
+/*íconos deshabilitados*/
+menu[disabled="true"], menuitem[disabled="true"]{ 
+  color: color-mix(in srgb, var(--arrowpanel-background)80%, var(--arrowpanel-color)) !important;}
+
+/*Color :hover al pasar mouse sobre items del menú*/
+panel treechildren::-moz-tree-row(selected),
+panel button:hover,
+menu:not([disabled="true"]):hover,
+menu[_moz-menuactive],
+menu[open],
+menuitem:not([disabled="true"]):hover,
+menuitem:not([disabled="true"])[_moz-menuactive]{color: var(--arrowpanel-color) !important; }
+
+/*Color letras del menú desplegable*/
+#editBMPanel_folderMenuList > menupopup > menuitem{ color: var(--arrowpanel-color) !important;}
+
+/*Colores y márgenes iconos superiores del menú contextual*/
+#main-menubar > menu > menupopup, #context-navigation{
+  color: var(--arrowpanel-color) !important;
+  padding: 2px;
+  background-color: color-mix(in srgb, var(--arrowpanel-background) 97%, var(--arrowpanel-color)) !important;
+  border-color: yellow !important;
+  margin-left: 4px !important; margin-right: 4px !important;
+  border-radius: 4px !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  border: 1px solid color-mix(in srgb, var(--panel-separator-color)50%, transparent) !important;}
+#context-sep-navigation {
+    margin-top: 4px !important;
+    border-color: var(--panel-separator-color) !important;}

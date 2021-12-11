@@ -1,0 +1,65 @@
+/*---------------------------------library ----------------------------------*/
+
+@-moz-document url(chrome://browser/content/places/places.xhtml) {
+	
+:root {
+	  --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background), black) !important;
+   	--organizer-border-color: var(--organizer-separator-color) !important;
+	}
+		
+/*-----------------------Menú principal-------------------------*/
+#placesToolbar>toolbarbutton {
+		margin: 2px 2px 2px 2px !important;}
+	
+#main-menubar> :hover, menubar>menu[_moz-menuactive="true"][open="true"] {
+background: #0060bf !important;}
+	
+toolbar{		
+ background-color: var(--organizer-pane-background) !important;}
+	
+#placesToolbar>toolbarbutton#back-button,	#placesToolbar>toolbarbutton#forward-button {
+ background: var(--organizer-pane-background) !important;}
+#placesToolbar>toolbarbutton#back-button:hover,	#placesToolbar>toolbarbutton#forward-button:hover {
+ background: color-mix(in srgb, var(--organizer-pane-background) 90%, var(--organizer-color)) !important;}
+
+#placesMenu>menu {
+ color: var(--organizer-color) !important;}
+	
+#searchFilter {
+	background-color: color-mix(in srgb, var(--organizer-pane-background) 90%, var(--organizer-color)) !important;
+	color: var(--organizer-color) !important;}
+	
+/*---------------sidebar Izquierda----------------*/
+#placesList, #places treechildren::-moz-tree-row {
+		color: var(--organizer-color) !important; background-color: var(--organizer-pane-background) !important;}
+#placesView>splitter {
+		border-color: var(--organizer-border-color) !important;}
+	
+/*Color letras sidebar derecha*/
+#contentView treecol {		
+		background: var(--organizer-pane-background) !important;
+		color: var(--organizer-color) !important;				
+		box-shadow: inset 0 -1px var(--organizer-border-color) !important;
+	}
+#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-cell-text() {
+		color: var(--organizer-color) !important;	}
+tree {background-color: var(--organizer-pane-background) !important;}
+
+/*--------------Fondo general de Editar--------------------*/
+#detailsPane, #places #downloadsRichListBox, #editBMPanel_keywordRow, #editBMPanel_locationRow, #editBMPanel_tagsRow, #editBMPanel_tagsSelectorRow {
+		background: var(--organizer-pane-background) !important; color: var(--organizer-color) !important;}
+/*Fondo inputText al Editar*/
+#editBookmarkPanelRows>vbox>input, #editBookmarkPanelRows>vbox>hbox>input {
+ background: color-mix(in srgb, var(--organizer-pane-background) 90%, var(--organizer-color)) !important;}
+
+/*Color "selected" de items*/
+#places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected), #placesList>treechildren::-moz-tree-row(selected){		
+	background: #1060bf !important;}
+#placeContent treechildren:not(.autocomplete-treebody)::-moz-tree-cell-text(selected), #placesList>treechildren::-moz-tree-cell-text(selected) {
+	color: #eaeaea !important;}
+#places treechildren::-moz-tree-image{
+	fill: var(--organizer-color) !important;}
+#places treechildren::-moz-tree-image(selected) {
+	fill: #eaeaea !important;}
+
+}
