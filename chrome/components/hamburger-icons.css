@@ -53,7 +53,7 @@
 #appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/help.svg");}
 
 /*Ícono salir*/
-#appMenu-quit-button2 { list-style-image: url("../images/quit.png");}
+#appMenu-quit-button2:hover { list-style-image: url("../images/quit.png");}
 
 /*Íconos de marcadores*/
 #panelMenuBookmarkThisPage { list-style-image: url("chrome://browser/skin/bookmark-hollow.svg");}
