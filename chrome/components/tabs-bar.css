@@ -47,7 +47,7 @@
   background-size: 16px !important; padding-left: 18px !important; background-position: center !important; background-repeat: no-repeat !important; }
 
 /* Remove little space left to first tab */
-.titlebar-spacer[type="pre-tabs"]{display:none;}
+/*.titlebar-spacer[type="pre-tabs"]{display:none;}*/
 
 /*barra de menú*/
 #main-menubar > menu  {border-radius: 4px !important}
