@@ -34,10 +34,10 @@
 
 /*Color del botón menú deplegable*/
 panel menulist, panel menulist:not([open]){ 
- border: 1px solid color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; padding: 7px !important;}
+ box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;}
 
 panel menulist:hover, panel menulist[open]{
- background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important; border-color: transparent !important;}
+ background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important; box-shadow: none !important;}
 
 /*Color -fondo y borde- menu desplegable (flecha hacia abajo)*/
 #editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down{
