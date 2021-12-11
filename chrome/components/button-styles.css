@@ -16,8 +16,10 @@
   --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
 }
 /*-"Radiobutton"-ProtecciónAntirastreo*/
-.protections-popup-tp-switch[enabled]:hover {background-color: #3030ff !important; border-color: transparent !important; }
-.protections-popup-tp-switch[enabled]{background-color: #4a4aff !important; border-color: transparent !important;}
+.protections-popup-tp-switch[enabled]:hover{
+ background-color: #3030ff !important; border-color: transparent !important; }
+.protections-popup-tp-switch[enabled]{
+ background-color: #4a4aff !important; border-color: transparent !important;}
 
 /*color Rojo de boton "borrar marcador"*/
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { 
@@ -30,19 +32,16 @@
 #editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton:hover{
   color: #eaeaea !important;}
 
-/*Color borde menu desplegable*/
+/*Color del botón menú deplegable*/
+panel menulist, panel menulist:not([open]){ 
+ border: 1px solid color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; padding: 7px !important;}
+
+panel menulist:hover, panel menulist[open]{
+ background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important; border-color: transparent !important;}
+
+/*Color -fondo y borde- menu desplegable (flecha hacia abajo)*/
 #editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down{
   border-color: color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; border-radius: 4px !important}
 
 #editBookmarkPanel .expander-up:hover, #editBookmarkPanel .expander-down:hover{
   border-color: var(--button-primary-bgcolor) !important; background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important;}
-
-/*Flecha menú derecha*/
-menu:not(.subviewbutton) > .menu-right{ filter: invert(0)}
-
-/*Color del botón menú deplegable*/
-panel menulist,
-panel menulist:not([open]){ border: 1px solid color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important; padding: 7px !important;}
-
-panel menulist:hover,
-panel menulist[open]{ background-color: var(--button-primary-bgcolor) !important; color: #eaeaea !important; border-color: transparent !important;}
