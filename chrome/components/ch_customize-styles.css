@@ -1,0 +1,30 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+https://github.com/Godiesc/Chameleons-Beauty */
+
+/*botones de la pagina de "Personalizar Toolbar"*/
+
+.customizationmode-button {
+    background-color: color-mix(in srgb, var(--lwt-accent-color) 95%, var(--lwt-tab-text)) !important;
+    border-color: #80808090 !important;
+    color: var(--lwt-tab-text) !important;
+    border-radius: 4px !important;
+}
+.customizationmode-button:is(:active, :hover):not([disabled]), .customizationmode-button[open], .customizationmode-button[checked] {
+    background-color: var(--button-primary-bgcolor) !important;
+    border-color: #2b7aff !important;
+    color: var(--lwt-tab-text) !important;
+}
+#customization-done-button {
+    color: #fff !important;
+    border-color: #3a84ff !important;
+    background-color: var(--button-primary-bgcolor) !important;
+}
+#customization-done-button:is(:active, :hover):not([disabled]) {
+    background-color: var(--button-primary-hover-bgcolor) !important;
+    border-color: #2b5abf !important;
+}
+/*Borde Redondeado - menú de debordamiento*/
+
+.panel-arrowcontent {
+    border-radius: 8px !important;
+}

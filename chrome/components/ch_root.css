@@ -1,0 +1,36 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+https://github.com/Godiesc/Chameleons-Beauty */
+
+:root{
+  --lwt-frame: var(--toolbar-bgcolor, Field) !important;      
+  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important; 
+  
+  --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
+  --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /*FondoPestañasNoSeleccionadasVentanaInactiva*/
+  --lwt-accent-color: var(--toolbar-bgcolor, Field) !important;                                                    /*FondoPestañasNoSeleccionadasVentanaActiva*/
+  --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text, Field)) !important;       /*ColorLetrasPestañaNoSeleccionada*/
+  --toolbarbutton-inner-padding: 5px !important;                                                                   /*botonesIconosToolbarMásPequeños*/
+  --tab-block-margin: 3px 2px !important;                                                                          /*MargenTop-BottomPestañas*/
+  --tab-min-height:  32px !important;                                                                              /*TamañoPestañas*/
+  --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
+  --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
+  --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;         /*urlbarColor-ColorBordeCuadroUrlbar*/  
+  --toolbarbutton-hover-background: var(--button-bgcolor) !important;                                              /*"button_background_hover": "#26242e"*/
+  --toolbar-field-background-color: var(--toolbar-bgcolor) !important;                                             /*ColorUrlbar*/
+  --toolbar-field-focus-background-color: var(--toolbar-bgcolor) !important;                                       /*ColorUrlbarOpen*/
+  --urlbar-popup-url-color: #3389ff !important;                                                                    /*colorUrlSugerenciasDeBusqueda*/
+  --lwt-popup-brighttext-url-color: #3379ff !important;                                                            /*"color de label: El sitio no funciona?"*/ 
+  --lwt-toolbar-field-highlight: #3b439b !important;                                                               /*"toolbar_field_highlight": "#006f80"*/
+  --lwt-toolbar-field-highlight-text: #eaeaea !important;                                                          /*"toolbar_field_highlight_text": "#eaeaea"*/
+  --autocomplete-popup-highlight-background: #3e5bfdbb !important;                                                 /*"popup_highlight": "#006f80"*/
+  --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight-letras": "#006f80"*/
+  --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/
+  
+  --panel-separator-zap-gradient: linear-gradient(to right, #902c8ad0 15%, #902cfc90 50%, #3083ff80 100%) !important;                       /*GradienteMenúHamburguesa*/
+  --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   /*GradientePestañaActiva*/
+    
+  --button-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                            /*ColorCombobox-yBotones(+-)*/
+  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
+  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 16%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/        
+}
