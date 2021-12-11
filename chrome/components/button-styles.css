@@ -15,22 +15,20 @@
   --checkbox-checked-hover-bgcolor: #cc3535 !important;
   --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
 }
-/*RadiobuttonProtecciónAntirastreo*/
+/*-"Radiobutton"-ProtecciónAntirastreo*/
 .protections-popup-tp-switch[enabled]:hover {background-color: #3030ff !important; border-color: transparent !important; }
 .protections-popup-tp-switch[enabled]{background-color: #4a4aff !important; border-color: transparent !important;}
 
 /*color Rojo de boton "borrar marcador"*/
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton { 
   background-color: var(--arrowpanel-background) !important; color: #ff6159 !important; 
-  outline: 1px solid #ff615960 !important;}
+  box-shadow: inset 0px 0px 0 1px #ff615960 !important}
 #editBookmarkPanelBottomButtons > #editBookmarkPanelRemoveButton:hover{
-  background-color: #da3633 !important; color: #f0f6fc !important; outline: 0px !important;}
+  background-color: #da3633 !important; color: #f0f6fc !important;}
 
-/*color letras de boton "Guardar" marcador*/
-#editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton{
-  border: 1px solid var(--button-primary-bgcolor) !important;color: #eaeaea !important; margin: -1px !important; border-radius: 5px !important;}
+/*color letras de boton "Guardar" marcador en :hover*/
 #editBookmarkPanelBottomButtons > #editBookmarkPanelDoneButton:hover{
-  border: 0px !important;color: #eaeaea !important; margin: 0px !important; border-radius: 5px !important;}
+  color: #eaeaea !important;}
 
 /*Color borde menu desplegable*/
 #editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down{
