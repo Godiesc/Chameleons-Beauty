@@ -32,7 +32,7 @@ menugroup>menuitem>hbox>image {
 menuseparator {
     border-color: var(--panel-separator-color, #50505090) !important;
     margin-left: 5px !important;
-    margin-right: 5px !important;
+    margin-right: 5px !important;    
 }
 /*Colores generales*/
 
@@ -43,7 +43,7 @@ menuseparator {
     border: 1px solid var(--arrowpanel-border-color, #50505090) !important;
     border-radius: 6px !important;
     /*ColorFondoAlPasarElMouseSobreItems*/
-    --menuitem-hover-background-color: color-mix(in srgb, var(--button-bgcolor) 90%, var(--organizer-color, var(--arrowpanel-color))) !important;
+    --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 90%, var(--organizer-color, var(--arrowpanel-color))) !important;
 }
 /*ColoresMenú*/
 
@@ -74,6 +74,19 @@ panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disab
 #editBMPanel_folderMenuList>menupopup>menuitem {
     color: var(--arrowpanel-color) !important;
 }
+/*Margenes menú desplegable marcadores*/
+
+#PlacesToolbar menuitem, #PlacesToolbar menu, .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {     
+    margin-left: 0px !important;
+    margin-right: 0px !important; 
+}
+/*Separador de items menú desplegable marcadores*/
+
+#PlacesToolbar menupopup[placespopup="true"] menuseparator{
+   margin-left: 1px !important;
+    margin-right: 1px !important;
+}
+
 /*Colores y márgenes iconos superiores del menú contextual*/
 /*
 #main-menubar>menupopup, #context-navigation {
