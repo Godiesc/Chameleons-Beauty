@@ -67,6 +67,16 @@ slot[part="content"] {
     margin-top: -1px !important;
     margin-bottom: 0px !important;
 }
+/*Label de páginas de extensiones*/
+
+.identity-box-button {
+    background: none !important;
+    padding-left:3px !important;
+    padding-right:4px !important;
+}
+#identity-box.extensionPage label{
+    display: none !important;
+}
 /*Páginas seguras de firefox"*/
 
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:hover:not([open]), #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:hover:not([open]) {
