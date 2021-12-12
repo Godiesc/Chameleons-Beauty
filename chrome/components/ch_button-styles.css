@@ -21,6 +21,7 @@
     --input-border-color: var(--focus-outline-color) !important;
 
     /*Colores checkbox —v*/
+    --checkbox-unchecked-bgcolor: var(--button-bgcolor) !important;
     --checkbox-unchecked-hover-bgcolor: var(--button-primary-bgcolor) !important;      
     --checkbox-unchecked-active-bgcolor: var(--button-primary-bgcolor) !important;
     --checkbox-checked-border-color: transparent !important;
@@ -42,7 +43,7 @@
 /*color Rojo de boton "borrar marcador"*/
 
 #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton {
-    box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
+    box-shadow: inset 0px 0px 0 1px var(--button-bgcolor) !important;
 }
 #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton:hover {
     background-color: #da3633 !important;
