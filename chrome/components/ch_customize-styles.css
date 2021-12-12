@@ -4,8 +4,8 @@ https://github.com/Godiesc/Chameleons-Beauty */
 /*botones de la pagina de "Personalizar Toolbar"*/
 
 .customizationmode-button {
-    background-color: color-mix(in srgb, var(--lwt-accent-color) 95%, var(--lwt-tab-text)) !important;
-    border-color: #80808090 !important;
+    background-color: var(--button-bgcolor) !important;
+    border-color: color-mix(in srgb, var(--arrowpanel-background) 80%, var(--lwt-tab-text, FieldText)) !important;
     color: var(--lwt-tab-text) !important;
     border-radius: 4px !important;
 }
