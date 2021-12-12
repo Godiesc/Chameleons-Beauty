@@ -75,7 +75,7 @@ https://github.com/Godiesc/Chameleons-Beauty */
 /*"Medidas menores para scroll de pestañas"*/
 
 #tabbrowser-tabs {
-    --uc-tabs-scrollbutton-border: 0px
+    --uc-tabs-scrollbutton-border: 0px !important;
 }
 #scrollbutton-up, #scrollbutton-down {
     border-block-width: var(--uc-tabs-scrollbutton-border, 0px) !important;
