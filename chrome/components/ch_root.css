@@ -31,6 +31,6 @@ https://github.com/Godiesc/Chameleons-Beauty */
   --gradient: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   /*GradientePestañaActiva*/
     
   --button-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                            /*ColorCombobox-yBotones(+-)*/
-  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
-  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 16%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/        
+  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 14%, transparent) !important;                      /*colorHoverCombobox-yBotones(+-)*/
+  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 18%, transparent) !important;                     /*ColorAlHacerClicCombobox-yBotones(+-)*/        
 }
