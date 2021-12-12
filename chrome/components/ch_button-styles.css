@@ -42,7 +42,6 @@
 /*color Rojo de boton "borrar marcador"*/
 
 #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton {
-    color: white !important;
     box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
 }
 #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton:hover {
