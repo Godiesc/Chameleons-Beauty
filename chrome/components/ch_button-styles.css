@@ -83,9 +83,25 @@ treechildren::-moz-tree-row(selected) {
 treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected), treechildren::-moz-tree-cell-text(selected) {
     color: white !important;
 }
+
+/*--------------------------Marcadore----------------------------------*/
+
 /*Color de highlight inputtext - marcadores*/
 
 #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
     background-color: var(--button-primary-bgcolor) !important;
     color: white !important;
+}
+/*Imagen grande y Favicon*/
+#editBookmarkPanelImage{
+    box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
+}
+#editBookmarkPanelFavicon[src] {
+  background-color: color-mix(in srgb, var(--arrowpanel-background) 94%, var(--lwt-tab-text)) !important;
+  box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 4px !important;
+  margin-top: 4px !important;
+  margin-inline-start: 4px !important;
 }
