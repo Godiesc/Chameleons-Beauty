@@ -97,14 +97,25 @@ slot[part="content"] {
 description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, #identity-popup-securityView-body>button {
     color: #2cf62c !important
 }
-/*fondo:hover de íconos de la urlbar"*/
+/*fondo :hover de íconos de la urlbar"*/
 
-:not(.urlbar-icon-wrapper)>.urlbar-icon[open="true"], :not(.urlbar-icon-wrapper)>.urlbar-icon[open="true"], .urlbar-icon-wrapper[open="true"], .urlbar-icon-wrapper[open="true"], .identity-box-button[open="true"], #tracking-protection-icon-container[open="true"], .identity-box-button[open="true"] .urlbar-page-action:not([disabled]):hover, #urlbar-go-button:hover, .search-go-button:hover {
-    background-color: var(--toolbarbutton-active-background) !important;
-}
 .urlbar-icon {
     margin-left: 2px !important
 }
+.identity-box-button:hover:not([open="true"]) {
+    background-color: transparent !important;
+}
+#identity-box:hover, #tracking-protection-icon-container:hover:not([open="true"]), .urlbar-page-action:not([disabled], [open="true"]):hover, #urlbar-go-button:hover, .search-go-button:hover {
+    background-color: var(--toolbarbutton-hover-background) !important; 
+    border-radius: 4px !important;
+}
+/*fondo active de íconos de la urlbar"*/
+
+#identity-box[open="true"], #tracking-protection-icon-container[open="true"], .urlbar-page-action:not([disabled])[open="true"] , #urlbar-go-button[open="true"], .search-go-button[open="true"] ,
+:not(.urlbar-icon-wrapper)>.urlbar-icon[open="true"], :not(.urlbar-icon-wrapper)>.urlbar-icon[open="true"], .urlbar-icon-wrapper[open="true"], .urlbar-icon-wrapper[open="true"], .identity-box-button[open="true"], #tracking-protection-icon-container[open="true"], .identity-box-button[open="true"] .urlbar-page-action:not([disabled]):hover, #urlbar-go-button:hover, .search-go-button:hover {
+    background-color: var(--toolbarbutton-active-background) !important;
+}
+
 /*------------toolbar autohided--------------------
 #nav-bar {
   /* customize this value. 
