@@ -87,9 +87,9 @@ treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected
 
 /*--------------------------Marcadores----------------------------------*/
 
-/*Color de highlight inputtext - marcadores*/
+/*Color de "highlight" inputtext*/
 
-#editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
+richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
     background-color: var(--button-primary-bgcolor) !important;
     color: white !important;
 }
