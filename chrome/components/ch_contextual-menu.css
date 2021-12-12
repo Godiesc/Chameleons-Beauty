@@ -75,7 +75,7 @@ panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disab
     color: var(--arrowpanel-color) !important;
 }
 /*Colores y márgenes iconos superiores del menú contextual*/
-
+/*
 #main-menubar>menupopup, #context-navigation {
     background-color: color-mix(in srgb, var(--arrowpanel-background) 99%, var(--arrowpanel-color)) !important;
     border: 1px solid color-mix(in srgb, var(--panel-separator-color)50%, transparent) !important;
@@ -89,4 +89,4 @@ panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disab
 #context-sep-navigation {
     margin-top: 4px !important;
     border-color: var(--panel-separator-color) !important;
-}
+}*/
