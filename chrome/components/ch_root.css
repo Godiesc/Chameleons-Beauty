@@ -15,7 +15,7 @@ https://github.com/Godiesc/Chameleons-Beauty */
   --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
   --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
   --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
-  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 8%, transparent) !important;         /*urlbarColor-ColorBordeCuadroUrlbar*/  
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 12%, transparent) !important;         /*urlbarColor-ColorBordeCuadroUrlbar*/  
   --toolbarbutton-hover-background: var(--button-bgcolor) !important;                                              /*"button_background_hover": "#26242e"*/
   --toolbar-field-background-color: var(--toolbar-bgcolor) !important;                                             /*ColorUrlbar*/
   --toolbar-field-focus-background-color: var(--toolbar-bgcolor) !important;                                       /*ColorUrlbarOpen*/
