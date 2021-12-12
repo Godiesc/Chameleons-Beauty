@@ -70,11 +70,11 @@ slot[part="content"] {
 /*Páginas seguras de firefox"*/
 
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:hover:not([open]), #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:hover:not([open]) {
-    background-color: #3070ffbb !important;
+    background-color: var(--button-primary-bgcolor) !important;
     color: white !important;
 }
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button[open="true"], #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button[open="true"] {
-    background-color: #3090ffbb !important;
+    background-color: var(--button-primary-hover-bgcolor) !important;
     color: white !important;
 }
 #identity-popup-security-button {
