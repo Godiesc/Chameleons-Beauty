@@ -1,7 +1,7 @@
-  /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
-  https://github.com/Godiesc/Chameleons-Beauty */
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/Chameleons-Beauty */
 
-  :root {
+:root {
       /*ColorBotónGuardar*/
       --button-primary-bgcolor: #304af1 !important;
       
@@ -28,9 +28,9 @@
       --checkbox-checked-color: #eaeaea !important;
       --checkbox-checked-hover-bgcolor: #cc3535 !important;
       --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
-  }
-
+}
   /*-"Radiobutton"-ProtecciónAntirastreo*/
+
   .protections-popup-tp-switch[enabled]:hover {
       background-color: #3030ff !important;
       border-color: transparent !important;
@@ -39,25 +39,22 @@
       background-color: #4a4aff !important;
       border-color: transparent !important;
   }
-
   /*color Rojo de boton "borrar marcador"*/
 
   #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton {
-      background-color: var(--arrowpanel-background) !important;
-      color: #ff6159 !important;
-      box-shadow: inset 0px 0px 0 1px #ff615960 !important
+      color: white !important;
+      box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
   }
   #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton:hover {
       background-color: #da3633 !important;
       color: #f0f6fc !important;
+      box-shadow: none !important;
   }
-
   /*color letras de boton "Guardar" marcador en :hover*/
 
   #editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton:hover {
       color: #eaeaea !important;
   }
-
   /*Color del botón menú deplegable*/
 
   panel menulist, panel menulist:not([open]) {
@@ -68,7 +65,6 @@
       color: #eaeaea !important;
       box-shadow: none !important;
   }
-
   /*Color -fondo y borde- menu desplegable (flecha hacia abajo)*/
 
   #editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down {
