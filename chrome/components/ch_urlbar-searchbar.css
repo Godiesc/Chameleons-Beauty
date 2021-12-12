@@ -126,6 +126,11 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
 .identity-box-button[open="true"] .urlbar-page-action:not([disabled]):hover, #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open="true"] {
     background-color: var(--toolbarbutton-active-background) !important;
 }
+/*Eliminar ícono de -sitio anclado- en las sugerencias de busqueda*/
+
+.urlbarView-type-icon{
+    display: none !important;
+}
 
 /*------------toolbar autohided--------------------
 #nav-bar {
