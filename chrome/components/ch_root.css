@@ -21,9 +21,9 @@ https://github.com/Godiesc/Chameleons-Beauty */
   --toolbar-field-focus-background-color: var(--toolbar-bgcolor) !important;                                       /*ColorUrlbarOpen*/
   --urlbar-popup-url-color: #3389ff !important;                                                                    /*colorUrlSugerenciasDeBusqueda*/
   --lwt-popup-brighttext-url-color: #3379ff !important;                                                            /*"color de label: El sitio no funciona?"*/ 
-  --lwt-toolbar-field-highlight: #3b439b !important;                                                               /*"toolbar_field_highlight": "#006f80"*/
+  --lwt-toolbar-field-highlight: var(--button-primary-bgcolor) !important;                                         /*"toolbar_field_highlight": "#006f80"*/
   --lwt-toolbar-field-highlight-text: #eaeaea !important;                                                          /*"toolbar_field_highlight_text": "#eaeaea"*/
-  --autocomplete-popup-highlight-background: #3e5bfdbb !important;                                                 /*"popup_highlight": "#006f80"*/
+  --autocomplete-popup-highlight-background: var(--button-primary-bgcolor) !important;                                                 /*"popup_highlight": "#006f80"*/
   --autocomplete-popup-highlight-color: #eaeaea !important;                                                        /*"popup_highlight-letras": "#006f80"*/
   --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/
   
