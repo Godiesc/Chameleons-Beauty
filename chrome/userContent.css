@@ -96,7 +96,7 @@ body {
 .context-menu-button:active, .context-menu-button:focus, .context-menu-button:hover{fill: #47a8d7 !important}
     
 /*Cuadro de busqueda eliminado*/
-.search-inner-wrapper{ display: none !important; }
+/*.search-inner-wrapper{ display: none !important; }*/
   
 .search-inner-wrapper{margin-top: 30px !important;}
   
