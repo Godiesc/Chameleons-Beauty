@@ -34,5 +34,33 @@
   --panel-separator-zap-gradient: linear-gradient(                                                                 /*GradienteMenúHamburguesa*/
     to right, #902c8ad0 15%, #902cfc90 50%, #3083ff80 100%) !important;                       
   --gradient: linear-gradient(                                                                                     /*GradientePestañaActiva*/
-    165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;     
+    165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   
+      
+    /*ColorBotónGuardar*/
+    --button-primary-bgcolor: #304af1 !important;
+
+    /*ColorLetrasBotónGuardar*/
+    --button-primary-color: #eaeaea !important;
+
+    /*ColorBotónGuardar:Hover*/
+    --button-primary-hover-bgcolor: #2c3da0 !important;
+
+    /*ColorBotónGuardar:clic*/
+    --button-primary-active-bgcolor: #0073b1 !important;
+
+    /*Color borde en InputText Focus*/
+    --focus-outline-color: var(--button-primary-bgcolor) !important;
+
+    /*Color borde en InputText*/
+    --input-border-color: var(--focus-outline-color) !important;
+
+    /*Colores checkbox —v*/
+    --checkbox-unchecked-bgcolor: var(--button-bgcolor) !important;
+    --checkbox-unchecked-hover-bgcolor: var(--button-primary-bgcolor) !important;      
+    --checkbox-unchecked-active-bgcolor: var(--button-primary-bgcolor) !important;
+    --checkbox-checked-border-color: transparent !important;
+    --checkbox-checked-bgcolor: var(--button-primary-bgcolor) !important;
+    --checkbox-checked-color: #eaeaea !important;
+    --checkbox-checked-hover-bgcolor: #cc3535 !important;
+    --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
 }
