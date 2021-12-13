@@ -40,7 +40,7 @@ slot[part="content"] {
 }
 #urlbar[focused=true] {
     background-image: linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 30%, #33b3fd70 45%, #00aaff70 60%, #fd189270 100%);
-    border-radius:
+    border-radius: 4px !important;
 }
 #urlbar[focused=true] #urlbar-background {
     background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important;
