@@ -1,35 +1,6 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-:root {
-    /*ColorBotónGuardar*/
-    --button-primary-bgcolor: #304af1 !important;
-
-    /*ColorLetrasBotónGuardar*/
-    --button-primary-color: #eaeaea !important;
-
-    /*ColorBotónGuardar:Hover*/
-    --button-primary-hover-bgcolor: #2c3da0 !important;
-
-    /*ColorBotónGuardar:clic*/
-    --button-primary-active-bgcolor: #0073b1 !important;
-
-    /*Color borde en InputText Focus*/
-    --focus-outline-color: var(--button-primary-bgcolor) !important;
-
-    /*Color borde en InputText*/
-    --input-border-color: var(--focus-outline-color) !important;
-
-    /*Colores checkbox —v*/
-    --checkbox-unchecked-bgcolor: var(--button-bgcolor) !important;
-    --checkbox-unchecked-hover-bgcolor: var(--button-primary-bgcolor) !important;      
-    --checkbox-unchecked-active-bgcolor: var(--button-primary-bgcolor) !important;
-    --checkbox-checked-border-color: transparent !important;
-    --checkbox-checked-bgcolor: var(--button-primary-bgcolor) !important;
-    --checkbox-checked-color: #eaeaea !important;
-    --checkbox-checked-hover-bgcolor: #cc3535 !important;
-    --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
-}
 /*-"Radiobutton"-ProtecciónAntirastreo*/
 
 .protections-popup-tp-switch[enabled]:hover {
