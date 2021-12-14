@@ -2,33 +2,20 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*Label de medios "Reproduciendo" modifiado - Animación*/
-
 @keyframes slide1 {
-    from {
-        transform: scale(1.0, 1.0);
-    }
-    to {
-        transform: scale(0.6, 1.0);
-    }
+    from { transform: scale(1.0, 1.0); }
+      to { transform: scale(0.6, 1.0); }
 }
 tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
-    margin-top: 0px !important;
-    margin-bottom: 4px !important;
-    opacity: 1 !important;
-    margin-left: 0px !important;
     background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%);
     font-size: 2px !important;
     color: transparent !important;
+    margin-top: 0px !important;
+    margin-bottom: 4px !important;
+    opacity: 1 !important;       
     border-radius: 4px !important;
     animation: 500ms infinite ease-in-out;
     animation-name: slide1;
-}
-tab:not([pinned], [selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
-    margin-top: 0px !important;
-    margin-bottom: 3px !important;
-    opacity: 1 !important;
-    color: transparent !important;
-    border-radius: 2px !important
 }
 .tab-secondary-label:is([muted], [activemedia-blocked]) {
     display: none !important
@@ -36,7 +23,7 @@ tab:not([pinned], [selected]) .tab-secondary-label:is([soundplaying], [picturein
 /*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
 
 .tab-icon-image:not([pinned]) {
-    opacity: 1 !important
+    opacity: 1 !important;
 }
 .tab-icon-overlay[activemedia-blocked], .tab-icon-overlay, .tab-icon-overlay:is([pinned]) {
     height: 13px !important;
