@@ -22,7 +22,6 @@
 
 /*Linea gradiente en pestaña activa*/
 
-.tabbrowser-tab .tab-stack {padding-left: 1px !important;}
 .tabbrowser-tab .tab-background{height: 32px !important; margin-left: -1px !important; margin-right: -1px !important}
 .tabbrowser-tab:not([pinned])[selected="true"] .tab-background {
     background-image: var(--gradient) !important;
