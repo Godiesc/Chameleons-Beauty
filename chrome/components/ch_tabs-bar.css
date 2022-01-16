@@ -2,51 +2,28 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*Sombra de la pestaña activa eliminada, borde superior de la toolbar y transparencia de la tabline*/
-
 .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
     box-shadow: none !important;
 }
 .tab-label {
     text-shadow: none !important
 }
-#navigator-toolbox {
-    --tabs-border-color: var(--gradient, transparent) !important
-}
-#tabbrowser-tabs {
-    --tab-line-color: var(--gradient, transparent) !important
-}
-/**-----verion nighty-----Borrar luego lineas 12 to 17*/
-
 #navigator-toolbox { --lwt-tabs-border-color: var(--gradient, transparent) !important; }
 #tabbrowser-tabs { --lwt-tab-line-color: var(--gradient, transparent) !important; }
 
 /*Linea gradiente en pestaña activa*/
+.tab-background{ margin-left: -1px !important; margin-right: -1px !important}
+.tab-content {height: calc(var(--tab-min-height) - 2px) !important; margin-top: calc(var(--margin-top) + 1px) !important; }
 
-.tabbrowser-tab .tab-background{height: 32px !important; margin-left: -1px !important; margin-right: -1px !important}
-.tabbrowser-tab:not([pinned])[selected="true"] .tab-background {
+.tab-background[selected="true"] {
     background-image: var(--gradient) !important;
-    border-radius: 4px !important;   
+    border-radius: 5px !important;
 }
-.tabbrowser-tab .tab-content {margin-top: 4px !important; height: 30px !important;}
-.tabbrowser-tab:not([pinned], [multiselected])[selected="true"] .tab-content:not([multiselected]) {
+.tabbrowser-tab:not([multiselected])[selected="true"] .tab-content {
     background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important;
-    border-radius: 4px !important;        
-    transition-duration: 0ms !important;
-    backdrop-filter: saturate(35%) brightness(10%) !important;
-}
-.tabbrowser-tab:is([pinned]):not([selected="true"]) .tab-background {height: 32px !important; margin-left: -1px !important; margin-right: -1px !important;}
-.tabbrowser-tab:is([pinned])[selected="true"] .tab-background {
-    background-image: var(--gradient) !important;
-    border-radius: 4px !important;    
-}
-.tabbrowser-tab:is([pinned]):not([selected="true"]) .tab-content { margin-top: 4px !important; height: 30px !important;}
-.tabbrowser-tab:is([pinned])[selected="true"]:not([multiselected]) .tab-content {
-    background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important;
-    border-radius: 4px !important;        
-    backdrop-filter: saturate(35%) brightness(10%) !important;
+    border-radius: 4px !important;
 }
 /*Margenes y color de las pestañas no seleccionadas*/
-
 .tabbrowser-tab>.tab-stack>.tab-background:not([selected="true"]) {
     margin-left: -1px !important;
     margin-right: -1px !important;
@@ -59,12 +36,10 @@
     margin-right: -1px !important;
 }
 /*Centrar botón "Open Newtab"*/
-
 #TabsToolbar .toolbarbutton-1 {
-    padding-top: 2px !important
+    padding-top: 2px !important;
 }
 /*"Medidas menores para scroll de pestañas"*/
-
 #tabbrowser-tabs {
     --uc-tabs-scrollbutton-border: 0px !important;
 }
@@ -72,16 +47,15 @@
     border-block-width: var(--uc-tabs-scrollbutton-border, 0px) !important;
 }
 /* Reduce spacing between pinned and regular tabs */
-
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: 2px !important;
+    margin-inline-start: 0px !important;
 }
 /*Regla para visualizar mejor el seleccionar varias pestañas*/
 
 .tabbrowser-tab[multiselected]:-moz-lwtheme {
     color: var(--lwt-tab-text) !important;    
 }
-.tabbrowser-tab[multiselected]>.tab-stack>.tab-background:is([multiselected]){
+.tab-background:is([multiselected]){
     background: #4d4dfe !important;
 }
 /*Vizualización correcta del porcentaje de zoom mostrado en la urlbar*/
@@ -91,7 +65,6 @@
     margin: 2px !important;
 }
 /*favicon de pagina newtab*/
-
 .tab-icon-stack .tab-icon-image[src="chrome://branding/content/icon32.png"] {
     background: url("../images/foxlogo.svg")!important;
     background-size: 16px !important;
@@ -100,11 +73,9 @@
     background-repeat: no-repeat !important;
 }
 /* Remove little space left to first tab */
-
 /*.titlebar-spacer[type="pre-tabs"]{display:none;}*/
 
 /*Borde redondeado - barra de menú*/
-
 #main-menubar>menu {
     border-radius: 4px !important
 }
