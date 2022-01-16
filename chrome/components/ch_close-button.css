@@ -2,8 +2,8 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*"Botón de cerrar pestaña"*/
-
-.tab-close-button {
+.tabbrowser-tab .tab-close-button {
+    list-style-image: url('../images/close.svg') !important;
     margin-inline-start: 0px !important;
     width: 16px !important;
     height: 16px !important;
@@ -11,9 +11,9 @@
     margin-inline-end: -5px !important;
     border-radius: 10px !important;
 }
-.tab-close-button:hover {
+.tabbrowser-tab .tab-close-button:hover {
     background-color: color-mix(in srgb, var(--lwt-tab-text) 14%, transparent) !important;
 }
-.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+.tabbrowser-tab .tabbrowser-tab:not([pinned]):hover .tab-close-button {
     display: -moz-box !important
 }
