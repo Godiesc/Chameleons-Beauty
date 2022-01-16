@@ -1,8 +1,12 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/* Color contenedor default */
+.identity-color-toolbar {
+    --identity-tab-color: #0c86ee !important;
+    --identity-icon-color: #0c86ee !important;
+}
 /*rework en la Linea de Contenedores-BordeGeneral*/
-
 .tab-context-line {
     opacity: 0 !important;
 }
@@ -11,16 +15,16 @@ tab[selected] .tab-context-line {
     margin: 0px !important;
     -moz-box-ordinal-group: 2 !important;
     opacity: 1 !important;
-    border-radius: 4px !important;
+    border-radius: 5px !important;
 }
 /*rework en la Linea de Contenedores-BordeFavicon*/
 
 .tab-icon-pending:not([selected]), .tab-sharing-icon-overlay:not([selected]), .tab-throbber[busy]:not([pinned]), .tab-throbber:is([busy][pinned]), .tab-icon-image:not([selected]) {
     box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
-    border-radius: 4px !important;
+    border-radius: 2px!important;
     padding: 2px !important;
     width: 20px !important;
-    height: 20px !important
+    height: 20px !important;
 }
 .tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected] {
     outline: 1px solid var(--identity-icon-color, #00000000) !important;
