@@ -10,8 +10,11 @@
   --lwt-accent-color: var(--toolbar-bgcolor, Field) !important;                                                    /*FondoPestañasNoSeleccionadasVentanaActiva*/
   --lwt-text-color: color-mix(in srgb , var(--lwt-accent-color) 20%, var(--lwt-tab-text, Field)) !important;       /*ColorLetrasPestañaNoSeleccionada*/
   --toolbarbutton-inner-padding: 5px !important;                                                                   /*botonesIconosToolbarMásPequeños*/
-  --tab-block-margin: 3px 2px !important;                                                                          /*MargenTop-BottomPestañas*/
-  --tab-min-height:  32px !important;                                                                              /*TamañoPestañas*/
+  
+  --tab-block-margin: 3px 2px !important;                                                                          /*margenes pestañas  <-------------------¬ */
+  --margin-top: 3px !important;                                                                                    /*margen top pestañas - variable personal \ */
+  --tab-min-height:  32px !important;                                                                              /*tamaño pestañas*/
+    
   --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
   --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
   --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
