@@ -1,6 +1,15 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/*Linea gradiente en los menús principales*/
+.PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient1) 1 !important;}
+.PanelUI-subView menuseparator, #PlacesToolbar menupopup[placespopup="true"] toolbarseparator, #widget-overflow-mainView > toolbarseparator,
+#widget-overflow-mainView > .panel-subview-body > toolbarseparator, .PanelUI-subView toolbarseparator, #permission-popup-mainView > toolbarseparator,
+#protections-popup-multiView toolbarseparator, #identity-popup-mainView toolbarseparator, #identity-popup-securityView > toolbarseparator, 
+#editBookmarkPanel toolbarseparator, #downloadsFooterButtons > toolbarseparator {    
+    /*border-image: var(--gradient) 1 !important;*/
+    /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
+}
 /*-----------------íconos en el menú de hamburguesa----------------------*/
 
 /*Posicion y margen de los íconos*/
