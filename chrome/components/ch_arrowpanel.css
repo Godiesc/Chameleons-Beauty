@@ -10,6 +10,13 @@
     /*border-image: var(--gradient) 1 !important;*/
     /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
 }
+
+/*
+#PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
+    border-image: var(--gradient) 1 !important;
+}
+*/
+
 /*-----------------íconos en el menú de hamburguesa----------------------*/
 
 /*Posicion y margen de los íconos*/
