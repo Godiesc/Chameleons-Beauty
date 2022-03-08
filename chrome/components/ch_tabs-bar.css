@@ -65,12 +65,9 @@
     margin: 2px !important;
 }
 /*favicon de pagina newtab*/
-.tab-icon-stack .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    background: url("../images/foxlogo.svg")!important;
-    background-size: 16px !important;
-    padding-left: 18px !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+.tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("../images/foxlogo.svg");
+  fill: var(--identity-icon-color, var(--general-color)) !important;
 }
 /* Remove little space left to first tab */
 /*.titlebar-spacer[type="pre-tabs"]{display:none;}*/
