@@ -39,7 +39,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <li>Windows 11 (Not tested - No Probado)</li></ul>
 
 # Example of about:support
-![about-support](https://user-images.githubusercontent.com/22057609/120349392-b372f980-c2c3-11eb-904d-b088168fd849.png)
+![120349392-b372f980-c2c3-11eb-904d-b088168fd849](https://user-images.githubusercontent.com/22057609/156908375-824f8679-56a5-4d09-a86f-353a7f61135e.png)
 
 # Adapted to "Beautiful" Themes
 
