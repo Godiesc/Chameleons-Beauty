@@ -47,7 +47,6 @@ slot[part="content"] {
 }
 #urlbar[open=true] {
     border-radius: 6px !important;
-    margin-top: 1px !important;
     background-image: linear-gradient(to bottom right, #fd189240 0%, #b02cfc40 30%, #33b3fd40 45%, #00aaff40 60%, #fd189240 100%);
     backdrop-filter: blur(20px);
     max-height: -moz-available !important;
@@ -60,10 +59,6 @@ slot[part="content"] {
     backdrop-filter: saturate(100%) brightness(0%);
     max-height: -moz-available !important;
 }
-#urlbar[breakout][breakout-extend]>#urlbar-input-container {
-    margin-top: -1px !important;
-    margin-bottom: 0px !important;
-}
 /*Páginas de extensiones*/
 
 #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button {
@@ -75,13 +70,20 @@ slot[part="content"] {
     display: none !important;
 }
 /*Páginas seguras de firefox"*/
-
+#identity-box[pageproxystate="valid"].chromeUI #identity-icon {
+  list-style-image: url("../images/foxlogo.svg") !important; fill: var(--general-color) !important; -moz-context-properties: fill !important;
+    width: 16px !important; height: 16px !important; margin-left: -4px !important; margin-right: -4px !important; padding-right: 0px !important;}
+#identity-box[pageproxystate="valid"].notSecureText, #identity-box[pageproxystate="valid"].chromeUI, #identity-box[pageproxystate="valid"].extensionPage, #urlbar-label-box {
+  margin-inline-end: 4px !important; }
+#identity-icon-label { display: none !important; }
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button, #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, #urlbar-label-box {
+    background-color: transparent !important;
+}
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:hover:not([open]), #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:hover:not([open]) {
-    background-color: var(--button-primary-bgcolor) !important;
-    color: white !important;
+    background-color: var(--toolbarbutton-hover-background) !important;
 }
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button[open="true"], #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button[open="true"] {
-    background-color: var(--button-primary-hover-bgcolor) !important;
+    background-color: var(--toolbarbutton-active-background)  !important;
     color: white !important;
 }
 #identity-popup-security-button {
