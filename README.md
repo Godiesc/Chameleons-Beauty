@@ -5,7 +5,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 ![SplashChameleon](https://user-images.githubusercontent.com/22057609/143943154-5c9f4e95-5746-42a0-b804-afab606c7260.png)
 
-The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">beautiful GX Proton</a>
+<ul><li>The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">beautiful GX Proton</a></li></ul>
 
 # Características Adicionales- Additional Characteristics
 
@@ -30,7 +30,6 @@ The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautif
    <ul>
 <li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
 <li>(EN) To find out your profile directory go to <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles.</li></ul>
-Additionally You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
 
 # Compatibilidad - Compatibility
 
@@ -44,6 +43,6 @@ Additionally You should install the themes from firefox add-ons web page: https:
 
 # Adapted to "Beautiful" Themes
 
-You should install the themes from firefox add-ons web page:<a href= "https://addons.mozilla.org/es/firefox/user/7024772/"> Here </a>
+You should install the themes from firefox add-ons web page: <a href= "https://addons.mozilla.org/es/firefox/user/7024772/">Here</a>
 
 ![Splash3CamaleonThemes3](https://user-images.githubusercontent.com/22057609/122129403-a85bb580-cdfb-11eb-8699-aaba1ff4d1e4.jpg)
