@@ -1,4 +1,5 @@
 # Chameleons-Beauty to Firefox CSS
+Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <ul><li>(ES) Compatibilidad completa con la versión estable del navegador.</li>
 <li>(EN) Complete Compatibility with stable version of the browser.</li></ul>
 
@@ -13,8 +14,6 @@ The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautif
 # Adapted to Light and dark Themes
 
 ![animated](https://user-images.githubusercontent.com/22057609/157361554-ba6a7c63-70a5-47b7-baec-412ae5b26a30.png)
-
-Theme to "Beautiful" Themes Lovers. v89-90 versions of the browser.
 
 # ¿Cómo instalar? - How to install?
 
@@ -45,8 +44,6 @@ Additionally You should install the themes from firefox add-ons web page: https:
 
 # Adapted to "Beautiful" Themes
 
-You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
-
-The dark theme is: https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/
+You should install the themes from firefox add-ons web page:<a href= "https://addons.mozilla.org/es/firefox/user/7024772/"> Here </a>
 
 ![Splash3CamaleonThemes3](https://user-images.githubusercontent.com/22057609/122129403-a85bb580-cdfb-11eb-8699-aaba1ff4d1e4.jpg)
