@@ -26,8 +26,8 @@ Theme to "Beautiful" Themes Lovers. v89-90 versions of the browser.
    <li>Copy the chrome folder and the user.js file into your Firefox profile directory. </li>
    <li>Restart the browser. </li></ol>
    <ul>
-<li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/opera-gx#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
-<li>(EN) To find out your profile directory go to <a href="https://github.com/Godiesc/opera-gx#example-of-aboutsupport"> about:support</a> or about:profiles.</li></ul>
+<li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
+<li>(EN) To find out your profile directory go to <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles.</li></ul>
 Additionally You should install the themes from firefox add-ons web page: https://addons.mozilla.org/es/firefox/user/7024772/
 
 # Example of about:support
