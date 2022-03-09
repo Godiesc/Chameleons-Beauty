@@ -18,7 +18,7 @@ tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
     animation-name: slide1;
 }
 .tab-secondary-label:is([muted], [activemedia-blocked]) {
-    display: none !important
+    display: none !important;
 }
 /*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
 
@@ -77,16 +77,18 @@ tab[pinned]:not(:hover) .tab-icon-overlay:not([soundplaying]) {
     border-radius: 10px !important;
     color: var(--lwt-tab-text) !important;
     background-color: var(--lwt-selected-tab-background-color) !important;
-    fill-opacity: 1 !important
+    fill-opacity: 1 !important;
+    top: 10px !important;
 }
 tab:not([pinned], [selected]) .tab-icon-overlay:is([sharing], [soundplaying]):not([pinned]) {
     color: var(--lwt-tab-text) !important;
     background-color: color-mix(in srgb, var(--lwt-tab-text) 11%, var(--lwt-accent-color)) !important;
+    top: 12px !important;
 }
 /*Compartiendo microfono y cámara*/
 
 .tab-icon-overlay:not([crashed]):is([sharing]) {
-    top: 12px !important;
+    top: 10px !important;
     stroke: transparent !important;
 }
 /*----ícono "reproduciendo" hover----*/
@@ -127,6 +129,7 @@ tab:not([pinned], [selected]) .tab-icon-overlay:hover:is([sharing], [soundplayin
     color: var(--lwt-tab-text) !important;
     background-color: var(--lwt-selected-tab-background-color) !important;
     stroke: var(--lwt-selected-tab-background-color) !important;
+    top: 10px !important;
 }
 /*muteado hover*/
 
