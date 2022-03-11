@@ -13,7 +13,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 # Adapted to Light and dark Themes
 
-![animated](https://user-images.githubusercontent.com/22057609/157925612-7c2b2b53-f90b-4334-9d4d-398970fc495b.png)
+![animated](https://user-images.githubusercontent.com/22057609/157925832-db0c797f-dd21-4bc9-8a4d-03136d2128b0.png)
 
 # ¿Cómo instalar? - How to install?
 
