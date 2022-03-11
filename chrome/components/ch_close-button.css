@@ -4,7 +4,6 @@
 /*"Botón de cerrar pestaña"*/
 .tabbrowser-tab .tab-close-button {
     list-style-image: url('../images/close.svg') !important;
-    margin-inline-start: 0px !important;
     width: 16px !important;
     height: 16px !important;
     padding: 3px !important;
@@ -14,6 +13,9 @@
 .tabbrowser-tab .tab-close-button:hover {
     background-color: color-mix(in srgb, var(--lwt-tab-text) 14%, transparent) !important;
 }
+/* X siempre visible :hover*/
+/*
 .tabbrowser-tab .tabbrowser-tab:not([pinned]):hover .tab-close-button {
     display: -moz-box !important
 }
+*/

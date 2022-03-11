@@ -100,8 +100,8 @@ panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disab
     margin-right: 4px !important;
     padding-top: 3px !important;
     padding-bottom: 3px !important;
-}
-#context-sep-navigation {
-    margin-top: 4px !important;
-    border-color: var(--panel-separator-color) !important;
 }*/
+#context-sep-navigation {
+    margin-top: 0px !important;
+    border-image: var(--panel-separator-zap-gradient) 1 !important;
+}

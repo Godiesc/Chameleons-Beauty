@@ -2,7 +2,6 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*-"Radiobutton"-ProtecciónAntirastreo*/
-
 .protections-popup-tp-switch[enabled]:hover {
     background-color: #3030ff !important;
     border-color: transparent !important;
@@ -12,7 +11,6 @@
     border-color: transparent !important;
 }
 /*color Rojo de boton "borrar marcador"*/
-
 #editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton {
     box-shadow: inset 0px 0px 0 1px var(--button-bgcolor) !important;
 }
@@ -21,8 +19,10 @@
     color: #f0f6fc !important;
     box-shadow: none !important;
 }
-/*color letras de boton "Guardar" marcador en :hover*/
-
+/*color boton "Guardar" marcador en :hover*/
+#editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton:hover{
+background-image: var(--panel-separator-zap-gradient) !important;
+}
 #editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton:hover {
     color: #eaeaea !important;
 }
@@ -32,7 +32,7 @@ panel menulist, panel menulist:not([open]) {
     box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
 }
 panel menulist:hover, panel menulist[open] {
-    background-color: var(--button-primary-bgcolor) !important;
+    background-image: var(--panel-separator-zap-gradient) !important;
     color: #eaeaea !important;
     box-shadow: none !important;
 }
@@ -43,14 +43,15 @@ panel menulist:hover, panel menulist[open] {
     border-radius: 4px !important
 }
 #editBookmarkPanel .expander-up:hover, #editBookmarkPanel .expander-down:hover {
-    border-color: var(--button-primary-bgcolor) !important;
-    background-color: var(--button-primary-bgcolor) !important;
+    border: none !important;
+    background-image: var(--panel-separator-zap-gradient) !important;
     color: #eaeaea !important;
 }
 /*Color -fondo y letras - botón menu desplegable*/
 
 treechildren::-moz-tree-row(selected) {
     background-color: var(--button-primary-bgcolor) !important;
+    outline: none !important;
 }
 treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected), treechildren::-moz-tree-cell-text(selected) {
     color: white !important;
@@ -59,7 +60,6 @@ treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected
 /*--------------------------Marcadores----------------------------------*/
 
 /*Color de "highlight" inputtext*/
-
 richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
     background-color: var(--button-primary-bgcolor) !important;
     color: white !important;
@@ -76,4 +76,32 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
   border-radius: 4px !important;
   margin-top: 4px !important;
   margin-inline-start: 4px !important;
+}
+/*Color de iconos de la toolbar cuando están :hover */
+#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-badge-stack {
+    fill: var(--lwt-toolbarbutton-icon-fill-attention) !important;
+}
+/*Aspecto cuadro deplegable mouse hover*/
+#tabbrowser-tab-tooltip,#places-tooltip-insecure-icon,
+#btTooltip,#un-toolbar-tooltip,
+#tooltip,.tooltip,#aHTMLTooltip,
+#urlTooltip,tooltip,.places-tooltip {
+	appearance: none !important;
+	color: var(--lwt-tab-text) !important;
+	width: auto !important;
+	height: auto !important;
+	background: color-mix(in srgb, var(--arrowpanel-background) 96%, var(--lwt-tab-text)) !important;    
+	border-color: color-mix(in srgb, var(--arrowpanel-background)70%, var(--lwt-tab-text)) !important;
+	margin-inline-start: 4x !important;
+    margin-inline-end: 4x !important;
+	font-size: 14px !important;
+	opacity: 1 !important;
+	padding-top: 3px !important;
+    padding-bottom: 0px !important;
+	border-radius: 4px !important;
 }

@@ -1,6 +1,28 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/*Color fondo clic por los diferentes items de menús principales*/
+.protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
+ panelview .toolbarbutton-1:not([disabled], [open]):is(:active), toolbarbutton.subviewbutton:not([disabled], [open]):is(:active), 
+.navigable.subviewbutton:not([disabled], [open]):is(:active), menu.subviewbutton:not([disabled])[_moz-menuactive], 
+ menuitem.subviewbutton:not([disabled])[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:active),
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:active) {
+ background-image: var(--panel-separator-zap-gradient) ;
+}
+/*Menú hamburguesa más amplio*/
+#appMenu-popup panelview{
+    padding-top: calc(24px + var(--tab-block-margin)) !important;
+    width: 24.5em !important;
+}
+/*Menu hamburguesa Logo */
+#PanelUI-menu-button > stack{
+  list-style-image: url("../images/foxFill.svg") !important;
+  display: -moz-box;
+  fill: var(--toolbarbutton-icon-fill) !important;
+}
+#PanelUI-menu-button[open="true"] > stack{
+  list-style-image: url("../images/foxlogo.svg") !important;
+}
 /*Linea gradiente en los menús principales*/
 .PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient1) 1 !important;}
 .PanelUI-subView menuseparator, #PlacesToolbar menupopup[placespopup="true"] toolbarseparator, #widget-overflow-mainView > toolbarseparator,
@@ -8,24 +30,19 @@
 #protections-popup-multiView toolbarseparator, #identity-popup-mainView toolbarseparator, #identity-popup-securityView > toolbarseparator, 
 #editBookmarkPanel toolbarseparator, #downloadsFooterButtons > toolbarseparator {    
     /*border-image: var(--gradient) 1 !important;*/
-    /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
+    /*border-image: var(--panel-separator-zap-gradient) 1 !important;*/
 }
-
+/*Linea de arcoiris en los menús principales*/
+.PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient) 1 !important;
+}
 /*
 #PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
     border-image: var(--gradient) 1 !important;
 }
 */
-
 /*-----------------íconos en el menú de hamburguesa----------------------*/
 
 /*Posicion y margen de los íconos*/
-
-#PanelUI-fxa-menu-connect-device-button, #PanelUI-fxa-menu-sendtab-button, #PanelUI-fxa-menu-account-signout-button, [oncommand="switchToTabHavingURI('about:performance', true)"] {
-    background-position: left 8px center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-}
 .subviewbutton:not(.subviewbutton-iconic, .subviewbutton-back, [checked="true"])>.toolbarbutton-icon {
     width: 16px;
     margin-inline-end: 8px !important;
@@ -95,7 +112,7 @@
 /*Ícono Marcadores*/
 
 #appMenu-bookmarks-button, #panelMenuBookmarkThisPage[starred], #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks {
-    list-style-image: url("chrome://browser/skin/bookmark.svg");
+    list-style-image: url("../images/bookmark-empty.svg");
 }
 /*ícono Historial*/
 
@@ -161,26 +178,8 @@
     list-style-image: url("chrome://browser/skin/customize.svg");
 }
 /*Ícono SincronizarAhora*/
-
 .syncNowBtn {
     visibility: visible !important;
     margin-inline-end: 8px;
     -moz-box-ordinal-group: 0 !important;
-}
-/*Ícono ConectarOtroDispositivo*/
-
-#PanelUI-fxa-menu-connect-device-button {
-    background-image: url("chrome://browser/skin/fxa/add-device.svg");
-    -moz-box-ordinal-group: 1 !important;
-    background-position: left 8px center;
-    background-repeat: no-repeat;
-    background-size: 16px
-}
-/*ícono en MásHerramientas*/
-
-#PanelUI-fxa-menu-account-signout-button {
-    background-image: url("chrome://browser/skin/sign-out.svg");
-}
-[oncommand="switchToTabHavingURI('about:performance', true)"] {
-    background-image: url("chrome://global/skin/icons/performance.svg");
 }

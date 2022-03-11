@@ -1,6 +1,10 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/*Color bolita de cargando página*/
+#tabbrowser-tabs{
+    --tab-loading-fill: var(--button-primary-bgcolor) !important;
+}
 /*Sombra de la pestaña activa eliminada, borde superior de la toolbar y transparencia de la tabline*/
 .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
     box-shadow: none !important;
@@ -9,10 +13,13 @@
     text-shadow: none !important
 }
 #navigator-toolbox { --lwt-tabs-border-color: var(--gradient, transparent) !important; }
-#tabbrowser-tabs { --lwt-tab-line-color: var(--gradient, transparent) !important; }
-
+#tabbrowser-tabs { --lwt-tab-line-color: var(--gradient, transparent) !important; 
+}
+/* Tamaño horizontal pestañas */
+.tabbrowser-tab[fadein]:not([style^="max-width"]){ max-width: 200px !important 
+}
 /*Linea gradiente en pestaña activa*/
-.tab-background{ margin-left: -1px !important; margin-right: -1px !important}
+.tab-background{ margin-left: -1px !important; margin-right: -1px !important;}
 .tab-content {height: calc(var(--tab-min-height) - 2px) !important; margin-top: calc(var(--margin-top) + 1px) !important; }
 
 .tab-background[selected="true"] {
@@ -66,7 +73,7 @@
 }
 /*favicon de pagina newtab*/
 .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("../images/foxlogo.svg");
+    content: url("../images/foxlogo.svg")!important;
 }
 /* Remove little space left to first tab */
 /*.titlebar-spacer[type="pre-tabs"]{display:none;}*/

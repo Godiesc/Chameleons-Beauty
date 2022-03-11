@@ -5,7 +5,7 @@
 
 @-moz-document url(chrome://browser/content/places/places.xhtml) {
     :root {
-        --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background), black) !important;
+        --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 75%, black) !important;
         --organizer-border-color:color-mix(in srgb, var(--organizer-separator-color), transparent) !important;
     }
     /*-----------------------Menú principal-------------------------*/
@@ -34,7 +34,7 @@
     /*---------------sidebar Izquierda----------------*/
     #placesList, #places treechildren::-moz-tree-row {
         color: var(--organizer-color) !important;
-        background-color: var(--organizer-pane-background) !important;
+        /*background-color: var(--organizer-pane-background) !important;*/
     }
     #placesView>splitter {
         border-color: var(--organizer-border-color) !important;
@@ -57,7 +57,7 @@
     }
     /*--------------Fondo general de Editar--------------------*/
     #detailsPane, #places #downloadsRichListBox, #editBMPanel_keywordRow, #editBMPanel_locationRow, #editBMPanel_tagsRow, #editBMPanel_tagsSelectorRow {
-        background: var(--organizer-pane-background) !important;
+        background: var(--organizer-pane-background-2) !important;
         color: var(--organizer-color) !important;        
     }
     /*Fondo inputText al Editar*/
@@ -67,6 +67,12 @@
     /*Color "selected" de items*/
     #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected), #placesList>treechildren::-moz-tree-row(selected) {
         background: linear-gradient(to right, #1060bf 0%, #d02f85bb 100%) !important;
+        margin-left: 2px !important;
+        margin-right:  2px !important;
+        border-radius: 4px !important;
+    }
+    /*Color "hover" de items*/
+    #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(hover), #placesList>treechildren::-moz-tree-row(hover) {
         margin-left: 2px !important;
         margin-right:  2px !important;
         border-radius: 4px !important;
