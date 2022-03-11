@@ -3,7 +3,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <ul><li>(ES) Compatibilidad completa con la versión estable del navegador.</li>
 <li>(EN) Complete Compatibility with stable version of the browser.</li></ul>
 
-![SplashChameleon](https://user-images.githubusercontent.com/22057609/143943154-5c9f4e95-5746-42a0-b804-afab606c7260.png)
+![imagen](https://user-images.githubusercontent.com/22057609/157924816-3a4db6fe-c29a-4c08-8164-0c55753abb45.png)
 
 <ul><li>The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">beautiful GX Proton</a></li></ul>
 
