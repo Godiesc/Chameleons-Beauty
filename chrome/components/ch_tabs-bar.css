@@ -12,8 +12,8 @@
 .tab-label {
     text-shadow: none !important
 }
-#navigator-toolbox { --lwt-tabs-border-color: var(--gradient, transparent) !important; }
-#tabbrowser-tabs { --lwt-tab-line-color: var(--gradient, transparent) !important; 
+#navigator-toolbox { --lwt-tabs-border-color: none !important; }
+#tabbrowser-tabs { --lwt-tab-line-color: none !important; 
 }
 /* Tamaño horizontal pestañas */
 .tabbrowser-tab[fadein]:not([style^="max-width"]){ max-width: 200px !important 
