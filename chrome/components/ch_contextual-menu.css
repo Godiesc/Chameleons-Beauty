@@ -45,7 +45,7 @@ menuseparator {
     border: 1px solid var(--arrowpanel-border-color, #50505090) !important;
     border-radius: 6px !important;
     /*ColorFondoAlPasarElMouseSobreItems*/
-    --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 90%, var(--organizer-color, var(--arrowpanel-color))) !important;
+    --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
 }
 /*ColoresMenú*/
 
