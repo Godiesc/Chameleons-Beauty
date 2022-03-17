@@ -16,7 +16,7 @@
 .urlbarView-row-inner{ padding-left: 2px !important;}
 #urlbar .search-panel-header{ padding-left: 4px !important; }
 .urlbarView-results{ margin-bottom: -14px !important; }
-.urlbarView-favicon{ padding: 5px !important; border-radius: 7px !important;}
+.urlbarView-favicon{ padding-left: 5px !important; padding-right: 5px !important; padding-block: 3px !important; border-radius: 7px !important;}
 
 /* Label "Sugerencias de firefox - Sugerencias de google" */
 .urlbarView-row[label] {margin-top: 16px !important;}
