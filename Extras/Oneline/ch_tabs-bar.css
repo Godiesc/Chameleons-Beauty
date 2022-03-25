@@ -93,8 +93,11 @@
 }
 #nav-bar {
   margin-right: calc(100vw - var(--navbarWidth)) !important;
-  margin-top  : -34px !important;
-  height: 36px !important;
+  margin-top  : -36px !important;
+  height: 38px !important;
+}
+#urlbar-container{
+    margin-top: 1px !important;
 }
 /* Espacio de arrastre */
 .titlebar-spacer {
