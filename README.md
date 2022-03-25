@@ -15,6 +15,10 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 ![animated](https://user-images.githubusercontent.com/22057609/157930265-a04a6fd0-c627-4ad5-ac70-7b91c3ca78a7.png)
 
+# Extras 
+<ul><li> OneLine - <a href ="https://user-images.githubusercontent.com/22057609/160184709-a8419c58-0a53-46bf-a852-0a7f44904a93.png">Preview</a></li>
+<li>Play/Pause icon button extension. </li></ul>
+
 # ¿Cómo instalar? - How to install?
 
 <ol><b>(ES) Pasos para configurar el tema:</b>
