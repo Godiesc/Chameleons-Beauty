@@ -102,7 +102,7 @@
 /* Espacio de arrastre */
 .titlebar-spacer {
     display: -moz-box !important;
-    width: 10px !important;
+    width: 0px !important;
 }
 /* urlbar open */
 #urlbar-container:not([open=true]){ min-width: 22vw !important;}
