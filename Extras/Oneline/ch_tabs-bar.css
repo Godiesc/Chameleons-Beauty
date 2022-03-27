@@ -100,9 +100,13 @@
     margin-top: 1px !important;
 }
 /* Espacio de arrastre */
-.titlebar-spacer {
-    display: -moz-box !important;
+:root[sizemode="maximized"] .titlebar-spacer {
+    display: none !important;
     width: 0px !important;
+}
+:root:not([sizemode="maximized"]) .titlebar-spacer {
+    display: moz-box !important;
+    width: 12px !important;
 }
 /* urlbar open */
 #urlbar-container:not([open=true]){ min-width: 22vw !important;}
