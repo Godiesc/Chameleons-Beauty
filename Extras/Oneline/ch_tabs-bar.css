@@ -19,7 +19,7 @@
 .tabbrowser-tab[fadein]:not([style^="max-width"]){ max-width: 200px !important 
 }
 /*Linea gradiente en pestaña activa*/
-.tab-background{ margin-left: -1px !important; margin-right: -1px !important;}
+.tab-background{ margin-left: -1px !important; margin-right: -1px !important; border-radius: 5px !important; }
 .tab-content {height: calc(var(--tab-min-height) - 2px) !important; margin-top: calc(var(--margin-top) + 1px) !important; }
 
 .tab-background[selected="true"] {
