@@ -28,48 +28,6 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient4897">
-      <stop
-         style="stop-color:#bd2bdb;stop-opacity:1"
-         offset="0"
-         id="stop4893" />
-      <stop
-         style="stop-color:#3063ff;stop-opacity:1"
-         offset="1"
-         id="stop4895" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient1590">
-      <stop
-         style="stop-color:#bd2bdb;stop-opacity:1"
-         offset="0"
-         id="stop1586" />
-      <stop
-         style="stop-color:#3063ff;stop-opacity:1"
-         offset="1"
-         id="stop1588" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1590"
-       id="linearGradient1592"
-       x1="12.423732"
-       y1="28.875187"
-       x2="43.24205"
-       y2="6.5933523"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient4897"
-       id="linearGradient3044"
-       x1="12.423732"
-       y1="28.875187"
-       x2="43.24205"
-       y2="6.5933523"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient5159"
        id="linearGradient5161"
        x1="11.832724"
@@ -88,10 +46,10 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="15.615275"
-     inkscape:cx="11.046875"
-     inkscape:cy="12.839991"
-     inkscape:window-width="1366"
-     inkscape:window-height="715"
+     inkscape:cx="5.859647"
+     inkscape:cy="12.839992"
+     inkscape:window-width="1302"
+     inkscape:window-height="745"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -124,7 +82,7 @@
          stroke-linejoin="round"
          id="path4"
          sodipodi:nodetypes="cccssssc"
-         style="fill:url(#linearGradient1592);fill-opacity:1;stroke:url(#linearGradient3044);stroke-opacity:1" />
+         style="fill:#305fff;fill-opacity:1;stroke:#305fff;stroke-opacity:1" />
       <path
          d="M 34.877078,15.206263 23.50121,30.189702"
          stroke="#101019"
@@ -134,7 +92,7 @@
          fill="none"
          fill-rule="evenodd"
          id="path6"
-         style="stroke-width:5.59299395;stroke-linejoin:miter;stroke-miterlimit:6.5999999;stroke-dasharray:none;fill:#281aff;fill-opacity:0.01000001;stroke:#161619;stroke-opacity:1" />
+         style="stroke-width:5.59299395;stroke-linejoin:miter;stroke-miterlimit:6.5999999;stroke-dasharray:none;fill:#281aff;fill-opacity:0.01000001;stroke:#23202d;stroke-opacity:1" />
       <path
          d="m 14.422073,22.517937 8.885112,7.86579"
          stroke="#101019"
@@ -144,7 +102,7 @@
          fill="none"
          fill-rule="evenodd"
          id="path8"
-         style="stroke-width:5.1786981;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;fill:url(#linearGradient5161);fill-opacity:0.01000001;stroke:#161619;stroke-opacity:1" />
+         style="stroke-width:5.1786981;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;fill:url(#linearGradient5161);fill-opacity:0.01000001;stroke:#23202d;stroke-opacity:1" />
     </g>
   </g>
 </svg>
