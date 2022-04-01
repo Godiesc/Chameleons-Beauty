@@ -9,6 +9,16 @@
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:active) {
  background-image: var(--panel-separator-zap-gradient) ;
 }
+/*Color fondo gradiente :hover por los diferentes items de menús principales*/
+/*
+.protections-popup-category:hover, .protections-popup-footer-button:hover, #protections-popup-show-report-stack:hover > .protections-popup-footer-button,
+ panelview .toolbarbutton-1:not([disabled], [open]):is(:hover), toolbarbutton.subviewbutton:not([disabled], [open]):is(:hover), 
+.navigable.subviewbutton:not([disabled], [open]):is(:hover), menu.subviewbutton:not([disabled])[_moz-menuhover], 
+ menuitem.subviewbutton:not([disabled])[_moz-menuhover], .widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:hover),
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:hover) {
+ background-image: var(--panel-separator-zap-gradient) ;
+}
+*/
 /*Menú hamburguesa más amplio*/
 #appMenu-popup panelview{
     padding-top: calc(24px + var(--tab-block-margin)) !important;
