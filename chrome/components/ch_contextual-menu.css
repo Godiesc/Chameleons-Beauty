@@ -2,20 +2,23 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*Menú contextual*/
-
 menupopup>menuitem, menupopup>menu {
     padding-block: 0.3em !important;
 }
 /* Menu items border and padding */
-
 menupopup>menuitem, menupopup>menu {
     border-radius: 3px !important;
     margin-left: 4px !important;
     margin-right: 4px !important;
-    padding-inline-start: 0.5em !important
+    padding-inline-start: 0.5em !important;
 }
+/*Gradient color to :hover items*/
+/*
+menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
+    background-image: var(--panel-separator-zap-gradient);
+}
+*/
 /*borde izquierda y derecha del menú contextual*/
-
 menugroup>menuitem:first-child {
     padding-left: 4px !important;
 }
@@ -23,12 +26,10 @@ menugroup>menuitem:last-child {
     padding-right: 4px !important;
 }
 /* context menu top buttons radius */
-
 menugroup>menuitem>hbox>image {
     border-radius: 4px !important;
 }
 /*separador de items*/
-
 menuseparator {
     border-color: var(--panel-separator-color, #50505090) !important;
     margin-left: 5px !important;
@@ -37,7 +38,6 @@ menuseparator {
   /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
 }
 /*Colores generales*/
-
 .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background, #50505090) !important;
     background-color: var(--arrowpanel-background, #50505090) !important;
@@ -48,7 +48,6 @@ menuseparator {
     --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
 }
 /*ColoresMenú*/
-
 .menupopup {
     --panel-color: var(--arrowpanel-color, FieldText) !important;
     /*ColorLetrasDelMenú*/
@@ -62,33 +61,27 @@ menuseparator {
     /*LineaSeparadoraItems*/
 }
 /*íconos deshabilitados*/
-
 menu[disabled="true"], menuitem[disabled="true"] {
     color: color-mix(in srgb, var(--arrowpanel-background)80%, var(--arrowpanel-color)) !important;
 }
 /*Color letras :hover al pasar mouse sobre items del menú*/
-
 panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disabled="true"]):hover, menu[_moz-menuactive], menu[open], menuitem:not([disabled="true"]):hover, menuitem:not([disabled="true"])[_moz-menuactive] {
     color: var(--arrowpanel-color) !important;
 }
 /*Color letras del menú desplegable*/
-
 #editBMPanel_folderMenuList>menupopup>menuitem {
     color: var(--arrowpanel-color) !important;
 }
 /*Margenes menú desplegable marcadores*/
-
 #PlacesToolbar menuitem, #PlacesToolbar menu, .subview-subheader {  
     margin-left: 7px !important;
     margin-right: 7px !important;     
 }
 /*Separador de items menú desplegable marcadores*/
-
 #PlacesToolbar menupopup[placespopup="true"] menuseparator{
    margin-left: 7px !important;
     margin-right: 7px !important;
 }
-
 /*Colores y márgenes iconos superiores del menú contextual*/
 /*
 #main-menubar>menupopup, #context-navigation {
