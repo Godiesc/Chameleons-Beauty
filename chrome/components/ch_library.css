@@ -7,6 +7,7 @@
     :root {
         --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 75%, black) !important;
         --organizer-border-color:color-mix(in srgb, var(--organizer-separator-color), transparent) !important;
+        --menu-items-hover-background2: color-mix(in srgb, var(--organizer-pane-background) 75%, white) !important;
     }
     /*-----------------------Menú principal-------------------------*/
     #placesToolbar>toolbarbutton {

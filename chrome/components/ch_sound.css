@@ -10,7 +10,7 @@ tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
     font-size: 2px !important;
     color: transparent !important;
     margin-top: 0px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 3px !important;
     opacity: 1 !important;       
     border-radius: 4px !important;
     animation: 500ms infinite ease-in-out;
@@ -25,7 +25,7 @@ tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
 }
  .tab-icon-overlay, .tab-icon-overlay[activemedia-blocked], .tab-icon-overlay[pinned] {
     height: 13px !important; width: 14px !important; z-index: 1; padding: 0px !important;
-    top: 12px !important; left: 8px !important;  border-radius: 50% !important;
+    top: 12px !important; left: 10px !important;  border-radius: 50% !important;
 }
 tab[pinned]:not(:hover) .tab-icon-overlay:not([soundplaying]),tab:not([pinned],:hover) .tab-icon-overlay:is([sharing]):not(:hover){
     opacity: 0 !important;

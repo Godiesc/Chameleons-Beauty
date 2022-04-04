@@ -3,7 +3,8 @@
 
 :root{
   --lwt-frame: var(--toolbar-bgcolor, Field) !important;      
-  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important; 
+  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important;
+  --panel-description-color: var(--button-primary-bgcolor) !important;                                                      /*"Color de letras de: correo de la cuenta, y dispositivos conectados"*/
   
   --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
   --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /*FondoPestañasNoSeleccionadasVentanaInactiva*/
@@ -14,7 +15,7 @@
   --tab-block-margin: 3px 1px !important;                                                                          /*margenes pestañas  <-------------------¬ */
   --margin-top: 3px !important;                                                                                    /*margen top pestañas - variable personal \ */
   --tab-min-height:  32px !important;                                                                              /*tamaño pestañas*/
-    
+  
   --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
   --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
   --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/

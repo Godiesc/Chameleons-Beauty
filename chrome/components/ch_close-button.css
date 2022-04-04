@@ -3,10 +3,9 @@
 
 /*"Botón de cerrar pestaña"*/
 .tabbrowser-tab .tab-close-button {
-    list-style-image: url('../images/close.svg') !important;
     width: 16px !important;
     height: 16px !important;
-    padding: 3px !important;
+    padding: 2px !important;
     margin-inline-end: -5px !important;
     border-radius: 10px !important;
 }

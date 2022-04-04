@@ -1,6 +1,24 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/*Color label deshabilitado y elementos de: "protección contra rastreo"*/
+.protections-popup-category.notFound {color: #777 !important;}
+.panel-info-button{width: 10px !important;}
+.panel-info-button:not([disabled]):is([checked],:hover, :active) {background: var(--panel-separator-zap-gradient) !important;}
+.panel-info-button:not([disabled]):is(:hover) {background: var(--button-primary-hover-bgcolor) !important;
+}
+/*Borde Gradiente paneles desplegables - Arrowpanels*/
+slot[part="content"]{
+  background-image: linear-gradient(165deg, #d02f85ee 0%, #b336fc9e 8%, #3567fd9e 30%, #4e7afd9e 60%,#4e89fd9e 70%, #d02f859e 100%) !important; 
+  border: none !important;
+  background-color: var(--arrowpanel-background) !important;
+  /*box-shadow: 0 0 0px 1px var(--arrowpanel-background) !important;*/
+}
+panelview{
+   border: 1px solid transparent !important;
+   border-radius: var(--uc-slot-radius, var(--panel-border-radius)) !important;
+   background-clip: padding-box !important;
+}
 /*Color fondo clic por los diferentes items de menús principales*/
 .protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
  panelview .toolbarbutton-1:not([disabled], [open]):is(:active), toolbarbutton.subviewbutton:not([disabled], [open]):is(:active), 

@@ -22,8 +22,12 @@
     list-style-image: url("../images/bookmark-empty.svg") !important;
 }
 /* Ícono protección contra rastreo */
+#tracking-protection-icon-container, #page-action-buttons{
+  -moz-box-ordinal-group: 2 !important;
+}
 #urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
     list-style-image: url("../images/shield.svg") !important;
+    fill: var(--lwt-frame) !important;
 }
 #urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box[hasException] > #tracking-protection-icon {
     list-style-image: url(chrome://browser/skin/tracking-protection-disabled.svg) !important;
