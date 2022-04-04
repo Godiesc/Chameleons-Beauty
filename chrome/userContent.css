@@ -44,8 +44,9 @@ body {
     
     --newtab-contextmenu-background-color: red !important;                                                                      /*contextual menu de tres puntos pinned*/   
     --newtab-element-hover-color: var(--newtab-background-color-secondary) !important;                                          /*color de fondo al hacer clic al menú 3 puntos*/
-    --newtab-element-hover-color: linear-gradient(to left, #1293bd90 5%, #cb2fe17a) !important;                                  /*color al pasar el mouse sobre los items del menú tres puntos*/
-    --newtab-element-secondary-hover-color: linear-gradient(to left,#1293bd90 5%, #cb2fe17a) !important; 
+    
+    /*color al pasar el mouse sobre los items del menú tres puntos*/
+    --newtab-element-secondary-hover-color: linear-gradient( to right, #902c8ad0 0%, #902cfc90 40%, #3083ff80 100%) !important; 
     --newtab-element-secondary-active-color: linear-gradient(to left,#1293bdb0 5%, #cb2fe19a) !important;                       /*Color al hacer clic en el menú contextual de 3 puntos*/
     
     --newtab-icon-primary-color:var(--newtab-wordmark-color) !important;                                                         /*tres puntos hover*/ 
@@ -93,7 +94,7 @@ body {
  padding-inline-start: 0.5em !important; border-radius: 4px !important; padding-inline-end: 0.5em !important;}
   
 /*Boton de 3 puntos al hacerle hover y clic*/
-.context-menu-button:active, .context-menu-button:focus, .context-menu-button:hover{fill: #47a8d7 !important}
+.context-menu-button:active, .context-menu-button:focus, .context-menu-button:hover{fill: #47a8d7 !important; background-color: transparent !important;}
     
 /*Cuadro de busqueda eliminado*/
 /*.search-inner-wrapper{ display: none !important; }*/
