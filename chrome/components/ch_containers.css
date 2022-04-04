@@ -27,7 +27,7 @@
 }
 .tab-icon-pending:not([selected])[pinned], .tab-sharing-icon-overlay:not([selected])[pinned], .tab-throbber[busy][pinned], .tab-icon-image:not([selected])[pinned] {
     box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
-    padding: 2px !important; border-radius: 1px !important;
+    padding: 2px !important; border-radius: 2px !important;
 }
 .tab-icon-pending[pinned], .tab-sharing-icon-overlay[pinned], .tab-icon-image[pinned], .tab-throbber:is([busy][pinned]) {
     margin-right: -1px !important;
