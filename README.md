@@ -9,7 +9,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 # Características Adicionales- Additional Characteristics
 
-![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/140859159-3de9c86a-6afe-42fc-a6cf-f5843702bba0.png)
+![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/161662584-6dc3061a-6c99-46be-9ad8-13a3b3d82f1d.png)
 
 # Adapted to Light and dark Themes
 
