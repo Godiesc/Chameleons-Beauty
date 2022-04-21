@@ -38,10 +38,8 @@ menuseparator {
   /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
 }
 /*Colores generales*/
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ 
-    menupopup{background: var(--gradient) !important; border-radius: 6px !important;}}
-#PlacesToolbar menupopup { padding-top: 0px !important; }
-#PlacesToolbar menupopup, #BMB_bookmarksPopup menupopup { padding-inline-start: 0px !important; }
+menupopup{background: var(--gradient) !important; border-radius: 6px !important;}
+#PlacesToolbar menupopup { padding: 0px !important;}
 #PlacesToolbar menupopup menupopup{ margin-inline-start: 0px !important; }
 .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background, #50505090) !important;
@@ -49,13 +47,10 @@ menuseparator {
     color: var(--arrowpanel-color, #50505090) !important;
     border: 1px solid transparent !important;
     border-radius: 6px !important;
-    margin-right: 0px !important; 
-    margin-block: 0px !important; 
+    margin: 0px !important;
+    background-clip: padding-box !important;
     /*ColorFondoAlPasarElMouseSobreItems*/
     --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
-}
-.menupopup-arrowscrollbox {
-    background-clip: padding-box !important;
 }
 /*ColoresMenú*/
 .menupopup {
