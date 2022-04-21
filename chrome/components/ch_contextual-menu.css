@@ -38,16 +38,23 @@ menuseparator {
   /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
 }
 /*Colores generales*/
-menupopup {background: var(--gradient) !important; border-radius: 6px !important; padding: 0px !important; }
-#PlacesToolbar menupopup { padding: 6px 0px 0 4px!important; margin-top: 0px !important;}
+@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ 
+    menupopup{background: var(--gradient) !important; border-radius: 6px !important;}}
+#PlacesToolbar menupopup { padding-top: 0px !important; }
+#PlacesToolbar menupopup, #BMB_bookmarksPopup menupopup { padding-inline-start: 0px !important; }
+#PlacesToolbar menupopup menupopup{ margin-inline-start: 0px !important; }
 .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background, #50505090) !important;
     background-color: var(--arrowpanel-background, #50505090) !important;
     color: var(--arrowpanel-color, #50505090) !important;
     border: 1px solid transparent !important;
     border-radius: 6px !important;
+    margin-right: 0px !important; 
+    margin-block: 0px !important; 
     /*ColorFondoAlPasarElMouseSobreItems*/
     --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
+}
+.menupopup-arrowscrollbox {
     background-clip: padding-box !important;
 }
 /*ColoresMenú*/
@@ -78,7 +85,7 @@ panel treechildren::-moz-tree-row(selected), panel button:hover, menu:not([disab
 /*Margenes menú desplegable marcadores*/
 #PlacesToolbar menuitem, #PlacesToolbar menu, .subview-subheader {  
     margin-left: 7px !important;
-    margin-right: 7px !important;     
+    margin-right: 7px !important;
 }
 /*Separador de items menú desplegable marcadores*/
 #PlacesToolbar menupopup[placespopup="true"] menuseparator{
