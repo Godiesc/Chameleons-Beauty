@@ -23,13 +23,13 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 <ol><b>(ES) Pasos para configurar el tema:</b>
 
-   <li>Descarga el tema con el gran botón verde: "Code" >> Download.zip</li>
-   <li>Copia la carpeta chrome y el archivo user.js dentro de la carpeta de perfil de tu usuario de firefox.</li>
+   <li>Descarga el tema con el gran botón verde: <code>Code</code> >> <code>Download.zip</code></li>
+   <li>Copia la carpeta chrome y el archivo <code>user.js</code> dentro de la carpeta de perfil de tu usuario de firefox.</li>
    <li>Reinicia el navegador.</li></ol>
 
 <ol><b>(EN) Steps to config the theme:</b>
-   <li>Download the theme with the big green button: "Code" >> Download.zip</li> 
-   <li>Copy the chrome folder and the user.js file into your Firefox profile directory. </li>
+   <li>Download the theme with the big green button: <code>Code</code> >> <code>Download.zip</code></li> 
+   <li>Copy the chrome folder and the <code>user.js</code> file into your Firefox profile directory. </li>
    <li>Restart the browser. </li></ol>
    <ul>
 <li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
@@ -41,6 +41,7 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <li>Linux - Manjaro (tested - Probado) ✔
 <li>Windows 7 (Not tested - No probado)</li>
 <li>Windows 11 (Not tested - No Probado)</li></ul>
+<li>MacOS (Not tested - No Probado)</li></ul>
 
 # Example of about:support
 ![120349392-b372f980-c2c3-11eb-904d-b088168fd849](https://user-images.githubusercontent.com/22057609/156908375-824f8679-56a5-4d09-a86f-353a7f61135e.png)
