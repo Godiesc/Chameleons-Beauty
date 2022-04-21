@@ -40,8 +40,8 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <ul><li>Windows 10 (Tested - Probado) ✔
 <li>Linux - Manjaro (tested - Probado) ✔
 <li>Windows 7 (Not tested - No probado)</li>
-<li>Windows 11 (Not tested - No Probado)</li></ul>
-<li>MacOS (Not tested - No Probado)</li></ul>
+<li>Windows 11 (Not tested - No Probado)</li>
+<li>MacOS (Not tested - No Probado)</li></ul></ul>
 
 # Example of about:support
 ![120349392-b372f980-c2c3-11eb-904d-b088168fd849](https://user-images.githubusercontent.com/22057609/156908375-824f8679-56a5-4d09-a86f-353a7f61135e.png)
