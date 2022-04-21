@@ -24,12 +24,12 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 <ol><b>(ES) Pasos para configurar el tema:</b>
 
    <li>Descarga el tema con el gran botón verde: <code>Code</code> >> <code>Download.zip</code></li>
-   <li>Copia la carpeta chrome y el archivo <code>user.js</code> dentro de la carpeta de perfil de tu usuario de firefox.</li>
+   <li>Copia la carpeta chrome y el archivo user.js dentro de la carpeta de perfil de tu usuario de firefox.</li>
    <li>Reinicia el navegador.</li></ol>
 
 <ol><b>(EN) Steps to config the theme:</b>
    <li>Download the theme with the big green button: <code>Code</code> >> <code>Download.zip</code></li> 
-   <li>Copy the chrome folder and the <code>user.js</code> file into your Firefox profile directory. </li>
+   <li>Copy the chrome folder and the user.js file into your Firefox profile directory. </li>
    <li>Restart the browser. </li></ol>
    <ul>
 <li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
