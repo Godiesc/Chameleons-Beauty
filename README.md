@@ -37,8 +37,8 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 # Compatibilidad - Compatibility
 
-<ul><li>Windows 10 (Tested - Probado) ✔
-<li>Linux - ManjaroKDE (tested - Probado) ✔
+<ul><li>Windows 10 (Tested - Probado) ✔</li>
+<li>Linux - ManjaroKDE (Not tested - No probado) soon.</li>
 <li>Windows 7 (Not tested - No probado)</li>
 <li>Windows 11 (Not tested - No Probado)</li>
 <li>MacOS (Not tested - No Probado)</li></ul></ul>
