@@ -11,6 +11,8 @@
 /* tamaño letras urlbar */
 #urlbar-input { opacity: 0.9 !important; font-weight: 501 !important; margin-left: 4px !important;
 }
+@media (-moz-platform: linux){ #urlbar-input { opacity: 0.9 !important; font-weight: 500 !important; }
+}
 /* Sugerencias de búsqueda */
 .urlbarView-row{ margin-top:-6px !important;  margin-bottom: 5px !important;}
 .urlbarView-row-inner{ padding-left: 2px !important;}
