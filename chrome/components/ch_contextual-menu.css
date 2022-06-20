@@ -105,7 +105,7 @@ menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
     color: var(--arrowpanel-color, #50505090) !important;
 }
 /* Necesario para quitar glitch indeseado al mover el mouse rapidamente sobre items de menús */
-menupopup>menuitem:not([disabled="true"], [selected="true"]), menupopup>menu:not([disabled="true"]) {
+menupopup>menuitem:not([disabled="true"], [selected="true"], :hover), menupopup>menu:not([disabled="true"], :hover) {
     appearance: none !important;
     background-color: transparent !important; }
 menupopup>menu[open="true"]{
