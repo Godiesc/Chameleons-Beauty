@@ -6,7 +6,7 @@ menupopup>menuitem, menupopup>menu {
     padding-block: 0.3em !important;
 }
 @media (-moz-platform: linux) { menupopup>menuitem, menupopup>menu {
-    padding-block: 6px !important; 
+    padding-block: 4px !important; 
 }}
 /* Menu items border and padding */
 menupopup>menuitem, menupopup>menu {
