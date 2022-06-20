@@ -3,7 +3,7 @@
 
 /*Menú contextual*/
 menupopup>menuitem, menupopup>menu {
-    padding-block: 0.4em !important;
+    padding-block: 0.3em !important;
 }
 @media (-moz-platform: linux) { menupopup>menuitem, menupopup>menu {
     padding-block: 6px !important; 
@@ -115,8 +115,10 @@ menupopup>menu[open="true"]{
 }
 /* Mostrar background-color en el item seleccionado */
 menupopup>menuitem:is([disabled="false"], [selected="true"]){
+    appearance: none !important;
     background-color: var(--button-active-bgcolor) !important; }
 menupopup>menuitem:is([disabled="false"], [selected="true"]):hover{
+    appearance: none !important;
     background-color: var(--button-active-bgcolor) !important;
 }
 /*Aspecto tooltip: mouse hover on elements*/
