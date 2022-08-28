@@ -5,8 +5,6 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
 ![imagen](https://user-images.githubusercontent.com/22057609/157924816-3a4db6fe-c29a-4c08-8164-0c55753abb45.png)
 
-<ul><li>The dark theme is: <a href= "https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">beautiful GX Proton</a></li></ul>
-
 # Características Adicionales- Additional Characteristics
 
 ![Splash1Camaleon](https://user-images.githubusercontent.com/22057609/161662584-6dc3061a-6c99-46be-9ad8-13a3b3d82f1d.png)
@@ -16,7 +14,9 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 ![animated](https://user-images.githubusercontent.com/22057609/157930265-a04a6fd0-c627-4ad5-ac70-7b91c3ca78a7.png)
 
 # Extras 
-<ul><li> OneLine - <a href ="https://user-images.githubusercontent.com/22057609/160184709-a8419c58-0a53-46bf-a852-0a7f44904a93.png">Preview</a></li>
+<ul>
+<li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Main-Image"> Main-Image </a></li>
+<li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Oneline"> OneLine </a></li>
 <li>Play/Pause icon button extension. </li></ul>
 
 # ¿Cómo instalar? - How to install?
@@ -25,11 +25,13 @@ Theme to "Beautiful" Themes Lovers. v98+ versions of the browser.
 
    <li>Descarga el tema con el gran botón verde: <code>Code</code> >> <code>Download.zip</code></li>
    <li>Copia la carpeta chrome y el archivo user.js dentro de la carpeta de perfil de tu usuario de firefox.</li>
+   <li>Usa el tema <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
    <li>Reinicia el navegador.</li></ol>
 
 <ol><b>(EN) Steps to config the theme:</b>
    <li>Download the theme with the big green button: <code>Code</code> >> <code>Download.zip</code></li> 
    <li>Copy the chrome folder and the user.js file into your Firefox profile directory. </li>
+   <li>Use the theme <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
    <li>Restart the browser. </li></ol>
    <ul>
 <li>(ES) Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li>
