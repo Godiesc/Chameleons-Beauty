@@ -29,3 +29,8 @@
 :root[style*="--lwt-additional-images"] #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
    background-image: transparent !important;
 }
+/* Color paloma del ícono de protección contra rastreo */
+#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
+    list-style-image: url("../images/shield.svg") !important;
+    fill: var(--arrowpanel-background) !important;
+}
