@@ -74,3 +74,23 @@
     --checkbox-checked-hover-bgcolor: #cc3535 !important;
     --checkbox-checked-active-bgcolor: var(--button-primary-bgcolor) !important;
 }
+/* Compatibilidad para temas que usan theme_frame para la imagen en su tema */
+:root[lwtheme-image]{
+  --tab-block-margin: 3px 2px !important;
+  --lwt-accent-color: var(--arrowpanel-background) !important; 
+  --toolbar-bgcolor: #1010199f !important;                                                                     /*"toolbar":"#131118", "Color de la toolbar"*/
+  --toolbar-field-background-color: transparent !important;                                                    /*"toolbar_field":"#1a1b25"*/
+  --toolbar-field-border-color: transparent !important;                                                        /*"toolbar_field_border": "#363540"*/
+  --toolbarbutton-icon-fill: #cacae6 !important;                                                               /*"icons" color */
+  --lwt-selected-tab-background-color: #10101900 !important;                                                   /*"tab_selected":"#363540"*/
+}
+/* Compatibilidad Parcial para temas que usan "Imagenes adicionales" en su tema */
+:root[style*="--lwt-additional-images"]{
+  --tab-block-margin: 3px 2px !important;
+  --lwt-accent-color: var(--arrowpanel-background) !important; 
+  --toolbar-bgcolor: color-mix(in srgb, var(--arrowpanel-background), transparent) !important;                                                                     /*"toolbar":"#131118", "Color de la toolbar"*/
+  --toolbar-field-background-color: transparent !important;                                                    /*"toolbar_field":"#1a1b25"*/
+  --toolbar-field-border-color: transparent !important;                                                        /*"toolbar_field_border": "#363540"*/
+  --toolbarbutton-icon-fill: #cacae6 !important;                                                               /*"icons" color */
+  --lwt-selected-tab-background-color: var(--arrowpanel-background) !important;                                /*"tab_selected":"#363540"*/
+}
