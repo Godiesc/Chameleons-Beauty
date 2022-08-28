@@ -1,4 +1,4 @@
-## steps to aplly "Main-Image" config
+## steps to apply "Main-Image" config
 
 <p>Add the files <code>ogx_main-image.css</code> and <code>ogx_root-personal.css</code> into the <code>chrome/components</code> folder.</p></br>
 
