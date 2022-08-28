@@ -20,7 +20,7 @@
 }
 .tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected] {
     outline: 1px solid var(--identity-icon-color, #00000000) !important;
-    border-radius: 2px !important;
+    border-radius: 3px !important;
     padding: 2px !important;
     margin-left: -1px !important;
     margin-right: 6px !important;

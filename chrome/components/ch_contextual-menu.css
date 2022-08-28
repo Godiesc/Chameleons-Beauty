@@ -3,7 +3,7 @@
 
 /*Menú contextual*/
 menupopup>menuitem, menupopup>menu {
-    padding-block: 0.3em !important;
+    padding-block: 0.4em !important;
 }
 @media (-moz-platform: linux) { menupopup>menuitem, menupopup>menu {
     padding-block: 4px !important; 
@@ -30,10 +30,10 @@ menugroup>menuitem>hbox>image {
     border-radius: 4px !important;
 }
 /*separador de items*/
-menuseparator {
+menuseparator{
+    appearance: none !important;
     border-color: var(--panel-separator-color, #50505090) !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
+    margin-inline: 5px 5px !important;
   /*border-image: var(--panel-separator-zap-gradient) 1 !important;*/
   /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
 }
@@ -41,9 +41,27 @@ menuseparator {
     margin-block: 3px !important;
     }}
 /*Colores generales*/
-menupopup{background: var(--gradient) !important;}
-#PlacesToolbar menupopup { padding: 0px !important;}
-#PlacesToolbar menupopup menupopup{ margin-inline-start: 0px !important; }
+menupopup{
+    background: var(--gradient) no-repeat !important;
+    /*border: 1px solid var(--arrowpanel-background) !important;
+    background-clip: padding-box !important;*/
+    margin-right: 0px !important;
+}
+menupopup{ 
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important; 
+    border-radius: 6px !important; }
+menupopup menupopup { 
+    margin-top: -4px !important;
+    margin-left: -4px !important; 
+}
+#PlacesToolbar menupopup { 
+    padding: 0px !important; 
+    margin-right: 0px !important; 
+    --panel-subview-body-padding: 4px 0px !important;
+}
+#PlacesToolbar menupopup menupopup{ margin-inline-start: -4px !important; margin-top: 0px !important; }
 .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background, #50505090) !important;
     background-color: var(--arrowpanel-background, #50505090) !important;
@@ -55,14 +73,7 @@ menupopup{background: var(--gradient) !important;}
     /*ColorFondoAlPasarElMouseSobreItems*/
     --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
 }
-/*ColoresMenú*/
-menupopup{ 
-    margin-top: 0px !important; 
-    margin-left: 0px !important; 
-    border-radius: 6px !important; }
-menupopup menupopup { 
-    margin-top: -6px !important; 
-    margin-left: -10px !important; }
+/* Margen - Colores */
 .menupopup {
     --panel-color: var(--arrowpanel-color, FieldText) !important;
     /*ColorLetrasDelMenú*/

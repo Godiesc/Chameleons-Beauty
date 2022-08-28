@@ -14,7 +14,7 @@
   
   --tab-block-margin: 3px 1px !important;                                                                          /*margenes pestañas  <-------------------¬ */
   --margin-top: 3px !important;                                                                                    /*margen top pestañas - variable personal \ */
-  --tab-min-height:  32px !important;                                                                              /*tamaño pestañas*/
+  --tab-min-height:  var(--tab-height-personal) !important;                                                        /*tamaño pestañas*/
   
   --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
   --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
@@ -32,8 +32,8 @@
   --lwt-toolbarbutton-icon-fill-attention: #4d7afe !important;                                                     /*"icons_attention": "#00dbfd"*/  
     
   --button-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 10%, transparent) !important;                    /*ColorCombobox-yBotones(+-)*/
-  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 14%, transparent) !important;              /*colorHoverCombobox-yBotones(+-)*/
-  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 18%, transparent) !important;             /*ColorAlHacerClicCombobox-yBotones(+-)*/        
+  --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 16%, transparent) !important;              /*colorHoverCombobox-yBotones(+-)*/
+  --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 20%, transparent) !important;             /*ColorAlHacerClicCombobox-yBotones(+-)*/        
   
   --panel-separator-zap-gradient: linear-gradient(                                                                 /*GradienteMenúHamburguesa*/
     to right, #902c8ad0 0%, #902cfc90 50%, #3083ff80 100%) !important;                       
@@ -59,7 +59,10 @@
     --focus-outline-color: var(--button-primary-bgcolor) !important;
 
     /*Color borde en InputText*/
-    --input-border-color: var(--focus-outline-color) !important;
+    --input-border-color: color-mix(in srgb, var(--arrowpanel-background) 90%, var(--arrowpanel-color)) !important;
+  
+    /*Fondo de InputText*/
+    --input-bgcolor: color-mix(in srgb, var(--arrowpanel-background)75%, black) !important;
 
     /*Colores checkbox —v*/
     --checkbox-unchecked-bgcolor: var(--button-bgcolor) !important;

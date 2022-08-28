@@ -5,7 +5,7 @@
 
 @-moz-document url(chrome://browser/content/places/places.xhtml) {
     :root {
-        --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 75%, black) !important;
+        --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 85%, black) !important;
         --organizer-border-color:color-mix(in srgb, var(--organizer-separator-color), transparent) !important;
         --menu-items-hover-background2: color-mix(in srgb, var(--organizer-pane-background) 75%, white) !important;
     }
@@ -63,7 +63,14 @@
     }
     /*Fondo inputText al Editar*/
     #editBookmarkPanelRows>vbox>input, #editBookmarkPanelRows>vbox>hbox>input {
-        background: color-mix(in srgb, var(--organizer-pane-background) 90%, var(--organizer-color)) !important;
+        background: color-mix(in srgb, var(--organizer-pane-background-2) 86%, var(--organizer-color)) !important;
+        border-color: color-mix(in srgb, var(--organizer-pane-background) 50%, black) !important;
+    }
+     #editBookmarkPanelRows>vbox>input:focus, #editBookmarkPanelRows>vbox>hbox>input:focus{
+        outline-color: var(--focus-outline-color) !important;
+        border-color: var(--focus-outline-color) !important;
+        outline-offset: -1px !important;
+        border-radius: 3px !important;
     }
     /*Color "selected" de items*/
     #places treechildren:not(.autocomplete-treebody)::-moz-tree-row(selected), #placesList>treechildren::-moz-tree-row(selected) {

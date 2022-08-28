@@ -8,16 +8,24 @@
 .panel-info-button:not([disabled]):is(:hover) {background: var(--button-primary-hover-bgcolor) !important;
 }
 /*Borde Gradiente paneles desplegables - Arrowpanels*/
-slot[part="content"]{
-  background-image: linear-gradient(165deg, #d02f85ee 0%, #b336fc9e 8%, #3567fd9e 30%, #4e7afd9e 60%,#4e89fd9e 70%, #d02f859e 100%) !important; 
-  border: none !important;
-  background-color: var(--arrowpanel-background) !important;
-  /*box-shadow: 0 0 0px 1px var(--arrowpanel-background) !important;*/
+:is(menupopup, panel)[type="arrow"]{
+    background-image: linear-gradient(165deg, #d02f85ee 0%, #b336fc9e 8%, #3567fd9e 30%, #4e7afd9e 60%,#4e89fd9e 70%, #d02f859e 100%) !important; 
+    background-repeat: no-repeat !important;
+    background-color: var(--arrowpanel-background) !important;
+    border-radius: 8px !important;
+    margin-top: 0px !important;
+    /*border: 1px solid var(--arrowpanel-background) !important;
+    background-clip: padding-box !important;*/
 }
-panelview{
-   border: 1px solid transparent !important;
-   border-radius: var(--uc-slot-radius, var(--panel-border-radius)) !important;
-   background-clip: padding-box !important;
+slot {
+    margin: 1px !important;
+    border: none !important;
+}
+/* Mantener */
+#protections-popup{
+    margin-top: 0px !important; 
+    margin-inline: -16px !important;
+    margin-right: 0px !important;
 }
 /*Color fondo clic por los diferentes items de menús principales*/
 .protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
@@ -75,8 +83,11 @@ panelview{
     width: 16px;
     margin-inline-end: 8px !important;
 }
+/* Margen item -tamaño- */
+panelmultiview .toolbaritem-combined-buttons > label {
+    margin-inline-start: 23px !important;
+}
 /*Color y margen de los íconos*/
-
 .subviewbutton {
     -moz-context-properties: fill;
     fill: currentColor;
@@ -85,11 +96,11 @@ panelview{
     -moz-context-properties: fill;
     fill: currentColor;
 }
-#appMenu-zoom-controls2>.toolbarbutton-text {
-    margin-inline-start: 24px !important;
+/* Alinear lista de pestañas sincronizadas */
+.PanelUI-remotetabs-clientcontainer label {
+    padding-inline-start: 0px !important;
 }
 /*ícono account*/
-
 #appMenu-fxa-label2::before {
     content: "";
     display: block;

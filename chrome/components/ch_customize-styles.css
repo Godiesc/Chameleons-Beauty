@@ -4,16 +4,17 @@
 /*botones de la pagina de "Personalizar Toolbar"*/
 
 .customizationmode-button {
-    background-color: var(--button-bgcolor) !important;
-    border-color: color-mix(in srgb, var(--arrowpanel-background) 80%, var(--lwt-tab-text, FieldText)) !important;
+    background: var(--button-bgcolor) no-repeat !important;
+    border-color: color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, FieldText)) !important;
     color: var(--lwt-tab-text) !important;
     border-radius: 4px !important;
 }
 .customizationmode-button:is(:active, :hover):not([disabled]), .customizationmode-button[open], .customizationmode-button[checked] {
-    background-image: var(--panel-separator-zap-gradient) !important;
-    border-color: #00000000 !important;
+    background: var(--panel-separator-zap-gradient) no-repeat !important;
+    border-color: transparent !important;
     color: var(--lwt-tab-text) !important;
-    background-clip: padding-box;
+    border-radius: 4px !important;   
+    background-clip: padding-box !important;
 }
 #customization-done-button {
     color: #fff !important;

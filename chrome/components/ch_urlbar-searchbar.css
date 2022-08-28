@@ -28,6 +28,9 @@
     letter-spacing: 0.04em !important;
 }
 /*"Urlbar más pequeñas"*/
+
+#nav-bar{ min-height: var(--toolbar-height-personal) !important; }
+
 #urlbar {
     min-height: 26px !important;
     border-radius: 4px !important;
@@ -73,15 +76,13 @@ slot[part="content"] {
 }
 #urlbar[focused=true] #urlbar-background {
     border-radius: 3px !important;
-    background-color: var(--lwt-selected-tab-background-color, var(--arrowpanel-background)) !important;
+    background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
     border: #00000000 !important;
     box-shadow: none !important;
-    backdrop-filter: saturate(35%) brightness(10%);
 }
 #urlbar[open=true] {
     border-radius: 6px !important;
     background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%);
-    backdrop-filter: blur(20px);
     max-height: -moz-available !important;
     border-radius: 6px !important;
 }
@@ -89,7 +90,6 @@ slot[part="content"] {
     border-radius: 6px !important;
     background-color: var(--lwt-accent-color) !important;
     animation-duration: 0ms !important;
-    backdrop-filter: saturate(100%) brightness(0%);
     max-height: -moz-available !important;
 }
 /*Páginas de extensiones*/

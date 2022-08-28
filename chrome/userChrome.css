@@ -2,6 +2,7 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 @import url('components/ch_root.css');
+@import url('components/ch_root_personal.css');
 @import url('components/ch_tabs-bar.css');
 @import url('components/ch_urlbar-searchbar.css');
 @import url('components/ch_windows-controls.css');
@@ -15,3 +16,5 @@
 @import url('components/ch_button-styles.css');
 @import url('components/ch_library.css');
 @import url('components/ch_toolbar-icons.css');
+@import url('components/ch_oneline.css');
+@import url('components/ch_main-image.css');
