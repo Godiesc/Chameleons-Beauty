@@ -17,7 +17,7 @@ Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautifu
 <ul>
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Main-Image"> Main-Image </a></li>
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Oneline"> OneLine </a></li>
-<li>Play/Pause icon button extension. </li></ul>
+<li><a href="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Play-Pause">Play/Pause icon button extension.</a></li></ul>
 
 # ¿Cómo instalar? - How to install?
 
