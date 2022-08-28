@@ -36,7 +36,7 @@
 @-moz-document url(chrome://browser/content/browser.xul), url(about:newtab), url(about:home) {  
 body {     
     /*-------------------------------eliminar la linea 39 al usar temas incompletos-----------------------------------------------------------------*/
-    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field) 95%, black ) !important;          
+    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, FieldText) 95%, black ) !important;          
 
     --newtab-background-color-secondary: var(--newtab-pinnedsites-background)  !important;                                      /*fondo de sitios fijados*/
     
@@ -57,7 +57,7 @@ body {
     --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                                               /*label general*/
        
 
-    --newtab-overlay-color: #10101010 !important;                                                                                       /*fondo de editar, transparente*/
+    --newtab-overlay-color: color-mix(in srgb, var(--lwt-sidebar-background-color, FieldText) 35%, transparent ) !important;            /*fondo de editar, transparente*/
     --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                                    /*contorno de txt al editar un sitio*/ 
   
     --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important;  /*Linea separadora en "personalizar"*/
@@ -78,8 +78,12 @@ body {
 .home-section .section .slider:hover {background: #454690 !important; border-color: #454690 !important;}
     
  /*Color de fondo al "editar" un sitio anclado*/  
-.modal {background-color: var(--newtab-background-color) !important; border: 1px solid var(--newtab-textbox-background-color) !important;  border-radius: 9px !important;}
-.modalOverlayOuter{background-color: color-mix(in srgb, var(--newtab-background-color)85% , transparent) !important; backdrop-filter: blur(2px) !important;}
+.modal {
+    background-color: var(--newtab-background-color) !important; 
+    border-color: color-mix(in srgb, var(--newtab-background-color) 85%, var(--newtab-wordmark-color)) !important;  
+    border-radius: 9px !important;}
+.modalOverlayOuter{
+    backdrop-filter: var(--personal-blur) !important;}
     
 /*fondo y borde del menú de 3 puntos, linea separadora*/
 .context-menu {background-color: var(--newtab-background-color) !important; color: var(--newtab-wordmark-color) !important;
