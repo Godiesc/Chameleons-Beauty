@@ -1,6 +1,6 @@
 # Steps to apply the OneLine theme
 
-<ul><li>Replace the file <code>ch_tabs-bar.css</code> into the directory: <code> chrome-> components</code> with the file in this directory.</li>
+<ul><li>Add the file <code>ch_oneline.css</code> into the directory: <code> chrome/components</code>.</li>
   <li>That's all, really simple right. </li></br>
   
 PD: Dont forget to put your icons in the dropdown arrow menu to let space to the main icons.
