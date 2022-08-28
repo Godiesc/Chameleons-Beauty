@@ -89,5 +89,20 @@
 /* Color y posición "dot" de pestaña que necesita atención */
 .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
   background-image: radial-gradient(circle, var(--button-active-bgcolor1), var(--button-active-bgcolor1) 2px, transparent 2px) !important;
-  background-position: center top calc(0px + var(--tabs-navbar-shadow-size)) !important;
+  background-position: center top calc(4px + var(--tabs-navbar-shadow-size)) !important;
+}
+/* Mantener una imagen al mover pestaña en temas con imagenes - still needs fix */
+:root[lwtheme-image] #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme{
+   background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)),
+   linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none) !important;
+   background-position: right top !important;
+   background-repeat:  no-repeat !important;
+   background-size:  inherit !important;  
+}
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme{
+   background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)),
+   linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none) !important;
+   background-position: right top !important;
+   background-repeat:  no-repeat !important;
+   background-size:  inherit !important;  
 }
