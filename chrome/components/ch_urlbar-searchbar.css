@@ -1,6 +1,19 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/*"bookmark_text": "#b3d9ff"*/
+.browser-toolbar:not(.titlebar-color) {
+    color: var(--lwt-text-color) !important;
+}              
+/*"personalizar barra de busqueda"*/
+findbar:-moz-lwtheme {
+    background-color: var(--toolbar-bgcolor) !important;
+    color: #d3d3d3 !important;  
+    border-color: var(--input-border-color) !important; }     
+.findbar-find-status[status="notfound"] { 
+    color: var(--general-color) !important; 
+    font-weight: 600 !important; 
+}
 /* "popup_highlight" -> 1.- keyboard highlight 2.-mouse highlight*/
 .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
     background-image: var(--panel-separator-zap-gradient) !important; color: #ffffff !important;}
