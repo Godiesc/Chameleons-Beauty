@@ -86,3 +86,8 @@
 #main-menubar>menu {
     border-radius: 4px !important
 }
+/* Color y posición "dot" de pestaña que necesita atención */
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+  background-image: radial-gradient(circle, var(--button-active-bgcolor1), var(--button-active-bgcolor1) 2px, transparent 2px) !important;
+  background-position: center top calc(0px + var(--tabs-navbar-shadow-size)) !important;
+}
