@@ -40,7 +40,7 @@
 }
 #nav-bar {
   margin-right: calc(100vw - var(--navbarWidth)) !important;
-  margin-top: calc(var(--tab-height-personal) - 2* var(--tab-height-personal) - 7px) !important;
+  margin-top: calc(var(--tab-height-personal) - 2* var(--tab-height-personal) - 5px) !important;
   height: calc(var(--tab-min-height) + 6px) !important;
 }
 #urlbar-container{
