@@ -2,7 +2,7 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 :root{
-  --lwt-main-image:  url("../images/newtab/wallpaper.png");                                  /* new-tab page image */
+  --lwt-main-image:  url("../images/newtab/wallpaper1.png");                                  /* new-tab page image */
   --wallpaper-size: auto auto;                                                               /* cover-> default ; auto auto -> to <<main-image>> config */
   --brightness-wallpaper: brightness(100%);                                                  /* 100% -> default ; 51% makes the wallpaper darker */
   
