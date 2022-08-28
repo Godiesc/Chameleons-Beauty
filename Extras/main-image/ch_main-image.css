@@ -1,0 +1,31 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/Chameleons-Beauty */
+
+:root{
+   --toolbar-bgcolor: transparent !important;
+   --toolbar-field-background-color: transparent !important;                                                   
+   --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 4%, transparent) !important;    
+   --toolbarbutton-hover-personal:  var(--toolbar-bgcolor) !important;
+   --lwt-selected-tab-background-color: transparent !important;
+   --lwt-accent-color: var(--arrowpanel-background) !important;
+   --chrome-content-separator-color: var(--toolbar-bgcolor) !important;                  
+}
+#navigator-toolbox {
+   --lwt-header-image: var(--lwt-main-image) !important;
+     background-image: var(--lwt-main-image) !important; 
+   /*background-size:  cover !important;  */
+}
+#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="false"],
+#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"],
+#tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
+   background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)),
+   linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none) !important;
+   background-position: right top !important;
+   background-repeat:  no-repeat !important;
+   background-size:  auto auto !important;  
+}
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="false"],
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"],
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
+   background-image: transparent !important;
+}
