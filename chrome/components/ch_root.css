@@ -4,7 +4,7 @@
 :root{
   --lwt-frame: var(--toolbar-bgcolor, Field) !important;      
   --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important;
-  --panel-description-color: var(--button-primary-bgcolor) !important;                                                      /*"Color de letras de: correo de la cuenta, y dispositivos conectados"*/
+  --panel-description-color: var(--button-primary-bgcolor) !important;                                             /*"Color de letras de: correo de la cuenta, y dispositivos conectados"*/
   
   --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
   --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /*FondoPestañasNoSeleccionadasVentanaInactiva*/
@@ -83,6 +83,7 @@
   --toolbar-field-border-color: transparent !important;                                                        /*"toolbar_field_border": "#363540"*/
   --toolbarbutton-icon-fill: #cacae6 !important;                                                               /*"icons" color */
   --lwt-selected-tab-background-color: #10101900 !important;                                                   /*"tab_selected":"#363540"*/
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 6%, transparent) !important;     /*urlbarColor-ColorBordeCuadroUrlbar*/ 
 }
 /* Compatibilidad Parcial para temas que usan "Imagenes adicionales" en su tema */
 :root[style*="--lwt-additional-images"]{
@@ -93,4 +94,5 @@
   --toolbar-field-border-color: transparent !important;                                                        /*"toolbar_field_border": "#363540"*/
   --toolbarbutton-icon-fill: #cacae6 !important;                                                               /*"icons" color */
   --lwt-selected-tab-background-color: var(--arrowpanel-background) !important;                                /*"tab_selected":"#363540"*/
+  --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 6%, transparent) !important;     /*urlbarColor-ColorBordeCuadroUrlbar*/ 
 }
