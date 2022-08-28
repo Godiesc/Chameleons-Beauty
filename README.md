@@ -1,5 +1,5 @@
 # Chameleons-Beauty to Firefox CSS
-Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautiful"</a> Themes Lovers.
+Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautiful" Themes </a>Lovers.
 <ul><li>(ES) Compatibilidad completa con la versión estable del navegador.</li>
 <li>(EN) Complete Compatibility with stable version of the browser.</li></ul>
 
