@@ -8,14 +8,12 @@
 :root[lwtheme-image]{
   --lwt-accent-color: var(--arrowpanel-background) !important;
   --toolbar-bgcolor: transparent !important;                                     
-  --lwt-selected-tab-background-color: #101019df !important;                     
-  --toolbar-field-focus-background-color: color-mix(in srgb, var(--general-color) 5%, #231f30fc) !important;        
+  --lwt-selected-tab-background-color: transparent !important;
 }
 :root[style*="--lwt-additional-images"]{
   --lwt-accent-color: var(--arrowpanel-background) !important;
   --toolbar-bgcolor: transparent !important;                                                                
-  --lwt-selected-tab-background-color: #101019df !important;
-  --toolbar-field-focus-background-color: color-mix(in srgb, var(--general-color) 5%, #231f30fc) !important;                        
+  --lwt-selected-tab-background-color: var(--arrowpanel-background) !important;
 }
 /*:root[style*="--lwt-additional-images"] #tabbrowser-tabs .tab-background[selected="true"]{ 
     height: calc(var(--tab-min-height) + 0px) !important;
