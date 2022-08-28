@@ -27,13 +27,7 @@
     clip-path: none !important; 
     border-bottom: 1px solid var(--lwt-selected-tab-background-color) !important;
 }*/
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10) { 
-:root:is([lwtheme-image],[style*="--lwt-additional-images"]) .titlebar-button:hover:not(.titlebar-close){
-    background-color: var(--lwt-selected-tab-background-color) !important; 
-    color: var(--button-active-bgcolor) !important;
-    fill: ar(--button-active-bgcolor) !important;
-    }
-}
+
 /* Oneline tweak */
 #TabsToolbar {
   margin-left : var(--navbarWidth) !important;
