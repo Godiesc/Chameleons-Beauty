@@ -86,6 +86,20 @@ menupopup menupopup {
     --menu-border-color: var(--panel-separator-color, Field) !important;
     /*LineaSeparadoraItems*/
 }
+/* Font color in Contextual menus */
+menupopup>menuitem:not([disabled="true"]), menupopup>menu {
+    appearance: none !important;
+    color: #ffffff !important;
+}
+/* Mostrar background-color en el item seleccionado */
+menupopup>menuitem:is([selected="true"]):not([disabled="false"]){
+    appearance: none !important;
+    background-image: var(--panel-separator-zap-gradient) !important; }
+menupopup>menuitem:is([selected="true"]):hover:not([disabled="false"]){
+    appearance: none !important;
+    background-image: var(--panel-separator-zap-gradient) !important;
+    backdrop-filter: brightness(0%) !important;
+}
 /* Íconos superiores del menú contextual */
 #context-navigation {
     background-color: var(--arrowpanel-background) !important;
