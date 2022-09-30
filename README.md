@@ -42,7 +42,7 @@ Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautifu
 <li><p>The file --> <code>chrome</code> --> <code>components</code> --> <code>ogx_root-personal.css</code> contain a very useful config rules to a better an easy custom of the wallpaper, height tabs, etc. There are descriptions on the right of each rule to you know what you can custom.</p></li></ul>
 <ul><b><i>Fondo Nueva Pestaña - NewTab Wallpaper</i></b>
    <li><p>(Option 1) Into the directory: <code>chrome</code> >> <code>images</code> >> <code>newtab</code> there is a set of wallpapers , the image that the theme will select by default is the one with the name: "wallpaper.png", you could rename the image you want with that name and the theme will select that one, you could add your own images. If you don't want a wallpaper just delete the file with that name. <b>A restart of the browser is necessary!!!. </b></p></li>
-<li><p>(Option 2) You could edit the file --> <code>chrome</code> --> <code>components</code> --> <code>ogx_root-personal.css</code> line <code>5</code><p></li></ul></br>
+<li><p>(Option 2) You could edit the file --> <code>chrome</code> --> <code>components</code> --> <code>ogx_root-personal.css</code> line <code>12</code><p></li></ul></br>
 
 # Compatibilidad - Compatibility
 
