@@ -73,32 +73,36 @@ menupopup menupopup {
     /*ColorFondoAlPasarElMouseSobreItems*/
     --menuitem-hover-background-color: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important;
 }
-/* Margen - Colores */
-.menupopup {
-    --panel-color: var(--arrowpanel-color, FieldText) !important;
-    /*ColorLetrasDelMenú*/
-    --panel-border-color: var(--arrowpanel-border-color, Field)!important;
-    /*bordeMenú*/
-    --panel-background: var(--arrowpanel-background, Field) !important;
-    /*FondoMenú*/
-    --menu-color: var(--arrowpanel-color, FieldText) !important;
-    /*ColorLetrasAlPasarElMouseSobreItems*/
-    --menu-border-color: var(--panel-separator-color, Field) !important;
-    /*LineaSeparadoraItems*/
+/* Íconos superiores del menú contextual */
+#context-navigation {
+    background-color: var(--arrowpanel-background) !important;
+    color: var(--arrowpanel-color) !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important; }
+#context-navigation > .menuitem-iconic:hover:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon{
+    appearance: none !important;
+    background-color: var(--button-hover-bgcolor) !important; }
+    /* Color íconos deshabilitados */
+#context-navigation > .menuitem-iconic:hover:is([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
+    appearance: none !important;
+    color: inherit !important;
+    background: transparent !important;
 }
 /* Font color in Contextual menus */
 menupopup>menuitem:not([disabled="true"]), menupopup>menu {
     appearance: none !important;
-    color: #ffffff !important;
+    color: var(--twt-tab-text) !important;
 }
 /* Mostrar background-color en el item seleccionado */
 menupopup>menuitem:is([selected="true"]):not([disabled="false"]){
     appearance: none !important;
-    background-image: var(--panel-separator-zap-gradient) !important; }
+    background-image: var(--panel-separator-zap-gradient) !important; 
+    color: white !important;}
 menupopup>menuitem:is([selected="true"]):hover:not([disabled="false"]){
     appearance: none !important;
     background-image: var(--panel-separator-zap-gradient) !important;
     backdrop-filter: brightness(0%) !important;
+    color: white !important;
 }
 /* Íconos superiores del menú contextual */
 #context-navigation {
@@ -126,7 +130,7 @@ menu[disabled="true"], menuitem[disabled="true"] {
 /* Color to :hover items*/
 menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
     appearance: none !important;
-    background: var(--button-hover-bgcolor) !important; 
+    background: color-mix(in srgb, var(--button-hover-bgcolor) 95%, var(--organizer-color, var(--arrowpanel-color))) !important; 
     color: var(--arrowpanel-color, #50505090) !important;
 }
 /* Necesario para quitar glitch indeseado al mover el mouse rapidamente sobre items de menús */
