@@ -2,7 +2,6 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*---------------------------------library ----------------------------------*/
-
 @-moz-document url(chrome://browser/content/places/places.xhtml) {
     :root {
         --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 85%, black) !important;

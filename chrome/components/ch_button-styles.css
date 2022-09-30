@@ -53,6 +53,9 @@ treechildren::-moz-tree-row(selected) {
 treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected), treechildren::-moz-tree-cell-text(selected) {
     color: white !important;
 }
+#PersonalToolbar {
+    padding-block: 0px 2px !important;
+}
 /*--------------------------Panel Guardar Marcador----------------------------------*/
 /*Color de "highlight" inputtext*/
 richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{

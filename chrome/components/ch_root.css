@@ -35,10 +35,8 @@
   --button-hover-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 16%, transparent) !important;              /*colorHoverCombobox-yBotones(+-)*/
   --button-active-bgcolor: color-mix(in srgb, var(--lwt-tab-text, Field) 20%, transparent) !important;             /*ColorAlHacerClicCombobox-yBotones(+-)*/        
   
-  --panel-separator-zap-gradient: linear-gradient(                                                                 /*GradienteMenúHamburguesa*/
-    to right, #902c8ad0 0%, #902cfc90 50%, #3083ff80 100%) !important;                       
-  --gradient: linear-gradient(                                                                                     /*GradientePestañaActiva*/
-    165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;   
+  --panel-separator-zap-gradient: var(--personal-gradient-into-arrowpanels) !important;                            /*GradienteMenúHamburguesa*/                    
+  --gradient: var(--personal-gradient-general) !important;                                                         /*GradientePestañaActiva*/
       
   --autocomplete-popup-hover-background: var(--button-hover-bgcolor) !important;                      /*Color hover de sujerencias de búsqueda*/
   --autocomplete-popup-separator-color: transparent !important;                                       /*color separador urlbar y sugerencias de búsqueda*/

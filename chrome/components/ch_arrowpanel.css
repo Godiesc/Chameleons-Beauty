@@ -50,15 +50,6 @@ slot {
     padding-top: calc(24px + var(--tab-block-margin)) !important;
     width: 24.5em !important;
 }
-/*Menu hamburguesa Logo */
-#PanelUI-menu-button > stack{
-  list-style-image: url("../images/foxFill.svg") !important;
-  display: -moz-box;
-  fill: var(--toolbarbutton-icon-fill) !important;
-}
-#PanelUI-menu-button[open="true"] > stack{
-  list-style-image: url("../images/foxlogo.svg") !important;
-}
 /*Linea gradiente en los menús principales*/
 .PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient1) 1 !important;}
 .PanelUI-subView menuseparator, #PlacesToolbar menupopup[placespopup="true"] toolbarseparator, #widget-overflow-mainView > toolbarseparator,
@@ -76,6 +67,9 @@ slot {
     border-image: var(--gradient) 1 !important;
 }
 */
+/* Panel de descargas */
+#downloadsListBox > richlistitem:not(:hover) { background: transparent !important; color: var(--ltw-tab-text) !important; }
+#downloadsListBox > richlistitem:is(:hover):not([disabled="true"]) { background: var(--button-hover-bgcolor) !important; color: var(--ltw-tab-text) !important; }
 /*-----------------íconos en el menú de hamburguesa----------------------*/
 
 /*Posicion y margen de los íconos*/
@@ -101,34 +95,14 @@ panelmultiview .toolbaritem-combined-buttons > label {
     padding-inline-start: 0px !important;
 }
 /*ícono account*/
-#appMenu-fxa-label2::before {
-    content: "";
-    display: block;
-    width: 16px;
-    height: 16px;
-    margin-inline-end: 8px;
-    border-radius: 50%;
+#appMenu-fxa-label2::before , #fxa-manage-account-button::before {
     background: var(--avatar-image-url) no-repeat center/16px;
-}
-#fxa-manage-account-button vbox:after {
-    content: "";
-    display: block !important;
-    width: 16px;
-    height: 16px;
-    border-radius: 0%;
-    background-size: 16px 16px !important;
-    background: var(--avatar-image-url) no-repeat left;
-    margin-inline-start: 0px;
-    margin-left: -24px !important;
-    margin-top: -28px !important
-}
-#fxa-manage-account-button vbox {
-    margin-inline-start: 24px;
-    padding-bottom: 12px !important;
+    content: ""; display: block; width: 16px; height: 16px;
+    margin-inline-end: 7px;
+    border-radius: 50%;
 }
 :root[fxastatus="signedin"] #fxa-menu-avatar {
-    display: unset;
-    -moz-box-ordinal-group: 2;
+    display: unset; -moz-box-ordinal-group: 2;
 }
 /*Ícono Nueva Pestaña*/
 

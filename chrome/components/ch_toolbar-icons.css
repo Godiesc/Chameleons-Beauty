@@ -47,3 +47,7 @@
 #reader-mode-button > .urlbar-icon {
     list-style-image: url("../images/read-mode.svg") !important;
 }
+/*Menu hamburguesa Logo */
+#PanelUI-menu-button {
+  list-style-image: url("../images/hamburger-menu.svg") !important;
+}

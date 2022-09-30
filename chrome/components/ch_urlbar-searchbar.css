@@ -101,7 +101,7 @@ slot[part="content"] {
 }
 #urlbar[open=true] #urlbar-background {
     border-radius: 6px !important;
-    background-color: var(--lwt-accent-color) !important;
+    background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
     animation-duration: 0ms !important;
     max-height: -moz-available !important;
 }
