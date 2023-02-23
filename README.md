@@ -11,8 +11,6 @@ Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautifu
 
 # Adapted to Light and dark Themes
 
-![animated](https://user-images.githubusercontent.com/22057609/157930265-a04a6fd0-c627-4ad5-ac70-7b91c3ca78a7.png)
-
 # Extras 
 <ul>
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Main-Image"> Main-Image </a></li>
