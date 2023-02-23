@@ -7,7 +7,7 @@
      #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;
   
   --personal-gradient-into-arrowpanels: linear-gradient(                                     /* Gradiente dentro del Menú Hamburguesa */
-    to right, #902c8ad0 0%, #902cfc90 50%, #3083ff80 100%) !important; 
+    to right, #902c8ad0 0%, #902cfcd0 50%, #3083ffd0 100%) !important; 
   
   --lwt-main-image:  url("../images/newtab/wallpaper.png");                                  /* new-tab page image */
   --wallpaper-size: cover;                                                                   /* cover-> default ; auto auto -> to <<main-image>> config */

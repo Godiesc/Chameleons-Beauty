@@ -8,7 +8,7 @@
 /*"personalizar barra de busqueda"*/
 findbar:-moz-lwtheme {
     background-color: var(--toolbar-bgcolor) !important;
-    color: #d3d3d3 !important;  
+    color: var(--lwt-text-color) !important;  
     border-color: var(--input-border-color) !important; }     
 .findbar-find-status[status="notfound"] { 
     color: var(--general-color) !important; 
@@ -16,7 +16,7 @@ findbar:-moz-lwtheme {
 }
 /* "popup_highlight" -> 1.- keyboard highlight 2.-mouse highlight*/
 .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
-    background-image: var(--panel-separator-zap-gradient) !important; color: #ffffff !important;}
+    background-image: var(--panel-separator-zap-gradient) !important; color: #ffffff !important; border-radius: 4px !important; }
 
 /* margenes sugerencias de búsqueda */
 .urlbarView-title{ margin-left: -6px !important;
@@ -141,17 +141,26 @@ slot[part="content"] {
     width: 14px !important;
 }
 #tracking-protection-icon {
+    margin-block-start: 1px !important;
     margin-inline-start: 1px !important
 }
 #tracking-protection-icon-container {
     padding: 3px !important;
 }
+/* ícono bookmark, vista de lectura, etc */
 .urlbar-page-action {
-    max-width: 22px !important;
-    min-width: 22px !important;
-    padding-left: 3px !important;
+    width: 23px !important;
+    height: 22px !important;
+    margin-inline: 0px 0px!important;
+    padding: 3px !important;
     color: var(--toolbarbutton-icon-fill) !important;
 }
+.urlbar-page-action .urlbar-icon{
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: 1px !important;
+    margin-block-start: 1px !important;
+    }
 /*"Color verde de la descripción de web segura"*/
 description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, #identity-popup-securityView-body>button {
     color: #2cf62c !important

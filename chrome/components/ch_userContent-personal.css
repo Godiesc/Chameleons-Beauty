@@ -36,7 +36,7 @@
 @-moz-document url(chrome://browser/content/browser.xul), url(about:newtab), url(about:home) {  
 body {     
     /*-------------------------------eliminar la linea 39 al usar temas incompletos-----------------------------------------------------------------*/
-    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, FieldText) 95%, black ) !important;          
+    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field) 95%, black ) !important;          
 
     --newtab-background-color-secondary: var(--newtab-pinnedsites-background)  !important;                                      /*fondo de sitios fijados*/
     
@@ -57,7 +57,7 @@ body {
     --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                                               /*label general*/
        
 
-    --newtab-overlay-color: color-mix(in srgb, var(--lwt-sidebar-background-color, FieldText) 35%, transparent ) !important;            /*fondo de editar, transparente*/
+    --newtab-overlay-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field) 35%, transparent ) !important;            /*fondo de editar, transparente*/
     --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                                    /*contorno de txt al editar un sitio*/ 
   
     --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important;  /*Linea separadora en "personalizar"*/

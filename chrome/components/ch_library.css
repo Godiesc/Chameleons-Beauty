@@ -8,6 +8,16 @@
         --organizer-border-color:color-mix(in srgb, var(--organizer-separator-color), transparent) !important;
         --menu-items-hover-background2: color-mix(in srgb, var(--organizer-pane-background) 75%, white) !important;
     }
+/* Contextual :hover item */    
+    menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
+        appearance: none !important;
+        background: #80808050 !important; 
+        color: var(--arrowpanel-color, #50505090) !important;
+}
+    menupopup{
+        outline: 1px solid #1060bf !important;
+        outline-offset: -2px !important;
+    }
     /*-----------------------Menú principal-------------------------*/
     #placesToolbar>toolbarbutton {
         margin: 2px 2px 2px 2px !important;

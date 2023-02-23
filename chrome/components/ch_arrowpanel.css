@@ -3,9 +3,8 @@
 
 /*Color label deshabilitado y elementos de: "protección contra rastreo"*/
 .protections-popup-category.notFound {color: #777 !important;}
-.panel-info-button{width: 10px !important;}
-.panel-info-button:not([disabled]):is([checked],:hover, :active) {background: var(--panel-separator-zap-gradient) !important;}
-.panel-info-button:not([disabled]):is(:hover) {background: var(--button-primary-hover-bgcolor) !important;
+.panel-info-button:not([disabled]):is([checked], :active) {background: var(--panel-separator-zap-gradient) !important; }
+.panel-info-button:not([disabled]):is(:hover) {background: var(--button-primary-hover-bgcolor) !important; color: var(--arrowpanel-background) !important;
 }
 /*Borde Gradiente paneles desplegables - Arrowpanels*/
 :is(menupopup, panel)[type="arrow"]{
@@ -14,8 +13,8 @@
     background-color: var(--arrowpanel-background) !important;
     border-radius: 8px !important;
     margin-top: 0px !important;
-    /*border: 1px solid var(--arrowpanel-background) !important;
-    background-clip: padding-box !important;*/
+    border: 1px solid var(--arrowpanel-background) !important;
+    background-clip: padding-box !important;
 }
 slot {
     margin: 1px !important;
@@ -70,6 +69,10 @@ slot {
 /* Panel de descargas */
 #downloadsListBox > richlistitem:not(:hover) { background: transparent !important; color: var(--ltw-tab-text) !important; }
 #downloadsListBox > richlistitem:is(:hover):not([disabled="true"]) { background: var(--button-hover-bgcolor) !important; color: var(--ltw-tab-text) !important; }
+
+#protections-popup, #editBookmarkPanel{ 
+    margin-top: 0px !important;  
+    margin-inline: -6px !important; }
 /*-----------------íconos en el menú de hamburguesa----------------------*/
 
 /*Posicion y margen de los íconos*/

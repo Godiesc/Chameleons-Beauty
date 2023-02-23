@@ -56,6 +56,11 @@ treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected
 #PersonalToolbar {
     padding-block: 0px 2px !important;
 }
+/* Quitar doble background en :hover en botones de extensiones ubicados en la barra de marcadores */
+#PersonalToolbar :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]):hover {
+  background-color: transparent !important;
+}
 /*--------------------------Panel Guardar Marcador----------------------------------*/
 /*Color de "highlight" inputtext*/
 richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
@@ -80,4 +85,14 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
 #nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-text,
 #nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-badge-stack {
     fill: var(--lwt-toolbarbutton-icon-fill-attention) !important;
+}
+/* Separador linea Vertical para tabs-bar, usando "espacio flexible" */
+:is(#TabsToolbar) toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"],:is(#TabsToolbar) toolbarspring {
+    background: var(--button-active-bgcolor) !important;
+    max-width: 1px !important;
+    min-width: 1px !important;
+    max-height: 14px !important;
+    min-height: 14px !important;
+    margin-inline: 3px !important;
+    margin-top: calc(var(--tab-height-personal) - 20px) !important;
 }

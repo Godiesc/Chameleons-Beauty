@@ -18,6 +18,33 @@
 /* Tamaño horizontal pestañas */
 .tabbrowser-tab[fadein]:not([style^="max-width"]){ max-width: 200px !important 
 }
+/* Firefox view icon */
+#firefox-view-button{ list-style-image: url("../images/firefoxview-close.svg") !important; }
+#firefox-view-button[aria-pressed="true"] { list-style-image: url("../images/firefoxview-open.svg") !important; }
+
+toolbar:is(#TabsToolbar) #firefox-view-button{ margin-left: 4px !important; }
+
+:root:not([privatebrowsingmode="temporary"]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs, :root[privatebrowsingmode="temporary"] :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button)) + #tabbrowser-tabs {
+  border-inline-start: 0px solid transparent !important;
+}
+toolbar:is(#TabsToolbar) #firefox-view-button .toolbarbutton-icon{
+    border-radius: 4px !important;
+    margin: -2px !important;
+    height: calc(var(--tab-height-personal) - 6px) !important;
+    width: calc(var(--tab-height-personal) - 6px) !important;
+    padding: 4px !important;
+}
+toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon{
+    outline: none !important;
+    border-radius: 3px !important;
+    margin: -2px !important;
+    background: var(--button-hover-bgcolor) !important;
+    fill: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
+}
+ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon{
+    background: var(--button-hover-bgcolor) !important;
+    fill: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
+}
 /*Linea gradiente en pestaña activa*/
 .tab-background[selected]{
   outline: none !important;
@@ -90,6 +117,21 @@
 .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
   background-image: radial-gradient(circle, var(--button-active-bgcolor1), var(--button-active-bgcolor1) 2px, transparent 2px) !important;
   background-position: center top calc(4px + var(--tabs-navbar-shadow-size)) !important;
+}
+/* ----------------------------------- config to themes that have "IMAGES" --------------------------------------------
+   ------------------------------------------ Compatibilidad parcial -------------------------------------------------- */
+:root:is([style*="--lwt-additional-images"],[lwtheme-image]) #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="false"],
+:root:is([style*="--lwt-additional-images"],[lwtheme-image]) #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
+    --lwt-background-alignment: right top, right top, right top !important;
+   background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+       linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+    var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+   background-position: right top !important;
+   background-repeat:  repeat-x !important;
+   background-size:  auto auto !important;  
+}
+#TabsToolbar{
+    background-color: var(--toolbar-bgcolor) !important;
 }
 /* Mantener una imagen al mover pestaña en temas con imagenes - still needs fix */
 :root[lwtheme-image] #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme{
