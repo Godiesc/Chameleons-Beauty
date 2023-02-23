@@ -57,9 +57,10 @@ treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected
     padding-block: 0px 2px !important;
 }
 /* Quitar doble background en :hover en botones de extensiones ubicados en la barra de marcadores */
-#PersonalToolbar :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
+toolbar:is(#TabsToolbar, #PersonalToolbar) :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]):hover {
-  background-color: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
 }
 /*--------------------------Panel Guardar Marcador----------------------------------*/
 /*Color de "highlight" inputtext*/
