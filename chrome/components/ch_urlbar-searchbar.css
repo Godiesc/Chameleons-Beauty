@@ -160,7 +160,16 @@ slot[part="content"] {
     height: 15px !important;
     margin-left: 1px !important;
     margin-block-start: 1px !important;
-    }
+}
+/* ícono contenido DRM */
+#notification-popup-box{
+    height: 22px !important;
+}
+.drm-icon {
+    padding: 3px !important;
+    height: 20px !important;
+    width: 20px !important;
+}
 /*"Color verde de la descripción de web segura"*/
 description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, #identity-popup-securityView-body>button {
     color: #2cf62c !important
@@ -184,23 +193,30 @@ description#identity-popup-content-owner-label, description#identity-popup-conte
     display: none !important;
 }
 
-/*------------toolbar autohide--------------------
+/*------------toolbar autohide--------------------*/
+/*
 #nav-bar {
-  --navbar-margin: -32px;
+    --navbar-margin: -34px;
 
-  margin-top: var(--navbar-margin);
-  margin-bottom: 0;
-  z-index: -100;
-  transition: all 0.1s ease !important;
-  opacity: 0;
+    margin-top: var(--navbar-margin);
+    margin-bottom: 0;
+    z-index: -100;
+    transition: all 0.1s ease !important;
+    opacity: 0;
 }
 
 #navigator-toolbox:focus-within > #nav-bar,
 #navigator-toolbox:hover > #nav-bar
 {
-  margin-top: 0;
-  margin-bottom: var(--navbar-margin);
-  z-index: 100;
-  opacity: 1;
+    margin-top: 0;
+    margin-bottom: var(--navbar-margin);
+    z-index: 100;
+    opacity: 1;
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+       linear-gradient(transparent, var(--toolbar-bgcolor, transparent)),
+    var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+    background-position: right top !important;
+    background-position-y: -34px !important;
+    background-color: var(--toolbar-bgcolor) !important;
 }
 */
