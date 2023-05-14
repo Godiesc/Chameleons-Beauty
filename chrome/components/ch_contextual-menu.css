@@ -45,15 +45,16 @@ menupopup{
     background: var(--gradient) no-repeat !important;
     border: 1px solid var(--arrowpanel-background) !important;
     background-clip: padding-box !important;
-}
-menupopup{ 
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    margin-left: 0px !important; 
+    margin-left: 0px !important;
     border-radius: 6px !important; }
 menupopup menupopup {
     margin-top: -6px !important;
-    margin-left: -4px !important; 
+    margin-left: -2px !important; 
+}
+menupopup, panel {
+  --panel-shadow-margin: 0px !important;
 }
 #PlacesToolbar menupopup {
     padding: 0px !important; 
