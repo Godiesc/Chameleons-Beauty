@@ -105,10 +105,10 @@ Get window_control_placeholder_support.css
 Window controls will be all wrong without it
 */
 
-/*:root[uidensity="compact"]{
+:root[uidensity="compact"]{
   --tab-block-margin: 2px !important;
 }
-*/
+
 /* Modify these to change relative widths or default height */
 #navigator-toolbox{
   --uc-navigationbar-width: 50vw;
@@ -120,36 +120,26 @@ Window controls will be all wrong without it
 
 /* reserved space for overflow + menu buttons */
 #navigator-toolbox{
-  --uc-buttons-width: calc(56px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+  --uc-buttons-width: calc(96px + 5 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
 }
-#nav-bar:not([overflowing]) > #nav-bar-customization-target{ 
-  --uc-buttons-width: calc(28px + 2 * var(--toolbarbutton-outer-padding) + 6px)
+#nav-bar:not([nonemptyoverflow="true"]) > #nav-bar-customization-target{ 
+  --uc-buttons-width: calc(64px + 4 * var(--toolbarbutton-outer-padding) + 6px)
 }
-/* Override for other densities 
-:root[uidensity="compact"] #navigator-toolbox{
-  --uc-toolbar-height: 34px;
-  --uc-menubutton-padding: 0px;
-}
-:root[uidensity="touch"] #navigator-toolbox{
-  --uc-toolbar-height: 44px;
-}
-:root[uidensity="compact"] #urlbar-container{
-  --urlbar-container-height: var(--uc-toolbar-height) !important;
-  padding-block: 0 !important;
-}
-:root[uidensity="compact"] #urlbar{
-  --urlbar-toolbar-height: var(--uc-toolbar-height) !important;
-}
-*/
+/* Deleted Override for other densities */
+
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
 @media screen and (max-width: 1000px){
-  #urlbar-container{ min-width:unset !important }
+  #urlbar-container{
+    min-width: 300px !important;
+    flex-shrink: 1 !important;
+  }
 }
 
 #TabsToolbar{
   margin-left: var(--uc-navigationbar-width);
   --tabs-navbar-shadow-size: 0px;
+  color: var(--toolbar-color);
 }
 
 #tabbrowser-tabs{
@@ -159,6 +149,7 @@ Window controls will be all wrong without it
 #TabsToolbar .tab-background[selected]{
   background: var(--lwt-selected-tab-background-color,rgba(0,0,0,0.2)) !important;
 }
+
 #TabsToolbar[brighttext] .tab-background[selected]{
   background: var(--lwt-selected-tab-background-color,rgba(255,255,255,0.2)) !important;
 }
@@ -177,11 +168,11 @@ Window controls will be all wrong without it
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container,
 #TabsToolbar > .toolbar-items{
   position: relative !important;
-  z-index: 3
+  z-index: 2
 }
 
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
-  display: -moz-box !important;
+  display: flex !important;
 }
 
 .titlebar-spacer[type="post-tabs"]{
@@ -302,25 +293,43 @@ Window controls will be all wrong without it
     margin-left: 2px !important;
     opacity: 0.8;
 }
+  
+/* Unified extension button on right - Immovable */
+  
+#unified-extensions-button{
+    position: fixed;
+    display: flex;
+    right: calc(var(--uc-window-control-width) + 82px) !important;
+    top: calc(var(--margin-top) + 3px) !important;
+    z-index: 3 !important;
+}
+  
+/* Ocultar botón "unified extension" en modo "pantalla completa" */
+  
+:root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#browser, :root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#browser-bottombox,
+:root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#customization-container {
+  z-index: 3 !important;
+}
+  
 /* ############# añadir más espacio para usarlo como espacio de arrastre en ventana no maximizada ########### */
 
 /* Sobre-escribir: reserved space for overflow + menu buttons */
 #navigator-toolbox{
-  --uc-buttons-width: calc(86px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+  --uc-buttons-width: calc(86px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px)) !important;
 }
 /* Espacio de arraste <antes> de las pestañas en ventanas no maximizadas */
 @media (-moz-platform: windows-win7),(-moz-platform: windows-win10){:root[tabsintitlebar][sizemode="normal"] #tabbrowser-tabs {padding-inline-start: 0px !important;
   }}
 /* Espacio de arraste <despues> de las pestañas en ventanas no maximizadas */
 :root[sizemode="normal"] #navigator-toolbox{
-  --uc-buttons-width: calc(126px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px))
+  --uc-buttons-width: calc(126px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px)) !important;
 }
 :root:is([tabsintitlebar][sizemode="normal"]) {
-    --uc-window-control-width: 158px;
+    --uc-window-control-width: 158px !important;
 }
 @media (-moz-gtk-csd-available) {
 :root:is([tabsintitlebar][sizemode="normal"]) {
-    --uc-window-control-width: 116px;
+    --uc-window-control-width: 116px !important;
   }}
 
 /*################################# Compatibilidad con <window controls> on left en linux ###########################*/
@@ -417,6 +426,13 @@ Window controls will be all wrong without it
     padding-top: 3px !important;
 }
 /* ------------------------- url --------------------------*/
+  
+/* Desenboque final en "Search with..." */
+  
+#urlbar[pageproxystate="invalid"]:not([usertyping],[searchmode],[open]) #urlbar-input{
+  mask-image: linear-gradient(to right, black calc(var(--min-width-url) - 5vw), transparent calc(var(--min-width-url) - 3vw)) !important;
+}
+  
 #urlbar{
     margin-top: -2px !important;
 }
@@ -428,12 +444,12 @@ Window controls will be all wrong without it
     -moz-box-orient: vertical !important;
 }
 /* urlbar focus - open */
-#urlbar-container:not([open=true],:focus, :focus-within ){
-    min-width: var(--min-width-url) !important; }
+#urlbar-container:not([open],:focus, :focus-within ){
+    max-width: var(--min-width-url) !important; }
 #urlbar:focus-within  { 
     min-width: calc(var(--min-width-url) + 30vw) !important; 
     clip-path: polygon(0px 0%, calc(var(--min-width-url) ) 0%, 0% 999999vw, 0% 0px) !important;}
-#urlbar[open=true]  { 
+#urlbar[open]  { 
     min-width: calc(var(--min-width-url) + 30vw) !important; 
     clip-path: none !important;
 }
