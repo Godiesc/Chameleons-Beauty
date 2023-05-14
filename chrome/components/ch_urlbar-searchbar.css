@@ -77,29 +77,29 @@ slot[part="content"] {
 }
 /*linea colorida urlbar focus*/
 
-#urlbar[open=true] #urlbar-background, #urlbar[focused=true] #urlbar-background {
+#urlbar[open] #urlbar-background, #urlbar[focused] #urlbar-background {
     margin-bottom: 1px !important;
     margin-top: 1px !important;
     margin-left: 1px !important;
     margin-right: 1px !important;
 }
-#urlbar[focused=true] {
+#urlbar[focused] {
     background-image: linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 30%, #33b3fd70 45%, #00aaff70 60%, #fd189270 100%);
     border-radius: 4px !important;
 }
-#urlbar[focused=true] #urlbar-background {
+#urlbar[focused] #urlbar-background {
     border-radius: 3px !important;
     background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
     border: #00000000 !important;
     box-shadow: none !important;
 }
-#urlbar[open=true] {
+#urlbar[open] {
     border-radius: 6px !important;
     background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%);
     max-height: -moz-available !important;
     border-radius: 6px !important;
 }
-#urlbar[open=true] #urlbar-background {
+#urlbar[open] #urlbar-background {
     border-radius: 6px !important;
     background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
     animation-duration: 0ms !important;
