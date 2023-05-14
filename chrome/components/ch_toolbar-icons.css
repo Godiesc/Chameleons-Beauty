@@ -3,11 +3,11 @@
 
 /* --------------- Íconos -------------------*/
 /* back button */
-#back-button image {    
+#nav-bar #back-button image {    
     list-style-image: url("../images/back.svg") !important;
 }
 /* forward - go button */
-#forward-button image {
+#nav-bar #forward-button image {
     list-style-image: url("../images/forward.svg") !important;
     padding-inline-start: 5px !important;
 }
