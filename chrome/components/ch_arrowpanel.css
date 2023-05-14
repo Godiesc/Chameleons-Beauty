@@ -33,7 +33,8 @@ slot {
 .navigable.subviewbutton:not([disabled], [open]):is(:active), menu.subviewbutton:not([disabled])[_moz-menuactive], 
  menuitem.subviewbutton:not([disabled])[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:active),
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:active) {
- background-image: var(--panel-separator-zap-gradient) ;
+    background-image: var(--panel-separator-zap-gradient) ;
+    background-repeat: no-repeat !important;
 }
 /*Color fondo gradiente :hover por los diferentes items de menús principales*/
 /*
