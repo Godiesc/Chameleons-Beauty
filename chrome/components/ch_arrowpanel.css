@@ -17,6 +17,7 @@
     background-clip: padding-box !important;
 }
 slot {
+    --panel-shadow-margin: 0px !important;
     margin: 1px !important;
     border: none !important;
 }
@@ -105,7 +106,7 @@ panelmultiview .toolbaritem-combined-buttons > label {
     border-radius: 50%;
 }
 :root[fxastatus="signedin"] #fxa-menu-avatar {
-    display: unset; -moz-box-ordinal-group: 2;
+    display: unset; order: 2 !important;
 }
 /*Ícono Nueva Pestaña*/
 
@@ -197,5 +198,5 @@ panelmultiview .toolbaritem-combined-buttons > label {
 .syncNowBtn {
     visibility: visible !important;
     margin-inline-end: 8px;
-    -moz-box-ordinal-group: 0 !important;
+    order: 0 !important;
 }
