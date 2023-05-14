@@ -97,3 +97,17 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
     margin-inline: 3px !important;
     margin-top: calc(var(--tab-height-personal) - 20px) !important;
 }
+/* :hover en botones de: all-tabs and unified extensions */
+#unified-extensions-panel .unified-extensions-item{
+    padding-block: 0px !important;    
+}
+#unified-extensions-panel .subviewbutton{
+  padding-block: 6px !important;
+}
+:root{
+    --uei-icon-size: 18px !important;
+}
+/* Second label del botón de extenciones */
+#unified-extensions-area toolbaritem:hover .unified-extensions-item-message-deck label{
+    color: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
+}
