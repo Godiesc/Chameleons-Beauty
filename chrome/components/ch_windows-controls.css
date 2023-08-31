@@ -3,24 +3,24 @@
 
 /*WindowsControls borde redondeado*/
 
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-button:not(.titlebar-close) {
+@media (-moz-platform: windows){ .titlebar-button:not(.titlebar-close) {
     padding-left: 10px !important;
     padding-right: 10px !important;
    }}
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-button:not(.titlebar-close):hover {
+@media (-moz-platform: windows){ .titlebar-button:not(.titlebar-close):hover {
     background-color: var(--toolbarbutton-hover-background) !important
    }}
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
+@media (-moz-platform: windows){ .titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
     border-radius: 6px !important;
     border: 3px solid #00000000 !important;
     margin-bottom: -1px !important
    }}
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover {
+@media (-moz-platform: windows){ .titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover {
     border-radius: 6px !important;
     border: 3px solid transparent !important;
     background-clip: padding-box !important;
    }}
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ .titlebar-close:hover {
+@media (-moz-platform: windows){ .titlebar-close:hover {
     border-radius: 6px 0px 6px 6px !important;
    }}
 /* Keep the same windows control icons in all the themes, includint the themes with images */

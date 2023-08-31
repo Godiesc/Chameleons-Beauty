@@ -53,7 +53,7 @@ findbar:-moz-lwtheme {
     padding-bottom: 2px !important;
     }}
 /*For nightly version, delete the code above when arrive to stable.*/
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){ #urlbar-input, #urlbar-scheme{
+@media (-moz-platform: windows){ #urlbar-input, #urlbar-scheme{
     padding-bottom: 2px !important;
     }}
 /*Search-bar*/
