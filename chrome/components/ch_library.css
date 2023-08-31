@@ -103,4 +103,9 @@
     #places treechildren::-moz-tree-image(selected) {
         fill: #eaeaea !important;
     }
+    /* Color :select con el mouse */
+    richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
+        background-color: #1060bf !important;
+        color: white !important;
+    }
 }
