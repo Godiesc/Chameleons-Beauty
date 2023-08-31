@@ -29,10 +29,7 @@ See the above repository for updates as well as full license text. */
   --uc-window-drag-space-pre: 0px; /* Remove pre space */
 }
 
-@media  (-moz-platform: windows-win7),
-        (-moz-platform: windows-win8),
-        (-moz-os-version: windows-win7),
-        (-moz-os-version: windows-win8){
+@media  (-moz-platform: windows){
   :root:is([tabsintitlebar], [sizemode="fullscreen"]) {
     --uc-window-control-width: 105px;
   }
@@ -314,7 +311,7 @@ Window controls will be all wrong without it
   --uc-buttons-width: calc(86px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px)) !important;
 }
 /* Espacio de arraste <antes> de las pestañas en ventanas no maximizadas */
-@media (-moz-platform: windows-win7),(-moz-platform: windows-win10){:root[tabsintitlebar][sizemode="normal"] #tabbrowser-tabs {padding-inline-start: 0px !important;
+@media (-moz-platform: windows){:root[tabsintitlebar][sizemode="normal"] #tabbrowser-tabs {padding-inline-start: 0px !important;
   }}
 /* Espacio de arraste <despues> de las pestañas en ventanas no maximizadas */
 :root[sizemode="normal"] #navigator-toolbox{
