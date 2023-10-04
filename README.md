@@ -37,18 +37,18 @@ Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautifu
 
 # Personalizar - Customize
 <ul><b><i>Personalizaciones Varias - Various customizations</i></b>
-<li><p>The file --> <code>chrome</code> --> <code>components</code> --> <code>ogx_root-personal.css</code> contain a very useful config rules to a better an easy custom of the wallpaper, height tabs, etc. There are descriptions on the right of each rule to you know what you can custom.</p></li></ul>
+<li><p>The file --> <code>chrome</code> --> <code>components</code> --> <code>ch_root-personal.css</code> contain a very useful config rules to a better an easy custom of the wallpaper, height tabs, etc. There are descriptions on the right of each rule to you know what you can customize.</p></li></ul>
 <ul><b><i>Fondo Nueva Pestaña - NewTab Wallpaper</i></b>
-   <li><p>(Option 1) Into the directory: <code>chrome</code> >> <code>images</code> >> <code>newtab</code> there is a set of wallpapers , the image that the theme will select by default is the one with the name: "wallpaper.png", you could rename the image you want with that name and the theme will select that one, you could add your own images. If you don't want a wallpaper just delete the file with that name. <b>A restart of the browser is necessary!!!. </b></p></li>
-<li><p>(Option 2) You could edit the file --> <code>chrome</code> --> <code>components</code> --> <code>ogx_root-personal.css</code> line <code>12</code><p></li></ul></br>
+   <li><p>(Option 1) Into the directory: <code>chrome</code> >> <code>images</code> >> <code>newtab</code> there is a set of wallpapers , the image that the theme will select by default is the one with the name: "wallpaper-dark.png" for dark themes, and "wallpaper-light.png" for light themes, you could rename the image you want with that name and the theme will select that one, you could add your own images. If you don't want a wallpaper just delete the file with that name. <b>A restart of the browser is necessary!!!. </b></p></li>
+<li><p>(Option 2) You could edit the file --> <code>chrome</code> --> <code>components</code> --> <code>ch_root-personal.css</code> lines 5 and 11 for dark and light wallpaper.<p></li></ul></br>
 
 # Compatibilidad - Compatibility
 
-<ul><li>Windows 10 (Tested - Probado) ✔</li>
-<li>Linux - ManjaroKDE (Not tested - No probado) soon.</li>
-<li>Windows 7 (Not tested - No probado)</li>
-<li>Windows 11 (Not tested - No Probado)</li>
-<li>MacOS (Not tested - No Probado)</li></ul></ul>
+<ul><li>Windows 10 (Tested - Probado)  ✔</li>
+<li>Linux - ManjaroKDE (Tested - Probado)  ✔</li>
+<li>Windows 7 (Not tested - No probado) ⚠️</li>
+<li>Windows 11 (Not tested - No Probado) ⚠️</li>
+<li>MacOS (Not tested - No Probado) ⚠️</li></ul></ul>
 
 # Example of about:support
 ![120349392-b372f980-c2c3-11eb-904d-b088168fd849](https://user-images.githubusercontent.com/22057609/156908375-824f8679-56a5-4d09-a86f-353a7f61135e.png)
