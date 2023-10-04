@@ -218,7 +218,7 @@
 @media (-moz-gtk-csd-available) {
 :root:is([tabsintitlebar][sizemode="normal"]),
 :root:is([tabsintitlebar],[sizemode="fullscreen"]){
-    --uc-window-control-width: 164px !important;
+    --uc-window-control-width: 134px !important;
   }}
   
 /* Sube la nav-bar a la tab-bar + Espacio para los -window controls- */
@@ -337,7 +337,7 @@
     --min-width-url: 23vw !important; /* Tamaño url */
   }
   
-/* ------------------------- url --------------------------*/
+/* --------------------------------------------- url ------------------------------------------ */
   
 /* Desenboque final en "Search with..." */
   
@@ -354,12 +354,12 @@
   
 #urlbar-container:not([open],:focus, :focus-within ){
     max-width: var(--min-width-url) !important; 
-  }
+}
   
 #urlbar:focus-within { 
     min-width: calc(var(--min-width-url) + 30vw) !important; 
     clip-path: polygon(0px 0%, calc(var(--min-width-url) ) 0%, 0% 999999vw, 0% 0px) !important;
-  }
+}
   
 #urlbar[open] { 
     min-width: calc(var(--min-width-url) + 30vw) !important; 
@@ -370,6 +370,17 @@
   
 #urlbar:not([focused]) #urlbar-input, /* ID for Firefox 70 */
 #urlbar:not([focused]) .urlbar-input{ text-align: center !important; }
+  
+/* Permite hacer espacio para mover los iconos en customization mode */
+  
+:root:is([customizing])  #urlbar{
+    max-width: calc(var(--min-width-url) - 10vw) !important; 
+}
+  
+:root:is([customizing])  #wrapper-urlbar-container{
+    max-width: calc(var(--min-width-url) - 9vw) !important; 
+}
+
   
 /* Ícono de "show more bookmarks" modificado */
   
@@ -430,74 +441,75 @@ spacer{
 /* ################################# Compatibilidad con <window controls> on left en linux ########################### */
 
 @media (-moz-gtk-csd-reversed-placement){
-  /* Quitar separador de  <window controls> de la derecha*/
-  #PanelUI-menu-button::after {
-    background: none !important;
-    padding-inline: 0px !important;
-    margin: 0px !important;
-  }
-  /* Poner Separador <window controls on left> y demás botones */
-:root:not([chromehidden~="toolbar"]) #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child::before {
-    background: url("../images/urlbar-separator.svg") no-repeat center !important; 
-    content: ""; display: block !important;
-    background-size: 6px 16px !important;
-    height: 16px;
-    fill: var(--button-hover-bgcolor) !important;
-    -moz-context-properties: fill !important;
-    padding-inline: 4px 4px !important;
-    margin-left: 2px !important;
-    opacity: 0.8;
-}  
-  /* Espacio de arrastre derecha ventana <no maximizada> */
-  :root[tabsintitlebar][sizemode="normal"]:not([sizemode="maximized"]) #navigator-toolbox{
-  --uc-buttons-width: calc(98px + 4 * var(--toolbarbutton-outer-padding) + var(--uc-menubutton-padding,6px)) !important; }
-  :root[tabsintitlebar][sizemode="normal"]:not([sizemode="maximized"]) #nav-bar{
-    border-inline-end-width: 50px  !important;
-  }  
-  :root:is([tabsintitlebar="true"][sizemode="maximized"],[tabsintitlebar][sizemode="fullscreen"]) #nav-bar{
-    border-inline-end-width: 0px  !important;
-  }
-  :root:is([tabsintitlebar][sizemode="maximized"]) #TabsToolbar-customization-target{
-    border-right: 62px solid transparent !important;
-  }
-  /* Hacer clicleable los botones de extensiones y overflow menu */
-  #PanelUI-button,#nav-bar-overflow-button, #unified-extensions-button{
-  margin: 0px !important;
-  border: 0px !important;
-  position: relative;
-  z-index: 3;
+  
+  :root{
+    --navbarWidth:36.3vw;                                                                                     /* Set width of navbar */
 }
-  /* Reordenar los <window controls> */
+  
+/* Sobreescribir el margen a la derecha */
+  
+  #nav-bar{
+    margin-inline-start: calc(var(--uc-window-control-width) - 20px)  !important;
+    padding-inline-end: 20px !important;
+  }
+  
+  #navigator-toolbox{
+    --uc-buttons-width: 97px
+  }
+  
+/* Unified extension button on right - Immovable */
+  
+  #unified-extensions-button{
+      position: fixed;
+      display: flex;
+      right: calc(var(--uc-window-control-width) - 39px) !important;
+      top: 0px !important;
+      padding-block: 6px !important;
+      z-index: 3 !important;
+  }
+  
+/* Quitar separador de  <window controls> de la derecha*/
+  
+  #PanelUI-menu-button::after {
+    display: none !important;
+    margin-right: 6px !important;
+  }
+  
+/* Espacio derecha para arratrar ventana */
+  
+  #PanelUI-button {
+    margin-right: 6px !important;
+  }
+  
+/* Poner Separador <window controls on left> y demás botones */
+  
+  :root:not([chromehidden~="toolbar"]) #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child::before {
+      background: url("../images/urlbar-separator.svg") no-repeat !important; 
+      content: ""; display: block !important;
+      background-size: 6px 16px !important;
+      width: 6px !important;
+      height: 16px;
+      fill: var(--button-active-bgcolor) !important;
+      -moz-context-properties: fill !important;
+      margin-left: -10px !important;
+      margin-right: 4px !important;
+      opacity: 0.8;
+    }  
+  
+/* Nueva posición <window controls> al borde izquierdo */
+  
   .titlebar-buttonbox {
     appearance: none !important;
     position: fixed !important;
     display: flex !important;
-    height: var(--tab-height-personal) !important;
+    height: calc(var(--tab-height-personal) + var(--margin-top) * 2) !important;
     top: var(--windowed-top-padding, 0px) !important;
     left: var(--uc-vertical-toolbar-width,0) !important;
-    flex-direction: row-reverse !important;
     background: transparent !important;
     padding-left: 2px !important;
     z-index: 2 !important;
-}
-  /*Botón <atrás> más a la derecha */
-  :root:not([chromehidden~="toolbar"]) #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child{
-    margin-left: calc(var(--uc-vertical-toolbar-width,0) + var(--uc-window-control-width)) !important;
-    padding-inline-start: 2px !important;
+    
     }
-  /* mover tabs-bar más a la derecha a causa de los <window controls> */
-  #TabsToolbar{
-    margin-left: calc(var(--uc-navigationbar-width) + var(--uc-window-control-width));
-    --tabs-navbar-shadow-size: inherit !important;
-    }
-  /* Menu bar */
-  :root:not([chromehidden~="toolbar"]) #toolbar-menubar{
-    padding-left: calc(var(--uc-vertical-toolbar-width,0) + var(--uc-window-control-width)) !important;
-    }
-  :root:not([chromehidden~="toolbar"]) #toolbar-menubar[autohide="false"] + #TabsToolbar{
-    padding-left: calc(var(--uc-vertical-toolbar-width,0) + 4px) !important;
   }
-}
 
-  }
-}
+}}

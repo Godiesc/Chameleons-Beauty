@@ -68,27 +68,25 @@
         list-style-image: none !important;
         appearance: auto !important;
     }
+    
     .titlebar-min {
         -moz-default-appearance: -moz-window-button-minimize !important;
     }
+    
     .titlebar-max {
         -moz-default-appearance: -moz-window-button-maximize !important;
     }
+    
     .titlebar-restore {
         -moz-default-appearance: -moz-window-button-restore !important;
     }
+    
     .titlebar-close {
         -moz-default-appearance: -moz-window-button-close !important;
     }
+    
     .titlebar-buttonbox {
-        min-height: calc(var(--tab-block-margin-personal) * 2 + var(--tab-height-personal)) !important;
-        max-height: calc(var(--tab-block-margin-personal) * 2 + var(--tab-height-personal)) !important;
-        
-    }
-}
-
-@media (-moz-gtk-csd-reversed-placement) {
-    .titlebar-buttonbox-container {
-        margin-inline: 2px 8px !important;
+        min-height: calc(var(--margin-top) * 2 + var(--tab-height-personal)) !important;
+        max-height: calc(var(--margin-top) * 2 + var(--tab-height-personal)) !important;
     }
 }

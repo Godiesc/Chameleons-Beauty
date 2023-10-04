@@ -223,6 +223,14 @@ spacer{
     #toolbar-menubar[autohide="true"] + #TabsToolbar{ padding-inline-start: var(--navbarWidth) !important; }  /* Muevo las pestañas 1px a la izquierda por bug */
 }
 
+/* For One-Line config - linux - window controls on left */
+
+@supports -moz-bool-pref("firefoxchameleon.oneline") {
+@media (-moz-gtk-csd-reversed-placement){
+    #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 0px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
+    }
+}
+
 :root:not([sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container{
   display: flex !important;
   visibility: visible !important;

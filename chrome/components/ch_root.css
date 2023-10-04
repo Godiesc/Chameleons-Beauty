@@ -184,6 +184,7 @@
 
 @media (prefers-color-scheme: light){  
   :root:is([privatebrowsingmode="temporary"]){
+    --lwt-accent-color: #f9f9f0 !important;                                                                        /* frame color in themes with images */
     --new-selected-tab-color: #e0dfec !important;                                                                  /* Nuevo color de pestaña a causa de bug */
   }
 }

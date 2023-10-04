@@ -5,15 +5,11 @@
 
 menupopup {
     --panel-padding-block: 5px !important;
-  }
-
-menupopup>menuitem, menupopup>menu {
-    padding-block: 0.4em !important;
 }
 
-@media (-moz-platform: linux) { menupopup>menuitem, menupopup>menu {
-    padding-block: 4px !important; 
-}}
+menupopup>menuitem, menupopup>menu {
+        padding-block: 0.4em !important;
+}
 
 /* Combo-box - Select Box more compact */
 
@@ -41,10 +37,6 @@ menuseparator {
     padding-inline: 0px !important;
     margin-inline: 0px !important;
 }
-
-@media (-moz-platform: linux) { menuseparator {
-    margin-block: 3px !important;
-    }}
 
 /*Colores generales*/
 
@@ -88,6 +80,7 @@ menupopup {
 /* Íconos superiores del menú contextual */
 
 #context-navigation {
+    appearance: none !important;
     background-color: transparent !important;
     color: var(--arrowpanel-color) !important; 
 }
@@ -150,51 +143,41 @@ menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menu
 /* ------------------------ LINUX ---------------------- */
 
 @media (-moz-platform: linux) {
-    #context-navigation {
-        background-color: var(--arrowpanel-background) !important;
-        color: var(--arrowpanel-color) !important;
-        margin-left: 4px !important;
-        margin-right: 4px !important; 
+    
+    menupopup>menuitem, menupopup>menu {
+        padding-block: 4px !important; 
+    }
+
+/* Color íconos deshabilitados */
+    
+    menu[disabled="true"], menuitem[disabled="true"] {
+        color: color-mix(in srgb, var(--arrowpanel-background)70%, var(--arrowpanel-color)) !important;
     }
     
-#context-navigation:hover{
-    --menuitem-hover-background-color: red !important; 
+/* Íconos superiores del menú contextual */
+
+    #context-navigation > .menuitem-iconic:hover:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon{
+        appearance: none !important;
+        background-color: transparent !important; 
+    }   
+    
+    #context-navigation>menuitem{
+        appearance: none !important;
+        border-radius: 4px !important;
+        background-color: transparent !important;
     }
     
-    /* Color íconos deshabilitados */
-menu[disabled="true"], menuitem[disabled="true"] {
-    color: color-mix(in srgb, var(--arrowpanel-background)70%, var(--arrowpanel-color)) !important;
+    #context-navigation>menuitem:hover{
+        background-color: var(--button-hover-bgcolor) !important; 
     }
 
-#context-sep-navigation {
-    margin-top: 4px !important;
-    }
-
-menupopup, panel {
-  --panel-padding-block: 4px !important;
-  --panel-padding: var(--panel-padding-block) 0;
-  --panel-color: MenuText;
-  --panel-background: Menu;
-  --panel-border-radius: env(-moz-gtk-csd-menu-radius);
-  --panel-border-color: ThreeDShadow;
-  --panel-width: initial;
-    }
+/* Flecha derecha */
     
-#context-navigation>menuitem{
-    appearance: none !important;
-    border-radius: 4px !important;
-    background: transparent !important;
+    .menu-right {
+        -moz-appearance: none !important;
+        list-style-image: url(chrome://global/skin/icons/arrow-right.svg )!important;    
+        -moz-context-properties: fill !important;
+        fill: currentColor !important;
+        opacity: 0.7 !important;
     }
-
-#context-navigation>menuitem:hover{
-    background: var(--button-hover-bgcolor) !important; 
-    }
-
-.menu-right {
-    -moz-appearance: none !important;
-    list-style-image: url(chrome://global/skin/icons/arrow-right.svg )!important;    
- 	height: initial !important;
-    -moz-context-properties: fill !important;
-    fill: currentColor !important;
-    opacity: 0.7 !important;
-    }}
+}
