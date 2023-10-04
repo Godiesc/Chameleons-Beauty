@@ -1,38 +1,94 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*WindowsControls borde redondeado*/
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/firefox-one */
 
-@media (-moz-platform: windows){ .titlebar-button:not(.titlebar-close) {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-   }}
-@media (-moz-platform: windows){ .titlebar-button:not(.titlebar-close):hover {
-    background-color: var(--toolbarbutton-hover-background) !important
-   }}
-@media (-moz-platform: windows){ .titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
-    border-radius: 6px !important;
-    border: 3px solid #00000000 !important;
-    margin-bottom: -1px !important
-   }}
-@media (-moz-platform: windows){ .titlebar-min:hover, .titlebar-max:hover, .titlebar-restore:hover, .titlebar-close:hover {
-    border-radius: 6px !important;
-    border: 3px solid transparent !important;
-    background-clip: padding-box !important;
-   }}
-@media (-moz-platform: windows){ .titlebar-close:hover {
-    border-radius: 6px 0px 6px 6px !important;
-   }}
-/* Keep the same windows control icons in all the themes, includint the themes with images */
-.titlebar-button{
-    background-color: transparent !important;
-    -moz-context-properties: stroke !important;
-    stroke: currentColor !important;
+/* WindowsOS - window control icons */
+
+@media (-moz-platform: windows) {
+
+    .titlebar-button{
+        background-color: transparent !important;
+        padding-inline: 3px !important;
+        padding-block: var(--tab-block-margin) !important;
+    }
+    
+    .titlebar-button:hover{
+        background-color: transparent !important;
+    }
+    
+    .titlebar-button.titlebar-min .toolbarbutton-icon,
+    .titlebar-button.titlebar-restore .toolbarbutton-icon, .titlebar-button.titlebar-max .toolbarbutton-icon,
+    .titlebar-button.titlebar-close .toolbarbutton-icon{
+        width: 32px !important;
+        height: 32px !important;
+        padding: 9px !important;
+    }
+    
+    .titlebar-button:hover .toolbarbutton-icon{
+        background-color:  var(--toolbarbutton-hover-background) !important;
+        border-radius: var(--tab-border-radius) !important;
+    }
+    
+    .titlebar-button.titlebar-close:hover .toolbarbutton-icon{        
+        background-color:  #e81123 !important;
+    }
+    
+    /* Keep the same windows control icons in all the themes, includint the themes with images */
+    
+    .titlebar-button {
+        background-color: transparent !important;
+        -moz-context-properties: stroke !important;
+        stroke: currentColor !important;
+    }
+    .titlebar-close:hover {
+        background-color: transparent !important;
+        color: white !important;
+    }
+    .titlebar-close {
+        list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important;
+    }
+    .titlebar-min {
+        list-style-image: url(chrome://browser/skin/window-controls/minimize.svg) !important
+    }
+    .titlebar-max {
+        list-style-image: url(chrome://browser/skin/window-controls/maximize.svg) !important
+    }
+    .titlebar-restore {
+        list-style-image: url(chrome://browser/skin/window-controls/restore.svg) !important
+    }
 }
-.titlebar-button:hover{ background-color: hsla(0,0%,100%,.32) !important }
-.titlebar-close:hover{ background-color: hsl(355,86%,49%) !important; color: white !important; 
+
+/* Linux default window control icons */
+
+@media (-moz-platform: linux) {
+    
+    .titlebar-button{
+        list-style-image: none !important;
+        appearance: auto !important;
+    }
+    .titlebar-min {
+        -moz-default-appearance: -moz-window-button-minimize !important;
+    }
+    .titlebar-max {
+        -moz-default-appearance: -moz-window-button-maximize !important;
+    }
+    .titlebar-restore {
+        -moz-default-appearance: -moz-window-button-restore !important;
+    }
+    .titlebar-close {
+        -moz-default-appearance: -moz-window-button-close !important;
+    }
+    .titlebar-buttonbox {
+        min-height: calc(var(--tab-block-margin-personal) * 2 + var(--tab-height-personal)) !important;
+        max-height: calc(var(--tab-block-margin-personal) * 2 + var(--tab-height-personal)) !important;
+        
+    }
 }
-.titlebar-close   { list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important }
-.titlebar-min     { list-style-image: url(chrome://browser/skin/window-controls/minimize.svg) !important }
-.titlebar-max     { list-style-image: url(chrome://browser/skin/window-controls/maximize.svg) !important }
-.titlebar-restore { list-style-image: url(chrome://browser/skin/window-controls/restore.svg) !important }
+
+@media (-moz-gtk-csd-reversed-placement) {
+    .titlebar-buttonbox-container {
+        margin-inline: 2px 8px !important;
+    }
+}

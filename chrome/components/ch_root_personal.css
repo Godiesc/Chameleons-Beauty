@@ -1,39 +1,87 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
+@media (prefers-color-scheme: dark){ :root{
+  --lwt-main-image:  url("../images/newtab/wallpaper-dark.png") !important;                     /* new-tab page image - dark theme */ 
+  --lwt-private-image:  url("../images/newtab/private-dark.png") !important;                    /* new-tab private-page image - dark theme */
+  --brightness-wallpaper: transparent !important;                                               /* filtro para oscurecer la imagen */
+  }}
+  
+@media (prefers-color-scheme: light){ :root{
+  --lwt-main-image:  url("../images/newtab/wallpaper-light.png") !important;                    /* new-tab page image - white theme*/
+  --lwt-private-image:  url("../images/newtab/private-light.png") !important;                   /* new-tab private-page image - white theme*/ 
+  --brightness-wallpaper: transparent !important;                                               /* filtro para oscurecer la imagen */
+  }}
+
 :root{
   
-  --personal-gradient-general: linear-gradient(165deg,                                       /* Gradiente Pestaña Activa */
-     #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) !important;
+  --purple: #8d35e2; --blue:  #304af1;
   
-  --personal-gradient-into-arrowpanels: linear-gradient(                                     /* Gradiente dentro del Menú Hamburguesa */
+  --general-color: var(--blue);
+  
+  --personal-gradient-general: linear-gradient(165deg,                                          /* Gradiente Pestaña Activa */
+     #d02f85 0%, #b336fc 8%, #3567fd 40%, #4e7afd 60%,#4e89fd 70%, #d02f85 100%) !important;
+  
+  --personal-gradient-into-arrowpanels: linear-gradient(                                        /* Gradiente linear */
     to right, #902c8ad0 0%, #902cfcd0 50%, #3083ffd0 100%) !important; 
   
-  --lwt-main-image:  url("../images/newtab/wallpaper.png");                                  /* new-tab page image */
-  --wallpaper-size: cover;                                                                   /* cover-> default ; auto auto -> to <<main-image>> config */
-  --brightness-wallpaper: brightness(100%);                                                  /* 100% -> default ; 51% makes the wallpaper darker */
+  --wallpaper-size: cover;                                                                      /* cover-> default ; auto auto -> to <<main-image>> config */
+  --brightness-wallpaper: brightness(100%);                                                     /* 100% -> default ; 51% makes the wallpaper darker */
   
-  --tab-height-personal: 32px ;                                                              /* Tamaño altura de pestañas*/
-  --toolbar-height-personal: 34px ;                                                          /* Toolbar height */
+  --tab-height-personal: 32px ;                                                                 /* Tamaño altura de pestañas*/
+  --toolbar-height-personal: 34px ;                                                             /* Toolbar height */
   
-  --logo-wordmark-visibility: 1 ;                                                            /* :1 visible, :0 invisible ; Logo-wordmark*/
-  --logo-wordmark-display: flex ;                                                            /* :none ->eliminar , :flex ->Mostrar;  Logo-wordmark*/
-  --searchbar-on-off: 1 ;                                                                    /* :1 visible, :0 invisible ; searchbar*/
-  --searchbar-display: flex ;                                                                /* :none ->eliminar , :flex ->Mostrar; searchbar*/
+  --logo-wordmark-visibility: 1 ;                                                               /* :1 visible, :0 invisible ; Logo-wordmark*/
+  --logo-wordmark-display: flex ;                                                               /* :none ->eliminar , :flex ->Mostrar;  Logo-wordmark*/
+  --searchbar-on-off: 1 ;                                                                       /* :1 visible, :0 invisible ; searchbar*/
+  --searchbar-display: flex ;                                                                   /* :none ->eliminar , :flex ->Mostrar; searchbar*/
   
-  --newtab-pinnedsites-background: color-mix(in srgb, white 5%, transparent) ;               /* color - fondo de sitios fijados y barra de búsqueda*/
+  --newtab-pinnedsites-position-top: 0px ;                                                      /* Posición pinnedsites - top-> : 0px ; center-> : auto*/
   
-  --selected-text-background: var(--button-active-bgcolor1);                                 /* Selected text background */
+  --newtab-pinnedsites-background: color-mix(in srgb, white 8%, transparent) ;                  /* color - fondo de sitios fijados y barra de búsqueda*/
   
-  --personal-blur: blur(26px) ;                                                              /* Utilizado para personalizar userContent.css */
+  --selected-text-background: var(--general-color);                                             /* Selected text background */
   
-  /*--background-align-y: -70px ;                                                              /* Alinear new-tab wallpaper to <<main-image>> config 
-                                                                                                -70px  ventana normal; 
-                                                                                                -98px  con Barra de Marcadores;
-                                                                                                -128px con B.Marcadores y B.Menu  */
+  --personal-blur: blur(14px) ;                                                                 /* Utilizado para personalizar userContent.css */
   
-  /*------------------------------Botones hover, clic--------------------------------*/
-  --button-bgcolor1: color-mix(in srgb, #304af1  20%, transparent) !important;              /*ColorCombobox-yBotones(+-)*/
-  --button-hover-bgcolor1: color-mix(in srgb, #304af1  80%, transparent) !important;        /*colorHoverCombobox-yBotones(+-)*/
-  --button-active-bgcolor1: color-mix(in srgb, #305aff  90%, transparent) !important;       /*ColorAlHacerClicCombobox-yBotones(+-)*/
+  
+  /* Botones hover, clic */
+  
+  --button-bgcolor: color-mix(in srgb, var(--general-color)  20%, transparent) !important;              /* button background */
+  --button-hover-bgcolor: color-mix(in srgb, var(--general-color)  80%, transparent) !important;        /* button :hover background */
+  --button-active-bgcolor: color-mix(in srgb, var(--general-color)  90%, transparent) !important;       /* button :active background */
 }
+
+:root[privatebrowsingmode="temporary"]{ --general-color: var(--purple) !important; }                    /* Accent color private mode */
+
+
+/* ---------------------------------------------------- -Main Image- Config ------------------------------------------------------ */
+
+@supports -moz-bool-pref("firefoxchameleon.main-image") {
+
+   @media (prefers-color-scheme: dark){ :root{
+      --lwt-main-image:  url("../images/newtab/main-image-dark.png") !important;                        /* Main image - dark theme */ 
+      --brightness-wallpaper: #0000004b !important;                                                     /* Filtro oscuro */
+     }}
+   @media (prefers-color-scheme: light){ :root{
+      --lwt-main-image:  url("../images/newtab/main-image-light.png") !important;                       /* new-tab page image - dark theme */ 
+      --brightness-wallpaper: #ffffff4b !important;                                                     /* Filtro claro */
+     }}
+  
+  :root{
+      --wallpaper-size: auto auto;                                                                      /* cover-> default ; auto auto -> to <<main-image>> config */  
+      --background-align-y: -71px ;                                                                     /* Alinear new-tab wallpaper to <<main-image>> config 
+                                                                                                           -71px  ventana normal 
+                                                                                                           -101px con Barra de Marcadores */
+    }
+}
+  
+/* --------------------------------------------- -Main Image- + -One line- config ------------------------------------------------ */
+
+@supports -moz-bool-pref("firefoxchameleon.main-image") and
+          -moz-bool-pref("firefoxchameleon.oneline"){  
+    :root{
+      --background-align-y: -38px ;                                                                     /* Alinear new-tab wallpaper to <<main-image>> config 
+                                                                                                           -38px ventana normal
+                                                                                                           -68px con Barra de Marcadores  */
+    }}

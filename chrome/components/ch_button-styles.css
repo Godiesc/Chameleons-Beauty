@@ -62,34 +62,19 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) :is(panelview .toolbarbutton-1, toolb
     background-color: transparent !important;
     background-image: none !important;
 }
+
 /*--------------------------Panel Guardar Marcador----------------------------------*/
+
 /*Color de "highlight" inputtext*/
+
 richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
     background-color: var(--button-primary-bgcolor) !important;
     color: white !important;
 }
-/* Favicon */
-#editBookmarkPanelFavicon[src] {
-  background-color: color-mix(in srgb, var(--arrowpanel-background) 94%, var(--lwt-tab-text)) !important;
-  box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 84%, var(--lwt-tab-text, Field)) !important;
-  width: 16px !important;
-  height: 16px !important;
-  border-radius: 4px !important;
-  margin-top: 4px !important;
-  margin-inline-start: 4px !important;
-}
-/*Color de iconos de la toolbar cuando están :hover */
-#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-text,
-#nav-bar .toolbarbutton-1:active:not([disabled="true"]) > .toolbarbutton-badge-stack,
-#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-text,
-#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-badge-stack {
-    fill: var(--lwt-toolbarbutton-icon-fill-attention) !important;
-}
+
 /* Separador linea Vertical para tabs-bar, usando "espacio flexible" */
 :is(#TabsToolbar) toolbarpaletteitem[place="toolbar"][id^="wrapper-customizableui-special-spring"],:is(#TabsToolbar) toolbarspring {
-    background: var(--button-active-bgcolor) !important;
+    background: var(--toolbarseparator-color) !important;
     max-width: 1px !important;
     min-width: 1px !important;
     max-height: 14px !important;
@@ -97,17 +82,59 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
     margin-inline: 3px !important;
     margin-top: calc(var(--tab-height-personal) - 20px) !important;
 }
-/* :hover en botones de: all-tabs and unified extensions */
+
+/* Botones de: all-tabs and unified extensions */
+
+/* botón >> ALL tabs */
+
+.all-tabs-secondary-button{
+    border-radius: var(--toolbarbutton-border-radius) !important;
+    border: none !important;
+    width: 28px !important;
+}
+
+.all-tabs-secondary-button .toolbarbutton-icon{
+    width: 14px !important;
+    height: 14px !important;
+}
+
+/* botón >> Unified extentions */
+
+:root{ --uei-icon-size: 18px !important; }
+
 #unified-extensions-panel .unified-extensions-item{
-    padding-block: 0px !important;    
+    padding-block: 0 !important;
+    margin-block: 0px !important;
 }
-#unified-extensions-panel .subviewbutton{
-  padding-block: 6px !important;
+
+.unified-extensions-item-action-button.panel-no-padding.webextension-browser-action.subviewbutton.subviewbutton-iconic{
+    padding-block: 2px !important;
+    margin-block: 0px !important;
 }
-:root{
-    --uei-icon-size: 18px !important;
+
+.unified-extensions-item-menu-button:is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]) {
+    background: transparent !important;
 }
+
+.unified-extensions-item-menu-button.subviewbutton.subviewbutton-iconic image{
+    border: none !important;   
+    background-repeat: no-repeat !important;
+    border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+/*
+.unified-extensions-item-menu-button.subviewbutton.subviewbutton-iconic:hover image {
+    background-image: var(--panel-separator-zap-gradient) !important;
+}*/
+
 /* Second label del botón de extenciones */
-#unified-extensions-area toolbaritem:hover .unified-extensions-item-message-deck label{
-    color: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
+
+@media (-moz-platform: linux) {
+#unified-extensions-area toolbaritem .unified-extensions-item-message-deck label{
+    appearance: none !important;
+    font-size: 0.875em !important;
+    width: -moz-available !important;
+    }
 }
+

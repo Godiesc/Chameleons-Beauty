@@ -1,46 +1,99 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*"bookmark_text": "#b3d9ff"*/
+/* bookmark_text */
+
 .browser-toolbar:not(.titlebar-color) {
     color: var(--lwt-text-color) !important;
 }              
-/*"personalizar barra de busqueda"*/
+
+/* Personalizar barra de busqueda */
+
 findbar:-moz-lwtheme {
     background-color: var(--toolbar-bgcolor) !important;
     color: var(--lwt-text-color) !important;  
-    border-color: var(--input-border-color) !important; }     
+    border-color: var(--input-border-color) !important; 
+}
+
+.findbar-textbox:focus {
+    border-color: var(--general-color) !important;
+    background-color: var(--arrowpanel-background) !important;
+}
+
 .findbar-find-status[status="notfound"] { 
     color: var(--general-color) !important; 
     font-weight: 600 !important; 
 }
+
 /* "popup_highlight" -> 1.- keyboard highlight 2.-mouse highlight*/
-.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
-    background-image: var(--panel-separator-zap-gradient) !important; color: #ffffff !important; border-radius: 4px !important; }
+
+.urlbarView-row-inner:is([selected], :hover) .urlbarView-url{
+    color: var(--lwt-tab-color) !important; 
+}
+
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected]  {
+    background-image: var(--panel-separator-zap-gradient) !important; 
+    color: #ffffff !important; 
+    border-radius: 4px !important; 
+}
 
 /* margenes sugerencias de búsqueda */
+
 .urlbarView-title{ margin-left: -6px !important;
 }
+
 /* tamaño letras urlbar */
-#urlbar-input { opacity: 0.9 !important; font-weight: 501 !important; margin-left: 4px !important;
+
+#urlbar-input { opacity: 0.9 !important; font-weight: 501 !important;
 }
+
 @media (-moz-platform: linux){ #urlbar-input { opacity: 0.9 !important; font-weight: 500 !important; }
 }
+
 /* Sugerencias de búsqueda */
-.urlbarView-row{ margin-top:-6px !important;  margin-bottom: 5px !important;}
-.urlbarView-row-inner{ padding-left: 2px !important;}
+
+.urlbarView-row{ 
+    margin-block: -3px !important; 
+    padding-block: 0px !important; 
+    min-height: 34px !important; 
+}
+
+.urlbarView-row-inner{ 
+    padding-left: 0px !important; 
+    margin-block: 0px !important; 
+    min-height: 24px !important;
+}
+
+/* No hacer doble fila url results en cuadro pequeño */
+
+@media screen and (min-height: 600px) {
+  .urlbarView-results[wrap] > .urlbarView-row {
+    &:where(:not([rich-suggestion])) > .urlbarView-row-inner {
+      & > .urlbarView-no-wrap {
+        flex-basis: 0% !important;
+      }
+    }
+  }
+}
+
 #urlbar .search-panel-header{ padding-left: 4px !important; }
+
 .urlbarView-results{ margin-bottom: -14px !important; }
-.urlbarView-favicon{ padding-left: 5px !important; padding-right: 5px !important; padding-block: 3px !important; border-radius: 7px !important;}
+
+.urlbarView-favicon{ padding-left: 5px !important; padding-right: 5px !important;  }
+
+.urlbarView-url { color: var(--lwt-toolbarbutton-icon-fill-attention) !important; }
 
 /* Label "Sugerencias de firefox - Sugerencias de google" */
+
 .urlbarView-row[label] {margin-top: 16px !important;}
 .urlbarView-row[label]::before {    
     margin-inline-start: 8px !important;
     font-weight: bold !important;
     letter-spacing: 0.04em !important;
 }
-/*"Urlbar más pequeñas"*/
+
+/* Urlbar más pequeñas */
 
 #nav-bar{ min-height: var(--toolbar-height-personal) !important; }
 
@@ -49,33 +102,64 @@ findbar:-moz-lwtheme {
     border-radius: 4px !important;
     max-height: 26px !important;
 }
-@media (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){ #urlbar-input, #urlbar-scheme{
-    padding-bottom: 2px !important;
-    }}
-/*For nightly version, delete the code above when arrive to stable.*/
+
 @media (-moz-platform: windows){ #urlbar-input, #urlbar-scheme{
     padding-bottom: 2px !important;
     }}
-/*Search-bar*/
+
+/* Brighness when urlbar [open]*/
+
+#urlbar[open] {
+    z-index: 4 !important;
+}
+
+#nav-bar[urlbar-exceeds-toolbar-bounds="true"]::before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Search-bar */
 
 #searchbar {
     min-height: 26px !important;
     max-height: 26px !important;
 }
+
 #searchbar:focus-within {
-    border-color: color-mix(in srgb, var(--toolbar-field-border-color) 65%, var(--lwt-text-color)) !important;
-    box-shadow: none !important
+    border-color: var(--general-color) !important;
+    box-shadow: none !important;
+    background-color: var(--toolbar-field-focus-background-color) !important;
 }
+
 #PopupSearchAutoComplete {
-    --uc-slot-radius: 0 0 4px 4px;
-    margin-top: -3px !important;
-    border-radius: 0 0 4px 4px !important;
-    --arrowpanel-border-color: color-mix(in srgb, var(--toolbar-field-border-color) 65%, var(--lwt-text-color)) !important;
+    --uc-slot-radius: 0 0 5px 5px;
+    --arrowpanel-border-radius: var(--uc-slot-radius) !important;
+    background-color: var(--toolbar-field-focus-background-color) !important;
+    width: calc(var(--panel-width) - 1px) !important;
+    margin-top: -4px !important;
+    border-radius: 0 0 5px 5px !important;
+    box-shadow: inset 1px 0 0 0 var(--general-color),
+                1px 0px 0 0 var(--general-color),
+                inset 0 -1px 0 0 var(--general-color) !important;
 }
-slot[part="content"] {
-    border-radius: var(--uc-slot-radius, var(--panel-border-radius)) !important;
+
+#PopupSearchAutoComplete {
+    --panel-border-radius: 0 0 5px 5px !important;
 }
-/*linea colorida urlbar focus*/
+
+.search-go-button, #urlbar-go-button {
+  width: calc(var(--urlbar-min-height) - 8px - 2 * var(--urlbar-container-padding)) !important;
+  height: calc(var(--urlbar-min-height) - 8px - 2 * var(--urlbar-container-padding)) !important;
+}
+
+/* Linea colorida urlbar focus */
 
 #urlbar[open] #urlbar-background, #urlbar[focused] #urlbar-background {
     margin-bottom: 1px !important;
@@ -83,57 +167,87 @@ slot[part="content"] {
     margin-left: 1px !important;
     margin-right: 1px !important;
 }
+
 #urlbar[focused] {
     background-image: linear-gradient(to bottom right, #fd189270 0%, #b02cfc70 30%, #33b3fd70 45%, #00aaff70 60%, #fd189270 100%);
     border-radius: 4px !important;
 }
+
 #urlbar[focused] #urlbar-background {
     border-radius: 3px !important;
-    background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
+    background-color: color-mix(in srgb, var(--toolbar-bgcolor) 86%, var(--contrast-color)) !important;
     border: #00000000 !important;
     box-shadow: none !important;
 }
+
+:root:is([style*="--lwt-additional-images"],[lwtheme-image]) #urlbar[focused] #urlbar-background {
+    background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
+}
+
 #urlbar[open] {
     border-radius: 6px !important;
     background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%);
     max-height: -moz-available !important;
     border-radius: 6px !important;
+    animation: ease-in-out 500ms !important;
 }
+
 #urlbar[open] #urlbar-background {
     border-radius: 6px !important;
     background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
-    animation-duration: 0ms !important;
+    animation: ease-in-out 500ms !important;
     max-height: -moz-available !important;
 }
+
 /*Páginas de extensiones*/
+
 #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button {
     background: transparent !important;
     padding-left:3px !important;
     padding-right:4px !important;
 }
+
 #identity-box.extensionPage label{
     display: none !important;
 }
+
 /*Páginas seguras de firefox"*/
+
 #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
-  list-style-image: url("../images/foxFill.svg") !important;
-    width: 16px !important; height: 16px !important; margin-left: -4px !important; margin-right: -4px !important; padding-right: 0px !important;}
-#identity-box[pageproxystate="valid"].notSecureText, #identity-box[pageproxystate="valid"].chromeUI, #identity-box[pageproxystate="valid"].extensionPage, #urlbar-label-box {
-  margin-inline-end: 2px !important; }
-#identity-icon-label { display: none !important; }
-#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button, #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, #urlbar-label-box {
+    list-style-image: url("../images/foxFill.svg") !important;
+    width: 16px !important; 
+    height: 16px !important; 
+    margin-inline: -4px !important; 
+}
+
+#identity-box[pageproxystate="valid"].notSecureText, #identity-box[pageproxystate="valid"].chromeUI, 
+#identity-box[pageproxystate="valid"].extensionPage, #urlbar-label-box {
+  margin-inline-end: 4px !important; 
+}
+
+#identity-icon-label { 
+    display: none !important; 
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button, #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button, 
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button, #urlbar-label-box {
     background-color: transparent !important;
 }
-#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:hover:not([open]), #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:hover:not([open]) {
+
+#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:hover:not([open]), 
+#identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:hover:not([open]) {
     background-color: var(--toolbarbutton-hover-background) !important;
 }
+
 #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button[open="true"], #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button[open="true"] {
     background-color: var(--toolbarbutton-active-background)  !important;
     color: white !important;
 }
+
 #identity-popup-security-button {
     margin-bottom: 0px !important
 }
+
 /*"Íconos de la urlbar más pequeños"*/
 
 #tracking-protection-icon, #identity-icon, .sharing-icon, #permissions-granted-icon, #blocked-permissions-container>.blocked-permission-icon {

@@ -1,46 +1,53 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*Menú contextual*/
+/* Menú contextual */
+
+menupopup {
+    --panel-padding-block: 5px !important;
+  }
+
 menupopup>menuitem, menupopup>menu {
     padding-block: 0.4em !important;
 }
+
 @media (-moz-platform: linux) { menupopup>menuitem, menupopup>menu {
     padding-block: 4px !important; 
 }}
+
+/* Combo-box - Select Box more compact */
+
+#ContentSelectDropdown > menupopup > menuitem {
+    padding-block: 0px !important;
+}
+
 /* Menu items border and padding */
+
 menupopup>menuitem, menupopup>menu {
     border-radius: 3px !important;
-    margin-left: 4px !important;
-    margin-right: 4px !important;
     padding-inline-start: 0.5em !important;
 }
-/*Gradient color to :hover items*/
-/*
-menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
-    background-image: var(--panel-separator-zap-gradient);
-}
-*/
-/*borde izquierda y derecha del menú contextual*/
-menugroup>menuitem:first-child { padding-left: 4px !important; }
-menugroup>menuitem:last-child {  padding-right: 4px !important; }
 
-/* context menu top buttons radius */
+/* Context menu top buttons radius */
+
 menugroup>menuitem>hbox>image {
     border-radius: 4px !important;
 }
-/*separador de items*/
-menuseparator{
+/* Separador de items */
+
+menuseparator {
     appearance: none !important;
     border-color: var(--panel-separator-color, #50505090) !important;
-    margin-inline: 5px 5px !important;
-  /*border-image: var(--panel-separator-zap-gradient) 1 !important;*/
-  /*border-image: linear-gradient(165deg, #d02f85ee 0%, #b336fcee 8%, #3567fdee 40%, #4e7afdee 60%,#4e89fdee 70%, #d02f85ee 100%) 1 !important;*/
+    padding-inline: 0px !important;
+    margin-inline: 0px !important;
 }
+
 @media (-moz-platform: linux) { menuseparator {
     margin-block: 3px !important;
     }}
+
 /*Colores generales*/
+
 menupopup{
     background: var(--gradient) no-repeat !important;
     border: 1px solid var(--arrowpanel-background) !important;
@@ -48,120 +55,122 @@ menupopup{
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-left: 0px !important;
-    border-radius: 6px !important; }
+    border-radius: 6px !important; 
+}
+
 menupopup menupopup {
-    margin-top: -6px !important;
+    margin-top: -7px !important;
     margin-left: -2px !important; 
 }
+
 menupopup, panel {
   --panel-shadow-margin: 0px !important;
 }
-#PlacesToolbar menupopup {
-    padding: 0px !important; 
-    margin-right: 0px !important; 
-    --panel-subview-body-padding: 4px 0px !important;
+
+menupopup {
+    padding: 0px !important;
+    margin: 0px !important;
+    --panel-padding-block: 5px !important;
+    --panel-subview-body-padding: 5px !important;
 }
-#PlacesToolbar menupopup menupopup{ margin-inline-start: -4px !important; margin-top: -6px !important; }
+
+#PlacesToolbar menupopup menupopup{ margin-inline-start: -4px !important; margin-top: -7px !important; }
+
 .menupopup-arrowscrollbox {
-    background: var(--arrowpanel-background, #50505090) !important;
-    background-color: var(--arrowpanel-background, #50505090) !important;
-    color: var(--arrowpanel-color, #50505090) !important;
+    background-color: var(--arrowpanel-background, #505050) !important;
+    color: var(--arrowpanel-color, #505050) !important;
     border: 1px solid transparent !important;
+    background-clip: padding-box !important;
     border-radius: 6px !important;
     margin: 0px !important;
-    background-clip: padding-box !important;
-    /*ColorFondoAlPasarElMouseSobreItems*/
-    --menuitem-hover-background-color: var(--button-hover-bgcolor, #80808050) !important;
 }
+
 /* Íconos superiores del menú contextual */
+
 #context-navigation {
-    background-color: var(--arrowpanel-background) !important;
-    color: var(--arrowpanel-color) !important;
-    margin-left: 2px !important;
-    margin-right: 2px !important; }
+    background-color: transparent !important;
+    color: var(--arrowpanel-color) !important; 
+}
+
 #context-navigation > .menuitem-iconic:hover:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon{
     appearance: none !important;
-    background-color: var(--button-hover-bgcolor) !important; }
-    /* Color íconos deshabilitados */
+    background-color: var(--button-hover-bgcolor) !important; 
+}
+
+/* Color íconos deshabilitados 
+
 #context-navigation > .menuitem-iconic:hover:is([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
     appearance: none !important;
     color: inherit !important;
     background: transparent !important;
-}
+}*/
+
 /* Font color in Contextual menus */
+
 menupopup>menuitem:not([disabled="true"]), menupopup>menu {
     appearance: none !important;
-    color: var(--twt-tab-text) !important;
+    color: var(--arrowpanel-color) !important;
 }
+
 /* Mostrar background-color en el item seleccionado */
+
 menupopup>menuitem:is([selected="true"]):not([disabled="false"]){
     appearance: none !important;
-    background-image: var(--panel-separator-zap-gradient) !important; 
-    color: white !important;}
+    background-image: var(--panel-separator-zap-gradient) !important;
+    color: white !important;
+}
+
 menupopup>menuitem:is([selected="true"]):hover:not([disabled="false"]){
     appearance: none !important;
     background-image: var(--panel-separator-zap-gradient) !important;
     color: white !important;
 }
-/* Íconos superiores del menú contextual */
-#context-navigation {
-    background-color: var(--arrowpanel-background) !important;
-    color: var(--arrowpanel-color) !important;
-    margin-left: 2px !important;
-    margin-right: 2px !important;}
+
+/* Color to :hover items*/
+menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menuactive]:not([disabled="true"])) {
+    appearance: none !important;
+    background-color: var(--button-hover-bgcolor, #80808050) !important; 
+    color: var(--arrowpanel-color, #50505090) !important;
+}
+
+/* Gradient color to :hover items */
+/*
+menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menuactive]:not([disabled="true"])),
+#context-navigation > .menuitem-iconic:hover:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
+    background-image: linear-gradient(#20202020, #20202020),
+                      linear-gradient(#20202020, #20202020), 
+                      var(--panel-separator-zap-gradient) !important;
+}
+*/
+
+#context-sep-navigation::before {
+    border-image: var(--panel-separator-zap-gradient) 1 !important;
+}
+
+/* ------------------------ LINUX ---------------------- */
+
+@media (-moz-platform: linux) {
+    #context-navigation {
+        background-color: var(--arrowpanel-background) !important;
+        color: var(--arrowpanel-color) !important;
+        margin-left: 4px !important;
+        margin-right: 4px !important; 
+    }
+    
 #context-navigation:hover{
-    --menuitem-hover-background-color: var(--button-hover-bgcolor) !important;}
+    --menuitem-hover-background-color: red !important; 
+    }
+    
     /* Color íconos deshabilitados */
 menu[disabled="true"], menuitem[disabled="true"] {
     color: color-mix(in srgb, var(--arrowpanel-background)70%, var(--arrowpanel-color)) !important;
-}
-@media (-moz-platform: linux) { #context-navigation {
-    background-color: var(--arrowpanel-background) !important;
-    color: var(--arrowpanel-color) !important;
-    margin-left: 4px !important;
-    margin-right: 4px !important; }}
-@media (-moz-platform: linux) { #context-navigation:hover{
-    --menuitem-hover-background-color: red !important; }}
-    /* Color íconos deshabilitados */
-@media (-moz-platform: linux) { menu[disabled="true"], menuitem[disabled="true"] {
-    color: color-mix(in srgb, var(--arrowpanel-background)70%, var(--arrowpanel-color)) !important;
-    }}
-/* Color to :hover items*/
-menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
-    appearance: none !important;
-    background: var(--button-hover-bgcolor, #80808050) !important; 
-    color: var(--arrowpanel-color, #50505090) !important;
-}
-/* Necesario para quitar glitch indeseado al mover el mouse rapidamente sobre items de menús */
-menupopup>menuitem:not([disabled="true"], [selected="true"], :hover), menupopup>menu:not([disabled="true"], :hover) {
-    appearance: none !important;
-    background-color: transparent !important; }
-menupopup>menu[open="true"]{
-    appearance: none !important;
-    background: var(--button-hover-bgcolor) !important; 
-    color: var(--arrowpanel-color) !important;
-}
-/*Colores y márgenes iconos superiores del menú contextual*/
-/*
-#main-menubar>menupopup, #context-navigation {
-    background-color: color-mix(in srgb, var(--arrowpanel-background) 99%, var(--arrowpanel-color)) !important;
-    border: 1px solid color-mix(in srgb, var(--panel-separator-color)50%, transparent) !important;
-    border-radius: 4px !important;
-    color: var(--arrowpanel-color) !important;
-    margin-left: 4px !important;
-    margin-right: 4px !important;
-    padding-top: 3px !important;
-    padding-bottom: 3px !important;
-}*/
-#context-sep-navigation {
-    margin-top: 0px !important;
-    border-image: var(--panel-separator-zap-gradient) 1 !important;
-}
-@media (-moz-platform: linux) { #context-sep-navigation {
-    margin-top: 4px !important;
-    }}
+    }
 
-@media (-moz-platform: linux) { menupopup, panel {
+#context-sep-navigation {
+    margin-top: 4px !important;
+    }
+
+menupopup, panel {
   --panel-padding-block: 4px !important;
   --panel-padding: var(--panel-padding-block) 0;
   --panel-color: MenuText;
@@ -169,16 +178,19 @@ menupopup>menu[open="true"]{
   --panel-border-radius: env(-moz-gtk-csd-menu-radius);
   --panel-border-color: ThreeDShadow;
   --panel-width: initial;
-    }}
-@media (-moz-platform: linux) { #context-navigation>menuitem{
+    }
+    
+#context-navigation>menuitem{
     appearance: none !important;
     border-radius: 4px !important;
     background: transparent !important;
-    }}
-@media (-moz-platform: linux) { #context-navigation>menuitem:hover{
+    }
+
+#context-navigation>menuitem:hover{
     background: var(--button-hover-bgcolor) !important; 
-    }}
-@media (-moz-platform: linux) {.menu-right {
+    }
+
+.menu-right {
     -moz-appearance: none !important;
     list-style-image: url(chrome://global/skin/icons/arrow-right.svg )!important;    
  	height: initial !important;

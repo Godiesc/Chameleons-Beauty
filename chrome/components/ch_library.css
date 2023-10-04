@@ -2,22 +2,46 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /*---------------------------------library ----------------------------------*/
-@-moz-document url(chrome://browser/content/places/places.xhtml) {
+@-moz-document url(chrome://browser/content/places/places.xhtml), url(chrome://browser/content/webext-panels.xhtml) {
     :root {
         --organizer-pane-background-2: color-mix(in srgb, var(--organizer-pane-background) 85%, black) !important;
         --organizer-border-color:color-mix(in srgb, var(--organizer-separator-color), transparent) !important;
         --menu-items-hover-background2: color-mix(in srgb, var(--organizer-pane-background) 75%, white) !important;
     }
-/* Contextual :hover item */    
-    menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:hover {
+    
+    @media (prefers-color-scheme: dark){
+        :root{
+            --color-menu: #181823 !important;
+        }}
+
+    @media (prefers-color-scheme: light){
+        :root{
+            --color-menu: #fafafa !important;
+        }}
+    
+/* Contextual :hover item */
+    
+    .menupopup-arrowscrollbox {
+        background-color: var(--color-menu) !important;
+        color: initial !important;
+    }
+    
+    menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menuactive]:not([disabled="true"])) {
         appearance: none !important;
         background: #80808050 !important; 
         color: var(--arrowpanel-color, #50505090) !important;
-}
-    menupopup{
-        outline: 1px solid #1060bf !important;
-        outline-offset: -2px !important;
     }
+    
+    menupopup{
+        --gradient: var(--personal-gradient-general) !important;
+        background: var(--gradient) no-repeat !important;
+        border: 1px solid menu !important;
+        background-clip: padding-box !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+    }
+    
     /*-----------------------Menú principal-------------------------*/
     #placesToolbar>toolbarbutton {
         margin: 2px 2px 2px 2px !important;

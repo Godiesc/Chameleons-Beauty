@@ -1,79 +1,107 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*Label de medios "Reproduciendo" modifiado - Animación*/
-@keyframes slide1 {
-    from { transform: scale(1.0, 1.0); }  to { transform: scale(0.6, 1.0); }
-}
+/*Label de medios "Reproduciendo" modifiado */
+
 tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {
-    background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%);
     font-size: 2px !important;
     color: transparent !important;
-    margin-top: 0px !important;
+    background: var(--animated-beats) no-repeat !important;
+    background-size: 22px 6px !important;
+    width: 22px !important;
+    height: 6px !important;
+    margin-top: -1px !important;
     margin-bottom: 3px !important;
-    opacity: 1 !important;       
-    border-radius: 4px !important;
-    animation: 500ms infinite ease-in-out;
-    animation-name: slide1;
+    margin-left: 1px !important;
 }
+
 .tab-secondary-label:is([muted], [activemedia-blocked]) {
     display: none !important;
 }
+
 /*--------Favicon simpre visible en pestañas con sonido-------*/
+
 .tab-icon-image:not([pinned]) {
     opacity: 1 !important;
 }
- .tab-icon-overlay, .tab-icon-overlay[activemedia-blocked], .tab-icon-overlay[pinned] {
-    height: 13px !important; width: 14px !important; z-index: 1; padding: 0px !important;
-    top: 11px !important; left: 10px !important;  border-radius: 50% !important;
+
+.tab-icon-overlay, .tab-icon-overlay[activemedia-blocked], .tab-icon-overlay[pinned] {
+    height: 13px !important; 
+    width: 14px !important; 
+    z-index: 1; 
+    padding: 0px !important;
+    top: 11px !important; 
+    left: 10px !important;  
+    border-radius: 50% !important;
 }
+
 tab[pinned]:not(:hover) .tab-icon-overlay:not([soundplaying]),tab:not([pinned],:hover) .tab-icon-overlay:is([sharing]):not(:hover){
     opacity: 0 !important;
 }
+
 .tab-icon-overlay[activemedia-blocked]:is([pinned]) {
-    opacity: 0.8 !important; margin-right: 0px !important;
+    opacity: 0.8 !important; 
+    margin-right: 0px !important;
 }
+
 .tab-icon-overlay[activemedia-blocked]:is([pinned]):hover {    
-    opacity: 1 !important; margin-right: 0px !important; background-color: transparent !important;
+    opacity: 1 !important; 
+    margin-right: 0px !important; 
+    background-color: transparent !important;
 }
+
 .tab-icon-overlay[activemedia-blocked] {
-    stroke: #d10000cc !important;  fill: #fff !important; margin-right: 6px !important;
+    stroke: #d10000cc !important;  
+    fill: #fff !important; 
+    margin-right: 6px !important;
 }
+
 .tab-icon-overlay[activemedia-blocked]:hover {
-    stroke: #d10000cc !important;  fill: #ffffff !important; 
+    stroke: #d10000cc !important;  
+    fill: #ffffff !important; 
 }
-/*------ícono  reproduciendose-------*/
+
+/*------Ícono  reproduciendose-------*/
+
 .tab-icon-overlay:is([sharing], [soundplaying]):not([pinned]) {
     border-radius: 10px !important;
     color: var(--lwt-tab-text) !important;
     background-color: transparent !important;
     fill-opacity: 1 !important;
 }
+
 tab:not([pinned], [selected]) .tab-icon-overlay:is([sharing], [soundplaying]):not([pinned]) {
     color: var(--lwt-tab-text) !important;
     background-color: transparent !important;
 }
-/*Compartiendo microfono y cámara*/
+
+/* Compartiendo microfono y cámara */
+
 .tab-icon-overlay:not([crashed]):is([sharing]) {
     stroke: transparent !important;
 }
-/*----ícono "reproduciendo" hover----*/
+
+/*----Ícono "reproduciendo" hover----*/
+
 tab:not([pinned])[selected] .tab-icon-overlay:not([pinned])[soundplaying]:hover, tab:is([pinned][selected]) .tab-icon-overlay:is([pinned][soundplaying]):hover {
     list-style-image: url("../images/muted.svg") !important;
     stroke: transparent !important;
     color: var(--lwt-tab-text) !important;
 }
+
 tab:not([pinned], [selected]) .tab-icon-overlay:hover:is([sharing], [soundplaying]) {
     color: var(--lwt-tab-text) !important;
     list-style-image: url("../images/muted.svg") !important;
     opacity: 1 !important;
     color: var(--lwt-tab-text) !important;
 }
+
 tab:hover .tab-icon-stack:not([crashed]):is([soundplaying], [muted], [activemedia-blocked]) :is(.tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay),
-tab[pinned][soundplaying] .tab-icon-stack:not([crashed]):is([soundplaying], [muted], [activemedia-blocked]) :is(.tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay){
+tab[pinned]:hover .tab-icon-stack:not([crashed]):is([muted], [activemedia-blocked]) :is(.tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay){
     mask-image: url("../images/tab_icon_masks.svg#SoundMask") !important;
     }
-/*------muteado-------*/
+
+/*------Muteado-------*/
 
 .tab-icon-overlay[muted]:not([pinned]) {
     border-radius: 10px !important;
@@ -82,29 +110,56 @@ tab[pinned][soundplaying] .tab-icon-stack:not([crashed]):is([soundplaying], [mut
     width: 14px !important;
     list-style-image: url("../images/muted.svg") !important;
 }
-/*muteado no seleccionado y seleccionado*/
+
+/* Muteado no seleccionado y seleccionado */
 
 .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:is([pinned][muted]):not([selected="true"]), tab:is([pinned]):not([selected]):hover .tab-icon-overlay:is([pinned][soundplaying]):not([selected="true"]) {
     background-color: transparent !important;
     stroke: transparent !important;
 }
+
 .tab-icon-overlay:is([selected="true"][muted]), .tab-icon-overlay:is([pinned][selected="true"][muted]), .tab-icon-overlay:is([pinned][selected="true"][soundplaying]) {
     !important;
     color: var(--lwt-tab-text) !important;
     background-color: transparent !important;
     stroke: transparent !important;
 }
-/*muteado hover*/
+
+/* Muteado hover */
 
 .tab-icon-overlay:not([pinned])[selected="true"][muted]:hover {
     stroke: transparent !important;
     color: var(--lwt-tab-text) !important;
     list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
 }
+
 .tab-icon-overlay:not([pinned], [selected="true"])[muted]:hover {
     list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg")!important;
     background-color: transparent !important;
 }
+
+/*-----------Ícono "reproduciendo" Pinned-----------*/
+
+.tab-icon-overlay:is([pinned][muted]) {
+    list-style-image: url("../images/muted.svg") !important;
+}
+
+tab:not(:hover) .tab-icon-overlay:is([pinned][soundplaying]) {
+    stroke: transparent !important;
+    color: transparent !important;
+    background: var(--animated-beats) no-repeat !important;
+    background-color: var(--toolbar-bgcolor) !important;
+    box-shadow: 2px -2px 0px var(--toolbar-bgcolor), -1px -2px 0px var(--toolbar-bgcolor) !important;
+    background-size: 22px 6px !important;
+    width: 17px !important;
+    height: 6px !important;
+    padding: 0px !important;
+    top: 18px !important;
+    left: 0px !important;
+    margin-right: 0px !important;
+    border-radius: 0px !important;
+}
+
 /*-----------ícono "reproduciendo" Pinned-----------*/
 
 .tab-icon-overlay:is([pinned][muted]) {

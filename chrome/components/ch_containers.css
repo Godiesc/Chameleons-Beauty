@@ -2,15 +2,20 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 /* Color contenedor default */
+
 .identity-color-toolbar {
     --identity-tab-color: #0c86ee !important;
     --identity-icon-color: #0c86ee !important;
 }
-/*rework en la Linea de Contenedores-BordePestaña*/
+
+/* Rework en la Linea de Contenedores-BordePestaña */
+
 .tab-context-line {
     opacity: 0 !important;
 }
-/*rework en la Linea de Contenedores-BordeFavicon*/
+
+/* Rework en la Linea de Contenedores-BordeFavicon */
+
 .tab-icon-pending:not([selected],[pinned]),.tab-icon-pending:not([pinned]), .tab-sharing-icon-overlay:not([selected],[pinned]), .tab-throbber[busy], .tab-icon-image:not([selected],[pinned]){
     box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
     border-radius: 2px !important;
@@ -18,22 +23,35 @@
     margin-left: -1px !important;
     margin-right: 6px !important;
 }
+
 .tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected] {
-    outline: 1px solid var(--identity-icon-color, #00000000) !important;
-    border-radius: 3px !important;
+    box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000),
+                -1px 0 0px var(--identity-icon-color, #00000000), 1px 0 0px var(--identity-icon-color, #00000000) !important;
+    border-radius: 2px !important;
     padding: 2px !important;
     margin-left: -1px !important;
     margin-right: 6px !important;
+    transition-duration: 100ms !important;
 }
+
 .tab-icon-pending:not([selected])[pinned], .tab-sharing-icon-overlay:not([selected])[pinned], .tab-throbber[busy][pinned], .tab-icon-image:not([selected])[pinned] {
     box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
     padding: 2px !important; border-radius: 2px !important;
 }
+
 .tab-icon-pending[pinned], .tab-sharing-icon-overlay[pinned], .tab-icon-image[pinned], .tab-throbber:is([busy][pinned]) {
     margin-right: -1px !important;
     margin-left: -1px !important;
 }
-/*Nuevos margenes - CargandoPágina*/
+
+/* Deleted label in urlbar */
+
+#userContext-label {
+    display: none !important;
+}
+
+/* Nuevos margenes - CargandoPágina */ 
+
 .tab-throbber[busy]:not([pinned]){
     border-radius: 0px !important;
     padding: 0 !important;
@@ -42,6 +60,7 @@
     margin-right: 8px !important;
     opacity: 1 !important;
 }
+
 .tab-throbber:is([busy][pinned]) {
     border-radius: 0px !important;
     padding: 0px !important;
@@ -49,13 +68,17 @@
     margin-left: 1px !important;
     margin-right: 1px !important;
 }
-/* corregir medida favicon ausente */
+
+/* Corregir medida favicon ausente */
+
 hbox .tab-icon-pending {
   height: 20px !important;
   width: 20px !important;
     padding: 2px !important;
 }
+
 /* Nuevos colores */
+
 .identity-color-blue {--identity-tab-color: #2574A7 !important; --identity-icon-color: #2574A7 !important;}
 .identity-color-green {--identity-tab-color: #1E934F !important; --identity-icon-color: #1Eb34F !important;}
 .identity-color-orange {--identity-tab-color: #e67e22 !important; --identity-icon-color: #e67e22 !important;}
@@ -65,12 +88,14 @@ hbox .tab-icon-pending {
 .identity-color-yellow {--identity-tab-color: #e6b803 !important; --identity-icon-color: #e6b803 !important;}
 .identity-color-turquoise {--identity-tab-color: #03b48d !important; --identity-icon-color: #03b48d !important;}
 
-/*Borde urlbar Container*/
+/* Borde urlbar Container */
+
 #urlbar:not([open])>#urlbar-input-container {
     border-width: 0 !important;
     padding: 2px !important;
     max-height: -moz-available !important;
 }
+
 #userContext-icons::before {
     box-sizing: border-box;
     display: block;
@@ -85,25 +110,31 @@ hbox .tab-icon-pending {
     outline-offset: -1px;
     pointer-events: none;
 }
+
 #urlbar[focused] #userContext-icons::before {
     outline-width: 1px;
     outline-offset: -1px;
 }
+
 #urlbar:is([focused]) #userContext-icons::before {
     border-radius: 4px !important;
 }
+
 #urlbar:not([focused]) #userContext-icons::before {
     outline-color: color-mix(in srgb, var(--toolbar-field-border-color) 78%, var(--identity-icon-color)) !important;
 }
+
 #urlbar:is([open]) #userContext-icons::before {
     border-radius: 6px !important;
 }
+
 /* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlabar popup is open */
 
 #urlbar[open]>#urlbar-input-container {
     position: static !important;
     max-height: -moz-available !important;
 }
+
 #urlbar[open]>#urlbar-background {
     z-index: -1 !important;
     max-height: -moz-available !important;
