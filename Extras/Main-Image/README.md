@@ -1,8 +1,13 @@
-## step to apply "Main-Image" config
+## Steps to apply -Main-Image- config
 
-<ul><li><p>Add the files <code>ogx_main-image.css</code> and <code>ogx_root-personal.css</code> into the <code>chrome/components</code> folder.</p></li><li>Use the theme <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li></ul></br>
+<ul><li>Create this preference in about:config page.</li>  
+  <table><tr>
+    <td width="320px">firefoxchameleon.main-image</td>
+    <td width="50px">true</td></tr>
+  </table>
+<li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li></ul></br>
 
-<p><i>PD: The file <code>ogx_root-personal.css</code> will replace the default file of the theme, if you changed some rule in that file you will 
-  need to change again in this new file. The wallpaper will be the named <b>>>wallpaper1.png<<</b> in <code>chrome</code> >> <code>images</code> >> <code>newtab</code>, if you want to change it you will need to replace your new image with that name.</i></p>
+> <p>⚠ Notice: If you have the bookmark-bar always on, you should edit the<code>chrome/components/ch_root_personal.css</code> file, line <code>73</code> with a higher number to line up the image, there is a description on the right of that line for your help.</p>
+</br>
   
-![imagen](https://user-images.githubusercontent.com/22057609/187052998-35e41223-3247-4d94-b1f1-8ca9ddd5dca7.png)
+![imagen](https://github.com/Godiesc/Chameleons-Beauty/assets/22057609/642a7fd2-73b7-4d08-a266-8d4583df45b7)
