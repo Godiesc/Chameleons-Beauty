@@ -5,9 +5,10 @@
     <td width="320px">firefoxchameleon.left-sidebar</td>
     <td width="50px">true</td></tr>
   </table>
-<li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li></ul></br>
+<li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
+<li>Is compatible with oneline config and main-image config.</li></ul></br>
 
-> <p>⚠ Notice: You should have the bookmark-bar always on. Is compatible with oneline config and main-image config.</p>
+> <p>⚠ Notice: You should have the bookmark-bar always on.</p>
 
 ### Previews
 ![imagen](https://github.com/Godiesc/Chameleons-Beauty/assets/22057609/481f0057-87f3-490f-98d8-c662e6a0e8c1)
