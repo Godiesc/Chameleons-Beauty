@@ -110,11 +110,11 @@
         text-decoration: underline var(--general-color) !important;
       }
       .Card-contents a:not(.Button){
-        color: var(--button-active-bgcolor) !important;
+        color: var(--general-color) !important;
       }
       .Card-contents a:hover:not(.Button){
-        color: var(--general-color) !important;
-        text-decoration: underline var(--general-color) !important;
+        color: var(--aqua) !important;
+        text-decoration: underline var(--aqua) !important;
        }
       .SearchResult--meta-section,
       .MetadataCard-title,
@@ -150,7 +150,7 @@
       .Button--action,
       .DevHub-Navigation ul li.DevHub-Navigation-Register .Button,
       .DevHub-MyAddons-item-buttons-submit .Button {
-        color: var(--in-content-primary-button-text-color) !important;
+        color: white !important;
         background: var(--in-content-primary-button-background) !important;
       }
       select,
@@ -172,7 +172,7 @@
       .Button--action:not(.Button--disabled):hover,
       .DevHub-Navigation ul li.DevHub-Navigation-Register .Button:hover,
       .DevHub-MyAddons-item-buttons-submit .Button:hover {
-        background: var(--in-content-primary-button-background-hover) !important;
+        background: var(--button-hover-bgcolor) !important;
       }
       .ShowMoreCard-contents::after {
         background: linear-gradient(hsla(0deg, 0%, 100%, 0), var(--in-content-table-background)) !important;

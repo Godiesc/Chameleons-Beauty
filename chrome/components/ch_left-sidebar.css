@@ -181,6 +181,20 @@
          background-position-y: calc(0px - var(--toolbar-height-personal)) !important;
     }}
     
+/* ---------------------------- Left-sidebar + tree-tabs config ---------------------------- */
+    
+@supports -moz-bool-pref("firefoxchameleon.tree-tabs"){
+    
+    /* Margen abajo de la left-sidebar */    
+    :root:not([chromehidden~="toolbar"]) #PersonalToolbar {
+        --padding-bottom-left-sidebar: 40px !important;
+    }
+    :root:not([chromehidden~="toolbar"]):not([lwtheme-image],[style*="--lwt-additional-images"]) #PersonalToolbar,
+    :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) #PersonalToolbar {
+         background-position-y: calc(1px - var(--toolbar-height-personal)) !important;
+    }
+    }
+    
 /* Tamaño botones de extensiines y botones clásicos */
 
    #PersonalToolbar .toolbarbutton-1{

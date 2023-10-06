@@ -195,7 +195,10 @@ spacer{
   max-height: calc(var(--tab-height-personal) + 3px) !important;
 }
 
-/* ---------------------------------------------------------- Menubar ---------------------------------------------------------- */
+/* ---------------------------------------------------------- Menubar ---------------------------------------------------------- 
+   --------------------------------------------- Incompatible with tree-tabs style --------------------------------------------- */
+
+@supports not -moz-bool-pref("firefoxchameleon.tree-tabs"){
 
 /* ---------------------- Menu-bar in tabs-tolbar ------------------------- */
 
@@ -239,6 +242,7 @@ spacer{
 #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
   display: flex !important;
 }
+
 
 /* ---------------------------------------------- Vertical Menu ----------------------------------------------
    Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_popup_menubar.css   */
@@ -339,4 +343,5 @@ menubar:hover{
     background-color: var(--button-bgcolor) !important;
     border-radius: 4px !important;
     width: -moz-available !important;
+}
 }

@@ -95,7 +95,8 @@
    
 /* Quita fondo oscuro sobre la toolbox incompatible con -oneline- config */
 
-@supports -moz-bool-pref("firefoxchameleon.oneline") {
+@supports -moz-bool-pref("firefoxchameleon.oneline") 
+       or -moz-bool-pref("firefoxchameleon.tree-tabs")  {
    
    @media screen and (min-width: 1000px){
       #nav-bar{

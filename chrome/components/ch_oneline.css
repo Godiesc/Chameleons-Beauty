@@ -351,8 +351,7 @@
 }
 
 #urlbar:not([open],:hover, [focused]) #urlbar-input {
-    mask-image:
-    linear-gradient(to right,  transparent 0%, #fff 10% 80%, transparent 90%)
+    mask-image: linear-gradient(to right,  transparent 0%, #fff 10% 80%, transparent 90%) !important;
 }
   
 /* urlbar focus - open */
@@ -371,21 +370,20 @@
     clip-path: none !important;
 }
   
+/* Permite hacer espacio para mover los iconos en customization mode */
+  
+:root:is([customizing])  #urlbar{
+    max-width: calc(var(--min-width-url) - 3vw) !important; 
+}
+  
+:root:is([customizing])  #wrapper-urlbar-container{
+    max-width: calc(var(--min-width-url) - 2vw) !important; 
+}
+
 /* Texto Urlbar centrado */
   
 #urlbar:not([focused]) #urlbar-input, /* ID for Firefox 70 */
 #urlbar:not([focused]) .urlbar-input{ text-align: center !important; }
-  
-/* Permite hacer espacio para mover los iconos en customization mode */
-  
-:root:is([customizing])  #urlbar{
-    max-width: calc(var(--min-width-url) - 10vw) !important; 
-}
-  
-:root:is([customizing])  #wrapper-urlbar-container{
-    max-width: calc(var(--min-width-url) - 9vw) !important; 
-}
-
   
 /* Ícono de "show more bookmarks" modificado */
   

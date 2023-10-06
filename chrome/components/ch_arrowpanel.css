@@ -86,6 +86,11 @@ slot {
     margin: 0px !important;
 }
 
+#sidebar-box {
+    max-width: none !important;
+    min-width: 30px !important;   
+}
+
 /*-------------------------------------- Íconos en el menú de hamburguesa ----------------------------------------------*/
 
 :root {
