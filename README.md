@@ -16,6 +16,7 @@ Theme to <a href="https://addons.mozilla.org/es/firefox/user/7024772/">"Beautifu
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Main-Image"> Main-Image </a> - This configuration will simulate a image behind all the browser.</li>
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Oneline"> OneLine </a> - The tabs-bar will be next to the navbar.</li>
 <li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Left-sidebar"> Left-sidebar </a> - The bookmark-bar will display on the left of the window.</li>
+<li><a href ="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Tree-tabs"> Tree-tabs </a> - Perfect match if you use tree-tabs extensions.</li>
 <li><a href="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Play-Pause">Play/Pause icon button extension.</a> - Enables the possibility to play or pause tabs with a click on the sound icon.</li></ul>
 
 # ¿Cómo instalar? - How to install?
