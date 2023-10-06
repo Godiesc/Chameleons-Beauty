@@ -6,7 +6,8 @@
     <td width="50px">true</td></tr>
 </table>
 <li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
-<li>Put your icons like the image below.</li></ul>
+<li>Put your icons like the image below.</li>
+<li>Is compatible with Left-sidebar config and Main-image config.</li></ul>
 
 ![OneLineBeforeConfig](https://github.com/Godiesc/Chameleons-Beauty/assets/22057609/84737aa5-8e14-402d-bb6e-11b08aa422d8)
 
