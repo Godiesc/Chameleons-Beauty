@@ -6,7 +6,7 @@
     <td width="50px">true</td></tr>
   </table>
 <li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
-<li>Is compatible with oneline config and main-image config.</li></ul></br>
+<li>It is compatible with oneline config, main-image config and tree-tabs config.</li></ul></br>
 
 > <p>⚠ Notice: You should have the bookmark-bar always on.</p>
 
