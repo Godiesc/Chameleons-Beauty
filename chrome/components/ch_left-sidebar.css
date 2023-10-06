@@ -166,7 +166,7 @@
          background-size: auto !important;
     }
     
-    :root:root:not([chromehidden~="toolbar"]):is([privatebrowsingmode="temporary"]){
+    :root:not([chromehidden~="toolbar"]):is([privatebrowsingmode="temporary"]){
         #PersonalToolbar{ background-color: var(--lwt-accent-color) !important; }
     }}
     
