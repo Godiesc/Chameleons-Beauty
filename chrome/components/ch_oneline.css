@@ -238,8 +238,8 @@
   
 @media (prefers-color-scheme: dark){
   :root:is([lwtheme-image],[style*="--lwt-additional-images"]){
-      --new-toolbar-bgcolor: #1010194b !important;                                                        
-      --new-selected-tab-bgcolor: #1010196b !important;
+      --new-toolbar-bgcolor: #1010196b !important;                                                        
+      --new-selected-tab-bgcolor: #1010197b !important;
       --toolbar-bgcolor: transparent !important;
       --chrome-content-separator-color: color-mix(in srgb, 
         var(--toolbar-field-color) 14%, transparent) !important;                                            /* toolbar_bottom_separator */
@@ -247,8 +247,8 @@
   
 @media (prefers-color-scheme: light){
   :root:is([lwtheme-image],[style*="--lwt-additional-images"]){
-      --new-toolbar-bgcolor: #ffffff4b !important;
-      --new-selected-tab-bgcolor: #ffffff6b !important;
+      --new-toolbar-bgcolor: #ffffff6b !important;
+      --new-selected-tab-bgcolor: #ffffff7b !important;
       --toolbar-bgcolor: transparent !important;
       --chrome-content-separator-color: color-mix(in srgb, 
         var(--toolbar-field-color) 14%, transparent) !important;                                            /* toolbar_bottom_separator */
@@ -262,13 +262,18 @@
      background-image: linear-gradient(var(--new-toolbar-bgcolor), var(--new-toolbar-bgcolor)),
                        linear-gradient(var(--new-toolbar-bgcolor), var(--new-toolbar-bgcolor)), 
                        var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+    background-position: right top, right top, right top, left top, right top !important;
+    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
     }
   
 :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) tab[selected] .tab-background{
-    background-image: linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)),
-                      linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)), 
+    background-image: linear-gradient(var(--new-toolbar-bgcolor), var(--new-toolbar-bgcolor)),
+                      linear-gradient(var(--new-toolbar-bgcolor), var(--new-toolbar-bgcolor)), 
                       var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
-  }}
+    background-position: right top, right top, right top, left top, right top !important;
+    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
+  }
+}
   
 /* Centrar windows controls */
   

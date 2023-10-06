@@ -109,7 +109,7 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
 
 :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) tab[selected] .tab-background{
     background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
-                      linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), 
+                      linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)), 
                       var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
     background-position: initial, initial, left top, right top, right top !important;
     background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;

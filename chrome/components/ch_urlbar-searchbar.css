@@ -194,7 +194,7 @@ findbar:-moz-lwtheme {
 
 #urlbar[open] #urlbar-background {
     border-radius: 6px !important;
-    background-color: var(--arrowpanel-background, var(--lwt-selected-tab-background-color)) !important;
+    background-color: var(--contrast-color, var(--lwt-selected-tab-background-color)) !important;
     animation: ease-in-out 500ms !important;
     max-height: -moz-available !important;
 }
@@ -288,6 +288,33 @@ findbar:-moz-lwtheme {
 description#identity-popup-content-owner-label, description#identity-popup-content-owner, description#identity-popup-content-verifier, #identity-popup-securityView-body>button {
     color: #2cf62c !important
 }
+
+/* Translate button */
+
+#translations-button[translationsactive="true"]{
+    width: initial !important;
+    border-radius: 52px !important;
+}
+
+#translations-button[translationsactive="true"] .urlbar-icon{
+    display: none !important;
+}
+
+#translations-button-locale {
+    background-color: var(--button-active-bgcolor) !important;
+    color: var(--lwt-tab-text) !important;
+    border-radius: 52px !important;
+    height: 20px !important;
+    padding-top: 1px !important;
+    padding-inline-start: 0px !important;
+    margin-inline: -3px -3px !important;
+}
+
+#translations-button:is([open], :hover) #translations-button-locale{
+    background-color: var(--toolbarbutton-icon-fill) !important;
+    color: var(--contrast-color) !important;
+}
+
 /*fondo :hover de íconos de la urlbar"*/
 .identity-box-button:hover:not([open="true"]) {
     background-color: transparent !important;

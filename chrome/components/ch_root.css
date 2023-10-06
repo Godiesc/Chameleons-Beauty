@@ -173,18 +173,46 @@
 
 @media (prefers-color-scheme: dark){
   :root:is([privatebrowsingmode="temporary"], 
-         [privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
-         [privatebrowsingmode="temporary"][lwtheme-image]){
+           [privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
+           [privatebrowsingmode="temporary"][lwtheme-image]){
     --lwt-accent-color: #101019 !important;                                                                        /* frame color in themes with images */
     --new-selected-tab-color: #202029 !important;                                                                  /* Nuevo color de pestaña a causa de bug */
+    --new-toolbar-bgcolor: #101019 !important;                                                        
+    --new-selected-tab-bgcolor: #101019 !important;
   }
 }
 
 /* light mode - Private Browsing Mode */
 
 @media (prefers-color-scheme: light){  
-  :root:is([privatebrowsingmode="temporary"]){
+  :root:is([privatebrowsingmode="temporary"], 
+           [privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
+           [privatebrowsingmode="temporary"][lwtheme-image]){
     --lwt-accent-color: #f9f9f0 !important;                                                                        /* frame color in themes with images */
     --new-selected-tab-color: #e0dfec !important;                                                                  /* Nuevo color de pestaña a causa de bug */
   }
 }
+
+/* Compatibilidad Parcial para temas que usan "Imagenes" */
+
+@media (prefers-color-scheme: dark){
+:root:is([style*="--lwt-additional-images"],[lwtheme-image]){
+  --lwt-tab-text: white !important;                                                                                /* tab_text */
+  --new-selected-tab-bgcolor: #1010192b !important;                                                                /* variable necesaria para ocurecer la pestaña activa */
+  --new-toolbar-bgcolor: #1010196b !important;                                                                     /* Necesario para image in menus */
+  --toolbar-bgcolor: #101019b0 !important;                                                                         /* toolbar */
+  --arrowpanel-background: #101019 !important;                                                                     /* popup */
+  --arrowpanel-color: var(--lwt-tab-text) !important;                                                              /* popup_text */
+  --lwt-background-alignment: right top, left top, right top !important;
+  }}
+
+@media (prefers-color-scheme: light){
+:root:is([style*="--lwt-additional-images"],[lwtheme-image]){
+  --lwt-tab-text: black !important;                                                                                /* tab_text */
+  --new-selected-tab-bgcolor: #fefef52b !important;                                                                /* variable necesaria para ocurecer la pestaña activa */
+  --new-toolbar-bgcolor: #ffffff6b !important;                                                                     /* Necesario para image in menus */
+  --toolbar-bgcolor: #fefef5b0 !important;                                                                         /* toolbar */
+  --arrowpanel-background: #fefef5 !important;                                                                     /* popup */
+  --arrowpanel-color: var(--lwt-tab-text) !important;                                                              /* popup_text */
+  --lwt-background-alignment: right top, left top, right top !important;
+  }}
