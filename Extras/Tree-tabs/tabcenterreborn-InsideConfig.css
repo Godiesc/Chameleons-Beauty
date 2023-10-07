@@ -1,0 +1,294 @@
+:root {
+    --tab-separator: transparent;
+    --tab-selected-line: transparent;
+    --tablist-separator: #cccccc;
+    --overflow-indicator-border: #333333;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1c1b22;
+        --toolbar-bgcolor: #23202d;
+        --icons: rgb(251,251,254);
+        --tab-separator: transparent;
+        --tab-active-background: rgb(66,65,77);
+        --tab-active-text: rgb(251,251,254);
+        --tab-text: #fbfbfe;
+        --toolbar-background: rgb(43,42,51);
+        --toolbar-text: rgb(251, 251, 254);
+        --input-background: rgb(28,27,34);
+        --input-border: transparent;
+        --input-background-focus: rgb(66,65,77);
+        --input-selected-text: rgb(251,251,254);
+        --input-text: rgb(251,251,254);
+        --input-text-focus: rgb(251,251,254);
+        --identity-color-toolbar: rgb(251,251,254);
+        --tablist-separator: #333333;
+        --overflow-indicator-border: #cccccc;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --lwt-frame-personal:  #ffffff;
+        --toolbar-bgcolor: #ffffff;
+    }
+}
+
+/* fix autoscrolling bug when middle clicking */
+:root,
+body {
+    overflow: hidden;
+    background-color: var(--toolbar-bgcolor);
+    /*background-color:var(--tab-active-background);*/
+}
+
+/* Move topmenu to bottom */
+#topmenu {
+    order: 2;
+    background: transparent;
+    border: none;
+}
+
+#newtab {
+    margin-left: 6px;
+}
+
+#settings {
+    margin-right: 2px;
+}
+
+/* Hide filterbox & settings icon */
+#filterbox-icon,
+#filterbox-input,
+#settings {
+    display: none;
+}
+
+#tablist-wrapper {
+    height: auto;
+    margin-inline: 6px;
+    /* adds margin above tabs to make the spacing even */
+    margin-top: 5px;
+}
+
+/* fix glitch with spacing in-between pinned tabs */
+#pinnedtablist:not(.compact) {
+    display: flex;
+    flex-direction: column;
+}
+
+#tablist-wrapper::after {
+    content: "";
+    margin: 2px 0;
+}
+
+#newtab {
+    flex-grow: 1;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding-left: 9px;
+    min-width: 36px;
+    width: 100%;
+}
+
+#pinnedtablist:not(.compact) .tab,
+#tablist .tab {
+    padding: 0;
+    margin: 0;
+    /*border: 0 solid transparent;
+    background: transparent;*/
+}
+
+#pinnedtablist:not(.compact) .tab:before,
+#tablist .tab:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -6px;
+    width: 6px;
+}
+
+#newtab::after {
+    content: attr(title);
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#newtab-icon {
+    min-width: 16px;
+}
+
+/*** Move container indicators to left ***/
+#tablist-wrapper {
+    margin-left: 0px;
+    padding-left: 6px;
+}
+#tablist,
+#pinnedtablist:not(.compact) {
+    margin-left: -6px;
+    padding-left: 6px;
+}
+.tab {
+    overflow: visible;
+}
+#tablist .tab[data-identity-color] .tab-context,
+#pinnedtablist:not(.compact) .tab[data-identity-color] .tab-context {
+    box-shadow: none !important;
+}
+#tablist .tab[data-identity-color] .tab-context::before,
+#pinnedtablist:not(.compact) .tab[data-identity-color] .tab-context::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 0 5px 5px 0;
+    background: var(--identity-color);
+    transition: inset .1s;
+}
+#tablist .tab.active[data-identity-color] .tab-context::before,
+#pinnedtablist:not(.compact) .tab.active[data-identity-color] .tab-context::before {
+    top: 1px;
+    bottom: 1px;
+}
+
+/* center favicons within the tab */
+#tablist-wrapper.shrinked>:not(#pinnedtablist.compact) .tab-meta-image {
+    margin-left: 6px !important;
+}
+
+/* hide certain items when collapsed */
+@media (max-width: 64px) {
+    /* using 64px minimum width to give the tab favicons more room during the transition */
+    .tab-close,
+    .tab-pin {
+        visibility: collapse !important;
+    }
+
+    /* hide scrollbar when sidebar is collapsed */
+    #tablist {
+        scrollbar-width: none;
+    }
+}
+
+@media (max-width: 48px) {
+    #settings-icon,
+    #tablist-wrapper .tab-title-wrapper,
+    #newtab::after,
+    #settings {
+        visibility: hidden !important;
+    }
+}
+
+/* Use mask for overflow instead of shadows */
+.can-scroll-top #tablist {
+    mask: linear-gradient(transparent, black 40px);
+}
+.can-scroll-bottom #tablist {
+    mask: linear-gradient(black calc(100% - 40px), transparent);
+}
+.can-scroll-bottom.can-scroll-top #tablist {
+    mask: linear-gradient(transparent, black 40px calc(100% - 40px), transparent);
+}
+#topshadow, #bottomshadow {
+    display: none;
+}
+
+/* Prevent showing scrollbar when adding/removing tabs */
+#tablist-wrapper:not(.can-scroll-bottom):not(.can-scroll-top) #tablist {
+    overflow: hidden;
+}
+
+/*** Prevent Favicon-only pinned tabs from wrapping ***/
+#pinnedtablist.compact {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 2px;
+}
+#pinnedtablist.compact:not(:hover):not(:focus-within) { /* Prevent scrollbar from showing when transitioning */
+    scrollbar-width: none;
+}
+#pinnedtablist.compact .tab {
+    min-width: 36px;
+}
+@media (max-width: 48px) {
+    #pinnedtablist.compact {
+        overflow-x: clip /* Clip always makes it reset scroll position */
+    }
+    #pinnedtablist.compact .tab.active {
+        order: -1
+    }
+}
+
+/* middle click newtab workaround */
+
+/* allows the #spacer element to take up more space */
+#spacer {
+    min-height: 100vh;
+}
+
+/* moves the new tab button to the original position */
+#tablist-wrapper {
+    margin-bottom: -100vh;
+}
+
+/* moves the new tab button separator to the original position */
+#tablist-wrapper::after {
+    transform: translateY(-100vh);
+}
+
+/* Change the radius of the close button */
+.tab-close{
+    border-radius: 0 4px 4px 0;
+}
+
+.tab.audible:not(.muted) .tab-icon-overlay-audible {
+    box-shadow: none;
+    border-width: 0px;
+}
+.tab.muted .tab-icon-overlay-muted{
+    opacity: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-width: 0px;
+}
+.tab.muted:hover .tab-icon-overlay-muted {
+    opacity: 1; 
+}
+.tab,
+.tab.active {
+background-color: var(identity-color, var(--tab-loading-fill));
+    border-bottom: none !important;
+    margin: 1px 0;
+}
+/* Change the line of selected tab to container color too */
+#pinnedtablist:not(.compact) .tab.active, #tablist .tab.active {
+    background-color: color-mix(in srgb,  var(--identity-color, var(--tab-loading-fill, var(--general-color))) 22%, transparent);
+    box-shadow: inset 3px 0 0 0px color-mix(in srgb, var(--identity-color,var(--tab-loading-fill)) 100%, transparent);
+    border-radius: 4px;
+}
+/* Change the line of selected tab to container color too in pinned tabs */
+#pinnedtablist:is(.compact) .tab.active {
+    background-color: color-mix(in srgb,  var(--identity-color, var(--tab-loading-fill, var(--general-color))) 22%, transparent);
+    box-shadow: inset 0 3px 0 0px color-mix(in srgb, var(--identity-color,var(--tab-loading-fill)) 100%, transparent);
+    border-radius: 4px;
+    border-radius: 4px;
+}
+#pinnedtablist.compact:not(:empty) {
+    border-color: #70707070;
+    margin-bottom: 2px;
+}
+#pinnedtablist.compact .tab{
+    margin-bottom: 2px;
+    margin-inline-end: -2px;
+}
+.tab:not(.active):hover, #newtab:hover {
+    --prueba-variable: color-mix(in srgb,  var(--toolbar-bgcolor) 90%, var(--input-text));
+    background-color: var(--prueba-variable);
+    border-radius: 4px;
+}
+#tablist-wrapper::after {border: 1px solid #70707070; border-bottom-width: 0px; }
+#pinnedtablist.compact { background-color: var(--lwt-frame-personal); }
+#newtab { margin-top: -4px; }
