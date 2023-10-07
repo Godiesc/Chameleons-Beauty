@@ -6,16 +6,6 @@
 #TabsToolbar, #toolbar-menubar{
     background-color: var(--toolbar-bgcolor) !important;
 }
-/*
-#TabsToolbar:-moz-lwtheme, 
-#toolbar-menubar:-moz-lwtheme {
-    background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
-                      linear-gradient(transparent, transparent), 
-                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
-    background-position: right top, right top, right top, left top !important;
-    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
-    background-size: auto !important; 
-}
 
 /* Color bolita de cargando página */
 
@@ -72,7 +62,6 @@ toolbar:is(#TabsToolbar) #firefox-view-button .toolbarbutton-icon{
 toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon{
     outline: none !important;
     border-radius: 4px !important;
-    margin: -2px !important;
     background: var(--button-hover-bgcolor) !important;
     fill: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
 }

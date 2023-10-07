@@ -222,7 +222,7 @@ findbar:-moz-lwtheme {
 
 #identity-box[pageproxystate="valid"].notSecureText, #identity-box[pageproxystate="valid"].chromeUI, 
 #identity-box[pageproxystate="valid"].extensionPage, #urlbar-label-box {
-  margin-inline-end: 4px !important; 
+  margin-inline-end: 2px !important; 
 }
 
 #identity-icon-label { 
