@@ -8,6 +8,8 @@
 <li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
 <li><b>It is compatible with Left-sidebar config and Main-image config. ⚠ Not compatible with Oneline config.</b></li></ul>
 
+> I used [tab-center reborn](https://addons.mozilla.org/es/firefox/addon/tabcenter-reborn/) to test it, using this code <code>tabcenterreborn-InsideConfig.css</code> inside the extension options.
+
 ### Previews
 
 ![imagen](https://github.com/Godiesc/Chameleons-Beauty/assets/22057609/763eefd5-fe6b-4a5a-bbab-ac6d9684fb36)
