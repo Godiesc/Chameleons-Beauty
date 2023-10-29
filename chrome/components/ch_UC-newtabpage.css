@@ -52,16 +52,23 @@ body {
     background-color: var(--newtab-primary-action-background) !important;
     }
     
-/* Color de borde del radio-button en "Personalizar" */
+/* Color de radio-button en "Personalizar" */
     
-.home-section .section .slider {
-    border-color: transparent !important;
-    }
+.toggle-button[aria-pressed="true"] {
+    background: var(--button-active-bgcolor) !important;
+}
     
-.home-section .section .slider:hover {
-    background: #454690 !important; 
-    border-color: #454690 !important;
-    }
+.toggle-button[aria-pressed="false"] {
+    opacity: 0.7 !important;
+}
+    
+.toggle-button[aria-pressed="true"]:enabled:hover {
+    background: var(--button-hover-bgcolor) !important;
+}
+    
+.toggle-button:enabled:hover {
+    opacity: 1 !important;
+}
     
  /* Color de fondo al "editar" un sitio anclado */
     

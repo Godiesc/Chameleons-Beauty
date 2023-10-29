@@ -1,7 +1,7 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-@supports -moz-bool-pref("firefoxchameleon.tree-tabs") {
+@media (-moz-bool-pref:"firefoxchameleon.tree-tabs") {
 
 /* ####################################### Window controls from MrOtherGuy ############################################ */
 
@@ -73,7 +73,7 @@
 }
 */
 /* This pref can be used to force window controls on left even if that is not normal behavior on your OS 
-@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
+@media (-moz-bool-pref:"userchrome.force-window-controls-on-left.enabled"){
   :root[tabsintitlebar="true"] #nav-bar{
     border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
   }

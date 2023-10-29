@@ -4,23 +4,25 @@
 /* Default Preferences */
 :root{
   
-  --lwt-accent-color: var(--toolbar-bgcolor, Field) !important;                                                    /*FondoPestañasNoSeleccionadasVentanaActiva*/
+  --lwt-accent-color: var(--toolbar-bgcolor, Field) !important;                                                    /* FondoPestañasNoSeleccionadasVentanaActiva*/
   --lwt-frame: var(--lwt-accent-color, #030615) !important;                                                        /* frame */
-  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important;
-  --panel-description-color: var(--button-primary-bgcolor) !important;                                             /*"Color de letras de: correo de la cuenta, y dispositivos conectados"*/
+  --lwt-tab-text: var(--tab-selected-textcolor) !important;                                                        /* Nueva variable de --lwt-tab-text */
   
-  --toolbar-field-focus-border-color: transparent !important;                                                      /*BordeUrlbarFocus*/
+  --lwt-frame-inactive: var(--toolbar-bgcolor, Field) !important;
+  --panel-description-color: var(--button-primary-bgcolor) !important;                                             /* Color de letras de: correo de la cuenta, y dispositivos conectados */
+  
+  --toolbar-field-focus-border-color: transparent !important;                                                      /* BordeUrlbarFocus */
   --toolbar-field-color: var(--lwt-tab-text) !important;
   --toolbar-field-focus-color: var(--lwt-tab-text) !important;
-  --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /*FondoPestañasNoSeleccionadasVentanaInactiva*/
+  --lwt-accent-color-inactive: var(--toolbar-bgcolor, Field) !important;                                           /* FondoPestañasNoSeleccionadasVentanaInactiva */
   
-  --toolbarbutton-inner-padding: 5px !important;                                                                   /*botonesIconosToolbarMásPequeños*/
+  --toolbarbutton-inner-padding: 5px !important;                                                                   /* botonesIconosToolbarMásPequeños */
   
   --toolbarbutton-icon-fill: var(--lwt-text-color) !important;
   
-  --tab-block-margin: 3px 1px !important;                                                                          /*margenes pestañas  <-------------------¬ */
-  --margin-top: 3px !important;                                                                                    /*margen top pestañas - variable personal */
-  --tab-min-height:  var(--tab-height-personal) !important;                                                        /*tamaño pestañas*/
+  --tab-block-margin: 3px 1px !important;                                                                          /* margenes pestañas  <-------------------¬ */
+  --margin-top: 3px !important;                                                                                    /* margen top pestañas - variable personal */
+  --tab-min-height:  var(--tab-height-personal) !important;                                                        /* tamaño pestañas*/
     
   --panel-subview-body-padding: 0px !important;                                                                    /* Margen top-bottom interno de arropanels */
   --arrowpanel-menuitem-margin-inline: 0px !important;                                                             /* Margen left-right interno de arropanels */
@@ -30,9 +32,9 @@
   
   --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;                                          /* tab_selected */
     
-  --arrowpanel-menuitem-padding: 7px !important;                                                                   /*MenúHambuguesaMásCompacto*/
-  --urlbar-icon-padding: 4px !important;                                                                           /*ÍconosUrlbarCompactos*/
-  --toolbarbutton-outer-padding: 3px !important;                                                                   /*EspacioEntreÍconosToolbar*/
+  --arrowpanel-menuitem-padding: 7px !important;                                                                   /* MenúHambuguesaMásCompacto */
+  --urlbar-icon-padding: 4px !important;                                                                           /* ÍconosUrlbarCompactos */
+  --toolbarbutton-outer-padding: 3px !important;                                                                   /* EspacioEntreÍconosToolbar */
   
   scrollbar-color: #38375580 #18173530 !important;                                                                 /* Colores - Barra de deplazamiento */
   

@@ -187,7 +187,7 @@ spacer{
 /* ---------------------------------------------------------- Menubar ---------------------------------------------------------- 
    --------------------------------------------- Incompatible with tree-tabs style --------------------------------------------- */
 
-@supports not -moz-bool-pref("firefoxchameleon.tree-tabs"){
+@media not (-moz-bool-pref:"firefoxchameleon.tree-tabs"){
 
 /* ---------------------- Menu-bar in tabs-tolbar ------------------------- */
 
@@ -210,14 +210,14 @@ spacer{
 
 /* For One-Line config - sobreescribo la linea anterior */
 
-@supports -moz-bool-pref("firefoxchameleon.oneline") {
+@media (-moz-bool-pref:"firefoxchameleon.oneline") {
     #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 40px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
     #toolbar-menubar[autohide="true"] + #TabsToolbar{ padding-inline-start: var(--navbarWidth) !important; }  /* Muevo las pestañas 1px a la izquierda por bug */
 }
 
 /* For One-Line config - linux - window controls on left */
 
-@supports -moz-bool-pref("firefoxchameleon.oneline") {
+@media (-moz-bool-pref:"firefoxchameleon.oneline") {
 @media (-moz-gtk-csd-reversed-placement){
     #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 0px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
     }

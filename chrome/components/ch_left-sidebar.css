@@ -1,7 +1,7 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-@supports -moz-bool-pref("firefoxchameleon.left-sidebar") {
+@media (-moz-bool-pref:"firefoxchameleon.left-sidebar") {
 
 /* ------------------- Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_bookmarks_toolbar.css ------------------- */
 
@@ -139,7 +139,7 @@
     
 /* ---------------------------- Left-sidebar + Oneline config ---------------------------- */
     
-@supports -moz-bool-pref("firefoxchameleon.oneline"){
+@media (-moz-bool-pref:"firefoxchameleon.oneline"){
     
     /* Margen abajo de la left-sidebar */    
     :root:not([chromehidden~="toolbar"]) #PersonalToolbar {
@@ -155,7 +155,7 @@
     
 /* ---------------------------- Left-sidebar + Main-image config ---------------------------- */
     
-@supports -moz-bool-pref("firefoxchameleon.main-image"){
+@media (-moz-bool-pref:"firefoxchameleon.main-image"){
     :root:not([chromehidden~="toolbar"]):not([lwtheme-image],[style*="--lwt-additional-images"]) #PersonalToolbar,
     :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) #PersonalToolbar {
          background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
@@ -173,7 +173,7 @@
     
 /* ---------------------------- Left-sidebar + Oneline + Main-image config ---------------------------- */
     
-@supports -moz-bool-pref("firefoxchameleon.oneline") and -moz-bool-pref("firefoxchameleon.main-image"){
+@media (-moz-bool-pref:"firefoxchameleon.oneline") and (-moz-bool-pref:"firefoxchameleon.main-image"){
     
     /* Filtro oscuro-claro de la left-sidebar */
     :root:not([chromehidden~="toolbar"]):not([lwtheme-image],[style*="--lwt-additional-images"]) #PersonalToolbar,
@@ -183,7 +183,7 @@
     
 /* ---------------------------- Left-sidebar + tree-tabs config ---------------------------- */
     
-@supports -moz-bool-pref("firefoxchameleon.tree-tabs"){
+@media (-moz-bool-pref:"firefoxchameleon.tree-tabs"){
     
     /* Margen abajo de la left-sidebar */    
     :root:not([chromehidden~="toolbar"]) #PersonalToolbar {

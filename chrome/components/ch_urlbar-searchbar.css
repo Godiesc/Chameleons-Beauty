@@ -142,12 +142,12 @@ findbar:-moz-lwtheme {
     --uc-slot-radius: 0 0 5px 5px;
     --arrowpanel-border-radius: var(--uc-slot-radius) !important;
     background-color: var(--toolbar-field-focus-background-color) !important;
-    width: calc(var(--panel-width) - 1px) !important;
+    width: calc(var(--panel-width) - 0px) !important;
     margin-top: -4px !important;
     border-radius: 0 0 5px 5px !important;
-    box-shadow: inset 1px 0 0 0 var(--general-color),
-                1px 0px 0 0 var(--general-color),
-                inset 0 -1px 0 0 var(--general-color) !important;
+    border-left: 1px solid var(--general-color) !important;
+    border-right: 1px solid var(--general-color) !important;
+    border-bottom: 1px solid var(--general-color) !important;
 }
 
 #PopupSearchAutoComplete {
