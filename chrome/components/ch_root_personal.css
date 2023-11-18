@@ -80,10 +80,10 @@
   
 /* ----------------------------- -Main Image- + -One line- config or -Main Image- + -tree tabs- config ---------------------------- */
 
-@media (-moz-bool-pref:"firefoxchameleon.main-image") and
-       (-moz-bool-pref:"firefoxchameleon.oneline") or
-       (-moz-bool-pref:"firefoxchameleon.main-image") and
-       (-moz-bool-pref:"firefoxchameleon.tree-tabs"){  
+@media ((-moz-bool-pref:"firefoxchameleon.main-image") and
+       (-moz-bool-pref:"firefoxchameleon.oneline")) or
+       ((-moz-bool-pref:"firefoxchameleon.main-image") and
+       (-moz-bool-pref:"firefoxchameleon.tree-tabs")){  
     :root{
       --background-align-y: -38px ;                                                                     /* Alinear new-tab wallpaper to <<main-image>> config 
                                                                                                            -38px ventana normal
