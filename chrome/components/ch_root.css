@@ -30,7 +30,10 @@
   --panel-separator-margin-vertical: 4px !important;                                                               /* margen vertical entre los separadores */
   --panel-separator-margin-horizontal: 0px !important;                                                             /* Margen horizontal de los separadores */
   
-  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;                                          /* tab_selected */
+  --urlbarView-separator-color: transparent !important;                                                            /* color separador urlbar y sugerencias de búsqueda */
+  
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;                                          /* tab_selected */
+  --lwt-selected-tab-background-color: var(--tab-selected-bgcolor) !important;          /* tab_selected */
     
   --arrowpanel-menuitem-padding: 7px !important;                                                                   /* MenúHambuguesaMásCompacto */
   --urlbar-icon-padding: 4px !important;                                                                           /* ÍconosUrlbarCompactos */
@@ -108,7 +111,6 @@
   --gradient: var(--personal-gradient-general) !important;                                                         /*GradientePestañaActiva*/
       
   --autocomplete-popup-hover-background: var(--button-hover-bgcolor) !important;                                   /*Color hover de sujerencias de búsqueda*/
-  --autocomplete-popup-separator-color: transparent !important;                                                    /*color separador urlbar y sugerencias de búsqueda*/
 
   --shield-icon-personal: url("../images/shield-dark.svg") !important;                                             /*Ícono protección contra rastreo*/
   --animated-beats: url("../images/beats-dark.gif") !important;                                                    /* Dark animated beats*/
@@ -152,7 +154,6 @@
   --gradient: var(--personal-gradient-general) !important;                                                         /*GradientePestañaActiva*/
       
   --autocomplete-popup-hover-background: var(--button-hover-bgcolor) !important;                                   /*Color hover de sujerencias de búsqueda*/
-  --autocomplete-popup-separator-color: transparent !important;                                                    /*color separador urlbar y sugerencias de búsqueda*/
   --shield-icon-personal: url("../images/shield-light.svg") !important;                                            /*Ícono protección contra rastreo*/
   --animated-beats: url("../images/beats-light.gif") !important;                                                   /* Dark animated beats*/
 }}
