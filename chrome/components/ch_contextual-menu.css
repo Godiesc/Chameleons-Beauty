@@ -90,6 +90,12 @@ menupopup {
     background-color: var(--button-hover-bgcolor) !important; 
 }
 
+#context-navigation > menuitem:not([selected="true"]),
+menupopup > menu {
+    appearance: none !important;
+    background-color: transparent !important;
+}
+
 /* Color íconos deshabilitados 
 
 #context-navigation > .menuitem-iconic:hover:is([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
