@@ -21,8 +21,7 @@
 
 /* Borde superior de la toolbar y transparencia de la tabline */
 
-#navigator-toolbox { --lwt-tabs-border-color: transparent !important; }
-/* #tabbrowser-tabs { --lwt-tab-line-color: blue !important; }*/
+#nav-bar:not([tabs-hidden="true"]) { box-shadow: none !important; }
 
 /* Quitar label "Navegación Privada" */
 
@@ -71,6 +70,18 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
     fill: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
 }
 
+/* Bug fixes en pestaña activa y tambien sirve para la barra de menú */
+
+:root[tabsintitlebar] #titlebar:-moz-window-inactive { opacity: 1 !important; }
+
+.tabbrowser-tab[selected] { z-index: 1 !important; }
+
+#titlebar{
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
+
 /* Linea gradiente en pestaña activa */
 
 .tab-background[selected]{
@@ -97,12 +108,12 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
 /* Imagen en pestaña */
 
 :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) tab[selected] .tab-background{
-    background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
-                      linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)), 
-                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
-    background-position: initial, initial, left top, right top, right top !important;
-    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
-    background-size: var(--display-theme-with-images) !important; 
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)), 
+                      var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;
+    background-position: 0 0, var(--lwt-background-alignment), right top !important;
+    background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
+    background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
+    background-attachment: scroll, fixed, fixed !important;
 }
 
 /* Margenes de las pestañas */
