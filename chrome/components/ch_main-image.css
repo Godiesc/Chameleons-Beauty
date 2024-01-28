@@ -18,7 +18,7 @@
 :root:is([brighttext]):-moz-lwtheme,
 :root[lwt-toolbar-field-focus-brighttext],
 :root:-moz-lwtheme{
-      --new-selected-tab-bgcolor: #0000004b !important;
+      --new-selected-tab-bgcolor: #0000008b !important;
       --toolbar-bgcolor: #0000004b !important;
       --toolbarbutton-hover-background: color-mix(in srgb, transparent 92%, var(--lwt-tab-text)) !important;         /*"button_background_hover": "#26242e"*/
       --toolbarbutton-hover-personal: var(--toolbarbutton-hover-background) !important;                              /* Button :hover color personal*/
@@ -30,7 +30,7 @@
 :root:not([brighttext]):-moz-lwtheme,
 :root:not([lwt-toolbar-field-focus-brighttext]),
 :root:-moz-lwtheme{
-      --new-selected-tab-bgcolor: #ffffff4b !important;
+      --new-selected-tab-bgcolor: #ffffff8b !important;
       --toolbar-bgcolor: #ffffff4b !important;
       --chrome-content-separator-color: #ffffff80 !important;
       --toolbarbutton-hover-background: color-mix(in srgb, transparent 92%, var(--lwt-tab-text)) !important;         /*"button_background_hover": "#26242e"*/
@@ -62,12 +62,12 @@
 }
    
 :root:not([chromehidden~="toolbar"]) tab[selected] .tab-background{
-    background-image: linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)),
-                      linear-gradient(var(--new-selected-tab-bgcolor), var(--new-selected-tab-bgcolor)), 
-                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
-    background-position: initial, initial, left top, right top, right top !important;
-    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
-    background-size: var(--display-theme-with-images) !important; 
+    background-image: linear-gradient(var(--new-selected-tab-bgcolor, transparent), var(--new-selected-tab-bgcolor, transparent)), 
+                      var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;
+    background-position: 0 0, var(--lwt-background-alignment), right top !important;
+    background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
+    background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
+    background-attachment: scroll, fixed, fixed !important;
 }
    
 /* Para quitar bug the urlbar :focus */
