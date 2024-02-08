@@ -69,6 +69,7 @@ menupopup {
 #PlacesToolbar menupopup menupopup{ margin-inline-start: -4px !important; margin-top: -7px !important; }
 
 .menupopup-arrowscrollbox {
+    background-image: none !important;
     background-color: var(--arrowpanel-background, #505050) !important;
     color: var(--arrowpanel-color, #505050) !important;
     border: 1px solid transparent !important;
