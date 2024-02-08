@@ -133,6 +133,13 @@ menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menu
     color: var(--arrowpanel-color, #50505090) !important;
 }
 
+/* Fix for some vanilla combobox */
+menu, menuitem {
+  &:where([_moz-menuactive]:not([disabled="true"])) {
+    background-color: var(--button-hover-bgcolor, #80808050) !important; 
+  }
+}
+
 /* Gradient color to :hover items */
 /*
 menupopup>menuitem:not([disabled="true"]):hover, menupopup>menu:where([_moz-menuactive]:not([disabled="true"])),
