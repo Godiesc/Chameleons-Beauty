@@ -77,9 +77,10 @@
 /* Default Dark Mode */
 
 @media (prefers-color-scheme: dark){
-:root[brighttext]:-moz-lwtheme,
+:root[brighttext],
 :root[lwt-toolbar-field-focus-brighttext],
-:root:-moz-lwtheme{
+:root[lwtheme],
+:root:not([lwtheme]){ 
   
   --contrast-color: #101019 !important;   
   
@@ -119,9 +120,10 @@
 /* Default Light Mode */
 
 @media (prefers-color-scheme: light){
-:root:not([brighttext]):-moz-lwtheme,
+:root:not([lwtheme-brighttext="true"]),
 :root:not([lwt-toolbar-field-focus-brighttext]),
-:root:-moz-lwtheme{
+:root[lwtheme],
+:root:not([lwtheme]){
   
   --contrast-color: #ffffff !important;
   

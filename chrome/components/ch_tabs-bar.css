@@ -21,7 +21,7 @@
 
 /* Borde superior de la toolbar y transparencia de la tabline */
 
-#nav-bar:not([tabs-hidden="true"]) { box-shadow: none !important; }
+#nav-bar:not([tabs-hidden="true"]) { box-shadow: none !important; border-color: transparent !important; }
 
 /* Quitar label "Navegación Privada" */
 

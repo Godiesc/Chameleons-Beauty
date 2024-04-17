@@ -329,6 +329,7 @@ body{
     /*background:no-repeat right top fixed !important; */
     background-attachment: fixed !important;
     background-size:  var(--wallpaper-size) !important;
+    background-repeat: repeat !important;
     background-position: right top !important;
     background-position-y: var(--background-align-y) !important;
     }

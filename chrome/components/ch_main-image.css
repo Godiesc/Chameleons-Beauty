@@ -15,9 +15,10 @@
 }
    
 @media (prefers-color-scheme: dark){
-:root:is([brighttext]):-moz-lwtheme,
+:root[brighttext],
 :root[lwt-toolbar-field-focus-brighttext],
-:root:-moz-lwtheme{
+:root[lwtheme],
+:root:not([lwtheme]){
       --new-selected-tab-bgcolor: #0000008b !important;
       --toolbar-bgcolor: #0000004b !important;
       --toolbarbutton-hover-background: color-mix(in srgb, transparent 92%, var(--lwt-tab-text)) !important;         /*"button_background_hover": "#26242e"*/
@@ -27,9 +28,10 @@
    }}
    
 @media (prefers-color-scheme: light){
-:root:not([brighttext]):-moz-lwtheme,
+:root:not([lwtheme-brighttext="true"]),
 :root:not([lwt-toolbar-field-focus-brighttext]),
-:root:-moz-lwtheme{
+:root[lwtheme],
+:root:not([lwtheme]){
       --new-selected-tab-bgcolor: #ffffff8b !important;
       --toolbar-bgcolor: #ffffff4b !important;
       --chrome-content-separator-color: #ffffff80 !important;
