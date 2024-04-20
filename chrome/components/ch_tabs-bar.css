@@ -253,6 +253,8 @@ spacer{
  * Does NOT support toolbar buttons/items in menubar when in disabled mode.
  */
 
+@-moz-document url(chrome://browser/content/browser.xhtml){
+    
 #toolbar-menubar{
   --uc-menubaritem-height: calc(var(--tab-height-personal) + 4px);
   --uc-menubaritem-width: 40px;
@@ -343,5 +345,6 @@ menubar:hover{
     background-color: var(--button-bgcolor) !important;
     border-radius: 4px !important;
     width: -moz-available !important;
-}
+    }
+  }
 }
