@@ -121,6 +121,20 @@ input:focus-visible, input:focus-visible{
     background-color: transparent !important;
     }
     
+/* Botón de editar sitio anclado */
+    
+.top-site-outer .context-menu-button {
+    border-radius: 2px 6px 2px 8px !important;
+    inset-inline-end: 2px !important;
+    top: 2px !important;
+    fill: var(--newtab-text-primary-color) !important;
+    background-color: transparent !important;
+    }
+    
+.top-site-outer .context-menu-button:is(:hover, :focus-within) {
+    background-color: color-mix(in srgb, var(--contrast-color) 20%, transparent) !important;
+    }
+    
 /* --------------------------------------------- Cuadro de búsqueda ------------------------------------------------- */
     
 /* Ícono Lupa */
@@ -231,6 +245,10 @@ browser[primary="true"][tabDialogShowing="true"],
     color:var(--newtab-wordmark-color)  !important;
     }
     
+.customize-menu .close-button-wrapper{
+    background-color: transparent !important;
+    }
+    
 .close-button {
     background-color: color-mix( in srgb, var(--newtab-background-color) 90%, var(--newtab-wordmark-color)) !important;
     color: var(--newtab-wordmark-color)  !important;
@@ -319,6 +337,10 @@ browser[primary="true"][tabDialogShowing="true"],
 .activity-stream {
     background-color: var(--newtab-background-color, #ff0000) !important;
     }
+    
+/* Elimina creditos de la imagen usada como wallpaper */
+    
+.wallpaper-attribution { display: none !important; }
     
 /* Personalizacion de la página newtab */
     

@@ -90,30 +90,29 @@ hbox .tab-icon-pending {
 
 /* Borde urlbar Container */
 
-#urlbar:not([open])>#urlbar-input-container {
-    border-width: 0 !important;
-    padding: 2px !important;
-    max-height: -moz-available !important;
+.urlbar-input-container{
+  border-width: 0 !important;
+  padding: 2px !important;
 }
 
-#userContext-icons::before {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    outline: 1px solid color-mix(in srgb, var(--identity-icon-color)80%, var(--toolbar-field-border-color));
-    border-radius: 4px;
-    outline-offset: -1px;
-    pointer-events: none;
+#userContext-icons::before{
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid color-mix(in srgb, var(--identity-icon-color)80%, var(--toolbar-field-border-color));
+  border-radius: var(--toolbarbutton-border-radius);
+  outline-offset: -1px;
+  pointer-events: none;
 }
 
-#urlbar[focused] #userContext-icons::before {
-    outline-width: 1px;
-    outline-offset: -1px;
+#urlbar[focused] #userContext-icons::before{
+  outline-width: 1px;
+  outline-offset: -1px
 }
 
 #urlbar:is([focused]) #userContext-icons::before {
@@ -128,14 +127,9 @@ hbox .tab-icon-pending {
     border-radius: 6px !important;
 }
 
-/* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlabar popup is open */
-
-#urlbar[open]>#urlbar-input-container {
-    position: static !important;
-    max-height: -moz-available !important;
+/* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlbar popup is open */
+#urlbar[open] > .urlbar-input-container{
+  position: static !important;
+  padding: calc(2px + var(--urlbar-margin-inline,5px)) !important;
 }
-
-#urlbar[open]>#urlbar-background {
-    z-index: -1 !important;
-    max-height: -moz-available !important;
-}
+#urlbar[open] > #urlbar-background{ z-index: -1 !important; }
