@@ -27,6 +27,16 @@ slot {
     padding: 5px !important;
 }
 
+/* Remove unwanted styles applied to the tab bar */
+
+:is(scrollbox[part="scrollbox"]) slot{
+    margin-inline: initial !important;
+    margin-block-end: initial !important;
+    box-shadow: none !important;
+    margin-top: initial !important;
+    padding: 0px !important;
+}
+
 /* Color fondo clic por los diferentes items de menús principales */
 
 .protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
