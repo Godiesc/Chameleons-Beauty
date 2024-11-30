@@ -9,7 +9,7 @@
 
 /* Personalizar barra de busqueda */
 
-findbar:-moz-lwtheme {
+findbar {
     background-color: var(--toolbar-bgcolor) !important;
     color: var(--lwt-text-color) !important;  
     border-color: var(--input-border-color) !important; 
@@ -95,7 +95,10 @@ findbar:-moz-lwtheme {
 
 /* Urlbar más pequeñas */
 
-#nav-bar{ min-height: var(--toolbar-height-personal) !important; }
+#nav-bar{ 
+    min-height: var(--toolbar-height-personal) !important; 
+    border-top-width: 0px !important;
+}
 
 #urlbar {
     min-height: 26px !important;
@@ -185,19 +188,44 @@ findbar:-moz-lwtheme {
 }
 
 #urlbar[open] {
-    border-radius: 6px !important;
+    border-radius: 10px !important;
     background-image: linear-gradient(to bottom right, #fd189260 0%, #b02cfc60 30%, #33b3fd60 45%, #00aaff60 60%, #fd189260 100%);
     max-height: -moz-available !important;
-    border-radius: 6px !important;
     animation: ease-in-out 500ms !important;
 }
 
 #urlbar[open] #urlbar-background {
-    border-radius: 6px !important;
+    border-radius: 10px !important;
     background-color: var(--contrast-color, var(--lwt-selected-tab-background-color)) !important;
     animation: ease-in-out 500ms !important;
     max-height: -moz-available !important;
 }
+
+/* Necessary for many -Hamburger Menu- and -Left Sidebar- scenarios */
+
+#navigator-toolbox {
+    z-index: unset !important;
+}
+
+/* Brighness when urlbar [open]*/
+
+#nav-bar::after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 4;
+    pointer-events: none;
+    transition: background-color 0.3s ease; 
+}
+
+:root:has(#urlbar[open]) #nav-bar::after {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 /*Páginas de extensiones*/
 
@@ -214,7 +242,7 @@ findbar:-moz-lwtheme {
 /*Páginas seguras de firefox"*/
 
 #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
-    list-style-image: url("../images/foxFill.svg") !important;
+    list-style-image: url("../icons/foxFill.svg") !important;
     width: 16px !important; 
     height: 16px !important; 
     margin-inline: -4px !important; 

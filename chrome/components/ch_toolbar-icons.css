@@ -6,44 +6,52 @@
 /* back button */
 
 #nav-bar #back-button image {    
-    list-style-image: url("../images/back.svg") !important;
+    list-style-image: url("../icons/back.svg") !important;
 }
 
 /* forward - go button */
 
 #nav-bar #forward-button image {
-    list-style-image: url("../images/forward.svg") !important;
+    list-style-image: url("../icons/forward.svg") !important;
     padding-inline-start: 5px !important;
 }
 
 /* home button */
 
 #home-button image{
-    list-style-image: url("../images/home.svg") !important;
+    list-style-image: url("../icons/home.svg") !important;
 }
 
 /* Ícono bookmark */
 
 #pageAction-panel-bookmark[starred], #star-button[starred] {
-    list-style-image: url("../images/bookmark.svg") !important; }
+    list-style-image: url("../icons/bookmark.svg") !important; }
 #pageAction-panel-bookmark, #star-button {
-    list-style-image: url("../images/bookmark-empty.svg") !important;
+    list-style-image: url("../icons/bookmark-empty.svg") !important;
 }
 
-/* Ícono protección contra rastreo */
+/* Tracking protection icon */
 
-#tracking-protection-icon-container, #page-action-buttons{
-  -moz-box-ordinal-group: 2 !important;
+#tracking-protection-icon-container {
+    -moz-box-ordinal-group: 2 !important;
+    order: 2 !important;
 }
 
-#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
+.urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box {
+  & not([hasException]) {
     list-style-image: var(--shield-icon-personal) !important;
-    fill: var(--lwt-toolbarbutton-icon-fill-attention) !important;
-}
+    fill: var(--general-color) !important;
+  }
+  &[active] {
+    list-style-image: var(--shield-icon-personal) !important;
+    fill: var(--general-color) !important;
+  }}
 
-#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box[hasException] > #tracking-protection-icon {
-    list-style-image: url(chrome://browser/skin/tracking-protection-disabled.svg) !important;
-    fill: var(--buttons-destructive-bgcolor) !important;
+.urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container:is(:hover,[open]) > #tracking-protection-icon-box {
+  fill: var(--toolbarbutton-icon-fill) !important;
+  &[active] {
+    fill: var(--toolbarbutton-icon-fill) !important;
+  }
 }
 
 /* Ícono protección contra rastreo */
@@ -55,25 +63,25 @@
 /* ícono candado */
 
 #identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
-    list-style-image: url("../images/security.svg") !important;
+    list-style-image: url("../icons/security.svg") !important;
     fill: var(--toolbarbutton-icon-fill) !important;
 }
 
 /* Ícono permisos adicionales */
 
 #permissions-granted-icon {
-    list-style-image: url("../images/permissions.svg") !important;
+    list-style-image: url("../icons/permissions.svg") !important;
     fill: var(--toolbarbutton-icon-fill) !important;
 }
 
 /* reader mode */
 
 #reader-mode-button > .urlbar-icon {
-    list-style-image: url("../images/read-mode.svg") !important;
+    list-style-image: url("../icons/read-mode.svg") !important;
 }
 
 /* Menu hamburguesa Logo */
 
 #PanelUI-menu-button {
-  list-style-image: url("../images/foxFill.svg") !important;
+  list-style-image: url("../icons/foxFill.svg") !important;
 }

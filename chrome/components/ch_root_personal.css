@@ -1,18 +1,6 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-@media (prefers-color-scheme: dark){ :root{
-  --lwt-main-image:  url("../images/newtab/wallpaper-dark.png") !important;                     /* new-tab page image - dark theme */ 
-  --lwt-private-image:  url("../images/newtab/private-dark.png") !important;                    /* new-tab private-page image - dark theme */
-  --brightness-wallpaper: transparent !important;                                               /* filtro para oscurecer la imagen */
-  }}
-  
-@media (prefers-color-scheme: light){ :root{
-  --lwt-main-image:  url("../images/newtab/wallpaper-light.png") !important;                    /* new-tab page image - white theme*/
-  --lwt-private-image:  url("../images/newtab/private-light.png") !important;                   /* new-tab private-page image - white theme*/ 
-  --brightness-wallpaper: transparent !important;                                               /* filtro para oscurecer la imagen */
-  }}
-
 :root{
   
   --fuchsia: #fa1e4e;     --blue:  #304af1;    --aqua: #00bfff;         --cyan: #00ffff;          --lightblue: #45a1ff;     --pink: #FF0F7E;
@@ -20,6 +8,38 @@
   --gray: #bfb6d2;        --orange: #ff6c22;   --yellow: #ffe20f;       --red: #ff3230;           --navyblue: #0050cE;      --poison: #cb17cf; 
   
   --general-color: var(--blue);
+  
+  /* __________________________________________________________  Various customizations __________________________________________________________ */
+                  /* Dark wallpapers */
+  --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;
+  --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;
+  --wallpaper-dark3: url("../newtab/wallpaper-dark3.png") !important;
+  --wallpaper-dark4: url("../newtab/wallpaper-dark4.png") !important;
+  --wallpaper-dark5: url("../newtab/wallpaper-dark5.png") !important;
+  --wallpaper-dark6: url("../newtab/wallpaper-dark6.png") !important;
+  
+                  /* Light wallpapers */
+  --wallpaper-light1: url("../newtab/wallpaper-light1.png") !important;
+  --wallpaper-light2: url("../newtab/wallpaper-light2.png") !important;
+  --wallpaper-light3: url("../newtab/wallpaper-light3.png") !important;
+  --wallpaper-light4: url("../newtab/wallpaper-light4.png") !important;
+  --wallpaper-light5: url("../newtab/wallpaper-light5.png") !important;
+  --wallpaper-light6: url("../newtab/wallpaper-light6.png") !important;
+}
+
+@media (prefers-color-scheme: dark){ :root{
+  --lwt-main-image:  url("../newtab/wallpaper-dark.png") !important;                     /* new-tab page image - dark theme */ 
+  --lwt-private-image:  url("../newtab/private-dark.png") !important;                    /* new-tab private-page image - dark theme */
+  --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
+  }}
+  
+@media (prefers-color-scheme: light){ :root{
+  --lwt-main-image:  url("../newtab/wallpaper-light.png") !important;                    /* new-tab page image - white theme*/
+  --lwt-private-image:  url("../newtab/private-light.png") !important;                   /* new-tab private-page image - white theme*/ 
+  --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
+  }}
+
+:root {
   
   --personal-gradient-general: linear-gradient(165deg,                                          /* Gradiente Pestaña Activa */
      #d02f85 0%, #b336fc 8%, #3567fd 40%, #4e7afd 60%,#4e89fd 70%, #d02f85 100%) !important;
@@ -56,18 +76,23 @@
 
 :root[privatebrowsingmode="temporary"]{ --general-color: var(--purple) !important; }                    /* Accent color private mode */
 
+@media (-moz-bool-pref:"firefoxchameleon.left-sidebar") or (-moz-bool-pref:"sidebar.revamp") or (-moz-bool-pref:"firefoxchameleon.tree-tabs") {
+  :root{
+  --my-vertical-toolbar-width: 41px ;                                                                   /* 'left-sidebar' width */
+  }}
+
 
 /* ---------------------------------------------------- -Main Image- Config ------------------------------------------------------ */
 
 @media (-moz-bool-pref:"firefoxchameleon.main-image") {
 
    @media (prefers-color-scheme: dark){ :root{
-      --lwt-main-image:  url("../images/newtab/main-image-dark.png") !important;                        /* Main image - dark theme */ 
-      --brightness-wallpaper: #0000004b !important;                                                     /* Filtro oscuro */
+      --lwt-main-image:  url("../newtab/main-image-dark.png") !important;                        /* Main image - dark theme */ 
+      --brightness-wallpaper: 50%;                                                               /* Filtro oscuro */
      }}
    @media (prefers-color-scheme: light){ :root{
-      --lwt-main-image:  url("../images/newtab/main-image-light.png") !important;                       /* new-tab page image - dark theme */ 
-      --brightness-wallpaper: #ffffff4b !important;                                                     /* Filtro claro */
+      --lwt-main-image:  url("../newtab/main-image-light.png") !important;                       /* new-tab page image - dark theme */ 
+      --brightness-wallpaper: 100%;                                                              /* Filtro claro */
      }}
   
   :root{

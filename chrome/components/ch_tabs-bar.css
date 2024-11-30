@@ -23,26 +23,48 @@
 
 #nav-bar:not([tabs-hidden="true"]) { box-shadow: none !important; border-color: transparent !important; }
 
-/* Quitar label "Navegación Privada" */
+/* Remove "Private navigation" label */
 
-#private-browsing-indicator-with-label>label {
+.private-browsing-indicator-label {
     display: none !important;
 }
 
-/* Tamaño horizontal pestañas */
+#tabbrowser-arrowscrollbox:not([orient="vertical"]) {
+    
+    /* Tamaño horizontal pestañas */
+    
+    & .tabbrowser-tab[fadein]:not([pinned],[style^="max-width"]) {
+        max-width: 200px !important;
+    }
 
-.tabbrowser-tab[fadein]:not([pinned],[style^="max-width"]) {
-    max-width: 200px !important;
-}
+    & .tabbrowser-tab[fadein]:not([pinned]) {
+        min-width: 74px !important;
+    }
+    
+    /* Align tab content */
+    
+    & .tab-content{ 
+        padding-block-start: 1px !important; margin-left: -1px !important;
+    }
+    
+    /* Margenes de las pestañas */
+    
+    & .tabbrowser-tab {
+        padding-inline: 4px 0px !important;
+        margin-inline-end: -2px !important;
+    }
 
-.tabbrowser-tab[fadein]:not([pinned]) {
-  min-width: 74px !important;
+    /* -Newtab- button */
+
+    & #tabs-newtab-button {
+        padding-inline-start: 4px !important;
+    }
 }
 
 /* Firefox view icon */
 
-#firefox-view-button{ list-style-image: url("../images/firefoxview-close.svg") !important; }
-#firefox-view-button[aria-pressed="true"] { list-style-image: url("../images/firefoxview-open.svg") !important; }
+#firefox-view-button{ list-style-image: url("../icons/firefoxview-close.svg") !important; }
+#firefox-view-button[aria-pressed="true"] { list-style-image: url("../icons/firefoxview-open.svg") !important; }
 
 toolbar:is(#TabsToolbar) #firefox-view-button{ padding-left: 8px !important; }
 
@@ -76,7 +98,7 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
 
 .tabbrowser-tab[selected] { z-index: 1 !important; }
 
-#titlebar{
+#TabsToolbar {
   will-change: unset !important;
   transition: none !important;
   opacity: 1 !important;
@@ -84,43 +106,30 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
 
 /* Linea gradiente en pestaña activa */
 
-.tab-background[selected]{
-    outline: none !important;
-    border: 1px solid transparent !important;
-    box-shadow: none !important;
-    background-clip: padding-box;
-    border-radius: 5px !important;
-}
-
-.tabbrowser-tab[selected] > .tab-stack::before{
-    content: "";
-    display: -moz-box;
-    min-height: inherit;
-    border-radius: 4px !important;
-    grid-area: 1/1;
-    margin-block: var(--tab-block-margin);
-    background: repeat var(--identity-icon-color, var(--gradient)) !important;
-}
-
-.tab-content{ padding-top: 1px !important; margin-left: -1px !important;
-}
-
-/* Imagen en pestaña */
-
-:root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) tab[selected] .tab-background{
+.tab-background:is([selected]){
     background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)), 
                       var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;
     background-position: 0 0, var(--lwt-background-alignment), right top !important;
     background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
     background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
     background-attachment: scroll, fixed, fixed !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    background-clip: padding-box;
+    border: 1px solid transparent !important;
+    border-radius: 5px !important;
 }
 
-/* Margenes de las pestañas */
-
-.tabbrowser-tab .tab-stack {
-    padding-left: 1px !important;
-    margin-right: -2px !important;
+.tabbrowser-tab[visuallyselected] > .tab-stack::before{
+    content: "";
+    display: flex;
+    min-height: inherit;
+    border-radius: var(--tab-border-radius);
+    grid-area: 1/1;
+    margin-block: var(--tab-block-margin);
+  /* Edit gradient colors here */
+    background: repeat var(--identity-icon-color, var(--gradient)) !important;
+    border-radius: 4px !important;
 }
 
 /* Color :hover de las pestañas no seleccionadas */
@@ -135,10 +144,11 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
     background-color: var(--lwt-selected-tab-background-color) !important;
 }
 
-/* Centrar botón -Open Newtab- */
+    
+/* Centrar botones de la tabs-bar */
 
 #TabsToolbar .toolbarbutton-1 {
-    padding-top: 2px !important;
+    padding-block: var(--tab-block-margin) !important;
 }
 
 /* Medidas menores para scroll de pestañas */
@@ -177,7 +187,7 @@ spacer{
 /*favicon de pagina newtab*/
 
 .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("../images/foxlogo.svg")!important;
+    content: url("../icons/foxlogo.svg")!important;
 }
 
 /* Color y posición "dot" de pestaña que necesita atención */
@@ -192,159 +202,200 @@ spacer{
 #titlebar{ appearance: none !important; }
 
 .titlebar-buttonbox-container, .tab-close-button, .tab-label-container{
-  max-height: calc(var(--tab-height-personal) + 3px) !important;
+  max-height: calc(var(--tab-height-personal) + var(--my-margin-top) + var(--my-margin-bottom)) !important;
 }
 
-/* ---------------------------------------------------------- Menubar ---------------------------------------------------------- 
-   --------------------------------------------- Incompatible with tree-tabs style --------------------------------------------- */
+/* Tab Preview */
 
-@media not (-moz-bool-pref:"firefoxchameleon.tree-tabs"){
-
-/* ---------------------- Menu-bar in tabs-tolbar ------------------------- */
-
-:root:not([customizing]) #titlebar{
-  -moz-box-orient: vertical; /* Fx <112 compatibility */
-  flex-direction: row;
-}
-#toolbar-menubar[autohide="false"] > .titlebar-buttonbox-container,
-#toolbar-menubar[autohide="false"] > spacer{ display: none; }
-
-#main-menubar[autohide="false"]{
-  -moz-box-flex: 1; /* Fx <112 compatibility */
-  flex-grow: 1 !important;
-}
-:root:not([customizing]) #toolbar-menubar[autohide="false"][inactive]{ max-width: 0px !important; }
-:root:not([customizing]) #toolbar-menubar[autohide="true"][inactive]{ max-width: 0px !important;  }
-
-:root:not([customizing]) #toolbar-menubar[autohide="false"] + #TabsToolbar{ margin-inline-start: 39px !important; } /* Muevo las pestañas un poco a la derecha con menu active */
-:root:not([customizing]) #toolbar-menubar[autohide="true"] + #TabsToolbar{ margin-inline-start: -1px !important; }  /* Muevo las pestañas 1px a la izquierda por bug */
-
-/* For One-Line config - sobreescribo la linea anterior */
-
-@media (-moz-bool-pref:"firefoxchameleon.oneline") {
-    #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 40px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
-    #toolbar-menubar[autohide="true"] + #TabsToolbar{ padding-inline-start: var(--navbarWidth) !important; }  /* Muevo las pestañas 1px a la izquierda por bug */
+#tab-preview-panel{
+    margin-top: 1px !important;
 }
 
-/* For One-Line config - linux - window controls on left */
-
-@media (-moz-bool-pref:"firefoxchameleon.oneline") {
-@media (-moz-gtk-csd-reversed-placement){
-    #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 0px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
-    }
-}
-
-:root:not([sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container{
-  display: flex !important;
-  visibility: visible !important;
-}
-
-#TabsToolbar > .titlebar-spacer[type="post-tabs"]{
-  display: flex !important;
-}
-
-
-/* ---------------------------------------------- Vertical Menu ----------------------------------------------
-   Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_popup_menubar.css   */
-
-/* Makes menubar-items (File, Edit etc.) appear vertically as popup
- * When menubar is enabled, only the first item will be visible and it will use an icon instead of text.
- * When menubar is disabled and you hit Alt to show it, then the menubar items will appear in the corner as overlay.
- * Does NOT support toolbar buttons/items in menubar when in disabled mode.
- */
-
-@-moz-document url(chrome://browser/content/browser.xhtml){
-    
-#toolbar-menubar{
-  --uc-menubaritem-height: calc(var(--tab-height-personal) + 4px);
-  --uc-menubaritem-width: 40px;
-}
-
-/* My code - Opening animation */
-
-@keyframes scale-up-top-left{0%{transform:scale(.5);transform-origin:top left}100%{transform:scale(1);transform-origin:top left}}
-menubar:hover > menu{animation:scale-up-top-left 0.1s; }
-#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{animation:scale-up-top-left 0.1s; }
-
-
-menubar > menu{visibility: collapse;}
-menubar:hover > menu,    
-#toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible; }
-
-:root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
-  display: block;
-  position: fixed;
-  z-index: 10;
-  background-color: var(--contrast-color);
-  inset-inline-start: 0;
-}
-
-/* My code - borde gradiente */
-
-#toolbar-menuba #menubar-items{
-    border-radius: 0 0 17px 0 !important;
-}
-
-#toolbar-menubar[autohide="true"]  #menubar-items{
-    /*margin-block-start: -1px !important;
-    border-inline-end: 1px solid red !important;
-    border-block-end: 1px solid red !important;
-    border-image: var(--personal-gradient-into-arrowpanels) 1 !important;*/
-    border-radius: 0 0 7px 0 !important;
-    box-shadow: 1px 1px var(--general-color) !important;
-}
-
-#menubar-items{
-    border-radius: 0 0 7px 0 !important;
-}
-
-:root:not([customizing]) menubar{
-    flex-direction: column;
-    border-radius: 0 0 7px 0 !important;
-}
-
-menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0px 0px calc(var(--uc-menubaritem-width) * 2 + 4px) !important; }
-#toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: hidden; }
-#toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: -32px; max-width: 0px !important;}    /*  !!!!  max-width 0 para que no desplace las pestañas a la derecha*/
-#toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
-
-#file-menu{
-  fill: currentColor;
-  visibility: visible;
-  height: var(--uc-menubaritem-height);
-  width: var(--uc-menubaritem-width);
-  -moz-context-properties: fill;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); }
-
-#file-menu > .menubar-text{ visibility: collapse }
-menubar:hover > #file-menu > .menubar-text{ visibility: visible; }
-
-/* My code - tamaño botones iguales y borde con el menú open */
-
-menubar:hover >  #file-menu{ width: -moz-available; }
-
-menubar:hover{
-    box-shadow: 1px 1px var(--general-color) !important;
-}
-
-/* My code - Borde redondeado barra de menú */
-
-#main-menubar>menu{
-    background-color: transparent !important;
-}
-
-#main-menubar>menu>.menubar-text{
-    padding: 6px 4px !important;
-    margin-block: 7px !important;
-}
-
-#main-menubar>menu:is(:hover,[open])>.menubar-text {
-    background-color: var(--button-bgcolor) !important;
-    border-radius: 4px !important;
+.tab-preview-thumbnail-container {
     width: -moz-available !important;
+    height: 138px !important;
+    border: 1px solid var(--button-bgcolor) !important;
+    border-radius: 0 0 6px 6px !important;
+}
+
+/* __________________________________________________________ Menubar __________________________________________________________ 
+   _____________________________________________ Incompatible with tree-tabs style _____________________________________________ */
+
+@media (not (-moz-bool-pref:"firefoxchameleon.tree-tabs")) and (not (-moz-bool-pref:"sidebar.verticalTabs")) {
+
+    /* ---------------------- Menu-bar in tabs-tolbar ------------------------- */
+
+    #toolbar-menubar[autohide="false"] > .titlebar-buttonbox-container,
+    #toolbar-menubar[autohide="false"] > spacer{ display: none; }
+
+    #main-menubar[autohide="false"]{
+        -moz-box-flex: 1; /* Fx <112 compatibility */
+        flex-grow: 1 !important;
     }
-  }
+    :root:not([customizing]) #toolbar-menubar[autohide="false"][inactive]{ max-width: 0px !important; }
+    :root:not([customizing]) #toolbar-menubar[autohide="true"][inactive]{ max-width: 0px !important;  }
+
+    :root:not([customizing]) #toolbar-menubar[autohide="false"] + #TabsToolbar{ margin-inline-start: var(--uc-menubaritem-width) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
+    :root:not([customizing]) #toolbar-menubar[autohide="true"] + #TabsToolbar{ margin-inline-start: -1px !important;}  /* Muevo las pestañas 1px a la izquierda por bug */
+
+    /* For One-Line config - sobreescribo la linea anterior */
+
+    @media (-moz-bool-pref:"firefoxchameleon.oneline") {
+        :root:not([customizing]) {
+            #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth)) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
+            #toolbar-menubar[autohide="false"] ~ #nav-bar { padding-inline-start: var(--uc-menubaritem-width) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
+            #toolbar-menubar[autohide="true"] + #TabsToolbar{ padding-inline-start: var(--navbarWidth) !important; }  /* Muevo las pestañas 1px a la izquierda por bug */
+        }
+    }
+
+    /* For One-Line config - linux - window controls on left */
+
+    @media (-moz-bool-pref:"firefoxchameleon.oneline") {
+        @media (-moz-gtk-csd-reversed-placement){
+            #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 0px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
+        }
+    }
+
+    :root:not([sizemode="fullscreen"]) #TabsToolbar > .titlebar-buttonbox-container{
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    #TabsToolbar > .titlebar-spacer[type="post-tabs"]{
+        display: flex !important;
+    }
+
+
+    /* ---------------------------------------------- Vertical Menu ----------------------------------------------
+    Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_popup_menubar.css   */
+
+    /* Makes menubar-items (File, Edit etc.) appear vertically as popup
+    * When menubar is enabled, only the first item will be visible and it will use an icon instead of text.
+    * When menubar is disabled and you hit Alt to show it, then the menubar items will appear in the corner as overlay.
+    * Does NOT support toolbar buttons/items in menubar when in disabled mode.
+    */
+
+    :root {
+        --uc-menubaritem-height: calc(var(--tab-height-personal) + 4px);
+        --uc-menubaritem-width: 40px;
+    }
+
+    /* My code - Opening animation */
+
+    @keyframes scale-up-top-left{0%{transform:scale(.5);transform-origin:top left}100%{transform:scale(1);transform-origin:top left}}
+    menubar:hover > menu{animation:scale-up-top-left 0.1s; }
+    #toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{animation:scale-up-top-left 0.1s; }
+
+
+    menubar > menu{visibility: collapse;}
+    menubar:hover > menu,    
+    #toolbar-menubar[autohide="true"]:not([inactive]) > #menubar-items > menubar > menu{visibility: visible; }
+
+    /* Bug fix - Menubar on top */
+    :root:not([customizing],[sizemode="fullscreen"]) #toolbar-menubar{
+        z-index: 4 !important;
+    }
+
+    /* Bug fix - when mwnubar appears */
+
+    toolbar {
+        min-height: 0px !important;
+    }
+
+    :root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
+        display: block;
+        position: fixed;
+        z-index: 10;
+        background-color: transparent;
+        inset-inline-start: 0;
+    }
+
+    /* My code - borde gradiente */
+
+    #toolbar-menuba #menubar-items{
+        border-radius: 0 0 17px 0 !important;
+    }
+
+    #toolbar-menubar[autohide="true"]  #menubar-items{
+        background-color: transparent !important;
+        border-radius: 0 0 7px 0 !important;
+        box-shadow: 1px 1px var(--general-color) !important;
+    }
+
+    #menubar-items,
+    :root:not([customizing]) menubar menu {
+        border-radius: 0 0 7px 0 !important;
+    }
+
+    :root:not([customizing]) menubar{
+        flex-direction: column;
+        border-radius: 0 0 7px 0 !important;
+    }
+
+    menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0px 0px 86px !important; }
+    #toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: hidden; }
+    #toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: calc(0px - var(--menubar-height-personal,28px)); max-width: 0px !important;}    /*  !!!!  max-width 0 para que no desplace las pestañas a la derecha*/
+    #toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
+
+    #file-menu{
+        fill: currentColor;
+        visibility: visible;
+        height: var(--uc-menubaritem-height);
+        width: var(--uc-menubaritem-width);
+        -moz-context-properties: fill;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    menubar:not(:hover) > #file-menu{ background-image: url("chrome://devtools/skin/images/tool-storage.svg"); background-color: transparent !important; }
+
+    #file-menu > .menubar-text{ visibility: collapse }
+    menubar:hover > #file-menu > .menubar-text{ visibility: visible; }
+
+    /* My code - tamaño botones iguales y borde con el menú open */
+
+    menubar:hover >  #file-menu{ width: -moz-available; }
+
+    menubar:hover{
+        box-shadow: 1px 1px var(--general-color) !important;
+    }
+
+    /* My code - Borde redondeado barra de menú */
+
+    /* Background color */
+
+    #main-menubar,
+    #main-menubar>menu{
+        background-color: var(--toolbar-bgcolor) !important;
+    }
+
+    #main-menubar>menu>.menubar-text{
+        padding: 6px 4px !important;
+        margin-block: 7px !important;
+    }
+
+    #main-menubar>menu:is(:hover,[open])>.menubar-text {
+        background-color: var(--button-bgcolor) !important;
+        border-radius: 4px !important;
+        width: -moz-available !important;
+    }
+}
+
+/* Menu-bar */
+
+#main-menubar{
+    min-height: var(--menubar-height-personal, 30px) !important;
+}
+
+
+/* _______________________ Configuration for Linux _______________________ */
+
+@media (-moz-platform: linux) {
+    
+    /* Elimina padding indeseado de la barra de menú */
+    toolbar { &[type="menubar"] { padding: 0px !important; }}
+
+    /* less spaced menu items */
+    #main-menubar>menu>.menubar-text{
+        margin-inline: -5px !important;
+    }
 }

@@ -146,7 +146,7 @@ slot {
 /* Ícono de Actualización disponible */
 
 .panel-banner-item::before {
-    background: url("../images/foxFill.svg") no-repeat center/16px;
+    background: url("../icons/foxFill.svg") no-repeat center/16px;
     content: ""; 
     display: inline-flex;
     -moz-context-properties: fill;
@@ -212,11 +212,11 @@ slot {
 /* Ícono Marcadores */
 
 #panelMenuBookmarkThisPage[starred]{
-    list-style-image: url("../images/bookmark.svg");
+    list-style-image: url("../icons/bookmark.svg");
     fill: var(--toolbarbutton-icon-fill) !important;
 }
 #appMenu-bookmarks-button, #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks,#panelMenuBookmarkThisPage:not([starred]) {
-    list-style-image: url("../images/bookmark-empty.svg");
+    list-style-image: url("../icons/bookmark-empty.svg");
 }
 
 /* ícono Historial */
@@ -252,7 +252,7 @@ slot {
 /* Guardar como... */
 
 #appMenu-save-file-button2{
-    list-style-image: url("../images/save.svg");
+    list-style-image: url("../icons/save.svg");
 }
 
 /* Ícono buscar */
@@ -270,7 +270,7 @@ slot {
 /* Item -tamaño- */
 
 #appMenu-zoom-controls:before{
-    content: url(../images/zoom.svg);
+    content: url(../icons/zoom.svg);
 }
 
 /* Ícono Ajustes */
@@ -291,11 +291,11 @@ slot {
 /* Ícono salir */
 
 #appMenu-quit-button2 {
-    list-style-image: url("../images/quit1.svg");
+    list-style-image: url("../icons/quit1.svg");
 }
 
 #appMenu-quit-button2:hover {
-    list-style-image: url("../images/quit2.svg");
+    list-style-image: url("../icons/quit2.svg");
 }
 
 #panelMenu_viewBookmarksToolbar {
@@ -345,5 +345,5 @@ slot {
 
 /* Ícono de -Cerrar sesión- */
 #PanelUI-fxa-menu-account-signout-button{
-    list-style-image: url("../images/logout.svg");
+    list-style-image: url("../icons/logout.svg");
 }

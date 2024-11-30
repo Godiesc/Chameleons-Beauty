@@ -13,68 +13,36 @@
 .tab-context-line {
     opacity: 0 !important;
 }
+    
+:root {
+    --tab-icon-end-margin: 7px !important; /* Rightmost tab label */
+}
 
 /* Rework en la Linea de Contenedores-BordeFavicon */
 
-.tab-icon-pending:not([selected],[pinned]),.tab-icon-pending:not([pinned]), .tab-sharing-icon-overlay:not([selected],[pinned]), .tab-throbber[busy], .tab-icon-image:not([selected],[pinned]){
-    box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
-    border-radius: 2px !important;
-    padding: 2px !important;
-    margin-left: -1px !important;
-    margin-right: 6px !important;
+.tabbrowser-tab:not([selected]) {
+    & .tab-throbber[busy], .tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay {
+        outline: 1px solid var(--identity-icon-color, transparent) !important;
+        outline-offset: 2px !important;
+        border-radius: 1px !important;
+        clip-path: xywh(-2px -3px calc(100% + 4px) calc(100% + 6px) round 0px);
+    }
 }
 
-.tab-icon-pending[selected], .tab-sharing-icon-overlay[selected], .tab-icon-image[selected] {
-    box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000),
-                -1px 0 0px var(--identity-icon-color, #00000000), 1px 0 0px var(--identity-icon-color, #00000000) !important;
-    border-radius: 2px !important;
-    padding: 2px !important;
-    margin-left: -1px !important;
-    margin-right: 6px !important;
-    transition-duration: 100ms !important;
-}
-
-.tab-icon-pending:not([selected])[pinned], .tab-sharing-icon-overlay:not([selected])[pinned], .tab-throbber[busy][pinned], .tab-icon-image:not([selected])[pinned] {
-    box-shadow: 0 -1px 0px var(--identity-icon-color, #00000000), 0 1px 0px var(--identity-icon-color, #00000000) !important;
-    padding: 2px !important; border-radius: 2px !important;
-}
-
-.tab-icon-pending[pinned], .tab-sharing-icon-overlay[pinned], .tab-icon-image[pinned], .tab-throbber:is([busy][pinned]) {
-    margin-right: -1px !important;
-    margin-left: -1px !important;
+.tabbrowser-tab[selected] {
+    & .tab-throbber[busy], .tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay {
+        outline: 1px solid var(--identity-icon-color, transparent) !important;
+        outline-offset: 2px !important;
+        border-radius: 1px !important;
+        clip-path: xywh(-3px -3px calc(100% + 6px) calc(100% + 6px) round 0px);
+        transition: clip-path 0.1s ease !important;
+    }
 }
 
 /* Deleted label in urlbar */
 
 #userContext-label {
     display: none !important;
-}
-
-/* Nuevos margenes - CargandoPágina */ 
-
-.tab-throbber[busy]:not([pinned]){
-    border-radius: 0px !important;
-    padding: 0 !important;
-    height: 20px !important;
-    margin-left: 1px !important;
-    margin-right: 8px !important;
-    opacity: 1 !important;
-}
-
-.tab-throbber:is([busy][pinned]) {
-    border-radius: 0px !important;
-    padding: 0px !important;
-    height: 20px !important;
-    margin-left: 1px !important;
-    margin-right: 1px !important;
-}
-
-/* Corregir medida favicon ausente */
-
-hbox .tab-icon-pending {
-  height: 20px !important;
-  width: 20px !important;
-    padding: 2px !important;
 }
 
 /* Nuevos colores */
@@ -124,7 +92,7 @@ hbox .tab-icon-pending {
 }
 
 #urlbar:is([open]) #userContext-icons::before {
-    border-radius: 6px !important;
+    border-radius: 10px !important;
 }
 
 /* These might potentially cause some issues, but are needed to make the border extend the border to the full popup when urlbar popup is open */

@@ -60,7 +60,7 @@
                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
    background-position: right top, right top, right top, left top !important;
    background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
-   background-size: auto !important; 
+   background-size: cover !important; 
 }
    
 :root:not([chromehidden~="toolbar"]) tab[selected] .tab-background{
@@ -68,7 +68,7 @@
                       var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;
     background-position: 0 0, var(--lwt-background-alignment), right top !important;
     background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
-    background-size: auto 100%, var(--lwt-background-size, auto auto), auto auto !important;
+    background-size: cover !important;
     background-attachment: scroll, fixed, fixed !important;
 }
    
@@ -91,7 +91,7 @@
 /* Color paloma del ícono de protección contra rastreo */
    
 #urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
-    list-style-image: url("../images/shield.svg") !important;
+    list-style-image: url("../icons/shield.svg") !important;
     fill: var(--contrast-color) !important;
    }
    
@@ -133,7 +133,7 @@
       background-position: -6px -6px !important;
    }
 
-   .menupopup-arrowscrollbox, slot, panelview, #menubar-items{
+   .menupopup-arrowscrollbox, :not(scrollbox[part="scrollbox"]) slot, panelview, #menubar-items{
       background-image: linear-gradient(var(--arrowpanel-background, transparent), var(--arrowpanel-background, transparent)), 
                         linear-gradient(transparent, transparent), 
                         var(--lwt-header-image, var(--lwt-additional-images, none)) !important;

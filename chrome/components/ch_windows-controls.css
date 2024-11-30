@@ -4,44 +4,39 @@
 /* WindowsOS - window control icons */
 
 @media (-moz-platform: windows) {
+    
+    /* Smaller buttons */
+    
+    .titlebar-button {
+        height: calc(var(--tab-height-personal) + var(--my-margin-top) + var(--my-margin-bottom)) !important;
+        padding: 8px 13px !important;
+    }
 
-    .titlebar-button{
-        background-color: transparent !important;
-        padding-inline: 3px !important;
-        padding-block: var(--tab-block-margin) !important;
+    /* Size of button */
+    .titlebar-button::before{
+        content: ""; display: flex;
+        position: absolute;
+        border-radius: 4px !important;
+        padding: 15px 17px !important;
+        z-index: -1 !important;
     }
-    
-    .titlebar-button:hover{
-        background-color: transparent !important;
+
+    /* Background color when 'hover' */
+    .titlebar-button:hover::before{
+        background-color: var(--toolbarbutton-hover-personal) !important;
     }
-    
-    .titlebar-button.titlebar-min .toolbarbutton-icon,
-    .titlebar-button.titlebar-restore .toolbarbutton-icon, .titlebar-button.titlebar-max .toolbarbutton-icon,
-    .titlebar-button.titlebar-close .toolbarbutton-icon{
-        width: 32px !important;
-        height: 32px !important;
-        padding: 9px !important;
+
+    /* Background color when 'hover' on 'close' button */
+    .titlebar-button:is(.titlebar-close):hover::before {        
+        background-color: hsl(355,86%,49%) !important;
     }
-    
-    .titlebar-button:hover .toolbarbutton-icon{
-        background-color:  var(--toolbarbutton-hover-background) !important;
-        border-radius: var(--tab-border-radius) !important;
-    }
-    
-    .titlebar-button.titlebar-close:hover .toolbarbutton-icon{        
-        background-color:  #e81123 !important;
-    }
-    
-    /* Keep the same windows control icons in all the themes, includint the themes with images */
-    
+
+    /* Keep the same windows control icons in all the themes, including the themes with images */
+
     .titlebar-button {
         background-color: transparent !important;
         -moz-context-properties: stroke !important;
         stroke: currentColor !important;
-    }
-    .titlebar-close:hover {
-        background-color: transparent !important;
-        color: white !important;
     }
     .titlebar-close {
         list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important;
@@ -83,7 +78,7 @@
     }
     
     .titlebar-buttonbox {
-        min-height: calc(var(--margin-top) * 2 + var(--tab-height-personal)) !important;
-        max-height: calc(var(--margin-top) * 2 + var(--tab-height-personal)) !important;
+        min-height: calc(var(--my-margin-top) * 2 + var(--tab-height-personal)) !important;
+        max-height: calc(var(--my-margin-top) * 2 + var(--tab-height-personal)) !important;
     }
 }
