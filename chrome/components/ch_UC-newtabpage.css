@@ -644,8 +644,7 @@ button.primary:hover{
     
 body{
     --newtab-search-icon: url("chrome://global/skin/icons/indicator-private-browsing.svg") !important;
-    background-image: linear-gradient(var(--brightness-wallpaper), var(--brightness-wallpaper)),
-                      linear-gradient(var(--brightness-wallpaper), var(--brightness-wallpaper)), 
+    background-image: linear-gradient(transparent, transparent),
                       var(--lwt-private-image) !important;
     background-attachment: fixed !important;
     background-size: cover !important;
