@@ -1,6 +1,9 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text.
    https://github.com/Godiesc/Chameleons-Beauty */
 
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text.
+   https://github.com/Godiesc/firefox-one */
+
 @media (prefers-color-scheme: dark){
  window, dialog {
      
@@ -46,20 +49,21 @@
     --in-content-page-color: var(--contrast-color) !important;                                  /* Color de texto general*/
     
     
-    --in-content-box-background-odd: color-mix(in srgb,                                         /* Color destinción entre filas de una tabla-atajos de busqueda */
-      var(--in-content-box-border-color), transparent) !important;     
+    --in-content-box-background-odd: color-mix(in srgb,                                         /* Color distinction between rows in a 'table' and 'search shortcuts' */
+      var(--in-content-box-border-color)40%, transparent) !important;
     --in-content-box-info-background: var(--in-content-box-background-odd) !important;          /* Color de la caja de elementos que se sincronizan */
     --section-highlight-background-color: var(--in-content-box-info-background) !important;
     
     --in-content-border-color: var(--in-content-box-border-color) !important;                   /* Linea separadora en la configuración*/
     --in-content-table-border-color: var(--in-content-box-border-color) !important;             /* Borde de tablas*/
     
-    --in-content-table-background: var(--in-content-page-background) !important;                /* Color de fondo de tablas de "about:support" */
+    --background-color-box: var(--in-content-page-background) !important;                       /* Background color of tables */
+    --in-content-table-background: var(--in-content-page-background) !important;                /* Background color of 'about:support' tables */
     
     --card-outline-color: var(--general-color) !important;                                      /* outline color temas-extensiones */
     --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color) !important;    /* outline color :hover temas-extensiones */
     
-    --in-content-item-hover: var(--button-active-bgcolor) !important;                           /* Color de fondo al pasar por los items de un combobox */
+    --in-content-item-hover: var(--button-hover-bgcolor) !important;                           /* Color de fondo al pasar por los items de un combobox */
     --in-content-item-hover-text: var(--in-content-text-color) !important;                      /* Color de label del item hover del combobox */
     --in-content-item-selected: var(--general-color) !important;                                /* Color de fondo al pasar por los items de un combobox (teclas de direccion)" */
     --in-content-item-selected-text:  var(--in-content-text-color) !important;                  /* Color de label al pasar por los items de un combobox (teclas de direccion)" */
@@ -68,14 +72,14 @@
     --in-content-button-background-hover: var(--button-active-bgcolor) !important;              /* color de botones :hover */
     --in-content-button-background-active: var(--general-color) !important;                     /* color de botones al darle clic */
     
-    --in-content-primary-button-background: var(--general-color) !important;                    /* Color botones principales */
-    --in-content-primary-button-background-hover: var(--button-hover-bgcolor) !important;       /* Color botones principales :hover */
-    --in-content-primary-button-background-active: var(--button-active-bgcolor) !important;     /* Color botones principales :active */
+    --in-content-primary-button-background: var(--general-color) !important;                    /* Primary button color */
+    --in-content-primary-button-background-hover: var(--button-hover-bgcolor) !important;       /* Primary button color on 'hover' */
+    --in-content-primary-button-background-active: var(--button-active-bgcolor) !important;     /* Primary button color on 'active' */
     
     --link-color: var(--general-color) !important;                                              /* Color de links */
-    --link-color-hover: var(--blue) !important;                                                 /* Color de links :hover */
+    --link-color-hover: var(--aqua) !important;                                                 /* Color de links :hover */
     --link-color-active: var(--purple) !important;                                              /* Color de links :active */
-    --link-color-visited: var(--general-color) !important;                                      /* Color de links :visited */
+    --link-color-visited: var(--purple) !important;                                             /* Color de links :visited */
     
     --gradiente-casual: linear-gradient(to right,                                               /* Gradiente personal about:preferences */
       var(--in-content-box-border-color) 90%, transparent ) !important;
@@ -86,10 +90,10 @@
 @media (prefers-color-scheme: dark){
     :root {
         --contrast-color: #ffffff !important;                                                   /* Color de contraste */
-        --in-content-page-background: #171520 !important;                                       /* Fondo general */
+        --in-content-page-background: #121018 !important;                                       /* Fondo general */
 
-        --in-content-box-background: #1c1925 !important;                                        /* Color de los textbox y fondo de menús desplegables */
-        --in-content-box-border-color: #272b37 !important;                                      /* Color del borde de los textbox */
+        --in-content-box-background: #15151e !important;                                        /* Color de los textbox y fondo de menús desplegables */
+        --in-content-box-border-color: #202430 !important;                                      /* Color del borde de los textbox */
     }}
 
 @media (prefers-color-scheme: light){
@@ -102,11 +106,23 @@
 
         --in-content-button-text-color-hover: white !important;                                 /* Color de letras en botones hover */
     }}
+
 /*-------------------------------> Colores varios de la interfaz de complementos y configuración <---------------------------------------*/
 
 @-moz-document  
     url-prefix(about:preferences), url-prefix(about:addons), url-prefix(about:support), 
     url-prefix(about:profiles) , url-prefix(about:debugging), url-prefix(about:welcome){
+        
+:root{
+    --opaque: color-mix(in srgb, var(--in-content-page-background) 70%, transparent) !important;
+}
+        
+/* Mensajes informativos */
+        
+.discopane-notice{
+    --message-bar-background-color: var(--button-bgcolor) !important;
+    --message-bar-border-color: var(--button-active-bgcolor) !important;
+}
         
 /* Toggle button */
         
@@ -117,18 +133,35 @@
 .toggle-button[aria-pressed="true"]:enabled:hover {
   background: var(--button-hover-bgcolor) !important;
 }
-
+        
 /* Botón más opciones */        
                     
-.more-options-button {
-    background-color: color-mix( in srgb, var(--in-content-border-color) 96%, var(--in-content-text-color))  !important;
-    border-color: color-mix( in srgb, var(--in-content-border-color) 96%, var(--in-content-text-color))  !important;
+.more-options-button[aria-expanded="true"] {
+    background-color: var(--button-active-bgcolor) !important;
 }
+        
+/* Buttons :hover */
 
 button:hover:not(.toggle-button) {
     background-color: var(--button-active-bgcolor) !important;
     color: #fafafa !important;
     border-color: transparent !important;
+}
+        
+/* Checkbox */
+        
+checkbox:not(:hover) .checkbox-check:not([checked="true"]) {
+    appearance: none !important;
+    border: 2px solid color-mix(in srgb, var(--gray) 20%, transparent) !important;
+    background: var(--opaque) !important;
+    border-radius: 2px !important;
+}
+        
+checkbox:hover .checkbox-check:not([checked="true"]) {
+    appearance: none !important; 
+    border: 2px solid color-mix(in srgb, var(--gray) 60%, transparent) !important;
+    background: var(--opaque) !important;
+    border-radius: 2px !important;
 }
         
 /* Color de Botones resaltados por default */
@@ -148,10 +181,11 @@ button.primary:hover {
         
 #categories{
     margin: 70px 15px 0 -18px !important; 
+    background-color: transparent !important;
 }
         
 #categories > .category{
-    background-color: var(--in-content-box-background) !important;
+    background-color: transparent !important;
     color: color-mix(in srgb, var(--in-content-text-color)76%, transparent) !important;
 }
         
@@ -241,8 +275,8 @@ addon-card[expanded] .addon.card {
     outline-offset: 1px !important;
 }
         
-#categories, #sidebar ,.main-heading, .main-search , .navigation, .sticky-container  {
-    background: var(--in-content-box-background) !important;
+#sidebar, .navigation, .sticky-container{
+    background-color: var(--opaque) !important;
 }
         
 .navigation, #sidebar{ 
@@ -251,7 +285,7 @@ addon-card[expanded] .addon.card {
         
 .sticky-container{
     border-bottom: 1px solid var(--in-content-box-border-color) !important;
-    box-shadow: 3px 3px 7px #00000030 !important;
+    box-shadow: 3px 3px 10px var(--in-content-page-background) !important;
 }
         
 #main{
@@ -263,11 +297,13 @@ addon-card[expanded] .addon.card {
 }
 
 .main-search {
+    background: transparent !important;
     max-width: 100% !important;
     padding: 20px 20px !important;
 }
         
 .main-heading {
+    background: transparent !important;
     margin-top: -52px !important;
     margin-bottom: 4px !important;
     min-width: 50% !important; 
@@ -317,7 +353,42 @@ search-addons > search-textbox[focused] {
 
 #searchInput[focused]{ 
     outline: 2px solid var(--general-color) !important; 
-}}
+}
+        
+/* Various smooth transitions */
+        
+button, menulist, treecol, .sidebar-footer-link{
+    transition: background-color 0.2s ease !important;
+}
+        
+search-textbox{
+    transition: border 0.2s ease !important;
+}
+        
+#categories > .category .category-name{
+    transition: all 0.1s ease !important;
+}
+
+/* Wallpaper */
+
+body,.sticky-container{
+    --bg: var(--lwt-main-image);
+    background-image: linear-gradient(var(--opaque), var(--opaque)),
+                      linear-gradient(var(--opaque), var(--opaque)), 
+                      var(--bg) !important;
+    background-repeat: repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position-y: var(--background-align-y) !important;
+    }
+        
+.sticky-container{
+    background-image: linear-gradient(var(--opaque), var(--opaque)),
+                      linear-gradient(var(--opaque), var(--opaque)),
+                      linear-gradient(var(--opaque), var(--opaque)),
+                      var(--bg) !important;
+    }
+}
 
 @-moz-document url-prefix(about:preferences){
     
@@ -331,12 +402,10 @@ search-addons > search-textbox[focused] {
 }
 
 .sticky-container {
-    background: var(--in-content-box-background) !important;
-    background: linear-gradient(to right, var(--in-content-box-background) 94%, var(--in-content-page-background)) !important;
     width: 125% !important;
     margin-left: -98px !important;
     border-bottom: 1px solid transparent !important;
     border-image: var(--gradiente-casual) 1 !important;
-    box-shadow: -1px 3px 7px #00000030 !important;
+    box-shadow: -17px 3px 17px #0000006a !important;
     }
 }

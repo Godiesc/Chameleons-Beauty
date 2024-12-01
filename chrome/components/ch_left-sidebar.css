@@ -752,7 +752,7 @@
 @media (-moz-bool-pref:"firefoxchameleon.verticalTabs-expandOnHover") and (-moz-bool-pref:"sidebar.verticalTabs") {
     
     :root {
-        --my-expand-sidebar-width: 203px;
+        --my-expand-sidebar-width: 212px;
         --my-vertical-elements-width: calc(var(--my-vertical-toolbar-width) - 1px) !important;
     }
     
@@ -761,7 +761,7 @@
     :root:has(sidebar-main:is([expanded])) {
         & #sidebar-main {
             position: absolute !important;
-            width: var(--my-vertical-toolbar-width) !important;
+            width: var(--my-vertical-elements-width) !important;
             z-index: 3 !important;
             height: calc(100% - var(--toolbar-height-personal) - var(--bookmarksbar-height-personal, 0px) - var(--menubar-height-personal, 0px)) !important;
             transition: width 0.1s ease-in-out !important;
@@ -840,7 +840,7 @@
         
         /* Web content */
         & #tabbrowser-tabbox{
-            margin-inline-start: calc(var(--my-vertical-toolbar-width) + 1px) !important;
+            margin-inline-start: var(--my-vertical-toolbar-width) !important;
         }
 
         /* Sidebar + sidebar content */
@@ -924,7 +924,6 @@
     #tabbrowser-tabbox {
         outline: none !important;
         box-shadow: none !important;
-        border-radius: 4px 0 0 0 !important;
         
         & browser {
             border-radius: 4px 0 0 0 !important;

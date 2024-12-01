@@ -2,14 +2,19 @@
    https://github.com/Godiesc/Chameleons-Beauty */
 
 :root{
-  
+  /* --------------------- Variables de colores, puedes poner tu color personalizado y utilizarlo -----------------------------*/  
   --fuchsia: #fa1e4e;     --blue:  #304af1;    --aqua: #00bfff;         --cyan: #00ffff;          --lightblue: #45a1ff;     --pink: #FF0F7E;
   --purple: #8d35e2;      --green: #05b694;    --aquamarine: #00ffa2;   --lightgreen: #36ff4e;    --yellowbrown: #febd60;   --swampautumn: #fdf008;
   --gray: #bfb6d2;        --orange: #ff6c22;   --yellow: #ffe20f;       --red: #ff3230;           --navyblue: #0050cE;      --poison: #cb17cf; 
   
-  --general-color: var(--blue);
-  
+  /*                                                                                                                                 
+    Accent color -----> UI del navegador.  -----|        |---- userContent <------------ Accent color
+                                                |        |     (Add-ons, preferences and about: pages.)
+                                                v        v                                                          */
+                        --general-color: var(--blue, --blue);
+
   /* __________________________________________________________  Various customizations __________________________________________________________ */
+  
                   /* Dark wallpapers */
   --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;
   --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;
@@ -28,14 +33,14 @@
 }
 
 @media (prefers-color-scheme: dark){ :root{
-  --lwt-main-image:  url("../newtab/wallpaper-dark.png") !important;                     /* new-tab page image - dark theme */ 
-  --lwt-private-image:  url("../newtab/private-dark.png") !important;                    /* new-tab private-page image - dark theme */
+  --lwt-main-image:  url("../newtab/wallpaper-dark6.png") !important;                    /* about: pages wallpaper - dark theme */ 
+  --lwt-private-image:  url("../newtab/private-dark.png") !important;                    /* new-tab private-page wallpaper - dark theme */
   --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
   }}
   
 @media (prefers-color-scheme: light){ :root{
-  --lwt-main-image:  url("../newtab/wallpaper-light.png") !important;                    /* new-tab page image - white theme*/
-  --lwt-private-image:  url("../newtab/private-light.png") !important;                   /* new-tab private-page image - white theme*/ 
+  --lwt-main-image:  url("../newtab/wallpaper-light1.png") !important;                   /* about: pages wallpaper - light theme*/
+  --lwt-private-image:  url("../newtab/private-light.png") !important;                   /* new-tab private-page image - light theme*/ 
   --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
   }}
 
@@ -96,10 +101,10 @@
      }}
   
   :root{
-      --wallpaper-size: auto auto;                                                                      /* cover-> default ; auto auto -> to <<main-image>> config */  
-      --background-align-y: -71px ;                                                                     /* Alinear new-tab wallpaper to <<main-image>> config 
-                                                                                                           -71px  ventana normal 
-                                                                                                           -101px con Barra de Marcadores */
+      --wallpaper-size: auto auto;                                                               /* cover-> default ; auto auto -> to <<main-image>> config */  
+      --background-align-y: -71px;                                                               /* Alinear new-tab wallpaper to <<main-image>> config 
+                                                                                                    -71px  ventana normal 
+                                                                                                    -101px con Barra de Marcadores */
     }
 }
   
@@ -110,7 +115,7 @@
        ((-moz-bool-pref:"firefoxchameleon.main-image") and
        (-moz-bool-pref:"firefoxchameleon.tree-tabs")){  
     :root{
-      --background-align-y: -38px ;                                                                     /* Alinear new-tab wallpaper to <<main-image>> config 
-                                                                                                           -38px ventana normal
-                                                                                                           -68px con Barra de Marcadores  */
+      --background-align-y: -38px ;                                                              /* Alinear new-tab wallpaper to <<main-image>> config 
+                                                                                                    -38px ventana normal
+                                                                                                    -68px con Barra de Marcadores  */
     }}
