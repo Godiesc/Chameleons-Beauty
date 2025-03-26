@@ -5,6 +5,11 @@
     <td width="320px">firefoxchameleon.tree-tabs</td>
     <td width="50px">true</td></tr>
 </table>
+<li>If you want the 'Expand on hover' feature you have to add too this preference in about:config page:</li>
+    <table><tr>
+    <td width="500px">firefoxchameleon.verticalTabs-expandOnHover</td>
+    <td width="50px">true</td></tr>
+    </table>
 <li>Use a compatible theme like this: <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
 <li><b>It is compatible with Left-sidebar config and Main-image config. ⚠ Not compatible with Oneline config.</b></li></ul>
 
