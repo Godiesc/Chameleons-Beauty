@@ -59,7 +59,7 @@ body {
     
     /* _______________________________________________________ Wallpapers _______________________________________________________ */
     
-    @media not (-moz-bool-pref:"firefoxchameleon.main-image"){
+    @media not -moz-pref("firefoxchameleon.main-image"){
 
         /* Dark 1 - Fuchsia */
         #dark-sky,
@@ -176,21 +176,18 @@ body {
         pointer-events: none;
     }
 
-    @media (-moz-bool-pref:"firefoxchameleon.main-image") {
-
-        body{
-            background-image: var(--lwt-main-image, initial) !important;
-            background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
-            background-size: calc(100% + var(--my-vertical-toolbar-width, 0px) + var(--extension-width, 0px)) !important;
-            background-attachment: fixed !important;
-            background-position-x: right !important;
-            background-position-y: var(--background-align-y, 0px) !important;
+    @media -moz-pref("firefoxchameleon.main-image") {
+        
+        body {
+            --newtab-background-color: transparent !important;
+            background-image: none !important;
+            background-color: transparent !important;
         }
 
         /* Brighness wallpaper */
 
         body::before {
-            background-color: color-mix(in srgb, var(--contrast-color), transparent var(--brightness-wallpaper));
+            display: none !important;
         }
     }
     
@@ -213,6 +210,15 @@ body {
         margin-bottom: 10px !important;
         }
 
+    /* Logo and Search when it get sticky position */
+    
+    @media (height > 700px) {
+        body:not(.inline-onboarding) .fixed-search .search-wrapper {
+            background-color: color-mix(in srgb, var(--newtab-background-color) 90%, transparent) !important;
+            backdrop-filter: var(--personal-blur) !important;
+        }
+    }
+    
     /* Border color when 'hover' over wallpapers */
 
     .wallpaper-list .wallpaper-input:not(:checked):hover {
@@ -578,12 +584,6 @@ browser[primary="true"][tabDialogShowing="true"],
     background-color: transparent !important; 
     }
     
-/* ntp */
-    
-.activity-stream {
-    background-color: var(--newtab-background-color, #ff0000) !important;
-    }
-    
 /* Elimina creditos de la imagen usada como wallpaper */
     
 .wallpaper-attribution { display: none !important; }
@@ -707,7 +707,7 @@ body{
         --fxview-element-background-active: var(--button-active-bgcolor) !important;    /* Context menu: color on 'clic' over items */
         --fxview-border: var(--fxview-primary-action-background) !important;
         --fxview-background-color: transparent !important;
-        --opaque: color-mix(in srgb, var(--in-content-page-background) 60%, transparent) !important;
+        --opaque: color-mix(in srgb, var(--in-content-page-background) 50%, transparent) !important;
     }
     
     @media (prefers-color-scheme: dark) {
@@ -744,11 +744,12 @@ body{
         background-size: cover !important;
         background-attachment: fixed !important;
         background-position-y: var(--background-align-y) !important;
+        backdrop-filter: var(--brightness-wallpaper) !important;
     }
     
     .sticky-container{
         margin-block-end: 10px !important;
-        box-shadow: 0 2px 10px 0 var(--in-content-page-background) !important;
+        box-shadow: 0 4px 10px var(--in-content-page-background) !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% + 10px), 0 calc(100% + 10px));
     }
     
@@ -765,32 +766,45 @@ body{
     
 /* Compatibility for aligning wallpaper when used with 'Main-image' config */
     
-    @media (-moz-bool-pref:"firefoxchameleon.main-image") {
+    @media -moz-pref("firefoxchameleon.main-image") {
 
-        body,.sticky-container{
-            --opaque: color-mix(in srgb, var(--border-contrast-color), transparent) !important;
-            --bg: linear-gradient(var(--opaque), var(--opaque)),
-                                  var(--lwt-main-image);
-            background-image: var(--bg) !important;
-            background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
-            background-size: calc(100% + var(--my-vertical-toolbar-width, 0px) + var(--extension-width, 0px)) !important;
-            background-attachment: fixed !important;
-            background-position-x: right !important;
-            background-position-y: var(--background-align-y, 0px) !important;
-            backdrop-filter: none !important;
+        .sticky-container {
+            background-image: none !important;
         }
         
-        body::before,.sticky-container::before{
-            --bg: linear-gradient(to bottom, transparent, var(--opaque));
-            position: fixed;
-            content: "";
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--bg) !important;
-            pointer-events: none;
-            z-index: -1 !important;
+        body {
+            background: transparent !important;
+            overflow-y: hidden !important;
+        }
+        
+        .main-container {
+            width: 100% !important;
+        }
+        
+        #pages {
+            padding: 0px !important;
+        }
+        
+        named-deck>view-recentbrowsing>div {
+            
+            min-width: 100% !important;
+            display: grid;
+        }
+        
+        named-deck {
+            width: 100% !important;
+            display: grid;
+        }
+        
+        .cards-container {
+            height: 66vh !important;
+            overflow: auto;
+            scrollbar-gutter: stable !important;
+            padding-inline: 42px 52px !important;
+        }
+        
+        .sticky-container {
+            margin-inline: 0px !important;
+            padding-inline: 42px 52px !important;
         }
     }
-}

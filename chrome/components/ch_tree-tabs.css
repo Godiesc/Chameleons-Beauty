@@ -3,27 +3,17 @@
 
 /* ___________________________ Code for both: With tree-tabs extensions and with Firefox Vertical Tabs ___________________________ */
 
-@media (-moz-bool-pref:"firefoxchameleon.tree-tabs") or (-moz-bool-pref:"sidebar.verticalTabs") {
+@media -moz-pref("firefoxchameleon.tree-tabs"), -moz-pref("sidebar.verticalTabs") {
     
     :root {
         --vertical-elements-width: calc(var(--my-vertical-toolbar-width) - 1px) !important;               /* WIdth of all sidebar elements */
-        --toolbar-height-personal: 36px !important;
+        --toolbar-height-personal: 40px !important;
         --uc-toolbar-height: var(--toolbar-height-personal) !important;
-    }
-
-    /* Remove unwanted spacer */
-    
-    :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{ 
-        :root[sizemode="maximized"] & {
-            > .titlebar-spacer[type="post-tabs"]{
-                display: none !important;
-            }
-        }
     }
 
     /* Separador ultimo icono de la nav-bar + window controls */
 
-    :root:has(#toolbar-menubar[autohide="true"]):not([sizemode="normal"]) .titlebar-buttonbox-container:before{
+    :root:has(#toolbar-menubar[autohide="true"]) .titlebar-buttonbox-container:before{
         background: url("../icons/urlbar-separator.svg") no-repeat center !important;
         content: ""; display: block !important;
         background-size: 16px 16px !important;
@@ -43,13 +33,14 @@
 
         /* Size of button */
         .titlebar-button::before{
-            padding: 15px 19px !important;
+            padding: 14px 16px !important;
         }
     }
     
-    /* Darker navbar background color */
+    /* Darker navbar & bookmrks-bar background color - fix for themes with images */
     
-    #nav-bar {
+    #nav-bar,
+    #PersonalToolbar {
         background-color: var(--toolbar-bgcolor) !important;
     }
     
@@ -57,10 +48,6 @@
        _________________________ https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_toolbar_v2.css _________________________ */
 
     /* Makes menubar appear as overlay in the top left corner */
-
-    :root {
-        --my-content-border-color: var(--toolbarbutton-hover-personal);
-    }
 
     #toolbar-menubar[autohide="false"] > .titlebar-buttonbox-container,
     #toolbar-menubar[autohide="false"] > spacer{ display: none; }
@@ -78,7 +65,7 @@
     
     #toolbar-menubar {
         &[autohide="true"] {
-            :root[tabsintitlebar] #navigator-toolbox[tabs-hidden] > & {
+            :root[customtitlebar] #navigator-toolbox[tabs-hidden] > & {
                 min-height: 0px !important;
             }
         }
@@ -115,9 +102,6 @@
     :root:has(#toolbar-menubar[autohide="false"]) {
         & #toolbar-menubar{
             position: initial !important;
-            /*display: flex;
-            top: 0;
-            width: 100vw;/**/
             height: initial !important;
             z-index: initial;
             background-image: linear-gradient(                                              /* My code v */
@@ -137,7 +121,7 @@
     /* _______ ¡Necessary for z-index problems - urlbar[open] */
 
     .browser-titlebar {
-        :root[tabsintitlebar] & {
+        :root[customtitlebar] & {
             will-change: unset !important;
             transition: none !important;
         }
@@ -164,14 +148,20 @@
     
     /* Bug fix: Trick to hide urlbar when menu appears (Alt key) */
 
-    :root:has(#toolbar-menubar[autohide="true"]) #urlbar {
-        display: none !important;
+    #toolbar-menubar[autohide="true"] ~ #nav-bar #urlbar {
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
-    :root:has(#toolbar-menubar[autohide="true"][inactive="true"]) {
-        & #urlbar {
-            display: initial !important;
-        }
+    #toolbar-menubar[autohide="true"][inactive] ~ #nav-bar #urlbar {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+    
+    /* Remove unwanted space in navbar */
+
+    #vertical-spacer {
+        display: none !important;
     }
 }
 
@@ -179,18 +169,18 @@
 /* ________________________________________________________________________________________________________________________________
    ______________________________________________ Code for only tree-tabs extensions ______________________________________________ */
 
-@media (-moz-bool-pref:"firefoxchameleon.tree-tabs") and (not (-moz-bool-pref:"sidebar.verticalTabs")){
+@media -moz-pref("firefoxchameleon.tree-tabs") and (not -moz-pref("sidebar.verticalTabs")){
 
     /* Source: https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_toolbar_v2.css */
 
     /* This requires Firefox 133+ to work */
 
-    @media (-moz-bool-pref: "sidebar.verticalTabs"){
+    @media -moz-pref( "sidebar.verticalTabs"){
         #sidebar-main{
             visibility: collapse;
         }
     }
-    @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+    @media -moz-pref( "userchrome.force-window-controls-on-left.enabled"){
         #nav-bar > .titlebar-buttonbox-container{
             order: -1 !important;
             > .titlebar-buttonbox{
@@ -198,14 +188,14 @@
             }
         }
     }
-    @media not (-moz-bool-pref: "sidebar.verticalTabs"){
+    @media not -moz-pref( "sidebar.verticalTabs"){
         #TabsToolbar{
             visibility: collapse;
         }
         :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
             display: flex !important;
         }
-        :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+        :root[customtitlebar] #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
             > .titlebar-buttonbox-container{
                 display: flex !important;
             }
@@ -218,7 +208,7 @@
                 > .titlebar-spacer[type="post-tabs"]{
                     display: none !important;
                 }
-                @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+                @media -moz-pref( "userchrome.force-window-controls-on-left.enabled"),
                     (-moz-gtk-csd-reversed-placement),
                     (-moz-platform: macos){
                         > .titlebar-spacer[type="post-tabs"]{
@@ -275,18 +265,6 @@
     :root:has(#sidebar-box:is(
     [sidebarcommand*="tabcenter"],
     [sidebarcommand*="treestyletab"])) #sidebar-splitter{ display: none }
-    
-    /* Behavior when boomarks-bar is enable */
-    
-    @media not (-moz-bool-pref:"firefoxgx.left-sidebar"){
-
-        :root:has(#sidebar-box:is(
-        [sidebarcommand*="tabcenter"],
-        [sidebarcommand*="treestyletab"],
-        [sidebarcommand*="_3c078156-979c-498b-8990-85f7987dd929"])):not([sizemode="fullscreen"]) #sidebar {
-            margin-block-start: calc( 0px - var(--bookmarksbar-height-personal, 0px));
-        }
-    }
 
     #sidebar-header{
         overflow: hidden;
@@ -327,7 +305,7 @@
 
     /* Add sidebar divider and give it background */
 
-    @media (-moz-bool-pref:"sidebar.position_start") {
+    @media -moz-pref("sidebar.position_start") {
         
         :root:has(#sidebar-box:is(
         [sidebarcommand*="tabcenter"],

@@ -22,7 +22,7 @@ findbar {
 
 .findbar-find-status[status="notfound"] { 
     color: var(--general-color) !important; 
-    font-weight: 600 !important; 
+    font-weight: 600 !important;
 }
 
 /* "popup_highlight" -> 1.- keyboard highlight 2.-mouse highlight*/
@@ -44,10 +44,8 @@ findbar {
 
 /* tamaño letras urlbar */
 
-#urlbar-input { opacity: 0.9 !important; font-weight: 501 !important; margin-left: 1px !important;
-}
-
-@media (-moz-platform: linux){ #urlbar-input { opacity: 0.9 !important; font-weight: 500 !important; }
+#urlbar-input {
+    margin-left: 1px !important;
 }
 
 /* Sugerencias de búsqueda */
@@ -78,7 +76,11 @@ findbar {
 
 #urlbar .search-panel-header{ padding-left: 4px !important; }
 
-.urlbarView-results{ margin-bottom: -14px !important; }
+.urlbarView-results{ margin-bottom: -10px !important; }
+
+@media -moz-pref("browser.urlbar.scotchBonnet.enableOverride") {
+    .urlbarView-results{ margin-bottom: 4px !important; }
+}
 
 .urlbarView-favicon{ padding-left: 5px !important; padding-right: 5px !important;  }
 
@@ -109,24 +111,6 @@ findbar {
 @media (-moz-platform: windows){ #urlbar-input, #urlbar-scheme{
     padding-bottom: 2px !important;
     }}
-
-/* Brighness when urlbar [open]*/
-
-#urlbar[open] {
-    z-index: 4 !important;
-}
-
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"]::before {
-    position: fixed;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
-    pointer-events: none;
-}
 
 /* Search-bar */
 
@@ -217,7 +201,7 @@ findbar {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
-    z-index: 4;
+    z-index: 5;
     pointer-events: none;
     transition: background-color 0.3s ease; 
 }
@@ -226,6 +210,65 @@ findbar {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Search Engine button */
+
+@media not -moz-pref("browser.urlbar.searchModeSwitcher.featureGate") {
+    #urlbar-searchmode-switcher:not(:hover,[open]) {
+        background-color: transparent !important;
+    }
+}
+
+#urlbar-searchmode-switcher {
+    appearance: none;
+    border-radius: var(--urlbar-icon-border-radius);
+    margin-inline-end: var(--urlbar-icon-padding);
+    padding-inline: var(--urlbar-searchmodeswitcher-spacing);
+    
+    &:hover {
+        background-color: var(--urlbar-box-hover-bgcolor) !important;
+    }
+    &[open] {
+        background-color: var(--urlbar-box-active-bgcolor) !important;
+    }   
+}
+
+#searchmode-switcher-chicklet {
+    height: calc(var(--urlbar-min-height) - 6px - 2 * var(--urlbar-container-padding)) !important;
+    align-self: center !important;
+}
+
+#searchmode-switcher-icon {
+    width: 14px !important;
+    height: 14px !important;
+    padding: 0px !important;
+    margin: -3px !important;
+}
+
+#searchmode-switcher-dropmarker {
+    display: none !important;
+}
+
+#urlbar-searchmode-switcher,
+#searchmode-switcher-chicklet {
+  @media -moz-pref("browser.urlbar.searchModeSwitcher.featureGate"), -moz-pref("browser.urlbar.scotchBonnet.enableOverride") {
+    #urlbar[searchmode] & {
+        display: inline-flex;
+        background-color: var(--urlbar-box-bgcolor) !important;
+    }
+  }
+}
+
+#urlbar-searchmode-switcher:is(:hover,[open]) {
+  @media -moz-pref("browser.urlbar.searchModeSwitcher.featureGate"), -moz-pref("browser.urlbar.scotchBonnet.enableOverride") {
+    #urlbar[searchmode] & {
+        display: inline-flex;
+        background-color: var(--urlbar-box-hover-bgcolor) !important;
+        border-radius: 2px !important;
+        padding-inline-end: 5px !important;
+        margin-inline-end: 1px !important;
+    }
+  }
+}
 
 /*Páginas de extensiones*/
 

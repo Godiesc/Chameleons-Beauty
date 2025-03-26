@@ -130,11 +130,8 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
 
 /* Second label del botón de extenciones */
 
-@media (-moz-platform: linux) {
 #unified-extensions-area toolbaritem .unified-extensions-item-message-deck label{
     appearance: none !important;
     font-size: 0.875em !important;
     width: -moz-available !important;
-    }
 }
-

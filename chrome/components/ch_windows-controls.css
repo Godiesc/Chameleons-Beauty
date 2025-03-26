@@ -4,20 +4,13 @@
 /* WindowsOS - window control icons */
 
 @media (-moz-platform: windows) {
-    
-    /* Smaller buttons */
-    
-    .titlebar-button {
-        height: calc(var(--tab-height-personal) + var(--my-margin-top) + var(--my-margin-bottom)) !important;
-        padding: 8px 13px !important;
-    }
 
     /* Size of button */
     .titlebar-button::before{
         content: ""; display: flex;
         position: absolute;
         border-radius: 4px !important;
-        padding: 15px 17px !important;
+        padding: 14px 17px !important;
         z-index: -1 !important;
     }
 
@@ -36,7 +29,7 @@
     .titlebar-button {
         background-color: transparent !important;
         -moz-context-properties: stroke !important;
-        stroke: currentColor !important;
+        margin-inline: -2px !important;
     }
     .titlebar-close {
         list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important;
@@ -55,30 +48,54 @@
 /* Linux default window control icons */
 
 @media (-moz-platform: linux) {
-    
+
     .titlebar-button{
         list-style-image: none !important;
-        appearance: auto !important;
+        appearance: none !important;
     }
-    
-    .titlebar-min {
+    .titlebar-button > .toolbarbutton-icon{
+        appearance: auto !important;
+        background: none !important;
+        width: unset !important;
+        height: unset !important;
+    }
+    .titlebar-min > .toolbarbutton-icon{
         -moz-default-appearance: -moz-window-button-minimize !important;
     }
-    
-    .titlebar-max {
+    .titlebar-max > .toolbarbutton-icon{
         -moz-default-appearance: -moz-window-button-maximize !important;
     }
-    
-    .titlebar-restore {
+    .titlebar-restore > .toolbarbutton-icon{
         -moz-default-appearance: -moz-window-button-restore !important;
     }
-    
-    .titlebar-close {
+    .titlebar-close > .toolbarbutton-icon{
         -moz-default-appearance: -moz-window-button-close !important;
     }
-    
     .titlebar-buttonbox {
         min-height: calc(var(--my-margin-top) * 2 + var(--tab-height-personal)) !important;
         max-height: calc(var(--my-margin-top) * 2 + var(--tab-height-personal)) !important;
+    }
+    
+    /* On linux set width based on number of caption buttons.
+    
+    One button */
+    @media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+        :root:is([customtitlebar]) {
+            --uc-window-control-width: 48px !important;
+        }
+    }
+    /* Two buttons */
+    @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+        (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+        (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+            :root:is([customtitlebar],[sizemode="fullscreen"]) {
+                --uc-window-control-width: 76px !important;
+            }
+    }
+    /* Three buttons */
+    @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+        :root:is([customtitlebar],[sizemode="fullscreen"]) {
+            --uc-window-control-width: 104px !important;
+        }
     }
 }

@@ -34,9 +34,19 @@ menugroup>menuitem>hbox>image {
 menuseparator {
     appearance: none !important;
     border-color: var(--panel-separator-color, #50505090) !important;
-    padding-inline: 0px !important;
-    margin-inline: 0px !important;
 }
+
+#contentAreaContextMenu menuseparator {
+    padding-inline: 0px !important;
+}
+
+/* Bug fix: Separator after 'AI menu' causes unwanted scrolling */
+
+:root:has(#context-ask-chat[hidden="false"]) { 
+    --context-ask-chat-display: flex 
+}
+
+#frame-sep { display: var(--context-ask-chat-display) !important; }
 
 /*Colores generales*/
 
@@ -46,13 +56,13 @@ menupopup{
     background-clip: padding-box !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    margin-left: 0px !important;
+    margin-inline-start: 0px !important;
     border-radius: 6px !important; 
 }
 
 menupopup menupopup {
     margin-top: -7px !important;
-    margin-left: -2px !important; 
+    margin-inline-start: -2px !important; 
 }
 
 menupopup, panel {
@@ -63,7 +73,6 @@ menupopup {
     padding: 0px !important;
     margin: 0px !important;
     --panel-padding-block: 5px !important;
-    --panel-subview-body-padding: 5px !important;
 }
 
 #PlacesToolbar menupopup menupopup{ margin-inline-start: -4px !important; margin-top: -7px !important; }

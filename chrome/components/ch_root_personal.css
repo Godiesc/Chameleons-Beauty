@@ -15,21 +15,13 @@
 
   /* __________________________________________________________  Various customizations __________________________________________________________ */
   
-                  /* Dark wallpapers */
-  --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;
-  --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;
-  --wallpaper-dark3: url("../newtab/wallpaper-dark3.png") !important;
-  --wallpaper-dark4: url("../newtab/wallpaper-dark4.png") !important;
-  --wallpaper-dark5: url("../newtab/wallpaper-dark5.png") !important;
-  --wallpaper-dark6: url("../newtab/wallpaper-dark6.png") !important;
-  
-                  /* Light wallpapers */
-  --wallpaper-light1: url("../newtab/wallpaper-light1.png") !important;
-  --wallpaper-light2: url("../newtab/wallpaper-light2.png") !important;
-  --wallpaper-light3: url("../newtab/wallpaper-light3.png") !important;
-  --wallpaper-light4: url("../newtab/wallpaper-light4.png") !important;
-  --wallpaper-light5: url("../newtab/wallpaper-light5.png") !important;
-  --wallpaper-light6: url("../newtab/wallpaper-light6.png") !important;
+                        /* Dark wallpapers */                                                     /* Light wallpapers */
+  --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;      --wallpaper-light1: url("../newtab/wallpaper-light1.png") !important;
+  --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;      --wallpaper-light2: url("../newtab/wallpaper-light2.png") !important;
+  --wallpaper-dark3: url("../newtab/wallpaper-dark3.png") !important;      --wallpaper-light3: url("../newtab/wallpaper-light3.png") !important;
+  --wallpaper-dark4: url("../newtab/wallpaper-dark4.png") !important;      --wallpaper-light4: url("../newtab/wallpaper-light4.png") !important;
+  --wallpaper-dark5: url("../newtab/wallpaper-dark5.png") !important;      --wallpaper-light5: url("../newtab/wallpaper-light5.png") !important;
+  --wallpaper-dark6: url("../newtab/wallpaper-dark6.png") !important;      --wallpaper-light6: url("../newtab/wallpaper-light6.png") !important;
 }
 
 @media (prefers-color-scheme: dark){ :root{
@@ -54,6 +46,8 @@
   
   --wallpaper-size: cover;                                                                      /* cover-> default ; auto auto -> to <<main-image>> config */
   --brightness-wallpaper: brightness(100%);                                                     /* 100% -> default ; 51% makes the wallpaper darker */
+  
+  --my-group-line-thickness: 2px !important;                                                    /* Tab-group line thickness */
   
   --tab-height-personal: 32px ;                                                                 /* Tamaño altura de pestañas*/
   --toolbar-height-personal: 34px ;                                                             /* Toolbar height */
@@ -81,41 +75,23 @@
 
 :root[privatebrowsingmode="temporary"]{ --general-color: var(--purple) !important; }                    /* Accent color private mode */
 
-@media (-moz-bool-pref:"firefoxchameleon.left-sidebar") or (-moz-bool-pref:"sidebar.revamp") or (-moz-bool-pref:"firefoxchameleon.tree-tabs") {
+@media -moz-pref("firefoxchameleon.left-sidebar") or -moz-pref("sidebar.revamp") or -moz-pref("firefoxchameleon.tree-tabs") {
   :root{
-  --my-vertical-toolbar-width: 41px ;                                                                   /* 'left-sidebar' width */
+    --my-vertical-toolbar-width: 41px ;                                                                 /* 'left-sidebar' width */
+    --uc-sidebar-hover-width: 200px ;
   }}
 
 
 /* ---------------------------------------------------- -Main Image- Config ------------------------------------------------------ */
 
-@media (-moz-bool-pref:"firefoxchameleon.main-image") {
+@media -moz-pref("firefoxchameleon.main-image") {
 
    @media (prefers-color-scheme: dark){ :root{
-      --lwt-main-image:  url("../newtab/main-image-dark.png") !important;                        /* Main image - dark theme */ 
+      --lwt-main-image:  url("../newtab/main-image-dark.png") !important;                        /* Wallpaper - dark theme */ 
       --brightness-wallpaper: 50%;                                                               /* Filtro oscuro */
      }}
    @media (prefers-color-scheme: light){ :root{
-      --lwt-main-image:  url("../newtab/main-image-light.png") !important;                       /* new-tab page image - dark theme */ 
+      --lwt-main-image:  url("../newtab/main-image-light.png") !important;                       /* Wallpaper - light theme */ 
       --brightness-wallpaper: 100%;                                                              /* Filtro claro */
      }}
-  
-  :root{
-      --wallpaper-size: auto auto;                                                               /* cover-> default ; auto auto -> to <<main-image>> config */  
-      --background-align-y: -71px;                                                               /* Alinear new-tab wallpaper to <<main-image>> config 
-                                                                                                    -71px  ventana normal 
-                                                                                                    -101px con Barra de Marcadores */
-    }
 }
-  
-/* ----------------------------- -Main Image- + -One line- config or -Main Image- + -tree tabs- config ---------------------------- */
-
-@media ((-moz-bool-pref:"firefoxchameleon.main-image") and
-       (-moz-bool-pref:"firefoxchameleon.oneline")) or
-       ((-moz-bool-pref:"firefoxchameleon.main-image") and
-       (-moz-bool-pref:"firefoxchameleon.tree-tabs")){  
-    :root{
-      --background-align-y: -38px ;                                                              /* Alinear new-tab wallpaper to <<main-image>> config 
-                                                                                                    -38px ventana normal
-                                                                                                    -68px con Barra de Marcadores  */
-    }}

@@ -1,20 +1,80 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text.
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*"Botón de cerrar pestaña"*/
-.tabbrowser-tab .tab-close-button {
-    width: 16px !important;
-    height: 16px !important;
-    padding: 2px !important;
-    margin-inline-end: -5px !important;
-    border-radius: 10px !important;
+/*"Botón de cerrar pestaña" en windows y linux */
+
+@media not -moz-pref("sidebar.verticalTabs") {
+
+    :is(#TabsToolbar) .close-icon {
+        list-style-image: url("../icons/close.svg") !important;
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .tabbrowser-tab .tab-close-button{
+        display: none !important;
+    }
+
+    .tabbrowser-tab:not([pinned]):hover .tab-close-button{
+        display: block !important;
+        border-radius: 3px !important;
+    }
+
+    :is(#TabsToolbar) .tab-close-button {
+        padding: 4px !important;
+    }
+
+    :is(#TabsToolbar) .tab-close-button:hover {
+        background-color: color-mix(in srgb, currentColor 15%, transparent) !important;
+        fill: var(--lwt-tab-text) !important;
+    }
+
+    :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover,
+    :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover{
+        background-color: color-mix(in srgb, var(--lwt-frame) 70%, transparent) !important;
+    }
+
+    /* Nuevos colores :hover para temas que usan imágenes */
+
+    :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) .tab-close-button:hover {
+        background-color: var(--toolbarbutton-hover-background) !important;
+        fill: var(--lwt-tab-text) !important;
+    }
 }
-.tabbrowser-tab .tab-close-button:hover {
-    background-color: color-mix(in srgb, var(--lwt-tab-text) 14%, transparent) !important;
+
+#tabbrowser-tabs[orient="vertical"] {
+    
+    &:is([selected]):not(:hover) {
+        opacity: 0 !important;
+    }
+    
+    &:not([expanded]) {
+        & .tab-close-button {
+            width: 14px !important;
+            height: 14px !important;
+            padding: 2px !important;
+            fill: var(--lwt-tab-text) !important;
+            background: transparent !important;
+            outline-color: transparent !important;
+            
+            &:hover {
+                background: var(--lwt-tab-text) !important;
+                fill: var(--contrast-color) !important;
+            }
+        }
+    }
+    &[expanded] {
+        & .tab-close-button {
+            height: 20px !important;
+            width:  20px !important;
+            padding: 4px !important;
+            margin-inline-end: -4px !important;
+            border-radius: 2px !important;
+
+            &:hover {
+                background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
+                fill: var(--lwt-tab-text) !important;
+            }
+        }
+    }
 }
-/* X siempre visible :hover*/
-/*
-.tabbrowser-tab .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-    display: -moz-box !important
-}
-*/

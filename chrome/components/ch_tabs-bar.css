@@ -29,35 +29,307 @@
     display: none !important;
 }
 
-#tabbrowser-arrowscrollbox:not([orient="vertical"]) {
-    
-    /* Tamaño horizontal pestañas */
-    
-    & .tabbrowser-tab[fadein]:not([pinned],[style^="max-width"]) {
-        max-width: 200px !important;
+/* ___________ General tab-groups variables */
+
+tab-group {
+    --tab-group-line-thickness: var(--my-group-line-thickness) !important;                          /* Tab-group line width */
+    --general-color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;  /* Tab accent color the same of group */
+}
+
+/* Horizontal Tab into a group */
+
+#tabbrowser-arrowscrollbox[orient="horizontal"] {
+
+    & tab-group {
+        
+        & .tabbrowser-tab {
+            background-color: color-mix(in srgb, light-dark(var(--tab-group-color), var(--tab-group-color-invert)) 0%, transparent) !important;/**/
+        }
+    }
+}
+
+/* Vertical Tab into a group */
+
+#tabbrowser-arrowscrollbox[orient="vertical"] {
+
+    tab-group {
+        
+        /* Tab accent color the same of group */
+        & .tabbrowser-tab {
+            background-color: color-mix(in srgb, light-dark(var(--tab-group-color), var(--tab-group-color-invert)) 5%, transparent) !important;/**/
+            --general-color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
+        }
+
+        /* Remove unwanted margin when sidebar is expanded */
+        #tabbrowser-tabs[expanded] & {
+            margin-inline-start: 0px !important;
+        }
+    }
+}
+
+/* ____________ tab group label style */
+        
+/* 'Closed' Group name */
+
+tab-group:is([collapsed]) .tab-group-label::before {
+    outline: 1px solid light-dark(var(--tab-group-color), var(--tab-group-color-pale)) !important;
+    outline-offset: -1px !important;
+}
+
+/* 'Open' group name */
+
+tab-group:not([collapsed]) .tab-group-label::before {
+    background-color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
+    border-radius: 4px !important;
+}
+
+/* _________________________________ Styles just for Horizontal tabs _________________________________ */
+
+@media not -moz-pref("sidebar.verticalTabs") {
+
+    #tabbrowser-arrowscrollbox[orient="horizontal"] {
+        
+        /* Margin between tabs */
+        &>.tabbrowser-tab {
+            padding-inline: 4px 0px !important;
+            margin-inline-end: -2px !important;
+        }
+        
+        & #tabs-newtab-button {
+            padding-inline-start: 4px !important;
+        }
+
+        /* Margin between tabs inside a group */
+        &>tab-group:not([collapsed])>.tabbrowser-tab:not(:last-child) {
+            padding-inline: 0 2px !important;   
+        }
+        
+        /* Margin last tab of group */
+        &>tab-group:not([collapsed])>.tabbrowser-tab:is(:last-child) {
+            padding-inline: 0 !important;
+            margin-inline-end: 2px !important;
+        }
+        
+        /* _____________________ Group name box re-done _____________________ */
+        
+        &>tab-group>.tab-group-label-container{
+            align-self: start !important;
+        }
+        
+        & .tab-group-label {
+            background: transparent !important;
+            border: transparent !important;
+            outline: transparent !important;
+            border-radius: 0px !important;
+            line-height: calc(var(--tab-height-personal) + var(--my-tab-margin-top)*2 - 1px) !important;
+            height: calc(var(--tab-height-personal) + var(--my-tab-margin-top) + var(--my-tab-margin-bottom)) !important;
+            z-index: 1 !important;
+            
+            &::before {
+                content: ""; 
+                display: flex;
+                position: absolute;
+                inset-inline-start: 1px; /* not 'left' cause RTL compatibility */
+                width: calc(100% - 4px);
+                margin-block: 9px 7px;
+                padding-block: calc(var(--tab-height-personal)/2 - 3px) calc(var(--tab-height-personal)/2 - 9px);
+                border-radius: 4px;
+                background-color: light-dark(transparent, var(--tab-group-color));
+                z-index: -1;
+                align-self: center !important;
+            }
+            
+            &:hover::before {
+                background-color: light-dark(transparent, color-mix( in srgb, var(--tab-group-color) 80%, var(--lwt-tab-text)));
+            }
+        }
+        
+        /* _____________________________________________________________ */
+        
+        /* Horizontal tab size for ungrouped tabs */
+        
+        &>.tabbrowser-tab[fadein]:not([style^="max-width"]) {
+            max-width: 200px !important;
+        }
+        
+        /* Horizontal tab size for grouped tabs */
+        
+        &>tab-group:not([collapsed]) .tabbrowser-tab[fadein]:not([style^="max-width"]) {
+            max-width: 200px !important;
+        }
+
+        & .tab-content {
+            margin-block-end: calc(1px - var(--my-tab-margin-top)) !important;
+        }
+
+        /* ____________________________ Styles when creating a group by dragging a tab ____________________________ */
+        
+        & .tabbrowser-tab[selected]:has(+ .tabbrowser-tab[dragover-createGroup]) {     /* 'Moving tab' + 'Tabforgroup' */
+            & .tab-background  {
+                border-inline-end-width: 0px !important;
+            }
+        }
+        
+        & .tabbrowser-tab[dragover-createGroup] + .tabbrowser-tab[selected] {          /* 'tabforgroup' + 'Moving tab' */
+            & .tab-background  {
+                border-inline-start-width: 0px !important;
+            }
+        }
+
+        & .tabbrowser-tab[selected]:has(+ .tabbrowser-tab[dragover-createGroup]),      /* 'Moving tab' + 'Tabforgroup' */
+        & .tabbrowser-tab[dragover-createGroup] + .tabbrowser-tab[selected] {          /* 'tabforgroup' + 'Moving tab' */
+
+            & .tab-background {
+                background-image: none !important;
+                background-color: light-dark(var(--dragover-tab-group-color), var(--dragover-tab-group-color)) !important;
+                outline-color: var(--dragover-tab-group-color-pale) !important;
+                outline-width: 1px !important;
+                outline-offset: -4px !important;
+                border-radius: 0px !important;
+                clip-path: none !important;
+                box-shadow: inset 0 -1px 0 0 light-dark(var(--dragover-tab-group-color-pale), var(--dragover-tab-group-color-pale)),
+                    0 -1px 0 0 light-dark(var(--dragover-tab-group-color-pale), var(--dragover-tab-group-color-pale)) !important;
+                filter: none !important;            /* Used for 'tab-shapes' config */
+                margin-inline: 0px !important;
+            }
+            
+            /* For 'Tab-shapes' - remove form */
+            & .tab-background::before,
+            & .tab-background::after {
+                display: none !important;
+            }
+
+            & .tab-stack::before {
+                clip-path: none !important;
+                border-radius: 0px !important;
+                --general-color: light-dark(var(--dragover-tab-group-color-pale), var(--dragover-tab-group-color-pale)) !important;
+            }
+        }
+
+        & .tabbrowser-tab[dragover-createGroup] {
+            & .tab-background{
+                outline-width: 1px !important;
+                clip-path: none !important;
+            }
+        }
     }
 
-    & .tabbrowser-tab[fadein]:not([pinned]) {
-        min-width: 74px !important;
+    /* __________________________________ Tab group line __________________________________*/
+    
+    /* Line under tab  */
+
+    .tab-group-line {
+        display: none !important;
     }
     
-    /* Align tab content */
-    
-    & .tab-content{ 
-        padding-block-start: 1px !important; margin-left: -1px !important;
-    }
-    
-    /* Margenes de las pestañas */
-    
-    & .tabbrowser-tab {
-        padding-inline: 4px 0px !important;
-        margin-inline-end: -2px !important;
+    /* Line below group label */
+
+    .tab-group-label-container {
+        tab-group:not([collapsed]) > &::after {
+            top: 0 !important;
+        }
     }
 
-    /* -Newtab- button */
+    tab-group .tabbrowser-tab:not([multiselected]) {
+        box-shadow: inset 0 calc(0px + var(--tab-group-line-thickness)) 0px 0px light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
+    }
 
-    & #tabs-newtab-button {
-        padding-inline-start: 4px !important;
+    /* 'Tabs with group' background color when moving a tab */
+
+    :root:has(#tabbrowser-tabs[movingtab]) {
+        tab-group .tabbrowser-tab:not([selected]) {
+            --moving-tab-background: color-mix(in srgb, var(--tab-group-color-invert) 16%, transparent);
+            /*clip-path: var(--my-tab-stack-clip);/**/
+            background-image: none !important;
+            background-color: light-dark(var(--tab-group-color), var(--moving-tab-background)) !important;
+        }
+    }
+}
+
+/* _________________________________ Group styles just for Vertical tabs _________________________________ */
+
+@media -moz-pref("sidebar.verticalTabs") {
+    
+    #tabbrowser-arrowscrollbox[orient="vertical"] {
+        
+        /* 'Group label container' height  and aling */
+        
+        .tab-group-label-container {
+            #tabbrowser-tabs[orient="vertical"] & {
+                height: calc(var(--vertical-elements-width) - 12px) !important;
+            }
+        }
+        
+        .tab-group-label {
+            #tabbrowser-tabs[orient="vertical"][expanded] & {
+                min-width: calc(var(--vertical-elements-width) - 16px) !important;
+                height: calc(var(--vertical-elements-width) - 16px) !important;
+                /*margin-block: 0px 3px !important;/**/
+                padding-block: 2px 0px !important;
+            }
+        }
+        
+        /* Group line */
+        
+        tab-group {
+            #tabbrowser-tabs & {
+                &::before {
+                    inset-inline-start: 0px !important;
+                    inset-block: 2px 0px !important;
+                }
+            }
+        }
+        
+        tab-group {
+            #tabbrowser-tabs & {
+                #tabbrowser-tabs[orient="vertical"][expanded] &::before {
+                    inset-block: 0px !important;
+                }
+            }
+        }
+
+        & .tab-group-label {
+            background: transparent !important;
+            border-color: transparent !important;
+            outline-color: transparent !important;
+            min-width: var(--vertical-elements-width) !important;
+            text-overflow: '..'  !important;
+            margin-block: 0px !important;
+            margin-inline: 0px !important;
+            padding-block: 0px !important;
+            padding-inline: 8px 8px !important;
+            font-size: inherit !important;
+            border-radius: 0px !important;
+            justify-content: center !important;
+            z-index: 1 !important; /* Allow click on border cause group-line may avoid the clic */
+
+            &::before {
+                content: ""; 
+                display: block;
+                position: absolute !important;
+                inset-inline-start: 6px;
+                height: calc(var(--vertical-elements-width) - 16px);
+                min-width: calc(100% - 12px) !important;
+                margin-block: 0px !important;
+                padding-block: 0px !important;
+                border-radius: 4px;
+                background-color: light-dark(transparent, var(--tab-group-color));
+                z-index: -1;
+            }
+
+            &:hover::before {
+                background-color: light-dark(transparent, color-mix( in srgb, var(--tab-group-color) 80%, var(--lwt-tab-text)));
+            }
+        }
+        
+        /* Align */
+        .tab-group-label {
+            #tabbrowser-tabs[orient="vertical"][expanded] & {
+            &::before {
+                top: 0 !important;
+                }
+            }
+        }
     }
 }
 
@@ -144,7 +416,6 @@ toolbar:is(#TabsToolbar, #PersonalToolbar) #firefox-view-button[aria-pressed="tr
     background-color: var(--lwt-selected-tab-background-color) !important;
 }
 
-    
 /* Centrar botones de la tabs-bar */
 
 #TabsToolbar .toolbarbutton-1 {
@@ -197,31 +468,31 @@ spacer{
   background-position: center top calc(4px + var(--tabs-navbar-shadow-size)) !important;
 }
 
-/* Code to tabs-bar reach lower height that 30px - usuful to align menu-bar controls buttons */
-
-#titlebar{ appearance: none !important; }
+/* Code to tabs-bar reach lower height that 30px */
 
 .titlebar-buttonbox-container, .tab-close-button, .tab-label-container{
-  max-height: calc(var(--tab-height-personal) + var(--my-margin-top) + var(--my-margin-bottom)) !important;
+  max-height: calc(var(--tab-height-personal) + var(--my-tab-margin-top) + var(--my-tab-margin-bottom)) !important;
 }
 
 /* Tab Preview */
 
 #tab-preview-panel{
     margin-top: 1px !important;
+    box-shadow: inset 0 0 0 1px var(--my-content-border-color) !important;
+    border-radius: 6px !important;
 }
 
 .tab-preview-thumbnail-container {
     width: -moz-available !important;
     height: 138px !important;
-    border: 1px solid var(--button-bgcolor) !important;
+    border-top-color: var(--button-bgcolor) !important;
     border-radius: 0 0 6px 6px !important;
 }
 
 /* __________________________________________________________ Menubar __________________________________________________________ 
    _____________________________________________ Incompatible with tree-tabs style _____________________________________________ */
 
-@media (not (-moz-bool-pref:"firefoxchameleon.tree-tabs")) and (not (-moz-bool-pref:"sidebar.verticalTabs")) {
+@media (not -moz-pref("firefoxchameleon.tree-tabs")) and (not -moz-pref("sidebar.verticalTabs")) {
 
     /* ---------------------- Menu-bar in tabs-tolbar ------------------------- */
 
@@ -240,7 +511,7 @@ spacer{
 
     /* For One-Line config - sobreescribo la linea anterior */
 
-    @media (-moz-bool-pref:"firefoxchameleon.oneline") {
+    @media -moz-pref("firefoxchameleon.oneline") {
         :root:not([customizing]) {
             #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth)) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
             #toolbar-menubar[autohide="false"] ~ #nav-bar { padding-inline-start: var(--uc-menubaritem-width) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
@@ -250,7 +521,7 @@ spacer{
 
     /* For One-Line config - linux - window controls on left */
 
-    @media (-moz-bool-pref:"firefoxchameleon.oneline") {
+    @media -moz-pref("firefoxchameleon.oneline") {
         @media (-moz-gtk-csd-reversed-placement){
             #toolbar-menubar[autohide="false"] + #TabsToolbar{ padding-inline-start: calc(var(--navbarWidth) - 0px) !important; } /* Muevo las pestañas un poco a la derecha con menu active */
         }
@@ -296,7 +567,7 @@ spacer{
         z-index: 4 !important;
     }
 
-    /* Bug fix - when mwnubar appears */
+    /* Bug fix - when menubar appears */
 
     toolbar {
         min-height: 0px !important;
@@ -304,7 +575,7 @@ spacer{
 
     :root:not([customizing],[sizemode="fullscreen"]) #menubar-items{
         display: block;
-        position: fixed;
+        position: absolute;
         z-index: 10;
         background-color: transparent;
         inset-inline-start: 0;
@@ -332,9 +603,9 @@ spacer{
         border-radius: 0 0 7px 0 !important;
     }
 
-    menubar > menu > menupopup{ margin: calc(0px - var(--uc-menubaritem-height)) 0px 0px 86px !important; }
+    menubar > menu > menupopup{ margin: calc(-6px - var(--menubar-height-personal)) 0px 0px 88px !important; }
     #toolbar-menubar[autohide="true"][inactive] > #menubar-items{ max-height: 0px; overflow: hidden; }
-    #toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: calc(0px - var(--menubar-height-personal,28px)); max-width: 0px !important;}    /*  !!!!  max-width 0 para que no desplace las pestañas a la derecha*/
+    #toolbar-menubar[autohide="true"]:not([inactive]){ margin-bottom: calc(0px - var(--menubar-height-personal,22px)); max-width: 0px !important;}    /*  !!!!  max-width 0 para que no desplace las pestañas a la derecha*/
     #toolbar-menubar > .titlebar-buttonbox-container + :is(toolbarbutton,toolbaritem){ margin-inline-start: var(--uc-menubaritem-width) }
 
     #file-menu{
@@ -386,16 +657,10 @@ spacer{
     min-height: var(--menubar-height-personal, 30px) !important;
 }
 
-
 /* _______________________ Configuration for Linux _______________________ */
 
 @media (-moz-platform: linux) {
     
     /* Elimina padding indeseado de la barra de menú */
     toolbar { &[type="menubar"] { padding: 0px !important; }}
-
-    /* less spaced menu items */
-    #main-menubar>menu>.menubar-text{
-        margin-inline: -5px !important;
-    }
 }

@@ -1,9 +1,9 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-@media (-moz-bool-pref:"firefoxchameleon.main-image") {
+@media -moz-pref("firefoxchameleon.main-image") {
 
-:root{
+:root {
    --toolbar-field-background-color: transparent !important;
    --toolbar-field-focus-background-color: var(--contrast-color) !important;
    --toolbar-field-border-color: color-mix(in srgb, var(--toolbar-field-color) 4%, transparent) !important;    
@@ -11,7 +11,11 @@
    --toolbarbutton-active-background: color-mix(in srgb, var(--toolbar-field-border-color) 94%, var(--lwt-tab-text)) !important;    
    --toolbarbutton-hover-personal:  var(--toolbar-bgcolor) !important;
    --lwt-selected-tab-background-color: transparent !important;
-   --chrome-content-separator-color: var(--toolbar-bgcolor) !important;
+   
+   /* Image */
+   --lwt-header-image: var(--lwt-main-image) !important;
+   --lwt-additional-images: var(--lwt-main-image) !important;
+   --my-content-border-color: color-mix(in srgb, var(--toolbar-bgcolor) 86%, var(--lwt-tab-text)) !important;  /* Border around web content */
 }
    
 @media (prefers-color-scheme: dark){
@@ -20,11 +24,11 @@
 :root[lwtheme],
 :root:not([lwtheme]){
       --new-selected-tab-bgcolor: #0000008b !important;
-      --toolbar-bgcolor: #0000004b !important;
+      --toolbar-bgcolor: transparent !important;
       --toolbarbutton-hover-background: color-mix(in srgb, transparent 92%, var(--lwt-tab-text)) !important;         /*"button_background_hover": "#26242e"*/
       --toolbarbutton-hover-personal: var(--toolbarbutton-hover-background) !important;                              /* Button :hover color personal*/
       --toolbarbutton-active-background: color-mix(in srgb, transparent 86%, var(--lwt-tab-text)) !important;        /*"button_background_active": "#26242e"*/
-      --chrome-content-separator-color: var(--toolbar-bgcolor) !important;
+      --chrome-content-separator-color: var(--my-content-border-color) !important;
    }}
    
 @media (prefers-color-scheme: light){
@@ -33,44 +37,65 @@
 :root[lwtheme],
 :root:not([lwtheme]){
       --new-selected-tab-bgcolor: #ffffff8b !important;
-      --toolbar-bgcolor: #ffffff4b !important;
+      --toolbar-bgcolor: transparent !important;
       --chrome-content-separator-color: #ffffff80 !important;
       --toolbarbutton-hover-background: color-mix(in srgb, transparent 92%, var(--lwt-tab-text)) !important;         /*"button_background_hover": "#26242e"*/
       --toolbarbutton-hover-personal: var(--toolbarbutton-hover-background) !important;                              /* Button :hover color personal*/
       --toolbarbutton-active-background: color-mix(in srgb, transparent 86%, var(--lwt-tab-text)) !important;        /*"button_background_active": "#26242e"*/
-      --chrome-content-separator-color: var(--toolbar-bgcolor) !important;
+      --chrome-content-separator-color: var(--my-content-border-color) !important;
    }}
+
+   /* Transparent navigator-toolbox to see imagen behind */
+
+   :root:not([privatebrowsingmode="temporary"]) {
+      #navigator-toolbox,
+      #sidebar-main {
+         background-image: none !important;
+         background-color: transparent !important;
+      }
+   }
+
+   /* Set the main image to all body */
+
+   #main-window {
+      background-image: var(--lwt-header-image) !important;
+      background-size: 100% 100vh !important;
+   }
    
-@media (prefers-color-scheme: dark){
-   :root:is([style*="--lwt-additional-images"],[lwtheme-image]){
-      --toolbar-bgcolor: #0000004d !important;
-      --lwt-selected-tab-background-color: transparent !important;
-   }}
+   /* Set main image in the sidebar content */ 
+
+   @media -moz-pref("sidebar.revamp") {      
+      #sidebar {
+         background-color: color-mix(in srgb, var(--contrast-color), transparent var(--brightness-wallpaper)) !important;
+         backdrop-filter: var(--personal-blur) !important;
+      }
+      #bookmarksPanel {
+         background-color: transparent !important;
+      }
+   }
+
+   /* Align tab background image */
+
+   .tabbrowser-tab:is([visuallyselected],[multiselected]) .tab-background {
+      background-size: 100% 100vh !important;
+   }
    
-@media (prefers-color-scheme: light){
-   :root:is([style*="--lwt-additional-images"],[lwtheme-image]){
-      --toolbar-bgcolor: #ffffff4d !important;
-      --lwt-selected-tab-background-color: transparent !important;
-   }}
+   /* Remove unnecessary backgrounds to show main-image */
    
-#navigator-toolbox {
-   --lwt-header-image: var(--lwt-main-image) !important;
-   background-image: linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
-                     linear-gradient(transparent, transparent), 
-                     var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
-   background-position: right top, right top, right top, left top !important;
-   background-repeat: repeat, repeat, var(--lwt-background-tiling) !important;
-   background-size: cover !important; 
-}
+   #browser, #tabbrowser-tabbox, #tabbrowser-tabpanels {
+      background-color: transparent !important;
+   }
    
-:root:not([chromehidden~="toolbar"]) tab[selected] .tab-background{
-    background-image: linear-gradient(var(--new-selected-tab-bgcolor, transparent), var(--new-selected-tab-bgcolor, transparent)), 
-                      var(--lwt-additional-images,none), var(--lwt-header-image, none) !important;
-    background-position: 0 0, var(--lwt-background-alignment), right top !important;
-    background-repeat: repeat-x, var(--lwt-background-tiling), no-repeat !important;
-    background-size: cover !important;
-    background-attachment: scroll, fixed, fixed !important;
-}
+   #browser:not(.browser-toolbox-background) {
+      :root[lwtheme] & {
+         background-image: none !important;
+      }
+   }
+
+   #tabbrowser-tabpanels {
+      background-image: transparent !important;
+      background-color: color-mix(in srgb, var(--contrast-color), transparent var(--brightness-wallpaper)) !important;
+   }
    
 /* Para quitar bug the urlbar :focus */
    
@@ -95,10 +120,48 @@
     fill: var(--contrast-color) !important;
    }
    
+   @media -moz-pref("sidebar.revamp") {
+
+      :root:not([privatebrowsingmode="temporary"],[customizing]) {
+         #sidebar-main {
+            background-image: none !important;
+            &[positionend] {
+               background-image: none !important;
+            }
+         }
+      }
+   }
+   
+   /* Put image in sidebar when expand-on-hover */
+
+   @media -moz-pref("sidebar.verticalTabs")  and -moz-pref("firefoxchameleon.verticalTabs-expandOnHover") {
+
+      :root:not([privatebrowsingmode="temporary"],[customizing]) {            
+         #sidebar-main:has(sidebar-main[expanded]) {
+            background-image: var(--lwt-additional-images, var(--lwt-header-image)) !important;
+            background-size: 100vw 100vh !important;
+            background-position: left bottom !important;
+
+
+            &[positionend] {
+               background-image: var(--lwt-additional-images, var(--lwt-header-image)) !important;
+               background-position-x: right !important;
+            }
+         }
+         
+         /* half fix for tab background image */
+
+         .tabbrowser-tab:is([visuallyselected],[multiselected]) .tab-background {
+            background-position: left top !important;
+            background-size: 100vw 100vh !important;
+         }
+      }
+   }
+   
 /* Quita fondo oscuro sobre la toolbox incompatible con -oneline- config */
 
-@media (-moz-bool-pref:"firefoxchameleon.oneline") or 
-       (-moz-bool-pref:"firefoxchameleon.tree-tabs")  {
+@media -moz-pref("firefoxchameleon.oneline") or 
+       -moz-pref("firefoxchameleon.tree-tabs")  {
    
    @media screen and (min-width: 1000px){
       #nav-bar{
@@ -106,10 +169,6 @@
             }}}
    
 /* ------------------------------------------ Image in menus ----------------------------------------- */
-   
-    :root{
-        --lwt-header-image: var(--lwt-main-image) !important;
-    }
 
     @media (prefers-color-scheme: dark){
         :root, :root:is([style*="--lwt-additional-images"],[lwtheme-image]){ --arrowpanel-background: #040410d0 !important; }
@@ -133,9 +192,8 @@
       background-position: -6px -6px !important;
    }
 
-   .menupopup-arrowscrollbox, :not(scrollbox[part="scrollbox"]) slot, panelview, #menubar-items{
-      background-image: linear-gradient(var(--arrowpanel-background, transparent), var(--arrowpanel-background, transparent)), 
-                        linear-gradient(transparent, transparent), 
+   .menupopup-arrowscrollbox, :not(scrollbox[part="scrollbox"]) slot, panelview, #menubar-items, #tab-preview-panel{
+      background-image: linear-gradient(var(--arrowpanel-background, transparent), var(--arrowpanel-background, transparent)),
                         var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
       background-size: auto 100vh !important;
       background-position: -1px -1px !important;

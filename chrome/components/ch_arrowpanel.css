@@ -10,12 +10,13 @@
 
 /*Borde Gradiente paneles desplegables - Arrowpanels*/
 
-:is(menupopup, panel)[type="arrow"]{
+.panel-no-padding[type="arrow"] {
     background-image: linear-gradient(165deg, #d02f85ee 0%, #b336fc9e 8%, #3567fd9e 30%, #4e7afd9e 60%,#4e89fd9e 70%, #d02f859e 100%) !important; 
     background-repeat: no-repeat !important;
     background-color: var(--arrowpanel-background) !important;
     border-radius: 6px !important;
     margin-top: 0px !important;
+    margin-inline: -1px !important;
     border: 1px solid var(--arrowpanel-background) !important;
     background-clip: padding-box !important;
 }
@@ -24,7 +25,7 @@ slot {
     --panel-shadow-margin: 0px !important;
     margin: 1px !important;
     border: none !important;
-    padding: 5px !important;
+    /*padding: 5px !important;/**/
 }
 
 /* Remove unwanted styles applied to the tab bar */
@@ -60,20 +61,13 @@ slot {
  background-image: var(--panel-separator-zap-gradient) ;
 }*/
 
-.subviewbutton-back , .panel-header > h1 > span {
-  margin-block-end: 6px !important;
-}
 
 /*Linea de arcoiris en los menús principales*/
 
-.PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient) 1 !important;
+.PanelUI-subView > toolbarseparator {
+    border-image: var(--panel-separator-zap-gradient) 1 !important;
 }
 
-/*
-#PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
-    border-image: var(--gradient) 1 !important;
-}
-*/
 /* Panel de descargas */
 
 #downloadsPanel-blockedSubview, #downloadsPanel-mainView {
@@ -96,9 +90,27 @@ slot {
     margin: 0px !important;
 }
 
+/* Sidebar */
+
 #sidebar-box {
     max-width: none !important;
-    min-width: 30px !important;   
+    min-width: 1px !important;   
+}
+
+@media -moz-pref("sidebar.revamp") {
+    
+    .sidebar-splitter {
+        --splitter-width: 4px !important;
+        width: 4px !important;
+    }
+    
+    #sidebar-box:not([positionend]) {
+        padding-inline-end: 4px !important;
+    }
+    
+    #sidebar-box[positionend] {
+        margin-inline-start: 4px !important;
+    }
 }
 
 /*-------------------------------------- Íconos en el menú de hamburguesa ----------------------------------------------*/
