@@ -22,19 +22,10 @@ You should install the themes from firefox add-ons web page: <a href= "https://a
 <li><a href="https://github.com/Godiesc/Chameleons-Beauty/tree/main/Extras/Play-Pause">Play/Pause icon button extension.</a> - Enables the possibility to play or pause tabs with a click on the sound icon.</li></ul>
 
 ## ¿Cómo instalar? - How to install?
-
-<b>(ES) Pasos para configurar el tema:</b>
-<ol>
-   <li>Descarga el tema con el gran botón verde: <code>Code</code> >> <code>Download.zip</code></li>
-   <li>Copia la carpeta chrome y el archivo user.js dentro de la carpeta de perfil de tu usuario de firefox.</li>
-   <li>Usa el tema <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
-   <li>Reinicia el navegador.</li></ol>
-   <ul>
-   <li>Para encontrar el directorio de tu perfil ve a <a href="https://github.com/Godiesc/Chameleons-Beauty#example-of-aboutsupport"> about:support</a> or about:profiles. </li></ul>
    
-<b>(EN) Steps to config the theme:</b>
+<b> Steps to apply the theme:</b>
 <ol>
-   <li>Download the theme with the big green button: <code>Code</code> >> <code>Download.zip</code></li> 
+   <li>Download the theme from the <b> << Releases >> </b> section, in the right side of this page</code></li> 
    <li>Copy the chrome folder and the user.js file into your Firefox profile directory. </li>
    <li>Use the theme <a href="https://addons.mozilla.org/es/firefox/addon/beautiful-opera-gx-proton/">Beautiful GX Proton.</a></li>
    <li>Restart the browser. </li></ol>
