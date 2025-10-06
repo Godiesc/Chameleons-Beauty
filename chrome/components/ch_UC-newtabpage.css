@@ -3,42 +3,31 @@
 
 :root{ scrollbar-color:  #383755b0 #18173530 !important; }              /*Color de la barra de desplazamiento*/
 
+.start-stop { stop-color: var(--start-color) !important; }              /* Start color logo-and-wordmark */
+.middle-stop { stop-color: var(--middle-color) !important; }            /* Middle color logo-and wordmark*/
+.end-stop { stop-color: var(--end-color) !important; }                  /* End color logo-and wordmark*/
+
 @-moz-document url(chrome://browser/content/browser.xul), url(about:newtab), url(about:home), url(about:privatebrowsing) {
     
 body {     
-    /*-------------------------------eliminar la linea 39 al usar temas incompletos-----------------------------------------------------------------*/
-    --newtab-background-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field) 95%, black ) !important;          
+    /*--newtab-search-icon: url(chrome://global/skin/icons/search-glass.svg) !important;            /* Image in the newtab searchbox */
+        --newtab-background-color-secondary: var(--newtab-pinnedsites-background) !important;           /* Background color of search box, recent activity, news */
+        --newtab-background-card: var(--newtab-pinnedsites-background) !important;                      /* Background color of pinned sites */
+        --newtab-element-hover-color: var(--button-active-bgcolor) !important;                          /* Background color when clicking on the 3 dot menu icon */
 
-    --newtab-background-color-secondary: var(--newtab-pinnedsites-background)  !important;                                              /*fondo de sitios fijados*/
-    
-    --newtab-contextmenu-background-color: red !important;                                                                              /*contextual menu de tres puntos pinned*/   
-    --newtab-element-hover-color: var(--newtab-background-color-secondary) !important;                                                  /*color de fondo al hacer clic al menú 3 puntos*/
-    
-    /*color al pasar el mouse sobre los items del menú tres puntos*/
-    --newtab-element-secondary-hover-color: linear-gradient( to right, #902c8ad0 0%, #902cfc90 40%, #3083ff80 100%) !important; 
-    --newtab-element-secondary-active-color: linear-gradient(to left,#1293bdb0 5%, #cb2fe19a) !important;                               /*Color al hacer clic en el menú contextual de 3 puntos*/
-    
-    --newtab-icon-primary-color:var(--newtab-wordmark-color) !important;                                                                /*tres puntos hover*/ 
-    --newtab-border-color: color-mix( in srgb, var(--newtab-background-color) 85%, var(--newtab-wordmark-color)  ) !important;          /*Linea separadora de items de menú contextual*/
-    --newtab-section-header-text-color:  var(--newtab-wordmark-color) !important;                                                       /*label principal al editar un sitio*/
-    
-    
-    --newtab-card-background-color: color-mix( in srgb, var(--newtab-background-color) 97%,  var(--newtab-wordmark-color) )!important;  /*fondo de actividad reciente*/
-    --newtab-text-secondary-color: var(--newtab-wordmark-color) !important;                                                             /*Label secundaria*/
-    --newtab-text-primary-color: var(--newtab-wordmark-color) !important;                                                               /*label general*/
-       
+        --newtab-element-secondary-color: color-mix(in srgb, Field 90%, FieldText ) !important;         /* background of buttons */      
+        --newtab-element-secondary-hover-color: var(--button-hover-bgcolor) !important;                 /* Background 'hover' on buttons */
+        --newtab-element-secondary-active-color: var(--button-bgcolor) !important;                      /* Background 'active' on buttons */
 
-    --newtab-overlay-color: color-mix(in srgb, var(--lwt-sidebar-background-color, Field) 35%, transparent ) !important;                    /*fondo de editar, transparente*/
-    --newtab-textbox-border: var(--newtab-overlay-color) !important;                                                                        /*contorno de txt al editar un sitio*/ 
-  
-    --customize-menu-seperator-line-color: color-mix(in srgb, var(--newtab-wordmark-color), var(--newtab-background-color) 80%) !important; /*Linea separadora en "personalizar"*/
-    
-    --newtab-primary-action-background: #304af1 !important;                                                         /*color de fondo de Boton "Guardar" y fondo de radiobuttons */
-    /*--newtab-button-secondary-color: #f02020c0 !important;                                                        color del botón "cancelar"*/
-    /*--newtab-element-border-primary-color: #f85149 !important;                                                    borde del botón "Cancelar"*/   
-    --newtab-element-secondary-color: color-mix( in srgb,                                                           /*color radiobutton no activo*/
-      var(--newtab-background-color) 75%, var(--newtab-wordmark-color) ) !important;    
-    --newtab-primary-element-text-color: #dadadabb !important;                                                      /*color bola de radiobutton*/        
+        --newtab-border-color: color-mix(in srgb, Field 86%, var(--newtab-wordmark-color)) !important;  /* 3-point menu and input-box border color when editing a site*/
+
+
+        --newtab-primary-action-background: var(--button-active-bgcolor) !important;                    /* Colors for 'Save' buttons and radiobuttons */
+
+        --newtab-primary-element-text-color: var(--newtab-text-primary-color) !important;               /* check-box color */
+        
+        --my-opaque-bgcolor: color-mix(in srgb, var(--contrast-color), transparent);                    /* Opaque background color - personal use */
+        --newtab-overlay-color: color-mix(in srgb, Field 30%, var(--my-opaque-bgcolor)) !important;     /* Big background when editing a site, semi-transparent */
 }
     
     @media (prefers-color-scheme: dark){
@@ -194,8 +183,8 @@ body {
 /* _____________________________________________________ Logo & Wordmark ____________________________________________________ */
     
     .logo{
-        background: url("../icons/foxlogo.svg") no-repeat center !important;
-        background-size: 64px !important;
+        background: url("../icons/fox-fill-gradient.svg") no-repeat center !important;
+        background-size: 100% 100% !important;
         }
 
     .wordmark {
@@ -204,11 +193,13 @@ body {
         transform: scale(0.9) !important;
         }
 
-    .logo-and-wordmark {
-        Opacity: var(--logo-wordmark-visibility) !important;
-        display: var(--logo-wordmark-display) !important;
-        margin-bottom: 10px !important;
+    @media (height < 700px) {
+        body:not(.inline-onboarding) .fixed-search .search-wrapper .logo-and-wordmark {
+            Opacity: var(--logo-wordmark-visibility) !important;
+            display: var(--logo-wordmark-display) !important;
+            margin-bottom: 10px !important;
         }
+    }
 
     /* Logo and Search when it get sticky position */
     
@@ -325,15 +316,15 @@ body {
 /* Botón de editar sitio anclado */
     
 .top-site-outer .context-menu-button {
-    border-radius: 2px 6px 2px 8px !important;
-    inset-inline-end: 2px !important;
-    top: 2px !important;
+    border-radius: 2px var(--border-radius-large) 2px 8px !important;
+    inset-inline-end: 0px !important;
+    top: 0 !important;
     fill: var(--newtab-text-primary-color) !important;
     background-color: transparent !important;
     }
     
 .top-site-outer .context-menu-button:is(:hover, :focus-within) {
-    background-color: color-mix(in srgb, var(--contrast-color) 20%, transparent) !important;
+    background-color: color-mix(in srgb, var(--contrast-color) 40%, transparent) !important;
     }
     
 /* --------------------------------------------- Cuadro de búsqueda ------------------------------------------------- */
@@ -352,7 +343,6 @@ body {
     background: transparent !important;
     opacity: var(--searchbar-on-off, 1) !important;
     display: var(--searchbar-display, flex) !important;
-    margin-top: 16px !important;
     outline: none !important;
     box-shadow: none !important;
     }
@@ -592,16 +582,44 @@ browser[primary="true"][tabDialogShowing="true"],
     min-width: 366px !important;
     }
     
-.search-wrapper .logo-and-wordmark {
-    margin-bottom: 20px !important;
-    }
-    
 .promo-cta .button { 
     color: #cacaca !important;  
     }
     
 main {
     margin-top: var(--newtab-pinnedsites-position-top, auto) !important;
+    }
+    
+    /* Theme image go below in newtab page */
+
+    @media -moz-pref("browser.tabs.allow_transparent_browser") {    
+        body {
+            background-color: transparent !important;
+        }
+
+        .customize-menu {
+            background-image: url("../icons/urlbar-noise-light.png") !important;
+            background-color: var(--newtab-background-color) !important;
+        }
+
+        /* When editing a pinned site */
+
+        .modalOverlayOuter {
+            --newtab-button-static-hover-background: light-dark(#E0E0E6, #101019e0) !important;
+            background-image: url("../icons/urlbar-noise-dark.png") !important;
+            background-color: var(--newtab-button-static-hover-background) !important;
+        }
+
+        /* General -Recent activity- */
+
+        .card .card-details {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .card .card-context {
+            position: fixed !important;
+        }
     }
 }
 
@@ -697,11 +715,13 @@ body{
     }
 }
 
-/* _______________________________________________________ Firefox View ____________________________________________________ */
+/* ________________________________________________________ Firefox View _________________________________________________________ 
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
 
 @-moz-document regexp("^about:firefoxview.*") {
     
-    :root{
+    :root {
+        --newtab-text-primary-color: unset !important;
         --fxview-primary-action-background: transparent !important;                     /* background color of the selected category */
         --fxview-element-background-hover: var(--button-hover-bgcolor) !important;      /* Context menu: color on 'hover' over items */
         --fxview-element-background-active: var(--button-active-bgcolor) !important;    /* Context menu: color on 'clic' over items */
@@ -735,21 +755,9 @@ body{
         }
     }
     
-    body, .sticky-container{
-        --bg: var(--lwt-main-image);
-        background-image: linear-gradient(var(--opaque), var(--opaque)),
-                          linear-gradient(var(--opaque), var(--opaque)), 
-                          var(--bg) !important;
-        background-repeat: repeat !important;
-        background-size: cover !important;
-        background-attachment: fixed !important;
-        background-position-y: var(--background-align-y) !important;
-        backdrop-filter: var(--brightness-wallpaper) !important;
-    }
-    
     .sticky-container{
         margin-block-end: 10px !important;
-        box-shadow: 0 4px 10px var(--in-content-page-background) !important;
+        box-shadow: 6px 4px 6px var(--in-content-page-background) !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% + 10px), 0 calc(100% + 10px));
     }
     
@@ -757,54 +765,67 @@ body{
         transition-duration: 0ms !important;
     }
     
-    .search-container input:is(:focus, :focus-visible){
+    .search-container input:is(:focus, :focus-visible) {
         &:focus-visible {
             border-color: transparent !important;
             box-shadow: 0 0 0 2px var(--general-color) !important;
             outline: none !important;
-        }}
-    
-/* Compatibility for aligning wallpaper when used with 'Main-image' config */
-    
-    @media -moz-pref("firefoxchameleon.main-image") {
-
-        .sticky-container {
-            background-image: none !important;
-        }
-        
-        body {
-            background: transparent !important;
-            overflow-y: hidden !important;
-        }
-        
-        .main-container {
-            width: 100% !important;
-        }
-        
-        #pages {
-            padding: 0px !important;
-        }
-        
-        named-deck>view-recentbrowsing>div {
-            
-            min-width: 100% !important;
-            display: grid;
-        }
-        
-        named-deck {
-            width: 100% !important;
-            display: grid;
-        }
-        
-        .cards-container {
-            height: 66vh !important;
-            overflow: auto;
-            scrollbar-gutter: stable !important;
-            padding-inline: 42px 52px !important;
-        }
-        
-        .sticky-container {
-            margin-inline: 0px !important;
-            padding-inline: 42px 52px !important;
         }
     }
+    
+    /* New style of elements */
+    
+    body {
+        background: transparent !important;
+        overflow-y: hidden !important;
+    }
+
+    .main-container {
+        width: 100% !important;
+    }
+
+    #pages {
+        padding: 0px !important;
+    }
+
+    named-deck>view-recentbrowsing>div {
+
+        min-width: 100% !important;
+        display: grid;
+    }
+
+    named-deck {
+        width: 100% !important;
+        display: grid;
+    }
+
+    .cards-container {
+        height: 66vh !important;
+        overflow: auto;
+        scrollbar-gutter: stable !important;
+        padding-inline: 42px 52px !important;
+    }
+
+    .sticky-container {
+        margin-inline: 0px !important;
+        padding-inline: 42px 52px !important;
+    }
+    
+    /* Search-box */
+    #input {
+        &[type="search"] {
+            border-color: color-mix(in srgb, var(--in-content-box-border-color) 80%, var(--in-content-text-color)) !important; 
+            border-radius: 16px !important;
+
+            &:hover {
+                border-color: var(--general-color) !important;
+                outline: 0px solid var(--general-color) !important;
+            }
+            
+            &:focus-visible {
+                border-color: var(--general-color) !important;
+                outline: 1px solid var(--general-color) !important;
+            }
+        }
+    }
+}

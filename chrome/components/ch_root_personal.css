@@ -1,16 +1,16 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-:root{
-  /* --------------------- Variables de colores, puedes poner tu color personalizado y utilizarlo -----------------------------*/  
-  --fuchsia: #fa1e4e;     --blue:  #304af1;    --aqua: #00bfff;         --cyan: #00ffff;          --lightblue: #45a1ff;     --pink: #FF0F7E;
-  --purple: #8d35e2;      --green: #05b694;    --aquamarine: #00ffa2;   --lightgreen: #36ff4e;    --yellowbrown: #febd60;   --swampautumn: #fdf008;
-  --gray: #bfb6d2;        --orange: #ff6c22;   --yellow: #ffe20f;       --red: #ff3230;           --navyblue: #0050cE;      --poison: #cb17cf; 
+:root {           /* _______________ Color variables, you can put your custom color and use it _______________ */
+
+  --fuchsia: #fa1e4e;     --blue: #4c4cff;    --aqua: #00bfff;        --cyan: #00ffff;        --lightblue: #45a1ff;   --pink: #FF0F7E;
+  --purple: #8d35e2;      --green: #05b694;   --aquamarine: #00ffa2;  --lightgreen: #36ff4e;  --yellowbrown: #febd60; --swampautumn: #fdf008;
+  --gray: #bfb6d2;        --orange: #ff6c22;  --yellow: #ffe20f;      --red: #ff3230;         --navyblue: #0050cE;    --poison: #cb17cf;
+  --catppuccino: #f38ba8;
   
-  /*                                                                                                                                 
-    Accent color -----> UI del navegador.  -----|        |---- userContent <------------ Accent color
-                                                |        |     (Add-ons, preferences and about: pages.)
-                                                v        v                                                          */
+  
+  /* Accent color ----> UI del navegador.  -----|       |--- userContent <------------ Accent color
+                                                v       v    (Some 'about:' pages)                                                                 */
                         --general-color: var(--blue, --blue);
 
   /* __________________________________________________________  Various customizations __________________________________________________________ */
@@ -25,37 +25,42 @@
 }
 
 @media (prefers-color-scheme: dark){ :root{
-  --lwt-main-image:  url("../newtab/wallpaper-dark6.png") !important;                    /* about: pages wallpaper - dark theme */ 
-  --lwt-private-image:  url("../newtab/private-dark.png") !important;                    /* new-tab private-page wallpaper - dark theme */
-  --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
-  }}
+  --lwt-main-image:  url("../newtab/wallpaper-dark6.png") !important ;                          /* 'about:' pages wallpaper - dark theme */ 
+  --lwt-private-image:  url("../newtab/private-dark.png") !important ;                          /* new-tab private-page wallpaper - dark theme */
+  --brightness-browser: 30% ;                                                                   /* Dark filter in themes with images - dark theme */
+  --brightness-wallpaper: 100% ;                                                                /* Dark filter for newtab wallpaper - dark theme */ }}
   
 @media (prefers-color-scheme: light){ :root{
-  --lwt-main-image:  url("../newtab/wallpaper-light1.png") !important;                   /* about: pages wallpaper - light theme*/
-  --lwt-private-image:  url("../newtab/private-light.png") !important;                   /* new-tab private-page image - light theme*/ 
-  --brightness-wallpaper: 100%;                                                          /* filtro para oscurecer la imagen */
-  }}
+  --lwt-main-image:  url("../newtab/wallpaper-light1.png") !important ;                         /* 'about:' pages wallpaper - light theme */
+  --lwt-private-image:  url("../newtab/private-light.png") !important ;                         /* New-tab private-page image - light theme */
+  --brightness-browser: 30% ;                                                                   /* Light filter in themes with images */
+  --brightness-wallpaper: 100% ;                                                                /* Light filter for newtab wallpaper - light theme */ }}
+
+:root[privatebrowsingmode="temporary"]{ --general-color: var(--purple) !important; }            /* Accent color Private mode */
 
 :root {
   
-  --personal-gradient-general: linear-gradient(165deg,                                          /* Gradiente Pestaña Activa */
-     #d02f85 0%, #b336fc 8%, #3567fd 40%, #4e7afd 60%,#4e89fd 70%, #d02f85 100%) !important;
+  --start-color: #dd2bdb ;                                                                      /* First color to make gradients */
+  --middle-color: #823ef9 ;                                                                     /* Middle color to make gradients */
+  --end-color: #3bbed0 ;                                                                        /* End color to make gradients */
   
-  --personal-gradient-into-arrowpanels: linear-gradient(                                        /* Gradiente linear */
-    to right, #902c8ad0 0%, #902cfcd0 50%, #3083ffd0 100%) !important; 
+  --my-tab-gradient: linear-gradient(165deg,                                                    /* Gradiente Pestaña Activa */
+    var(--start-color) 0%,var(--middle-color) 20%, var(--end-color) 50%, var(--start-color) 100%) ;
   
-  --wallpaper-size: cover;                                                                      /* cover-> default ; auto auto -> to <<main-image>> config */
-  --brightness-wallpaper: brightness(100%);                                                     /* 100% -> default ; 51% makes the wallpaper darker */
+  --my-arrowpanel-gradient: linear-gradient(165deg,                                             /* Gradiente border 'context-menu' & 'arrowpanels' */  
+  var(--start-color) 0%, var(--middle-color) 5%, var(--end-color) 15%, var(--middle-color) 60%, var(--start-color) 100%) ;
   
-  --my-group-line-thickness: 2px !important;                                                    /* Tab-group line thickness */
+  --my-menuitem-gradient: linear-gradient(to right,                                             /* Gradiente linear in menuitems */
+  var(--start-color), var(--middle-color), var(--end-color)) !important; 
+  
+  --my-group-line-thickness: 2px ;                                                              /* Tab-group line thickness */
   
   --tab-height-personal: 32px ;                                                                 /* Tamaño altura de pestañas*/
+  --tab-min-width-personal: 35px ;                                                              /* Tab min width | default -> :76px */
   --toolbar-height-personal: 34px ;                                                             /* Toolbar height */
   
   --logo-wordmark-visibility: 1 ;                                                               /* :1 visible, :0 invisible ; Logo-wordmark*/
   --logo-wordmark-display: flex ;                                                               /* :none ->eliminar , :flex ->Mostrar;  Logo-wordmark*/
-  --searchbar-on-off: 1 ;                                                                       /* :1 visible, :0 invisible ; searchbar*/
-  --searchbar-display: flex ;                                                                   /* :none ->eliminar , :flex ->Mostrar; searchbar*/
   
   --newtab-pinnedsites-position-top: 0px ;                                                      /* Posición pinnedsites - top-> : 0px ; center-> : auto*/
   
@@ -64,34 +69,44 @@
   --selected-text-background: var(--general-color);                                             /* Selected text background */
   
   --personal-blur: blur(14px) ;                                                                 /* Utilizado para personalizar userContent.css */
-  
-  
-  /* Botones hover, clic */
-  
-  --button-bgcolor: color-mix(in srgb, var(--general-color)  20%, transparent) !important;              /* button background */
-  --button-hover-bgcolor: color-mix(in srgb, var(--general-color)  80%, transparent) !important;        /* button :hover background */
-  --button-active-bgcolor: color-mix(in srgb, var(--general-color)  90%, transparent) !important;       /* button :active background */
 }
-
-:root[privatebrowsingmode="temporary"]{ --general-color: var(--purple) !important; }                    /* Accent color private mode */
 
 @media -moz-pref("firefoxchameleon.left-sidebar") or -moz-pref("sidebar.revamp") or -moz-pref("firefoxchameleon.tree-tabs") {
   :root{
-    --my-vertical-toolbar-width: 41px ;                                                                 /* 'left-sidebar' width */
-    --uc-sidebar-hover-width: 200px ;
+    --my-vertical-toolbar-width: 41px ;                                                         /* Sidebar width <------------<¬ */
+    --my-sidebar-hover-count: 5 ;                                                               /* 'Hover' - Sidebar width x 5  | */
   }}
 
 
-/* ---------------------------------------------------- -Main Image- Config ------------------------------------------------------ */
-
+/* -----------------------------------------------------------------------------------------------------------------------------------------------
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ Main Image config ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
 @media -moz-pref("firefoxchameleon.main-image") {
 
-   @media (prefers-color-scheme: dark){ :root{
+   @media (prefers-color-scheme: dark) { :root {
       --lwt-main-image:  url("../newtab/main-image-dark.png") !important;                        /* Wallpaper - dark theme */ 
-      --brightness-wallpaper: 50%;                                                               /* Filtro oscuro */
-     }}
-   @media (prefers-color-scheme: light){ :root{
+      --brightness-browser: 50%;                                                                 /* Filtro oscuro */ }}
+  
+   @media (prefers-color-scheme: light) { :root {
       --lwt-main-image:  url("../newtab/main-image-light.png") !important;                       /* Wallpaper - light theme */ 
-      --brightness-wallpaper: 100%;                                                              /* Filtro claro */
-     }}
+      --brightness-browser: 100%;                                                                /* Filtro claro */  }}
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ The following variables were not included for user editing, but are required in this file ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
+
+:root {
+  
+  /* ________________ Variables needed for 'Vertical tabs' ________________ */
+  
+  --my-vertical-elements-width: calc(var(--my-vertical-toolbar-width) - 1px) !important;                /* WIdth of all sidebar elements */
+  --my-vertical-toolbar-hover-width: calc(var(--my-vertical-elements-width)                             /* Sidebar width when using 'expand-on-hover' */
+    * var(--my-sidebar-hover-count) + var(--my-sidebar-hover-count)* 1px + 2px);
+  
+  /* ________________ buttons background color when 'static' - 'hover' - 'click'  ________________ */
+
+  --button-bgcolor: color-mix(in srgb, var(--general-color)  20%, transparent) !important;              /* button background */
+  --button-hover-bgcolor: color-mix(in srgb, var(--general-color)  70%, transparent) !important;        /* button :hover background */
+  --button-active-bgcolor: color-mix(in srgb, var(--general-color)  90%, transparent) !important;       /* button :active background */
 }

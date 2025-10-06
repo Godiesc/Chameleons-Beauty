@@ -1,8 +1,19 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text.
    https://github.com/Godiesc/Chameleons-Beauty */
 
+window, dialog, .dialogBox {
+    --background-color-canvas: var(--in-content-page-background) !important;                    /* Background-color */
+    
+    --button-background-color-primary: var(--button-active-bgcolor) !important;                 /* Background-primary color */
+    --button-text-color-primary: var(--in-content-primary-button-text-color);                   /* Label primary button */
+    --button-background-color-primary-hover: var(--general-color) !important;                   /* Background-primary color on 'hover' */
+    --button-text-color-primary-hover: var(--in-content-primary-button-text-color);             /* Label primary color on 'hover' */
+    
+    --button-background-color: var(--in-content-box-border-color) !important;                   /* Button color */
+}
+
 @media (prefers-color-scheme: dark) {
-    window, dialog {
+    window, dialog, .dialogBox {
 
         --color-accent-primary: var(--general-color) !important;
         --in-content-page-background: #1a1a24 !important;
@@ -13,14 +24,10 @@
 
         --in-content-box-background: #1f1f30  !important;
         --in-content-box-border-color: #4d4d68  !important;
-
-        --in-content-button-background: var(--in-content-box-border-color) !important;          /* Button color */
-        --in-content-button-background-hover: var(--general-color) !important;                  /* Button color on 'hover' */
-        --in-content-button-background-active: var(--button-hover-bgcolor) !important;          /* Button color on 'click' */
     }}
 
 @media (prefers-color-scheme: light) {
-    window, dialog {
+    window, dialog, .dialogBox {
         --color-accent-primary: var(--general-color) !important;
         --in-content-page-background: #f9f9f9 !important;
         --in-content-primary-button-background: var(--general-color) !important;
@@ -30,14 +37,11 @@
 
         --in-content-box-background: #bababa  !important;
         --in-content-box-border-color: #aeaeae  !important;
-
-        --in-content-button-background: var(--in-content-box-border-color) !important;          /* Button color */
-        --in-content-button-background-hover: var(--button-active-bgcolor) !important;          /* Button color on 'hover' */
-        --in-content-button-background-active: var(--button-hover-bgcolor) !important;          /* Button color on 'click' */
+        
         --in-content-button-text-color: black !important;
     }}
 
-:root { 
+:root {
     --toolbarbutton-icon-fill-attention: unset !important;                                      /* Remove unwanted accent color */
     --color-accent-primary: var(--general-color) !important;                                    /* Main Accent color */
     --color-accent-primary-hover: var(--button-hover-personal) !important;
@@ -68,13 +72,17 @@
     --in-content-item-selected: var(--general-color) !important;                                /* Combobox background color on 'hover' (arrow keys) */
     --in-content-item-selected-text:  var(--in-content-text-color) !important;                  /* Combobox text color on 'hover' (arrow keys) */
 
-    --in-content-button-background: var(--in-content-border-color) !important;                  /* Button color */
-    --in-content-button-background-hover: var(--button-active-bgcolor) !important;              /* Button color on 'hover' */
-    --in-content-button-background-active: var(--general-color) !important;                     /* Button color on 'click' */
+    --button-background-color: var(--in-content-border-color) !important;                       /* Button color */
+    --button-background-color-hover: var(--button-hover-bgcolor) !important;                    /* Button color on 'hover' */
+    --button-background-color-active: var(--button-active-bgcolor) !important;                  /* Button color on 'active' */
+    
+    --button-border-color-hover: var(--button-bgcolor) !important;                              /* Button border color on 'hover' */
 
-    --in-content-primary-button-background: var(--general-color) !important;                    /* Primary button color */
-    --in-content-primary-button-background-hover: var(--button-hover-bgcolor) !important;       /* Primary button color on 'hover' */
-    --in-content-primary-button-background-active: var(--button-active-bgcolor) !important;     /* Primary button color on 'active' */
+    --button-background-color-primary: var(--button-hover-bgcolor) !important;                 /* Primary button background */
+    --button-background-color-primary-hover: var(--button-active-bgcolor) !important;                   /* Primary button background on 'hover' */
+    --button-background-color-primary-active: var(--button-hover-bgcolor) !important;          /* Primary button background on 'active' */
+    
+    --button-text-color-primary: var(--in-content-text-color) !important;
 
     --link-color: var(--general-color) !important;                                              /* Links color */
     --link-color-hover: var(--blue) !important;                                                 /* Links color on 'hover' */
@@ -97,6 +105,7 @@
         --contrast-color: #ffffff !important;                                                   /* Contrast background color */
         --border-contrast-color: #000000 !important;                                            /* Contrast border color */
         --in-content-page-background: #121018 !important;                                       /* Bakground color */
+        --background-color-canvas: #090911 !important;                                          /* 'about:' background */
 
         --in-content-box-background: #15151e !important;                                        /* Color of textboxes and background of drop-down menus */
         --in-content-box-border-color: #272b37 !important;                                      /* Textbox border color */
@@ -111,11 +120,10 @@
         --contrast-color: #000000 !important;                                                   /* Contrast background color */
         --border-contrast-color: #ffffff !important;                                            /* Contrast border color */
         --in-content-page-background: #f9f9f9 !important;                                       /* Bakground color */
+        --background-color-canvas: #f0f0f0 !important;                                          /* 'about:' background */
 
         --in-content-box-background: #f9f9fb !important;                                        /* Color of textboxes and background of drop-down menus */
         --in-content-box-border-color: #d4cfe7 !important;                                      /* Textbox border color */
-
-        --in-content-button-text-color-hover: white !important;                                 /* Color of letters in buttons on 'hover' */
     }
 
     /* Pop-up window background in 'settings' */
@@ -145,7 +153,7 @@
     /* button when 'open' - Menu background */
     
     panel-list {
-        background: var(--in-content-button-background) !important;
+        background: var(--button-background-color) !important;
     }
         
     /* Toggle button */
@@ -236,84 +244,92 @@
         
     td { 
         border-color: var(--in-content-table-border-color) !important; 
+    }        
+
+    /* 'Separator line' gradient in 'settings' */
+
+    .subcategory:not([hidden]) ~ .subcategory {
+        border-image: linear-gradient(to right, var(--general-color), transparent) 1 !important; 
     }
 
     /* ___________ Background and border color of elements in about:addons */
     
-    /* Addons enabled */
+    /* Addons */
+    
+    .addon.card {
+        transition: outline 150ms, box-shadow 150ms !important;
+    }
+    
+    addon-card:not([expanded]) > .addon.card:hover {
+        & .addon-name-link {
+            color: inherit !important;
+            text-decoration: underline currentColor !important;
+            text-underline-offset: 2px !important;
+        }
+    }
 
     .card[active="true"] {
-        background-color: color-mix(in srgb, var(--in-content-box-background) 96%, var(--contrast-color)) !important;
+        background-color: color-mix(in srgb, var(--in-content-box-background) 98%, var(--contrast-color)) !important;
         outline-color: transparent !important;
-    }
 
-    addon-card:not([expanded="true"]) .card[active="true"]:not(:hover) {
-        box-shadow: 0 0 0 1px var(--in-content-border-color) !important;
-    }
-    
-    /* addons disabled */
-    
-    .card, 
-    .card[active="false"] {
-        outline: 1px solid var(--in-content-box-border-color) !important;
+        &:hover {
+            border-color: var(--general-color) !important;
+            outline: 1px solid var(--general-color) !important;
+        }
     }
 
     .card[active="false"]:hover {
-        outline-color: gray !important;
-        box-shadow: none !important;
+        --border-color-card: color-mix(in srgb, currentColor 20%, transparent) !important;
     }
-        
+
     addon-card[expanded] .addon.card {
         margin-top: 24px !important;
         outline-color: var(--general-color) !important;
-        outline-width: 2px !important;
-        outline-offset: 1px !important;
     }
         
-        /* Category Sidebar */
-        
-        .navigation, 
-        #sidebar {
-            box-shadow: inset -1px 0 0 0 var(--in-content-box-border-color), 
-                1px 77px 27px var(--border-contrast-color) !important;
-        }
-        
-        .navigation:dir(rtl), 
-        #sidebar:dir(rtl) {
-            box-shadow: inset 1px 0 0 0 var(--in-content-box-border-color), 
-                1px 77px 27px var(--border-contrast-color) !important;
-        }
+    /* Category Sidebar 
+
+    .navigation, 
+    #sidebar {
+        box-shadow: 1px 84px 10px black !important;
+    }
+
+    .navigation:dir(rtl), 
+    #sidebar:dir(rtl) {
+        box-shadow: inset 1px 0 0 0 var(--in-content-box-border-color), 
+            1px 77px 17px black !important;
+    }*/
+    
+    .sticky-container {
+        box-shadow: /*0 1px var(--in-content-box-border-color),
+            3px 1px 10px black!important/**/ ;
+        clip-path: xywh(0px 0px 100% calc(100% + 11px)) !important;
+    }
 
     /* Search-box in 'about:preferences' */
 
     #policies-container, 
     #searchInput {
-        border-radius: 16px !important;
         margin-block: 20px !important;
-        margin-inline: 0px 120px !important;
-        
-        &:hover {
-            border-color: var(--general-color) !important;
-        }
     }
     
     /* Search box in 'about:addons' */
     
-    search-addons > search-textbox {
-        border-radius: 16px !important; 
+    #input {
+        &[type="search"] {
+            border-color: color-mix(in srgb, var(--in-content-box-border-color) 80%, var(--in-content-text-color)) !important; 
+            border-radius: 16px !important;
 
-        &:hover {
-            border-color: var(--general-color) !important; 
+            &:hover {
+                border-color: var(--general-color) !important;
+                outline: 0px solid var(--general-color) !important;
+            }
+            
+            &:focus-visible {
+                border-color: var(--general-color) !important;
+                outline: 1px solid var(--general-color) !important;
+            }
         }
-    }
-
-    search-addons > search-textbox[focused] {
-        border-color: var(--general-color) !important;
-        outline: 2px solid var(--general-color) !important; 
-    }
-
-    #searchInput[focused]{ 
-        outline: 2px solid var(--general-color) !important; 
     }
     
     /* Inside 'Privacy' Category */
@@ -333,7 +349,7 @@
     /* Various smooth transitions */
 
     button, menulist, treecol, .sidebar-footer-link {
-        transition: background-color 0.2s ease !important;
+        transition: background-color 0.2s ease, border-color 0.2s ease !important;
     }
 
     search-textbox {
@@ -350,10 +366,67 @@
         background-image: none !important;
         background-color: transparent !important;
     }
+    
+    /* _________ New layout of sticky and main content _________ */
 
-    /* Wallpaper */
+    /* 'About:preferences' page */
 
-    @media not -moz-pref("firefoxchameleon.main-image") {
+    /* Remove unwanted margin from right section */
+    .main-content {
+        padding-inline: 0px !important;
+    }
+
+    .pane-container{
+        width: max(100%, var(--page-main-content-width)) !important;
+        display: grid !important;
+        overflow-x: hidden !important;
+
+        & #mainPrefPane {
+            padding-top: 20px !important; 
+            padding-inline-start: 60px !important;
+            padding-inline-end: calc(100% - var(--page-main-content-width)) !important;
+            overflow-x: hidden !important;
+        }
+    }
+    /* 'About:addons' page */
+
+    #content {
+        max-height: 100vh;
+        display: grid !important;
+        grid-template-rows: auto auto 1fr;
+        --in-content-page-background: transparent;
+    }
+
+    #main {
+        overflow: auto;
+        max-width: 100% !important;
+        scrollbar-gutter: stable !important;
+        margin-inline-start: 0px !important;
+        padding-inline-start: var(--main-margin-start);
+        /*box-shadow: inset 1px 0 0px 0 var(--in-content-box-border-color) !important;
+        clip-path: xywh(0 0 100% calc(100% - 10px)) !important;/**/
+
+        & addon-card[expanded="true"],
+        & addon-list,
+        &>recommended-themes-section>recommended-addon-list,
+        & recommended-extensions-section {
+            --page-main-content-width: calc(100% + 28px + 4px) !important;
+            display: block !important;
+            max-width: calc(100% - var(--in-content-sidebar-width) - var(--main-margin-start, 0px)) !important;
+            padding-inline-start: 4px !important;
+        }
+
+        & discovery-pane {
+            --page-main-content-width: calc(100% + var(--main-margin-start) + 4px) !important;
+            display: block !important;
+            max-width: calc(100% - var(--in-content-sidebar-width) - var(--main-margin-start)) !important;
+            padding-inline-start: 4px !important;
+        }
+    }
+
+    /* Background without transparent browser */
+
+    @media not -moz-pref("firefoxchameleon.main-image"), not -moz-pref("browser.tabs.allow_transparent_browser") {
 
         body,.sticky-container{
             --bg: linear-gradient(var(--opaque), var(--opaque)), var(--lwt-main-image);
@@ -362,81 +435,22 @@
             background-attachment: fixed !important;
         }
 
-        body, .sticky-container{
+        body, .sticky-container {
             background-image: linear-gradient(var(--opaque), var(--opaque)),
                 var(--bg) !important;
         }
     }
-
-    /* _______________________________________ Wallpaper when using with 'Main-image' config _______________________________________ */
-
-    @media -moz-pref("firefoxchameleon.main-image") {
-
-        :root {
-            --opaque: color-mix(in srgb, var(--border-contrast-color) 90%, transparent) !important;
+    
+    /* Background When using transparent browser */
+    
+    @media -moz-pref("browser.tabs.allow_transparent_browser") {
+        
+        :root, 
+        body,
+        .sticky-container {  /* used for other 'about' pages */
+            --opaque: transparent !important;
+            background-image: none !important;
             background-color: transparent !important;
-        }
-
-        /* _________ About:preferences page */
-
-        /* Remove unwanted margin from right section */
-        .main-content {
-            padding-inline: 0px !important;
-        }
-
-        .pane-container{
-            width: max(100%, var(--page-main-content-width)) !important;
-            display: grid !important;
-            overflow-x: hidden !important;
-
-            & #mainPrefPane {
-                padding-top: 20px !important; 
-                padding-inline-start: 60px !important;
-                padding-inline-end: calc(100% - var(--page-main-content-width)) !important;
-                overflow-x: hidden !important;
-            }
-        }
-        /* _________ About:addons page */
-
-        #content {
-            max-height: 100vh;
-            display: grid !important;
-            grid-template-rows: auto auto 1fr;
-            --in-content-page-background: transparent;
-        }
-
-        #main {
-            overflow: auto;
-            max-width: 100% !important;
-            scrollbar-gutter: stable !important;
-
-            & addon-card[expanded="true"],
-            & addon-list,
-            &>recommended-themes-section>recommended-addon-list,
-            & recommended-extensions-section {
-                --page-main-content-width: calc(100% + 28px + 4px) !important;
-                display: block !important;
-                max-width: calc(100% - var(--in-content-sidebar-width) - var(--main-margin-start, 0px)) !important;
-                padding-inline-start: 4px !important;
-            }
-
-            & discovery-pane {
-                --page-main-content-width: calc(100% + var(--main-margin-start) + 4px) !important;
-                display: block !important;
-                max-width: calc(100% - var(--in-content-sidebar-width) - var(--main-margin-start)) !important;
-                padding-inline-start: 4px !important;
-            }
-        }
-
-        /* Brightness wallpaper */
-        body::before{
-            --bg: linear-gradient(to bottom, transparent, var(--opaque));
-            position: fixed; content: ""; top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--bg);
-            pointer-events: none;
-            z-index: -1;
         }
     }
 }
@@ -451,8 +465,6 @@
         display: grid !important;
         grid-template-rows: 1 !important;
         grid-template-columns: auto  auto !important;
-        box-shadow: 0 1px 0 0 var(--in-content-box-border-color), 
-                27px 1px 27px var(--border-contrast-color) !important;
 
         /* Left part */            
         & .main-heading {
@@ -478,11 +490,6 @@
             }
         }
     }
-    
-    .sticky-container:dir(rtl) {
-        box-shadow: 0 1px 0 0 var(--in-content-box-border-color), 
-            -27px -1px 27px var(--border-contrast-color) !important;
-    }
 
     /* Stycky head Style in small width resolution */
 
@@ -498,39 +505,10 @@
 /* ______________________________________ only 'about:preferences' page _______________________________________ */
 
 @-moz-document url-prefix(about:preferences) {
-    
-    .sticky-container {
-        box-shadow: 0 1px 0 0 var(--in-content-box-border-color), 
-            -17px 1px 27px var(--border-contrast-color) !important;
-    }
-s
-    .sticky-container:dir(rtl) {
-        box-shadow: 0 1px 0 0 var(--in-content-box-border-color), 
-            17px 1px 27px var(--border-contrast-color) !important;
-    }
 
     @media not -moz-pref("firefoxchameleon.main-image") {
-
         #mainPrefPane{
             padding-top: 20px !important; 
-            width: 100% !important; 
-        }
-
-        .pane-container {
-            margin-inline-start: 50px !important; margin-inline-end: 50px !important;
-        }
-
-        .sticky-container {
-            width: 125% !important;
-            margin-inline-start: -78px !important;
-            border-block-end: 1px solid transparent !important;
-            border-image: var(--gradiente-casual) 1 !important;
-            box-shadow: -17px 1px 27px var(--border-contrast-color) !important;
-        }
-        
-        .sticky-container:dir(rtl) {
-            border-image: var(--gradiente-casual-rtl) 1 !important;
-            box-shadow: 17px 1px 27px var(--border-contrast-color) !important;
         }
     }
 }

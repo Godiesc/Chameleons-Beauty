@@ -6,21 +6,55 @@
 @media (-moz-platform: windows) {
 
     /* Size of button */
-    .titlebar-button::before{
-        content: ""; display: flex;
-        position: absolute;
-        border-radius: 4px !important;
-        padding: 14px 17px !important;
-        z-index: -1 !important;
+    .titlebar-button {
+        padding: 8px 16px !important;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 4px !important;
+            padding-block: calc(var(--tab-height-personal)/2 - 1px) !important;
+            padding-inline: 17px !important;
+            z-index: -1 !important;
+            
+            /* New height for 'Vertical tabs' */
+            @media -moz-pref("firefoxone.tree_tabs_style") or -moz-pref("sidebar.verticalTabs") {
+                padding-block: calc(var(--menubar-height-personal, var(--toolbar-height-personal))/2 - 4px) !important;
+            }
+        }
+    }
+    
+    /* Separator between <window controls> and other buttons in some 'Extra' features */
+    @media -moz-pref("firefoxchameleon.oneline"), -moz-pref("firefoxchameleon.tree-tabs"), -moz-pref("sidebar.verticalTabs") {
+        
+        :root:not([chromehidden~="toolbar"]) #toolbar-menubar[autohide] ~ #nav-bar .titlebar-buttonbox::before {
+            content: ""; position: absolute !important; align-self: center !important;
+            background: url("../icons/urlbar-separator.svg") no-repeat left !important;
+            background-size: 6px 16px !important;
+            width: 6px !important;
+            height: 16px !important;
+            fill: var(--toolbarbutton-icon-fill) !important;
+            -moz-context-properties: fill !important;
+            opacity: 0.2 !important;
+            fill-opacity: 1 !important;
+            inset-inline-start: -18px !important;
+        }
+    }
+    
+    /* Draw space added for 'Vertical tabs' */
+    @media -moz-pref("firefoxchameleon.tree-tabs"), -moz-pref("sidebar.verticalTabs") {
+        #nav-bar>.titlebar-buttonbox-container {
+            margin-inline-start: 26px !important;
+        }
     }
 
     /* Background color when 'hover' */
-    .titlebar-button:hover::before{
+    .titlebar-button:hover::after{
         background-color: var(--toolbarbutton-hover-personal) !important;
     }
 
     /* Background color when 'hover' on 'close' button */
-    .titlebar-button:is(.titlebar-close):hover::before {        
+    .titlebar-button:is(.titlebar-close):hover::after {        
         background-color: hsl(355,86%,49%) !important;
     }
 
@@ -29,19 +63,6 @@
     .titlebar-button {
         background-color: transparent !important;
         -moz-context-properties: stroke !important;
-        margin-inline: -2px !important;
-    }
-    .titlebar-close {
-        list-style-image: url(chrome://browser/skin/window-controls/close.svg) !important;
-    }
-    .titlebar-min {
-        list-style-image: url(chrome://browser/skin/window-controls/minimize.svg) !important
-    }
-    .titlebar-max {
-        list-style-image: url(chrome://browser/skin/window-controls/maximize.svg) !important
-    }
-    .titlebar-restore {
-        list-style-image: url(chrome://browser/skin/window-controls/restore.svg) !important
     }
 }
 

@@ -1,66 +1,73 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*-"Radiobutton"-ProtecciónAntirastreo*/
-.protections-popup-tp-switch[enabled]:hover {
-    background-color: #3030ff !important;
-    border-color: transparent !important;
+/* Bookmark popup dropdown colors */
+
+panel menulist {
+    &:hover, 
+    &[open] {
+        background: var(--my-menuitem-gradient) !important;
+        color: var(--arrowpanel-color, var(--tab-selected-textcolor)) !important;
+        box-shadow: none !important;
+    }
 }
-.protections-popup-tp-switch[enabled] {
-    background-color: #4a4aff !important;
-    border-color: transparent !important;
+
+/* Border color (down arrow) */
+
+.hideable {
+    --button-background-color-hover: var(--button-hover-bgcolor) !important;
 }
-/*colores del boton "borrar marcador"*/
-#editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton {
-    box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 88%, var(--lwt-tab-text, Field)) !important;
-}
-#editBookmarkPanelBottomButtons>#editBookmarkPanelRemoveButton:hover {
-    background-color: #da3633 !important;
-    color: #f0f6fc !important;
-    box-shadow: none !important;
-}
-/*color boton "Guardar" marcador en :hover*/
-#editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton:hover{
-background-image: var(--panel-separator-zap-gradient) !important;
-}
-#editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton:hover {
-    color: #eaeaea !important;
-}
-/*Color del botón menú deplegable*/
-panel menulist, panel menulist:not([open]) {
-    box-shadow: inset 0px 0px 0 1px color-mix(in srgb, var(--arrowpanel-background) 88%, var(--lwt-tab-text, Field)) !important;
-}
-panel menulist:hover, panel menulist[open] {
-    background-image: var(--panel-separator-zap-gradient) !important;
-    color: #eaeaea !important;
-    box-shadow: none !important;
-}
-/*Color -fondo y borde- menu desplegable (flecha hacia abajo)*/
+
 #editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down {
-    border-color: color-mix(in srgb, var(--arrowpanel-background) 88%, var(--lwt-tab-text, Field)) !important;
-    border-radius: 4px !important
+    border-color: transparent !important;
 }
-#editBookmarkPanel .expander-up:hover, #editBookmarkPanel .expander-down:hover {
-    border: none !important;
-    background-image: var(--panel-separator-zap-gradient) !important;
-    color: #eaeaea !important;
-}
-/*Color -fondo y letras - botón menu desplegable*/
-treechildren::-moz-tree-row(selected) {
-    background-color: var(--button-primary-bgcolor) !important;
-    outline: none !important;
-}
-treechildren::-moz-tree-image(selected), treechildren::-moz-tree-twisty(selected), treechildren::-moz-tree-cell-text(selected) {
+
+/* 'Save' & 'Remove' buttons */
+
+#editBookmarkPanelDoneButton {   
     color: white !important;
 }
-#PersonalToolbar {
-    padding-block: 0px 2px !important;
+
+#editBookmarkPanelRemoveButton {
+    --button-background-color-hover: #da3633bb !important;
+    -moz-context-properties: fill !important;
+    fill: var(--toolbarbutton-icon-fill) !important;
+    
+    & label {
+        display: none !important;
+    }
 }
-/* Quitar doble background en :hover en botones de extensiones ubicados en la barra de marcadores */
-toolbar:is(#TabsToolbar, #PersonalToolbar) :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]):hover {
-    background-color: transparent !important;
-    background-image: none !important;
+
+/* Background and Border Color in items (Dropdown Menu) */
+
+/* Style tested in sidebar-bookmarks, clic in the arrow | can't convine with the next line for unknow reason */
+treechildren::-moz-tree-row(current, focus),
+treechildren::-moz-tree-row(selected) {
+    background: var(--my-menuitem-gradient) !important;
+    outline-color: transparent !important;
+}
+
+#editBMPanel_folderTreeRow treechildren::-moz-tree-row(selected) {
+    background: var(--my-menuitem-gradient) !important;
+}
+
+treechildren::-moz-tree-image(selected), 
+treechildren::-moz-tree-twisty(selected), 
+treechildren::-moz-tree-cell-text(selected) {
+    color: currentColor !important;
+}
+
+#editBMPanel_folderTree,
+#editBMPanel_tagsSelector {
+    background-color: var(--input-bgcolor, Field) !important;
+    border-color: var(--input-border-color, Field) !important;
+}
+
+/* Show keyword box when bookmark a website */
+
+.editBMPanel_locationRow, .editBMPanel_keywordRow{
+    visibility: visible !important;
+    display: block !important;
 }
 
 /*--------------------------Panel Guardar Marcador----------------------------------*/
@@ -83,28 +90,26 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
     margin-top: calc(var(--tab-height-personal) - 20px) !important;
 }
 
-/* Botones de: all-tabs and unified extensions */
-
-/* botón >> ALL tabs */
-
-.all-tabs-secondary-button{
-    border-radius: var(--toolbarbutton-border-radius) !important;
-    border: none !important;
-    width: 28px !important;
-}
-
-.all-tabs-secondary-button .toolbarbutton-icon{
-    width: 14px !important;
-    height: 14px !important;
-}
-
-/* botón >> Unified extentions */
+/* ______________ Unified extentions button ______________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
 
 :root{ --uei-icon-size: 18px !important; }
 
-#unified-extensions-panel .unified-extensions-item{
-    padding-block: 0 !important;
-    margin-block: 0px !important;
+#unified-extensions-manage-extensions .toolbarbutton-icon{
+    margin-inline: 2px 4px !important;
+}
+
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
+    opacity: 1 !important;
+}
+
+#unified-extensions-panel {
+    --menu-panel-width-wide: 30em !important; /* Keep the second line in 1 line 'Spanish languaje' */
+    
+    .unified-extensions-item {
+        padding-block: 0 !important;
+        margin-block: 0px !important;
+    }
 }
 
 .unified-extensions-item-action-button.panel-no-padding.webextension-browser-action.subviewbutton.subviewbutton-iconic{
@@ -115,23 +120,40 @@ richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel
 .unified-extensions-item-menu-button:is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, 
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]) {
     background: transparent !important;
+    padding: 0px 6px !important;
 }
 
-.unified-extensions-item-menu-button.subviewbutton.subviewbutton-iconic image{
-    border: none !important;   
-    background-repeat: no-repeat !important;
-    border-radius: var(--toolbarbutton-border-radius) !important;
-}
-
-/*
 .unified-extensions-item-menu-button.subviewbutton.subviewbutton-iconic:hover image {
-    background-image: var(--panel-separator-zap-gradient) !important;
-}*/
+    background: var(--button-hover-bgcolor) !important;
+    border-radius: 3px !important;
+}
 
-/* Second label del botón de extenciones */
+/* Second label del botón de extensiones */
 
+#unified-extensions-area toolbaritem:hover .unified-extensions-item-message-deck label{
+    color: var(--arrowpanel-color, var(--tab-selected-textcolor)) !important;
+}
+
+@media (-moz-platform: linux) {
 #unified-extensions-area toolbaritem .unified-extensions-item-message-deck label{
     appearance: none !important;
     font-size: 0.875em !important;
     width: -moz-available !important;
+    }
+}
+
+/* Delete style when 'sidebar' button change to 'active' */
+
+#sidebar-button {
+    --toolbarbutton-active-background: transparent !important;
+
+    &[checked] {
+        @media -moz-pref("sidebar.revamp") {
+            list-style-image: url("chrome://browser/skin/sidebar-collapsed.svg") !important;
+        }
+
+        &:hover {
+            --toolbarbutton-active-background: var(--toolbarbutton-hover-background) !important;
+        }
+    }
 }

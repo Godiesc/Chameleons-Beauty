@@ -1,7 +1,98 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/* HTML5 dark mode web notifs */
+/* _____________________________________________ Notifs - warnings - and browser dialogs ______________________________________________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
+
+/* Position */
+
+#window-modal-dialog{
+    
+}
+
+/* Background color for dark themes */
+
+@media (prefers-color-scheme: dark){
+    :root[dialogroot], :host(dialog) {
+        --arrowpanel-background: #101019 !important;
+        --in-content-page-background: var(--arrowpanel-background) !important;
+    }}
+
+@-moz-document url("chrome://global/content/commonDialog.xhtml"){
+  :root{
+    background-color: var(--arrowpanel-background) !important;
+  }
+}
+
+/* website icon background */
+
+.titleIcon {
+  background-color: transparent !important;
+}
+
+/* Background color behind notification */
+
+browser[primary="true"][tabDialogShowing="true"], .dialogOverlay[topmost="true"], #window-modal-dialog::backdrop {
+    background-image: linear-gradient(var(--arrowpanel-background, transparent), transparent), 
+                      linear-gradient(transparent, var(--arrowpanel-background, transparent)), 
+                      var(--noise-urlbar-personal, var(--noise-urlbar-personal, none)) !important;    
+}
+
+/* Background color behind notification - "about:" pages */
+
+#window-modal-dialog::backdrop, #main-window[window-modal-open="true"]>body>#browser{
+    background-color: color-mix(in srgb, var(--toolbarbutton-hover-personal), transparent) !important; 
+}
+
+/* Border */
+
+.dialogBox:not(.spotlightBox) {
+    box-shadow:  0 0px 0px 2px var(--contrast-color)  !important;
+    border-radius: var(--tab-border-radius) !important;
+    outline: 1px solid var(--general-color) !important;
+}
+
+/* Remove background color behind notification en "about:" pages*/
+
+#window-modal-dialog > .dialogOverlay[topmost="true"] {
+    background: transparent !important;
+}
+
+/* Buttons - checkbox - etc colors */
+
+@-moz-document url(chrome://global/content/commonDialog.xhtml),
+    url("chrome://mozapps/content/handling/permissionDialog.xhtml"),
+    url("chrome://mozapps/content/handling/appChooser.xhtml")
+{
+    #commonDialogWindow,
+    #commonDialogWindow * {
+        
+    --toolbarbutton-icon-fill-attention: var(--newtab-text-primary-color) !important;
+    --in-content-link-color: var(--button-active-bgcolor) !important;
+    --in-content-link-color-hover: var(--general-color) !important;
+    --in-content-link-color-active: var(--button-active-bgcolor) !important;
+        
+    --in-content-primary-button-background: var(--button-active-bgcolor) !important;
+    --in-content-primary-button-background-hover: var(--button-hover-bgcolor) !important;
+    --in-content-primary-button-background-active: var(--button-active-bgcolor) !important;
+    --in-content-primary-button-text-color: white !important;
+        
+    --checkbox-checked-border-color: transparent !important;        
+    --checkbox-border-color:  color-mix(in srgb, var(--arrowpanel-background)75%,var(--in-content-text-color) ) !important;
+        
+    --checkbox-unchecked-bgcolor: color-mix(in srgb, var(--arrowpanel-background) 90%,var(--in-content-text-color) ) !important;
+    --checkbox-unchecked-hover-bgcolor: var(--general-color) !important;                /*color de los checkbox hover*/
+    --checkbox-unchecked-active-bgcolor: var(--button-hover-bgcolor) !important;        /*color de los checkbox al darle clic*/
+
+    --checkbox-checked-bgcolor: var(--button-active-bgcolor) !important;                /*color de los checkbox con check*/
+    --checkbox-checked-color: white !important;                                         /*color de la palomita check*/
+    --checkbox-checked-hover-bgcolor: var(--general-color) !important;                  /*color de los checkbox con check :hover*/
+    --checkbox-checked-active-bgcolor: var(--button-active-bgcolor) !important;         
+    }    
+}
+
+/* ____________________________________________________ HTML5 dark mode web notifs ____________________________________________________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
 
 @-moz-document url("chrome://global/content/alerts/alert.xhtml") {
     #alertBox {
@@ -38,4 +129,66 @@
     #alertImage {
         border-radius: 4px !important;
     }
+}
+
+/* ____________________________________________ Information - Warnings above the web page _____________________________________________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
+
+@media -moz-pref("firefoxchameleon.left-sidebar") and (not -moz-pref("browser.toolbars.bookmarks.visibility", 'always')) and (not -moz-pref("firefoxchameleon.oneline")),
+    -moz-pref("firefoxchameleon.oneline") and (-moz-pref("firefoxchameleon.tree-tabs") or -moz-pref("sidebar.verticalTabs")),
+-moz-pref("firefoxchameleon.verticalTabs-expandOnHover") and -moz-pref("sidebar.visibility", 'expand-on-hover') {
+    
+    /* animación */
+
+    @keyframes messageappeardisappear{
+        0%{ opacity: 1 }
+        80%{ opacity: 1 }
+        100%{ opacity: 0 }}
+
+    /* Warning when using Left-sidebar style without the bookmarks toolbar set to 'Always show' */
+
+    :root:not([chromehidden~="toolbar"],[inFullscreen]) {
+        #tabbrowser-tabbox:before {
+            display: flex;
+            position: absolute;
+            content: 'Use this shortcut: < Ctrl + Shift + B > to show/hide the "Left Sidebar"';
+            width: contain;
+            opacity: 0;
+            padding-block: 2px;
+            padding-inline: 5px;
+            align-self: center !important;
+            justify-content: center;
+            text-align: center;
+            text-shadow: none;
+            font-size: 1.05em;
+            font-weight: 501;
+            background-color: var(--general-color);
+            color: var(--contrast-color);
+            box-shadow: inset 0 0 0 1px var(--tab-selected-textcolor), inset 0 0 0 2px var(--contrast-color);
+            z-index: 3;
+            animation: messageappeardisappear linear 5s;
+        }
+    }
+     
+     /* Warning when using 'Oneline' configuration and 'Vertical-tabs' */
+    
+     @media -moz-pref("firefoxchameleon.oneline") and (-moz-pref("firefoxchameleon.tree-tabs") or -moz-pref("sidebar.verticalTabs")) {
+         :root:not([chromehidden~="toolbar"],[inFullscreen]) {
+             #tabbrowser-tabbox:before {
+                 background-color: var(--red) !important;
+                 content: '❌ "One-line" configuration is not compatible with "Vertical-tabs", so just keep one enabled.';
+             }
+         }
+     }
+    
+    /* Warning when using the both features 'expand-on-hover' */
+    
+    @media -moz-pref("firefoxchameleon.verticalTabs-expandOnHover") and -moz-pref("sidebar.visibility", 'expand-on-hover') {
+         :root:not([chromehidden~="toolbar"],[inFullscreen]) {
+             #tabbrowser-tabbox:before {
+                 background-color: var(--red) !important;
+                 content: '❌ "Please keep only one "expand on hover" feature enabled, do not use both at the same time. ';
+             }
+         }
+     }
 }

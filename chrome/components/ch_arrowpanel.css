@@ -1,54 +1,54 @@
 /* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
    https://github.com/Godiesc/Chameleons-Beauty */
 
-/*Color label deshabilitado y elementos de: "protección contra rastreo"*/
+/* Arrowpanel, popup menus & panels styles */
 
-.protections-popup-category.notFound { color: #777 !important;}
-.panel-info-button:not([disabled]):is([checked], :active) { background: var(--panel-separator-zap-gradient) !important; }
-.panel-info-button:not([disabled]):is(:hover) { background: var(--button-primary-hover-bgcolor) !important; 
+:is(menupopup, panel):where([type="arrow"]) {
+    --my-background-image-popup: radial-gradient( 100% 91.38% at 50% 99.62%,
+                           color-mix(in srgb, var(--general-color) 10%, transparent) 0%,
+                           var(--arrowpanel-background));
+    --panel-background: var(--my-background-image-popup), var(--noise-urlbar-personal),
+                        var(--noise-urlbar-personal), var(--arrowpanel-background)  !important;
+    --panel-border-color: var(--arrowpanel-border-color) !important;
 }
 
-/*Borde Gradiente paneles desplegables - Arrowpanels*/
+panel {
+    --panel-shadow: 0 0 0 1px var(--contrast-color) !important;
+    
+    @media (prefers-color-scheme: light) {
+        --contrast-color: var(--border-contrast-color) !important;
+    }
+}
+
+/* Remove unwanted style for radiobutton */
+
+.toggle-button {
+    --toggle-dot-background-color-on-pressed: var(--arrowpanel-background) !important;
+}
+
+/* Alignment of popups [Open] */
 
 .panel-no-padding[type="arrow"] {
-    background-image: linear-gradient(165deg, #d02f85ee 0%, #b336fc9e 8%, #3567fd9e 30%, #4e7afd9e 60%,#4e89fd9e 70%, #d02f859e 100%) !important; 
-    background-repeat: no-repeat !important;
-    background-color: var(--arrowpanel-background) !important;
-    border-radius: 6px !important;
-    margin-top: 0px !important;
-    margin-inline: -1px !important;
-    border: 1px solid var(--arrowpanel-background) !important;
-    background-clip: padding-box !important;
+    margin-block: calc(-1 * var(--panel-shadow-margin) + 1px) !important;
+    margin-inline: -4px !important;
 }
 
-slot {
-    --panel-shadow-margin: 0px !important;
-    margin: 1px !important;
-    border: none !important;
-    /*padding: 5px !important;/**/
-}
+/* Gradient border around popups -&- border color in popups like bookmark */
 
-/* Remove unwanted styles applied to the tab bar */
-
-:is(scrollbox[part="scrollbox"]) slot{
-    margin-inline: initial !important;
-    margin-block-end: initial !important;
-    box-shadow: none !important;
-    margin-top: initial !important;
-    padding: 0px !important;
-}
-
-/* Color fondo clic por los diferentes items de menús principales */
-
-.protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
- panelview .toolbarbutton-1:not([disabled], [open]):is(:active), toolbarbutton.subviewbutton:not([disabled], [open]):is(:active), 
-.navigable.subviewbutton:not([disabled], [open]):is(:active), menu.subviewbutton:not([disabled])[_moz-menuactive], 
- menuitem.subviewbutton:not([disabled])[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:active),
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:active) {
-    background-image: var(--panel-separator-zap-gradient) ;
-    background-repeat: no-repeat !important;
-    color: white !important;
-    fill: white !important;
+:is(menupopup, panel):where([type="arrow"]) {
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        inset: calc(var(--panel-shadow-margin) + 0px);
+        border-radius: var(--arrowpanel-border-radius);
+        padding: 1px;
+        background-position: center center !important;
+        background: var(--my-arrowpanel-gradient);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        pointer-events: none !important;
+    }
 }
 
 /*Color fondo gradiente :hover por los diferentes items de menús principales
@@ -61,11 +61,27 @@ slot {
  background-image: var(--panel-separator-zap-gradient) ;
 }*/
 
+/* Color fondo clic por los diferentes items de menús principales */
+
+.protections-popup-category:active, .protections-popup-footer-button:active, #protections-popup-show-report-stack:active > .protections-popup-footer-button,
+ panelview .toolbarbutton-1:not([disabled], [open]):is(:active), toolbarbutton.subviewbutton:not([disabled], [open]):is(:active), 
+.navigable.subviewbutton:not([disabled], [open]):is(:active), menu.subviewbutton:not([disabled])[_moz-menuactive], 
+ menuitem.subviewbutton:not([disabled])[_moz-menuactive], .widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:active),
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:active) {
+    background-image: var(--my-menuitem-gradient) ;
+    background-repeat: no-repeat !important;
+    color: white !important;
+    fill: white !important;
+}
 
 /*Linea de arcoiris en los menús principales*/
 
-.PanelUI-subView > toolbarseparator {
-    border-image: var(--panel-separator-zap-gradient) 1 !important;
+.PanelUI-subView {
+    & toolbarseparator.proton-zap::before,
+    &> toolbarseparator::before {
+        border-image: var(--my-menuitem-gradient) 1 !important;
+        opacity: 0.6;
+    }
 }
 
 /* Panel de descargas */
@@ -90,33 +106,122 @@ slot {
     margin: 0px !important;
 }
 
-/* Sidebar */
+/* ______________________________ Sidebar-box ______________________________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
 
 #sidebar-box {
+    --sidebar-border-color: var(--my-content-border-color) !important;
+    background-color: transparent !important;
     max-width: none !important;
-    min-width: 1px !important;   
+    min-width: 1px !important;
+    
+    @media (-moz-pref("firefoxchameleon.left-sidebar") and -moz-pref("browser.toolbars.bookmarks.visibility", 'always')) and
+        (not -moz-pref("sidebar.revamp")) {
+            outline: 1px solid var(--my-content-border-color) !important;
+            border-radius: var(--border-radius-small) var(--border-radius-small) 0 0 !important;
+            
+            /* Sidebar on right */
+            &[sidebar-positionend] {
+                border-radius: var(--border-radius-small) 0 0 0 !important;
+            }
+    }
+    
+    ~ #sidebar-splitter {
+        border-color: transparent !important;
+        border-inline-width: 0px !important;
+        --splitter-width: 1px !important;
+        --space-medium: 4px !important;
+        
+        @media -moz-pref("firefoxchameleon.left-sidebar") and -moz-pref("browser.toolbars.bookmarks.visibility", 'always') {
+            --splitter-width: 6px !important;
+            --space-medium: 4px !important;
+        }
+    }
 }
+
+.sidebar-splitter {
+  @media (not -moz-pref("sidebar.revamp")) and (-moz-pref("firefoxchameleon.left-sidebar") and -moz-pref("browser.toolbars.bookmarks.visibility", 'always')) {
+      &:not(:hover) {
+          background-color: transparent !important;
+      }
+      
+      background-color: var(--general-color) !important;
+    }
+}
+
+/* Sidebar-box when using 'sidebar-revamp' */ 
 
 @media -moz-pref("sidebar.revamp") {
     
-    .sidebar-splitter {
-        --splitter-width: 4px !important;
-        width: 4px !important;
+    /* Remove extra margin of sidebar header - extensions */
+    #sidebar-panel-header {
+        margin-block: 0px !important;
+        padding-block: 0px !important;
     }
     
-    #sidebar-box:not([positionend]) {
-        padding-inline-end: 4px !important;
+    /* Round corner fix - tested in 'sync tabs' in theme with images */
+    #sidebar-box {
+        padding-block-end: 0px !important;
+
+        & > .sidebar-browser-stack {
+            /* Border */
+            & #sidebar {
+                border-radius: var(--border-radius-small) var(--border-radius-small) 0 0 !important;
+                outline-offset: -1px !important;
+                outline: none !important;
+                border: 1px solid var(--my-content-border-color) !important;
+            }
+        }
     }
-    
-    #sidebar-box[positionend] {
-        margin-inline-start: 4px !important;
+}
+
+/* Searchbox in Sidebar 'bookmarks-history-sync' */
+
+#search-box,
+#input {  
+    --input-text-border-color: #80808080 !important;
+    --input-text-background-color: color-mix(in srgb, Field, transparent) !important;
+
+    &:focus {
+        --input-text-border-color: var(--general-color) !important;
     }
+}
+
+/* sync-tabs sidebar searchbox */
+
+#input {
+    &[type="search"] {
+        border-color: #80808080 !important;
+        &:focus {
+            --toolbarbutton-icon-fill-attention: unset !important;
+            outline: 2px solid var(--general-color) !important;
+            border-color: var(--general-color) !important;
+        }
+    }
+}
+
+/* _____ information bar _____
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
+
+.infobar {
+    /* Background */
+    --info-bar-background-color: var(--toolbar-bgcolor) !important;
+
+    /* Gradient */
+    &::before {
+        background: linear-gradient(to bottom, var(--start-color), var(--middle-color)) !important;
+    }
+}
+
+/* Infobar icon */
+.icon[data-l10n-id="moz-message-bar-icon-info"] {
+    fill: var(--general-color) !important;
 }
 
 /*-------------------------------------- Íconos en el menú de hamburguesa ----------------------------------------------*/
 
 :root {
-    --label-color: color-mix(in srgb, var(--arrowpanel-color, var(--lwt-tab-text))80%, transparent);
+    --label-color: color-mix(in srgb, var(--arrowpanel-color, var(--tab-selected-textcolor)) 86%, transparent);
     }
 
 /* Tamaño menu Open ventana no maximizada */
@@ -145,14 +250,14 @@ slot {
 
 /* Tamaño y margen de los íconos */
 
-.subviewbutton:not(.subviewbutton-iconic, .toolbarbutton-text, [checked="true"])> .toolbarbutton-icon,          /* Mayoría de botones */
 #appMenu-fxa-status2[fxastatus="signedin"] #appMenu-fxa-label2::before, #fxa-manage-account-button::before,     /* Account icon signedin */
 #appMenu-fxa-status2:not([fxastatus="signedin"])::before,                                                       /* Account icon not signedin */
-.panel-banner-item::before,                                                                                     /* Baner de actualización disponible */
-#appMenu-zoom-controls:before, .syncNowBtn{           
-    width: 16px; height: 16px;
-    margin-inline-start: 0px !important;
+.panel-banner-item::before {
     margin-inline-end: 8px !important;
+}
+
+#appMenu-zoom-controls:before {           
+    margin-inline-start: 8px !important;
 }
 
 /* Ícono de Actualización disponible */
@@ -172,190 +277,166 @@ slot {
 #appMenu-popup .panel-banner-item:not([disabled]):hover, #appMenu-popup .addon-banner-item:not([disabled]):hover {
     background: var(--button-active-bgcolor) !important;
 }
+
+/* 'About Firefox' logo when checking browser update */
+#leftBox {
+  background-image: image-set(url("../icons/fox-fill-gradient.svg"), url("../icons/fox-fill-gradient.svg") 2x) !important;
+}
+
+/* ___________________________________________________ Borders around sidebars and web content __________________________________________________ 
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ */
+
+#sidebar-box, #browser {
+    --border-radius-small: calc(var(--tab-border-radius) + 2px) !important;
+}
+
+@media -moz-pref("firefoxchameleon.left-sidebar") and -moz-pref("browser.toolbars.bookmarks.visibility", 'always') {
+
+    :root:not([chromehidden*="menubar"], [inDOMFullscreen]) {  /* Not apply style to popup windows and webapps and when a video is in fullscreen */
+
+        #sidebar-box {
+            & ~ #tabbrowser-tabbox {
+                outline: 1px solid var(--my-content-border-color) !important;
+                border-top-left-radius: var(--border-radius-small) !important;
+
+                :root[inFullscreen] & {
+                    border-radius: 0px !important;
+                }
+                
+                 /* Border radius in web content - tested in main youtube page */
+                .browserStack, 
+                .browserStack>browser {
+                    --my-content-border-radius: var(--border-radius-small) 0px 0 0;
+                    border-radius: var(--my-content-border-radius);
+
+                    :root[inFullscreen] & {
+                        border-radius: 0;
+                    }
+                }
+            }
+            
+            &[checked][sidebar-positionend] ~ #tabbrowser-tabbox {
+                border-top-right-radius: var(--border-radius-small) !important;
+                
+                :root[inFullscreen] & {
+                    border-radius: 0px !important;
+                }
+                
+                .browserStack, 
+                .browserStack>browser {
+                    --my-content-border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+
+                    :root[inFullscreen] & {
+                        border-radius: 0;
+                    }
+                }
+            }
+            
+            :root[inFullscreen] & {
+                --border-radius-small: 0 !important;
+            }
+        }
+    }
+}
+
+@media -moz-pref( "sidebar.revamp") {
     
-/* ----------------------------- Ícono Account ------------------------------ */
+    /* web content */
+
+    :root:not([inDOMFullscreen]) #sidebar-main:not([hidden]) ~ #tabbrowser-tabbox {
+        outline-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: var(--border-radius-small) 0 0 0 !important;        
+        border: 1px solid var(--my-content-border-color) !important;
+        border-inline-end-width: 0px !important;
+        border-block-end-width: 0px !important;
+        
+        .browserStack, 
+        .browserStack>browser {
+            border-radius: var(--border-radius-small) 0 0 0 !important;
+        }
+    }
+
+    /* Remove sidebar unwanted shadow */
+    #sidebar {
+        box-shadow: none !important;
+    }
+}
+
+/* _____________ Sidebar on right side */
+
+@media -moz-pref("sidebar.revamp") and (not -moz-pref("sidebar.position_start")) {
+
+    /* Border around web content */
     
-/* Cuenta no iniciada  */
-
-#appMenu-fxa-status2:not([fxastatus="signedin"])  toolbarbutton {
-    border-radius: var(--tab-border-radius) !important;
-}
-
-#appMenu-fxa-status2:not([fxastatus="signedin"])  toolbarbutton:hover {
-    background-color: var(--button-active-bgcolor) !important;
-}
-
-#appMenu-fxa-status2:not([fxastatus="signedin"])::before  {
-    content: var(--avatar-image-url);
-}
-
-/* Cuenta iniciada */
-
-#appMenu-fxa-status2:is([fxastatus="signedin"], [fxastatus="unverified"], [fxastatus="login-failed"]) #appMenu-fxa-label2::before,
-#fxa-manage-account-button::before {
-    content: "";
-    border-radius: 50% !important;
-    background-size: 16px !important;
-    background-image: var(--avatar-image-url) !important;
-}
+    :root:not([inDOMFullscreen]) #sidebar-main:not([hidden]) ~ #tabbrowser-tabbox {
+        border-inline-start-width: 0px !important;
+        border-inline-end-width: 1px !important;
+        border-radius: 0 var(--border-radius-small) 0 0 !important;
+        
+        .browserStack, 
+        .browserStack>browser {
+            border-radius: 0 var(--border-radius-small) 0 0 !important;
+        }
+        
+    }
     
-/* Ícono Nueva Pestaña */
-
-#appMenu-new-tab-button2 {
-    list-style-image: url("chrome://browser/skin/new-tab.svg");
+    /* Sidebar content + web content */
+    :root:not([inDOMFullscreen]) #sidebar-main:not([hidden]) ~ #sidebar-box[checked="true"] ~ #tabbrowser-tabbox {
+        border-radius: 0 var(--border-radius-small) 0 0 !important;
+    }
 }
 
-/* Ícono Nueva Ventana - PestañasCerradasRecientes */
+@media -moz-pref("firefoxchameleon.tree-tabs") and -moz-pref("firefoxchameleon.verticalTabs-expandOnHover") {
+    
+    :root:not([inDOMFullscreen]) {
+        #sidebar-box:not(
+        [sidebarcommand*="tabcenter"],
+        [sidebarcommand*="treestyletab"],
+        [sidebarcommand*="_3c078156-979c-498b-8990-85f7987dd929"]) {
+            box-shadow:  0 -1px var(--my-content-border-color) !important;
 
-#appMenuRecentlyClosedTabs, #sidebar-switcher-tabs {
-    list-style-image: url("chrome://browser/skin/window.svg");
-}
+            ~ #tabbrowser-tabbox {
+                box-shadow: 0 0 0 1px var(--my-content-border-color) !important;
+            }
+        }
 
-#appMenu-new-window-button2, #appMenuRecentlyClosedWindows {
-    list-style-image: url("chrome://browser/skin/tab.svg");
-}
+        #navigator-toolbox {
+            border-bottom-color: transparent !important;
+        }
 
-/* Ícono Ventana Privada */
+        #sidebar-box:is(
+        [sidebarcommand*="tabcenter"],
+        [sidebarcommand*="treestyletab"],
+        [sidebarcommand*="_3c078156-979c-498b-8990-85f7987dd929"]) {
+            &:not(:hover) {
+                box-shadow:  0 -1px var(--my-content-border-color) !important;/**/
+            }
 
-#appMenu-new-private-window-button2 {
-    list-style-image: url("chrome://browser/skin/privateBrowsing.svg");
-}
+            ~ #tabbrowser-tabbox {
+                outline-color: transparent !important;
+                box-shadow: none !important;
+                border-radius: var(--border-radius-small) 0 0 0 !important;
+                border: 1px solid var(--my-content-border-color) !important;
+                border-inline-end-width: 0px !important;
+                border-block-end-width: 0px !important;
 
-/* Ícono Marcadores */
+                @media (not -moz-pref("sidebar.position_start")) {
+                    border-radius: 0 var(--border-radius-small) 0 0 !important;
+                    border-inline-start-width: 0px !important;
+                    border-inline-end-width: 1px !important;
+                }
 
-#panelMenuBookmarkThisPage[starred]{
-    list-style-image: url("../icons/bookmark.svg");
-    fill: var(--toolbarbutton-icon-fill) !important;
-}
-#appMenu-bookmarks-button, #appMenu-library-bookmarks-button, #sidebar-switcher-bookmarks,#panelMenuBookmarkThisPage:not([starred]) {
-    list-style-image: url("../icons/bookmark-empty.svg");
-}
 
-/* ícono Historial */
+                .browserStack, 
+                .browserStack>browser {
+                    clip-path: xywh(0 0 100% 100% round var(--border-radius-small) 0 0 0 );
 
-#appMenu-history-button, #appMenu-library-history-button, #sidebar-switcher-history {
-    list-style-image: url("chrome://browser/skin/history.svg");
-}
-
-/* ícono decargas */
-
-#appMenu-downloads-button, #appMenu-library-downloads-button {
-    list-style-image: url("chrome://browser/skin/downloads/downloads.svg");
-}
-
-/* Ícono Contraseñas */
-
-#appMenu-passwords-button {
-    list-style-image: url("chrome://browser/skin/login.svg");
-}
-
-/* Ícono Complementos */
-
-#appMenu-extensions-themes-button {
-    list-style-image: url("chrome://mozapps/skin/extensions/extension.svg");
-}
-
-/* Ícono Imprimir */
-
-#appMenu-print-button2 {
-    list-style-image: url("chrome://global/skin/icons/print.svg");
-}
-
-/* Guardar como... */
-
-#appMenu-save-file-button2{
-    list-style-image: url("../icons/save.svg");
-}
-
-/* Ícono buscar */
-
-#appMenu-find-button2, #panelMenu_searchBookmarks {
-    list-style-image: url("chrome://global/skin/icons/search-glass.svg");
-}
-
-/* Ícono translate */
-
-#appMenu-translate-button{
-    list-style-image: url(chrome://browser/skin/translations.svg);
-}
-
-/* Item -tamaño- */
-
-#appMenu-zoom-controls:before{
-    content: url(../icons/zoom.svg);
-}
-
-/* Ícono Ajustes */
-
-#appMenu-settings-button {
-    list-style-image: url("chrome://global/skin/icons/settings.svg");
-}
-
-/* Ícono Ayuda */
-
-#appMenu-help-button2 {
-    list-style-image: url("chrome://global/skin/icons/help.svg");
-}
-#appMenu-more-button2 {
-    list-style-image: url("chrome://global/skin/icons/developer.svg");
-}
-
-/* Ícono salir */
-
-#appMenu-quit-button2 {
-    list-style-image: url("../icons/quit1.svg");
-}
-
-#appMenu-quit-button2:hover {
-    list-style-image: url("../icons/quit2.svg");
-}
-
-#panelMenu_viewBookmarksToolbar {
-    list-style-image: url("chrome://browser/skin/bookmarks-toolbar.svg");
-}
-
-/* Ícono -Buscar en el historial- */
-
-#appMenuSearchHistory{
-    list-style-image: url("chrome://global/skin/icons/search-glass.svg");
-}
-
-/* Ícono Borrar Historial */
-
-#appMenuClearRecentHistory {
-    list-style-image: url("chrome://browser/skin/forget.svg");
-}
-
-/* ícono Personalizar Barra Herramientas */
-
-#appmenu-moreTools-button, #overflowMenu-customize-button {
-    list-style-image: url("chrome://browser/skin/customize.svg");
-}
-
-/* Ícono SincronizarAhora */
-
-.syncNowBtn {
-    visibility: visible !important; order: -1 !important;
-}
-
-/* Ícono -Conectar Otro Dispositivo- */
-
-#PanelUI-fxa-menu-connect-device-button {
-    list-style-image:  url("chrome://browser/skin/device-phone.svg");
-}
-
-/* Ícono -enviar pestaña a dispositivo- */
-
-#PanelUI-fxa-menu-sendtab-button{
-    list-style-image:  url("chrome://browser/skin/synced-tabs.svg");    
-}
-
-/* Ícono -Ajustes de sincronización- */
-#PanelUI-fxa-menu-sync-prefs-button{
-    list-style-image: url("chrome://global/skin/icons/settings.svg");
-}
-
-/* Ícono de -Cerrar sesión- */
-#PanelUI-fxa-menu-account-signout-button{
-    list-style-image: url("../icons/logout.svg");
+                    @media (not -moz-pref("sidebar.position_start")) {
+                        clip-path: xywh(0 0 100% 100% round 0 var(--border-radius-small) 0 0 );
+                    }
+                }
+            }
+        }
+    }
 }

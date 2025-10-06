@@ -26,55 +26,47 @@
 
     :is(#TabsToolbar) .tab-close-button:hover {
         background-color: color-mix(in srgb, currentColor 15%, transparent) !important;
-        fill: var(--lwt-tab-text) !important;
+        fill: var(--tab-selected-textcolor) !important;
     }
 
     :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover,
     :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover{
-        background-color: color-mix(in srgb, var(--lwt-frame) 70%, transparent) !important;
+        background-color: color-mix(in srgb, var(--lwt-accent-color) 70%, transparent) !important;
     }
 
     /* Nuevos colores :hover para temas que usan imágenes */
 
     :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) .tab-close-button:hover {
         background-color: var(--toolbarbutton-hover-background) !important;
-        fill: var(--lwt-tab-text) !important;
+        fill: var(--tab-selected-textcolor) !important;
     }
 }
 
 #tabbrowser-tabs[orient="vertical"] {
-    
-    &:is([selected]):not(:hover) {
-        opacity: 0 !important;
-    }
-    
     &:not([expanded]) {
         & .tab-close-button {
-            width: 14px !important;
-            height: 14px !important;
-            padding: 2px !important;
-            fill: var(--lwt-tab-text) !important;
+            width: 12px !important;
+            height: 12px !important;
             background: transparent !important;
             outline-color: transparent !important;
+            padding: 3px !important;
+            inset-block-start: -1px !important;
+            inset-inline-start: 3px !important;
             
             &:hover {
-                background: var(--lwt-tab-text) !important;
+                background: var(--tab-selected-textcolor) !important;
                 fill: var(--contrast-color) !important;
+                padding: 1px !important;
             }
         }
     }
     &[expanded] {
         & .tab-close-button {
-            height: 20px !important;
-            width:  20px !important;
-            padding: 4px !important;
+            height: 16px !important;
+            width:  16px !important;
+            padding: 2px !important;
             margin-inline-end: -4px !important;
             border-radius: 2px !important;
-
-            &:hover {
-                background-color: color-mix(in srgb, currentColor 10%, transparent) !important;
-                fill: var(--lwt-tab-text) !important;
-            }
         }
     }
 }
